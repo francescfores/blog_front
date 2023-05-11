@@ -1,0 +1,26 @@
+<div
+  [ngClass]="{ 'w-64': sidebarOpen, 'w-20 ': !sidebarOpen  }"
+  class=" flex-grow-0 flex-shrink-0 left-0  bg-bgPrim
+       px-4  z-50
+        duration-500 transition-all
+       h-full gap-12  fixed overflow-y-auto scrollbar-corner-bgPrim overflow-x-hidden pb-2
+      ">
+  <button
+           class=' h-16 py-4 px-2 flex-grow-0 flex-shrink-0  items-start flex flex-col rounded  justify-center group pr-2 transition-all duration-500' (click)="toggleSidebar()">
+    <div [ngClass]="{
+        'h-1 w-6 mb-1 bg-primary transition ease transform duration-300':true,
+        'rotate-45 translate-y-2 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}"> </div>
+    <div [ngClass]="{
+        'h-1 w-6 mb-1 bg-primary transition ease transform duration-300':true,
+        'opacity-0' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}">        </div>
+    <div [ngClass]="{
+        'h-1 w-6  mb-1 bg-primary transition ease transform duration-300':true,
+        '-rotate-45 -translate-y-2 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}">
+    </div>
+  </button>
+  <app-menu ></app-menu>
+
+</div>

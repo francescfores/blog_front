@@ -1,0 +1,21 @@
+<div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable}" class="transition-colors duration-1000 ">
+  <!--  <app-navbar (navbarToggled)="onNavbarToggled($event)" [navbarOpen]="navbarOpen" [isDarkEnable]="isDarkEnable" [transparent]="false"-->
+  <!--              (onClick)='changeTheme($event)'></app-navbar>-->
+  <div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable}" class="relative">
+    <!--<app-admin-navbar></app-admin-navbar>
+    <app-header-stats></app-header-stats>
+    <div class="px-4 md:px-10 mx-auto w-full -m-24">-->
+    <div class="flex flex-col">
+      <!-- Sidebar TODO change to componente -->
+      <!--      <app-sidebar [navbarOpen]="navbarOpen" ></app-sidebar>-->
+      <!-- Main -->
+      <!--      <div class="flex-grow px-0 px-6 py-16 bg-bgSeco duration-500 transition-all ease-in-out"-->
+      <!--           [ngClass]="{'ml-64': navbarOpen, 'ml-20': !navbarOpen}"-->
+      <!--      >-->
+      <router-outlet></router-outlet>
+      <!--      </div>-->
+      <!--      <app-footer-admin-->
+      <!--        class="w-full z-50 fixed py-2 bg-bgPrim bottom-0 overflow-hidden"></app-footer-admin>-->
+    </div>
+  </div>
+</div>
