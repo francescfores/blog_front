@@ -1,0 +1,442 @@
+<div class="mx-auto px-2 py-4 sm:px-8 lg:container min-h-screen">
+  <div class="mb-4 flex justify-between">
+    <div class="inline-block">
+      <h3 class="font-semibold text-textPrimary">Buttons</h3>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-primary text-white">Button</button>
+        <button type="button" disabled class="cursor-not-allowed  rounded-md  px-4 py-2.5 text-xs font-semibold  opacity-25 bg-primary text-white">Disabled</button>
+        <button class="  rounded-md  px-4 py-2.5 text-xs font-semibold text-primary hover:outline hover:outline-1 ">Link</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Colors</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white"> Prim</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-secondary text-white"> Seco</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-ternary text-white"> Tern</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-success text-white">success</button>
+
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-info text-white">info</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-warning text-white">warning</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-help text-white">help</button>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-danger text-white">danger</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Variants</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white">Normal</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Text</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">Outline</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] ">Hover</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]">Focused</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]">Active</button>
+        <div class='button
+          rounded-md   text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out px-4 py-2'>Pressed
+        </div>
+        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Change color on active</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-transparent active:text-primary transition-all duration-300">Normal</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary active:bg-primary active:text-white transition-all duration-300">Text</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary active:bg-primary active:text-white transition-all duration-300">Outline</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-transparent active:text-primary transition-all duration-300">Hover</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65] active:bg-transparent active:text-primary transition-all duration-300">Focused</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65] active:bg-transparent active:text-primary transition-all duration-300">Active</button>
+        <div class='button
+          rounded-md  h-6  text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4]
+          active:bg-transparent z-10 transition-all duration-300'>
+          <span class=' h-6 px-4 py-2 z-50 flex flex-col justify-center items-center h-full text-white active:text-primary font-bold text-xs '>Pressed</span>
+        </div>
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Rings</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white
+        active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim">Normal</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary
+        active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim">Text</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary  active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim">Outline</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85]  hover:ring-offset-1 hover:ring-1 hover:ring-primary ring-offset-bgPrim">Hover</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65] focus:ring-offset-1 focus:ring-1 focus:ring-primary ring-offset-bgPrim">Focused</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65] active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim">Active</button>
+        <div class='button
+          rounded-md  h-6 text-xs font-semibold  bg-primary text-white
+          active:translate-y-2
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out
+          active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim'>
+          <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Pressed</span>
+        </div>
+        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed
+        ring-offset-1 ring-1 ring-primary ring-offset-bgPrim">Disabled</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Button no rounded</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-primary text-white">Normal</button>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Text</button>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">Outline</button>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] ">Hover</button>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]">Focused</button>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]">Active</button>
+        <div class='button rounded-none
+            h-6 text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out'>
+          <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Pressed</span>
+        </div>
+        <button class="rounded-none  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Button rounded</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-primary text-white">Normal</button>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Text</button>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">Outline</button>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] ">Hover</button>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]">Focused</button>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]">Active</button>
+        <div class='button rounded-full
+            h-6 text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out'>
+          <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Pressed</span>
+        </div>
+        <button class="rounded-full  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Button icon</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">
+          <i class="fas fa-regular fa-star text-xs">
+          </i></button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <div class='button
+          rounded-md  h-6 text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out'>
+          <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '><i class="fas fa-regular fa-star text-xs">
+          </i></span>
+        </div>
+        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Button icon rounded</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2  text-xs font-semibold  bg-primary text-white"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  bg-transparent text-primary "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">
+          <i class="fas fa-regular fa-star text-xs">
+          </i></button>
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <button class="rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]"><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+        <div class='button
+          rounded-full inline-flex items-center justify-center w-8 h-8 mr-2  text-xs font-semibold  bg-primary text-white
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_3px_0_0_#004f5e,0_6px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out'>
+          <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '><i class="fas fa-regular fa-star text-xs">
+          </i></span>
+        </div>
+        <button class=" rounded-full inline-flex items-center justify-center w-8 h-8 mr-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed "><i class="fas fa-regular fa-star text-xs">
+        </i></button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Loading</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <button type="button" (click)="loading()"
+                class="rounded-md px-4 py-2 text-xs font-semibold  text-white bg-primary
+                  inline-flex items-center
+                   transition-all duration-150 ease-in-out   "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class=" -ml-1 text-white animate-spin transition-all duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Normal...</p>
+        </button>
+        <button type="button" (click)="loading()" [disabled]="buttonloading"
+                class="rounded-md px-4 py-2 text-xs font-semibold   bg-transparent text-primary
+                   inline-flex items-center
+                   transition-all duration-150 ease-in-out  "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="-ml-1 text-primary animate-spin transition-all duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Text...</p>
+        </button>
+        <button type="button" (click)="loading()" [disabled]="buttonloading"
+                class="px-4 py-2 rounded-md  px-4 py-2 text-xs font-semibold text-primary bg-transparent
+                  inline-flex items-center
+                  outline outline-2 outline-primary
+                   transition-all duration-150 ease-in-out  "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="w-3 h-3 -ml-1   animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Outline...</p>
+        </button>
+        <button type="button"(click)="loading()" [disabled]="buttonloading"
+                class="rounded-none px-4 py-2 text-xs font-semibold  text-white bg-primary
+                  inline-flex items-center
+                   hover:bg-primary/[.85] transition-all duration-150 ease-in-out   "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="w-3 h-3  -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Hover...</p>
+        </button>
+        <button type="button"(click)="loading()" [disabled]="buttonloading"
+                class="rounded-none px-4 py-2 text-xs font-semibold  text-white bg-primary
+                   transition-all duration-150 ease-in-out  focus:bg-primary/[.65] inline-flex items-center "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="w-3 h-3  -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Focused...</p>
+        </button>
+        <button type="button"type="button" (click)="loading()" [disabled]="buttonloading"
+                class="rounded-none px-4 py-2 text-xs font-semibold  text-white bg-primary
+                   transition-all duration-150 ease-in-out  active:bg-primary/[.65]  inline-flex items-center "
+                [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="w-3 h-3  -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <p class="ml-3">Active...</p>
+        </button>
+
+        <button  (click)="loading()" [disabled]="buttonloading"
+                 class='button
+          rounded-md  h-6 px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]
+          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out inline-flex items-center '
+                 [ngClass]="{'opacity-50 cursor-not-allowed':buttonloading}">
+          <svg class="w-3 h-3  -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <span class='h-6 ml-3 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Pressed...</span>
+        </button>
+        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed inline-flex items-center">
+          <svg class="w-3 h-3  -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24"
+               [ngClass]="{'h-0 w-0':!buttonloading,'w-3 h-3 ':buttonloading}">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          <span class='h-6 ml-3 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Disabled...</span>
+        </button>
+      </div>
+    </div>
+
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Text hover background on active</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary hover:bg-primary/[.08] active:bg-primary/[.2] "> Prim</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-secondary hover:bg-secondary/[.08] active:bg-secondary/[.2] "> Seco</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-ternary hover:bg-ternary/[.08] active:bg-ternary/[.2] "> Tern</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-success hover:bg-success/[.08] active:bg-success/[.2] ">success</button>
+
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-info hover:bg-info/[.08] active:bg-info/[.2] ">info</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-warning hover:bg-warning/[.08] active:bg-warning/[.2] ">warning</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-help hover:bg-help/[.08] active:bg-help/[.2] ">help</button>
+        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-danger hover:bg-danger/[.08] active:bg-danger/[.2] ">danger</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary"> Colors & hover </div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <div class="flex  flex-col flex-wrap gap-4">
+          <div class="text-xs font-medium text-textTertiary">
+            <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Bg primary </div>
+          </div>
+          <button class="rounded-md  px-4 py-2.5 text-xs font-semibold  bg-primary text-white hover:bg-transparent hover:text-primary"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-primary hover:bg-primary hover:text-white"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-secondary text-white hover:bg-transparent hover:text-secondary"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-secondary hover:bg-secondary  hover:text-white"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-ternary text-white hover:bg-transparent hover:text-ternary"> Tern</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-ternary hover:bg-ternary  hover:text-white"> Seco</button>
+        </div>
+        <div class="flex  flex-col flex-wrap gap-4">
+          <div class="text-xs font-medium text-textTertiary">
+            <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Bg secondary </div>
+          </div>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-primary text-white hover:bg-bgSeco"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-white hover:bg-primary"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-secondary text-white hover:bg-bgSeco"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-white hover:bg-secondary"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-ternary text-white hover:bg-bgSeco"> Tern</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-white hover:bg-ternary"> Tern</button>
+        </div>
+        <div class="flex  flex-col flex-wrap gap-4">
+          <div class="text-xs font-medium text-textTertiary">
+            <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Bg ternary </div>
+          </div>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-primary text-white hover:bg-bgTern"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgTern text-white hover:bg-primary"> Prim</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-secondary text-white hover:bg-bgTern"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgTern text-white hover:bg-secondary"> Seco</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-ternary text-white hover:bg-bgTern"> Tern</button>
+          <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-bgTern text-white hover:bg-ternary"> Tern</button>
+        </div>
+      </div>
+    </div>
+    <div class="space-x-1 text-xs font-medium text-textTertiary">
+      <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Mix text/hover/background primary
+      </div>
+    </div>
+    <div class=" flex flex-col rounded-lg bg-bgPrim p-4  gap-4">
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textPrimary hover:bg-bgTern">bg-sec/txt-pri/hover-ter</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textSecondary hover:bg-bgTern">bg-sec/txt-sec/hover-ter</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textTertiary hover:bg-bgTern">bg-sec/txt-ter/hover-ter</button>
+      </div>
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textPrimary hover:bg-bgSeco">bg-sec/txt-pri/hover-sec</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textSecondary hover:bg-bgSeco">bg-sec/txt-sec/hover-sec</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textTertiary hover:bg-bgSeco">bg-sec/txt-ter/hover-sec</button>
+      </div>
+    </div>
+    <div class="space-x-1 text-xs font-medium text-textTertiary">
+      <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Mix text/hover/background secondary
+      </div>
+    </div>
+    <div class=" flex flex-col rounded-lg bg-bgSeco p-4 gap-4">
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textPrimary hover:bg-bgTern">bg-pri/txt-pri/hover-ter</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textSecondary hover:bg-bgTern">bg-pri/txt-sec/hover-ter</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textTertiary hover:bg-bgTern">bg-pri/txt-ter/hover-ter</button>
+      </div>
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textPrimary hover:bg-bgPrim">bg-ter/txt-pri/hover-prim</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textSecondary hover:bg-bgPrim">bg-ter/txt-sec/hover-prim</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgTern text-textTertiary hover:bg-bgPrim">bg-ter/txt-ter/hover-prim</button>
+      </div>
+    </div>
+    <div class="space-x-1 text-xs font-medium text-textTertiary">
+      <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Mix text/hover/background ternary
+      </div>
+    </div>
+    <div class=" flex flex-col rounded-lg bg-bgTern p-4 gap-4">
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textPrimary hover:bg-bgSeco">bg-pri/txt-pri/hover-sec</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textSecondary hover:bg-bgSeco">bg-pri/txt-sec/hover-sec</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgPrim text-textTertiary hover:bg-bgSeco">bg-pri/txt-ter/hover-sec</button>
+      </div>
+      <div class="flex flex-wrap items-center justify-start gap-4">
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textPrimary hover:bg-bgPrim">bg-sec/txt-pri/hover-pri</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textSecondary hover:bg-bgPrim">bg-sec/txt-sec/hover-pri</button>
+        <button class="flex-none rounded-md px-4 py-2.5 text-xs font-semibold  bg-bgSeco text-textTertiary hover:bg-bgPrim">bg-sec/txt-ter/hover-pri</button>
+      </div>
+    </div>
+  </div>
+</div>

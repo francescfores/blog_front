@@ -8,6 +8,12 @@ import {NotificationDropdownComponent} from "./dropdowns/notification-dropdown/n
 import {TableDropdownComponent} from "./dropdowns/table-dropdown/table-dropdown.component";
 import {PagesDropdownComponent} from "./dropdowns/pages-dropdown/pages-dropdown.component";
 import {IndexDropdownComponent} from "./dropdowns/index-dropdown/index-dropdown.component";
+import {CardStatsComponent} from "./cards/card-stats/card-stats.component";
+import {ButtonDefaultComponent} from "./buttons/button-default/button-default.component";
+import {CardDefaultComponent} from "./cards/card-default/card-default.component";
+import {CardPricingComponent} from "./cards/card-pricing/card-pricing.component";
+import {CardBackgroundComponent} from "./cards/card-background/card-background.component";
+import { InputDefaultComponent } from './inputs/input-default/input-default.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import {IndexDropdownComponent} from "./dropdowns/index-dropdown/index-dropdown.
     NotificationDropdownComponent,
     IndexDropdownComponent,
     TableDropdownComponent,
-    PagesDropdownComponent
+    PagesDropdownComponent,
+    CardStatsComponent,
+    ButtonDefaultComponent,
+    CardDefaultComponent,
+    CardPricingComponent,
+    CardBackgroundComponent,
+    InputDefaultComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +40,12 @@ import {IndexDropdownComponent} from "./dropdowns/index-dropdown/index-dropdown.
     NotificationDropdownComponent,
     TableDropdownComponent,
     PagesDropdownComponent,
+    CardStatsComponent,
+    ButtonDefaultComponent,
+    CardDefaultComponent,
+    CardPricingComponent,
+    CardBackgroundComponent,
+    InputDefaultComponent,
   ]
 })
 export class ComponentsModule { }

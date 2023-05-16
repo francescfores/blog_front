@@ -5,6 +5,9 @@ import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import {UsersComponent} from "./pages/users/users.component";
 import {SettingsComponent} from "./pages/settings/settings.component";
 import {ComponentsComponent} from "./pages/components/components.component";
+import {ButtonsComponent} from "./pages/components/buttons/buttons.component";
+import {CardsComponent} from "./pages/components/cards/cards.component";
+import {InputsComponent} from "./pages/components/inputs/inputs.component";
 
 const routes: Routes = [
   {
@@ -16,7 +19,13 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "users", component: UsersComponent },
       { path: "settings", component: SettingsComponent },
-      { path: "components", component: ComponentsComponent },
+      { path: "components", component: ComponentsComponent,
+      children:[
+        { path: "buttons", component: ButtonsComponent },
+        { path: "cards", component: CardsComponent },
+        { path: "inputs", component: InputsComponent }
+      ],
+      },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

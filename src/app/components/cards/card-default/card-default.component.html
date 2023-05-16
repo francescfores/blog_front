@@ -1,0 +1,46 @@
+<div class="{{statStyle}}">
+  <div *ngIf="statImg!==''" class="{{statImgStyle}}">
+    <img
+      class="h-full w-full object-cover"
+      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+      alt="ui/ux review check"
+    />
+  </div>
+  <div>
+    <div class="p-6">
+      <h6 *ngIf="statSubtitle!==''"  class="mb-4 block font-sans text-base font-semibold  leading-relaxed tracking-normal text-primary antialiased">
+        {{ statSubtitle }}
+      </h6>
+      <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased  flex justify-start items-center">
+        <i *ngIf="statIconName!==''" class="{{statIconName}} {{statIconColor}} text-md mr-4"></i>
+        <p>{{ statTitle }}</p>
+      </h5>
+      <p class="break-words block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+        {{ statDescripiron }}
+      </p>
+      <div class="card-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div *ngIf="statButtonLeft && statButtonRight" class="p-6 pt-0 flex justify-between gap-4">
+      <app-button-default
+        class="{{statButtonLeftStyle}}"
+        *ngIf="statButtonLeft"
+        [statTitle]="statButtonLeftTitle"
+        [statIconName]="statButtonLeftIcon"
+        [statIconPosition]="statButtonLeftIconPosition">
+        <!--      [statStyle]="statButtonLeftStyle"-->
+      </app-button-default>
+      <app-button-default
+        class="{{statButtonRightStyle}}"
+        *ngIf="statButtonRight"
+        [statTitle]="statButtonRightTitle"
+        [statIconName]="statButtonRightIcon"
+        [statIconPosition]="statButtonRightIconPosition">
+        <!--      [statStyle]="statButtonRightStyle">-->
+      </app-button-default>
+    </div>
+  </div>
+
+</div>
+

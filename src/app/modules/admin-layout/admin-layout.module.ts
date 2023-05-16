@@ -13,6 +13,9 @@ import {FooterAdminComponent} from "./components/footer-admin/footer-admin.compo
 import { MenuComponent } from './components/sidebar/menu/menu.component';
 import { SubmenuComponent } from './components/sidebar/submenu/submenu.component';
 import { ComponentsComponent } from './pages/components/components.component';
+import { CardsComponent } from './pages/components/cards/cards.component';
+import { ButtonsComponent } from './pages/components/buttons/buttons.component';
+import { InputsComponent } from './pages/components/inputs/inputs.component';
 
 
 
@@ -27,7 +30,10 @@ import { ComponentsComponent } from './pages/components/components.component';
     FooterAdminComponent,
     MenuComponent,
     SubmenuComponent,
-    ComponentsComponent
+    ComponentsComponent,
+    CardsComponent,
+    ButtonsComponent,
+    InputsComponent
   ],
   imports: [
     CommonModule,

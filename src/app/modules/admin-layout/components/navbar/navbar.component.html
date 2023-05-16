@@ -3,29 +3,31 @@
 <!--  <nav id="navbar"-->
 <!--       class="  text-textPrimary transition-colors duration-1000 top-0 fixed z-20 w-full flex flex-wrap items-center-->
 <!--    justify-between navbar-expand-lg">-->
-  <div class="z-40 w-screen h-16">
-    <div class="py-4 pr-6 flex w-full justify-center items-center">
-      <button  [ngClass]="{ 'w-64': sidebarOpen, 'w-20 ': !sidebarOpen  }"
-               class='px-6 flex-grow-0 flex-shrink-0  items-start flex flex-col rounded justify-start group pr-2 transition-all duration-500' (click)="toggleSidebar()">
+  <div class="w-screen ">
+    <div class="py-4 pr-6 flex w-full justify-start items-center">
+      <button [ngClass]="{'opacity-0':sidebarOpen}"
+               class='z-50 px-8 flex-grow-0 flex-shrink-0  items-start flex flex-col rounded justify-start group pr-2 transition-all duration-500' (click)="toggleSidebar()">
         <div [ngClass]="{
-        'h-1 w-6 mb-1 bg-primary transition ease transform duration-300':true,
-        'rotate-45 translate-y-2 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'h-0.5 w-4 mb-1 bg-primary transition ease transform duration-300':true,
+        'rotate-45 translate-y-1.5 opacity-50 group-hover:opacity-100' : sidebarOpen,
         'opacity-50 group-hover:opacity-100': !sidebarOpen}"> </div>
         <div [ngClass]="{
-        'h-1 w-6 mb-1 bg-primary transition ease transform duration-300':true,
+        'h-0.5 w-4 mb-1 bg-primary transition ease transform duration-300':true,
         'opacity-0' : sidebarOpen,
         'opacity-50 group-hover:opacity-100': !sidebarOpen}">        </div>
         <div [ngClass]="{
-        'h-1 w-6  mb-1 bg-primary transition ease transform duration-300':true,
-        '-rotate-45 -translate-y-2 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'h-0.5 w-4  mb-1 bg-primary transition ease transform duration-300':true,
+        '-rotate-45 -translate-y-1.5 opacity-50 group-hover:opacity-100' : sidebarOpen,
         'opacity-50 group-hover:opacity-100': !sidebarOpen}">
         </div>
       </button>
-      <a class="text-2xl font-bold font-heading w-full flex justify-start px-6" href="#">
-        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-        <img *ngIf="isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo_dark.png" >
-        <img *ngIf="!isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo.png" >
-      </a>
+      <div [ngClass]="{'opacity-0':sidebarOpen}" class="flex px-8 justify-center items-center transition-all duration-500 ease-in-out">
+        <div>
+          <img *ngIf="isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo_dark.png" >
+          <img *ngIf="!isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo.png" >
+        </div>
+        <div class="text-xl text-textPrimary tracking-wide ml-2 font-semibold">Thunder</div>
+      </div>
       <!-- Nav Links -->
       <div class="flex-grow  space-x-5 flex justify-end">
         <a class="flex items-center hover:text-gray-200" *ngIf="!isDarkEnable" (click)="changeTheme()" mode-button style="font-size:18px"><i class="fa-solid fa-moon"></i></a>

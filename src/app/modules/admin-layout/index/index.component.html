@@ -8,15 +8,16 @@
     <div class="px-4 md:px-10 mx-auto w-full -m-24">-->
     <div class="flex flex-col">
       <!-- Sidebar TODO change to componente -->
-      <app-sidebar></app-sidebar>
+      <app-sidebar class="bg-bgPrim"></app-sidebar>
 
       <!-- Main -->
-      <div class="flex-grow px-0 px-6 py-16 bg-bgSeco duration-500 transition-all ease-in-out"
-           [ngClass]="{'ml-64': sidebarOpen, 'ml-20': !sidebarOpen}"
+<!--      <div class="flex-grow py-16 bg-[conic-gradient(at_bottom_right,_var(&#45;&#45;tw-gradient-stops))] from-bgPrim via-bgTern to-bgPrim duration-500 transition-all ease-in-out"-->
+      <div class="flex-grow bg-bgSeco py-16 duration-500 transition-all ease-in-out"
+           [ngClass]="{'pl-0 sm:pl-64': sidebarOpen, 'pl-0 sm:pl-20': !sidebarOpen}"
       >
       <router-outlet></router-outlet>
       </div>
-      <app-footer-admin [ngClass]="{'ml-64': sidebarOpen, 'ml-20': !sidebarOpen}"
+      <app-footer-admin [ngClass]="{'pl-64': sidebarOpen, 'pl-0 sm:pl-20': !sidebarOpen}"
         class="w-full z-50 fixed py-2 bg-bgPrim bottom-0 overflow-hidden duration-500 transition-all ease-in-out"></app-footer-admin>
     </div>
   </div>
