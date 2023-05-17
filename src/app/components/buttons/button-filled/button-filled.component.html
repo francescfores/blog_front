@@ -1,0 +1,26 @@
+<button [disabled]="disabled"
+  [ngClass]="
+  {
+  'cursor-not-allowed opacity-75':disabled,
+  }"
+  class="
+  {{style}}
+  {{rounded}}
+  {{text}}
+  {{font}}
+  {{color}}
+  {{padding}}
+  {{margin}}
+  {{outline}}
+  {{hover}}
+  {{focus}}
+  {{active}}
+  {{transition}}"
+>
+<!--  <p>{{title}}</p>-->
+<!--  <i  class="{{icon}} "></i>-->
+<!--  <img class="{{imageStyle}}"-->
+<!--       src="{{imageUrl}}"/>-->
+  <ng-content></ng-content>
+
+</button>

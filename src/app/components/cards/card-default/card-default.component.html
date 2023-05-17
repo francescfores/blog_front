@@ -22,21 +22,22 @@
         <ng-content></ng-content>
       </div>
     </div>
-    <div *ngIf="statButtonLeft && statButtonRight" class="p-6 pt-0 flex justify-between gap-4">
+    <div *ngIf="statButtonLeft || statButtonRight" class="p-6 pt-0 flex justify-between gap-4">
       <app-button-default
-        class="{{statButtonLeftStyle}}"
         *ngIf="statButtonLeft"
         [statTitle]="statButtonLeftTitle"
         [statIconName]="statButtonLeftIcon"
-        [statIconPosition]="statButtonLeftIconPosition">
+        [statStyle]="statButtonLeftStyle">
+      >
+<!--        [statIconPosition]="statButtonLeftIconPosition"-->
         <!--      [statStyle]="statButtonLeftStyle"-->
       </app-button-default>
       <app-button-default
-        class="{{statButtonRightStyle}}"
         *ngIf="statButtonRight"
         [statTitle]="statButtonRightTitle"
         [statIconName]="statButtonRightIcon"
-        [statIconPosition]="statButtonRightIconPosition">
+        [statStyle]="statButtonRightStyle">
+      <!--        [statIconPosition]="statButtonRightIconPosition"-->
         <!--      [statStyle]="statButtonRightStyle">-->
       </app-button-default>
     </div>

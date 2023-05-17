@@ -10,25 +10,80 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
       </div>
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <button class=" rounded-md  px-4 py-2.5 text-xs font-semibold  bg-primary text-white">Button</button>
-        <button type="button" disabled class="cursor-not-allowed  rounded-md  px-4 py-2.5 text-xs font-semibold  opacity-25 bg-primary text-white">Disabled</button>
-        <button class="  rounded-md  px-4 py-2.5 text-xs font-semibold text-primary hover:outline hover:outline-1 ">Link</button>
+        <app-button-filled>
+          <p>Button</p>
+        </app-button-filled>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white">Button</button>
+      </div>
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Template</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <app-button-filled
+         [style]="'flex items-center'"
+        >
+          <p>Icon</p>
+          <i  class="fas fa-regular fa-envelope ml-2"></i>
+        </app-button-filled>
+        <app-button-filled
+          [style]="'flex items-center'"
+        >
+          <i  class="fas fa-regular fa-envelope mr-2"></i>
+          <p>Icon</p>
+        </app-button-filled>
       </div>
     </div>
     <div class=" py-2 space-y-2">
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Colors</div>
       </div>
-      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white"> Prim</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-secondary text-white"> Seco</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-ternary text-white"> Tern</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-success text-white">success</button>
+<!--      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white"> Prim</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-secondary text-white"> Seco</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-ternary text-white"> Tern</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-success text-white">success</button>-->
 
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-info text-white">info</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-warning text-white">warning</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-help text-white">help</button>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-danger text-white">danger</button>
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-info text-white">info</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-warning text-white">warning</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-help text-white">help</button>-->
+<!--        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-danger text-white">danger</button>-->
+<!--      </div>-->
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <app-button-filled>
+          <p>Prim</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-secondary'">
+          <p>Seco</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-ternary'">
+          <p>Tern</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-success'">
+          <p>success</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-info'">
+          <p>info</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-warning'">
+          <p>warning</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-help'">
+          <p>help</p>
+        </app-button-filled>
+        <app-button-filled
+          [color]="'bg-danger'">
+          <p>danger</p>
+        </app-button-filled>
       </div>
     </div>
     <div class=" py-2 space-y-2">
@@ -36,20 +91,151 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Variants</div>
       </div>
       <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white">Normal</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Text</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary">Outline</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] ">Hover</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]">Focused</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]">Active</button>
-        <div class='button
-          rounded-md   text-xs font-semibold  bg-primary text-white
-          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
-          active:border-b-[0px]
-          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
-          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out px-4 py-2'>Pressed
-        </div>
-        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+        <app-button-filled>
+        <p>Filled</p>
+        </app-button-filled>
+        <app-button-filled
+          [text]="'text-xs text-primary'"
+          [color]="'bg-transparent'">
+        <p>Link</p>
+        </app-button-filled>
+        <app-button-filled
+          [text]="'text-xs text-primary'"
+          [color]="'bg-transparent'"
+          [outline]="'outline outline-1 outline-primary'"
+        >
+        <p>Outline</p>
+        </app-button-filled>
+        <app-button-filled
+          [hover]="'hover:bg-primary/[.85]'"
+        >
+        <p>Hover</p>
+        </app-button-filled>
+        <app-button-filled
+          [focus]="'focus:bg-primary/[.85]'"
+        ><p>Focused</p>
+        </app-button-filled>
+        <app-button-filled
+          [active]="'active:bg-primary/[.65]'"
+        ><p>Active</p>
+        </app-button-filled>
+        <app-button-filled
+          [active]="'active:translate-y-2  active:[box-shadow:none] active:border-b-[0px]'"
+          [transition]="'duration-150 transition-all ease-in-out'"
+          [style]="'[box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]'"
+        ><p>Pressed</p>
+        </app-button-filled>
+        <app-button-filled
+          [disabled]="true">
+          <p>Pressed</p>
+        </app-button-filled>
+      </div>
+<!--      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  bg-primary text-white">Normal</button>-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Text</button>-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  bg-transparent text-primary ">Outline</button>-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] ">Hover</button>-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65]">Focused</button>-->
+<!--        <button class="rounded-md px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65]">Active</button>-->
+<!--        <div class='button-->
+<!--          rounded-md   text-xs font-semibold  bg-primary text-white-->
+<!--          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841] active:border-b-[0px]-->
+<!--          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]-->
+<!--          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out px-4 py-2'>Pressed-->
+<!--        </div>-->
+<!--        <button class="  rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>-->
+<!--      </div>-->
+    </div>
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Size</div>
+      </div>
+      <div class="flex flex-wrap justify-start items-center overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <app-button-filled
+          [title]="'Small'">
+        </app-button-filled>
+        <app-button-filled
+          [title]="'Medium'"
+          [padding]="'px-5 py-3'"
+        ></app-button-filled>
+          <app-button-filled
+          [title]="'Large'"
+          [padding]="'px-7 py-3.5'"
+        ></app-button-filled>
+        <!--
+                <app-button-filled
+                  [title]="'Filled'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'"></app-button-filled>
+                <app-button-filled
+                  [title]="'Text'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-primary'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-transparent'"
+                  [padding]="'px-4 py-2'">
+                </app-button-filled>
+                <app-button-filled
+                  [title]="'Outline'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-primary'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-transparent'"
+                  [padding]="'px-4 py-2'"
+                  [outline]="'outline outline-1 outline-primary'"
+                >
+                </app-button-filled>
+                <app-button-filled
+                  [title]="'Hover'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'"
+                  [hover]="'hover:bg-primary/[.85]'"
+                >
+                </app-button-filled>
+                <app-button-filled
+                  [title]="'Focused'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'"
+                  [focus]="'focus:bg-primary/[.85]'"
+                ></app-button-filled>
+                <app-button-filled
+                  [title]="'Active'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'"
+                  [active]="'active:bg-primary/[.65]'"
+                ></app-button-filled>
+                <app-button-filled
+                  [title]="'Pressed'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'"
+                  [active]="'active:translate-y-2  active:[box-shadow:none] active:border-b-[0px]'"
+                  [transition]="'duration-150 transition-all ease-in-out'"
+                  [style]="'[box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]'"
+                ></app-button-filled>
+                <app-button-filled
+                  [disabled]="true"
+                  [title]="'Disbaled'"
+                  [rounded]="'rounded-md'"
+                  [text]="'text-xs text-white'"
+                  [font]="'font-semibold'"
+                  [color]="'bg-primary'"
+                  [padding]="'px-4 py-2'">
+                </app-button-filled>-->
       </div>
     </div>
     <div class=" py-2 space-y-2">
@@ -91,9 +277,8 @@
         <div class='button
           rounded-md  h-6 text-xs font-semibold  bg-primary text-white
           active:translate-y-2
-          active:border-b-[0px]
-          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
-          border-b-[1px] border-[#3592a4] duration-150 transition-all ease-in-out
+          [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]
+          duration-150 transition-all ease-in-out
           active:ring-offset-1 active:ring-1 active:ring-primary ring-offset-bgPrim'>
           <span class='h-6 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>Pressed</span>
         </div>

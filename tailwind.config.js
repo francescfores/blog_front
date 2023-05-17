@@ -168,11 +168,11 @@ module.exports = {
         // 'theme': '#fff',
         // 'header-color': '#404040',
         // 'route-link-active': '#E85651',
-        // 'link-color': '#fff',
+        'link-color': '#40B45BED',
         // 'border-color': '#E85651',
       },
       dark: {
-        'primary': '#41FF6CCA',//0091ADB2 ///41FF6CDA
+        'primary': '#40B45BED',//0091ADB2 ///41FF6CDA
         'secondary': '#F3A71299', ///F3A71299 //FBB02DE5
         'ternary': '#29335C99', ///29335C99 //17BEBBE4
         'success': '#70C18399', //'#70C1B3',
@@ -195,7 +195,7 @@ module.exports = {
         // 'theme': '#424242',
         // 'header-color': '#E85651',
         // 'route-link-active': '#E85651',
-        // 'link-color': '#fff',
+        'link-color': '#41FF6CCA',
         // 'border-color': '#E85651',
       },
       fontFamily: {

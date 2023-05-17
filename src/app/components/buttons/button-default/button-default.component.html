@@ -1,5 +1,6 @@
-<button class="{{statStyle}}">
-  <i *ngIf="statIconPosition==='left'" class="{{statIconName}} {{statIconColor}} text-md mr-2"></i>
-  {{statTitle}}
-  <i *ngIf="statIconPosition==='right'" class="{{statIconName}} {{statIconColor}} text-md ml-2"></i>
+<button class="{{statStyle}} flex  justify-center items-center">
+    <i  class="{{statIconName}} "></i>
+    <p>{{statTitle}}</p>
+    <img class="{{statImageStyle}}"
+         src="{{statImageUrl}}"/>
 </button>

@@ -6,78 +6,108 @@
   </div>
   <div class="w-full">
     <div class="py-4">
-<!--      <div class="text-xs font-medium text-textTertiary">-->
-<!--        <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Default input</div>-->
-<!--      </div>-->
-<!--      <div class="flex flex-wrap gap-8 justify-start items-center py-4 ">-->
       <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
                         [statTitle]="'Default input'">
-            <div class="flex flex-wrap gap-8 justify-start items-center py-4">
-              <div class="relative">
-                <div class="relative h-10  min-w-min">
-                  <input
-                    class="peer h-full w-40 rounded-[7px] border-2 border-textSecondary
-                    border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-textPrimary outline outline-0
-                    transition-all placeholder-shown:border-t-2 placeholder-shown:border-t-textSecondary
-                    placeholder-shown:border-textSecondary placeholder-shown:border-t-blue-gray-200
-                    focus:border-2 focus:border-textPrimary focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                    placeholder=" "
-                  />
-                  <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none
-                  text-[11px] font-normal leading-tight text-textSecondary transition-all before:pointer-events-none before:mt-[6.5px]
-                  before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t-2
-                  before:border-l-2 before:border-textSecondary before:transition-all after:pointer-events-none after:mt-[6.5px]
-                  after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t-2
-                  after:border-r-2 after:border-textSecondary after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75]
-                  peer-placeholder-shown:text-textPrimary peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent
-                  peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-textSecondary peer-focus:before:border-t-2 peer-focus:before:border-l-2
-                  peer-focus:before:border-textPrimary peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-textPrimary
-                  peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                    Floating Outlined
-                  </label>
-                </div>
+            <div class="flex flex-wrap gap-8 justify-start items-end py-4">
+            <!--                <div class="relative">
+              <div class="relative h-10  min-w-min">
+              <input
+              class="peer h-full w-40 rounded-[7px] border-2 border-textSecondary
+              border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-textPrimary outline outline-0
+              transition-all placeholder-shown:border-t-2 placeholder-shown:border-t-textSecondary
+              placeholder-shown:border-textSecondary placeholder-shown:border-t-blue-gray-200
+              focus:border-2 focus:border-textPrimary focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              placeholder=" "
+              />
+              <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none
+              text-[11px] font-normal leading-tight text-textSecondary transition-all before:pointer-events-none before:mt-[6.5px]
+              before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t-2
+              before:border-l-2 before:border-textSecondary before:transition-all after:pointer-events-none after:mt-[6.5px]
+              after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t-2
+              after:border-r-2 after:border-textSecondary after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75]
+              peer-placeholder-shown:text-textPrimary peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent
+              peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-textSecondary peer-focus:before:border-t-2 peer-focus:before:border-l-2
+              peer-focus:before:border-textPrimary peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-textPrimary
+              peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+              Floating Outlined
+              </label>
+              </div>
               </div>
               <div class="relative">
-                <input type="text" id="floating_filled" class="w-40 block rounded-t-sm px-2.5 pb-2.5 pt-4  text-sm text-textPrimary
-                bg-bgSeco border-0 border-b-2
-                border-textSecondary appearance-none
-                focus:outline-none focus:ring-0
-                focus:border-textPrimary peer" placeholder=" " />
-                <label for="floating_filled" class="absolute text-sm text-textSecondary
-                 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0]
-                left-2.5 peer-focus:text-textSecondary peer-placeholder-shown:scale-100
-                peer-placeholder-shown:text-textPrimary
-                 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
+              <input type="text" id="floating_filled" class="w-40 block rounded-t-sm px-2.5 pb-2.5 pt-4  text-sm text-textPrimary
+              bg-bgSeco border-0 border-b-2
+              border-textSecondary appearance-none
+              focus:outline-none focus:ring-0
+              focus:border-textPrimary peer" placeholder=" " />
+              <label for="floating_filled" class="absolute text-sm text-textSecondary
+              duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0]
+              left-2.5 peer-focus:text-textSecondary peer-placeholder-shown:scale-100
+              peer-placeholder-shown:text-textPrimary
+              peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
               </div>
-              <div class="relative z-0">
-                <input type="text"  class="block px-3 py-2.5 px-0 w-40 text-sm text-textPrimary bg-transparent
-                border-0 border-b-2 border-textSecondary appearance-none
-                focus:outline-none focus:ring-0 focus:border-textSecondary peer" placeholder=" " />
-                <label  class="absolute text-sm text-textSecondary duration-300 transform
-                -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0
-                peer-focus:text-textSecondary peer-placeholder-shown:text-textPrimary
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
-                peer-focus:scale-75 peer-focus:-translate-y-6">Floating standard</label>
-              </div>
-              <div class=" relative z-0 mt-3">
-                <input type="text" class="rounded-md border-2
-                focus:border-textPrimary block px-3 py-1.5 px-0 w-40 text-sm
-                text-textPrimary focus:text-textPrimary bg-transparent
-                border-0 border-b-2 border-textSecondary appearance-none
-                focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />
-                <label class="absolute text-sm text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2
-                -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1  peer-focus:scale-75 peer-focus:-translate-y-8">Floating outside</label>
-              </div>
+                            <div class="relative z-0">
+                              <input type="text"  class="block px-3 py-2.5 px-0 w-40 text-sm text-textPrimary bg-transparent
+                              border-0 border-b-2 border-textSecondary appearance-none
+                              focus:outline-none focus:ring-0 focus:border-textSecondary peer" placeholder=" " />
+                              <label  class="absolute text-sm text-textSecondary duration-300 transform
+                              -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0
+                              peer-focus:text-textSecondary peer-placeholder-shown:text-textPrimary
+                              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                              peer-focus:scale-75 peer-focus:-translate-y-6">Floating standard</label>
+                            </div>
+                            <div class=" relative z-0 mt-3">
+                              <input type="text" class="rounded-md border-2
+                              focus:border-textPrimary block px-3 py-1.5 px-0 w-40 text-sm
+                              text-textPrimary focus:text-textPrimary bg-transparent
+                              border-0 border-b-2 border-textSecondary appearance-none
+                              focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />
+                              <label class="absolute text-sm text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2
+                              -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary
+                              peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1  peer-focus:scale-75 peer-focus:-translate-y-8">Floating outside</label>
+                            </div>-->
+              <app-input-default class="w-64"
+                                 [statLabel]="'Floating filled'"
+                                 [variant]="'filled'"
+                                 [size]="'md'"
+                                 [statStyle]="'relative z-0'"
+                                 [statInputStyle]="''"
+                                 [statLabelStyle]="''"
+                                 [statButtonLabel]="'Invite'"
+                                 [statButtonStyle]="' absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+                                 [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg mr-2'"
+              ></app-input-default>
+              <app-input-default  class="w-64"
+                [statLabel]="'Floating standard'"
+                [variant]="'standard'"
+                [statStyle]="'relative z-0 '"
+                [statInputStyle]="''"
+                [statLabelStyle]="''"
+                [statButtonLabel]="'Invite'"
+                [statButtonStyle]="''"
+                [statButtonIconStyle]="''"
+              ></app-input-default>
+              <app-input-default  class="w-64"
+                [statLabel]="'Floating Outsite'"
+                [variant]="'outsite'"
+                [statStyle]="'relative z-0 mt-4 flex items-center'"
+                [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+                [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+                [statButtonLabel]="'Invite'"
+                [statButtonStyle]="'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+                [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg  ml-2'"
+              ></app-input-default>
             </div>
         </app-card-default>
-<!--    </div>-->
     </div>
     <div class="py-4">
-<!--      <div class="text-xs font-medium text-textTertiary">-->
-<!--        <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Border radius input</div>-->
-<!--      </div>-->
-<!--      <div class="flex flex-wrap gap-8 justify-start items-center py-4">-->
         <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
                           [statTitle]="'Border radius input'">
             <div class="flex flex-col gap-8 py-4">
@@ -216,13 +246,8 @@
               </div>
             </div>
       </app-card-default>
-<!--      </div>-->
     </div>
     <div class="py-4">
-<!--      <div class="text-xs font-medium text-textTertiary">-->
-<!--        <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Size inputss</div>-->
-<!--      </div>-->
-<!--      <div class="flex flex-wrap gap-8 justify-start items-center py-4">-->
         <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
                           [statTitle]="'Size input'">
             <div class="flex flex-col gap-8 py-4">
@@ -267,6 +292,16 @@
                 peer-placeholder-shown:text-textPrimary
                  peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
                 </div>
+                <app-input-default class="w-64"
+                                   [statLabel]="'Floating filled'"
+                                   [variant]="'filled'"
+                                   [rounded]="'md'"
+                                   [size]="'md'"
+                                   [statStyle]="'relative z-0 '"
+                                   [statInputStyle]="''"
+                                   [statLabelStyle]="''"
+                ></app-input-default>
+
                 <div class=" relative z-0 mt-4">
                   <input type="text" class="rounded-md border-2
                 focus:border-textPrimary block px-2 py-1.5 px-0 w-full text-sm
@@ -283,17 +318,28 @@
               <p class="text-sm font-semibold text-textSecondary">Large</p>
               <div class="flex flex-wrap items-end justify-start gap-8">
                 <div class=" relative">
-                  <input type="text"  class="block rounded-sm px-1.5 pb-1 pt-4 w-full text-lg text-textPrimary
-                bg-bgSeco border-0 border-b-2
-                border-textSecondary appearance-none
-                focus:outline-none focus:ring-0
-                focus:border-textPrimary peer" placeholder=" " />
-                  <label class="absolute text-lg text-textSecondary
-                 duration-300 transform -translate-y-4 scale-75 top-3 z-10 origin-[0]
-                left-1.5 peer-focus:text-textSecondary peer-placeholder-shown:scale-100
-                peer-placeholder-shown:text-textPrimary
-                 peer-placeholder-shown:translate-y-1 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
+                  <input type="text"  class="
+                  block rounded-sm px-1.5 pb-1 pt-4 w-full text-lg text-textPrimary
+                  bg-bgSeco border-0 border-b-2
+                  border-textSecondary appearance-none
+                  focus:outline-none focus:ring-0
+                  focus:border-textPrimary peer" placeholder=" " />
+                  <label class="
+                  absolute text-lg text-textSecondary
+                  duration-300 transform -translate-y-4 scale-75 top-3 z-10 origin-[0]
+                  left-1.5 peer-focus:text-textSecondary peer-placeholder-shown:scale-100
+                  peer-placeholder-shown:text-textPrimary
+                  peer-placeholder-shown:translate-y-1 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
                 </div>
+                <app-input-default class="w-64"
+                                   [statLabel]="'Floating filled'"
+                                   [variant]="'filled'"
+                                   [size]="'lg'"
+                                   [rounded]="'sm'"
+                                   [statStyle]="'relative z-0'"
+                                   [statInputStyle]="''"
+                                   [statLabelStyle]="''"
+                ></app-input-default>
                 <div class="relative z-0 mt-4 flex">
                   <input type="text" class="rounded-lg border-2
                 focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg
@@ -321,6 +367,15 @@
                 peer-placeholder-shown:text-textPrimary
                  peer-placeholder-shown:translate-y-1 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
               </div>
+              <app-input-default class="w-64"
+                                 [statLabel]="'Floating filled'"
+                                 [variant]="'filled'"
+                                 [size]="'xl'"
+                                 [rounded]="'sm'"
+                                 [statStyle]="'relative z-0'"
+                                 [statInputStyle]="''"
+                                 [statLabelStyle]="''"
+              ></app-input-default>
               <div class="relative z-0 mt-6 flex">
                 <input type="text" class="rounded-lg border-2
                 focus:border-textPrimary block px-3 py-2 px-0 w-full text-2xl
@@ -334,41 +389,30 @@
             </div>
           </div>
         </app-card-default>
-<!--      </div>-->
     </div>
     <div class="py-4">
-<!--      <div class="text-xs font-medium text-textTertiary">-->
-<!--        <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Input With Icon</div>-->
-<!--      </div>-->
-<!--      <div class="flex flex-wrap gap-8 justify-start items-center py-4">-->
       <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
                         [statTitle]="'Input with text/icon'">
         <div class="flex flex-wrap gap-8 justify-start items-center py-4">
-          <div class="relative z-0 mt-4 flex items-center">
-            <input type="text" class="rounded-lg border-2
-                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg
-                text-textPrimary focus:text-textPrimary bg-transparent
-                border-0 border-b-2 border-textSecondary appearance-none
-                focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />
-            <label class="absolute text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2
-                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9">Floating outside</label>
-            <svg aria-hidden="true" class=" z-10 absolute transform right-3 w-6 h-6 text-textSecondary bg-bgPrim peer-focus:text-textPrimary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-
-          </div>
-        </div>
-        </app-card-default>
-<!--      </div>-->
-    </div>
-    <div class="py-4">
-<!--      <div class="text-xs font-medium text-textTertiary">-->
-<!--        <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Input With Icon</div>-->
-<!--      </div>-->
-<!--      <div class="flex flex-wrap gap-8 justify-start items-center py-4">-->
-      <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
-                        [statTitle]="'Input with button text/icon'">
-        <div class="flex flex-wrap gap-8 justify-start items-center py-4">
-          <app-input-default
+<!--          <div class="relative z-0 mt-4 flex items-center">-->
+<!--            <input type="text" class="rounded-lg border-2-->
+<!--                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg-->
+<!--                text-textPrimary focus:text-textPrimary bg-transparent-->
+<!--                border-0 border-b-2 border-textSecondary appearance-none-->
+<!--                focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />-->
+<!--            <label class="absolute text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2-->
+<!--                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary-->
+<!--                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9 transition-all duration-150 ease-in-out">Floating outside</label>-->
+<!--            <svg aria-hidden="true" class=" z-10 absolute transform right-3 w-6 h-6 text-textSecondary bg-bgPrim peer-focus:text-textPrimary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>-->
+<!--          </div>-->
+          <app-input-default class="w-64"
+            [variant]="'filled'"
+            [size]="'lg'"
+            [rounded]="'sm'"
+            [statStyle]="'relative z-0'"
+            [statIconStyle]="'fas fa-regular fa-envelope top-3 z-10 absolute transform right-3 text-xl text-textSecondary bg-transparent peer-focus:text-textPrimary'"
+          ></app-input-default>
+          <app-input-default class="w-64"
             [statLabel]="'Input'"
             [statStyle]="'relative z-0 mt-4 flex items-center'"
             [statInputStyle]="'rounded-lg border-2\n'+
@@ -376,53 +420,297 @@
 '                text-textPrimary focus:text-textPrimary bg-transparent\n'+
 '                border-0 border-b-2 border-textSecondary appearance-none\n'+
 '                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+            [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9 transition-all duration-150 ease-in-out'"
+            [statIconStyle]="'fas fa-regular fa-envelope top-2 z-10 absolute transform right-3 text-xl text-textSecondary bg-bgPrim peer-focus:text-textPrimary'"
+          ></app-input-default>
+          <app-input-default class="w-64"
+            [statLabel]="'Input'"
+            [statStyle]="'relative z-0 mt-4 flex items-center'"
+            [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer '"
             [statLabelStyle]="'absolute text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
 '                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
-'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
-            [statIconStyle]="'fas fa-regular fa-envelope top-2 z-10 absolute transform right-3 text-xl text-textSecondary bg-bgPrim peer-focus:text-textPrimary'"
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9 transition-all duration-150 ease-in-out'"
             [statImageStyle]="'z-10 absolute transform right-3 w-6 h-6 text-textSecondary bg-bgPrim peer-focus:text-textPrimary'"
             [statImageUrl]="'./assets/img/icons/email-48.png'"
           ></app-input-default>
+          <app-input-default class="w-64"
+            [variant]="'filled'"
+            [size]="'lg'"
+            [rounded]="'sm'"
+            [statStyle]="'relative z-0'"
+            [statImageStyle]="'top-3 z-10 absolute transform right-3 w-6 h-6 text-textSecondary peer-focus:text-textPrimary'"
+            [statImageUrl]="'./assets/img/icons/email-48.png'"
+          ></app-input-default>
 
-          <div class="relative z-0 mt-4 flex items-center">
-            <input type="text" class="rounded-lg border-2
-                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg
-                text-textPrimary focus:text-textPrimary bg-transparent
-                border-0 border-b-2 border-textSecondary appearance-none
-                focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />
-            <label class="absolute text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2
-                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9">Floating outside</label>
-            <button
-              class="absolute top-[10%] h-[82%] right-[4px] top-0 rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out "
-              type="button"
-              data-ripple-light="true"
-            >
-              Invite
-            </button>
+        </div>
+        </app-card-default>
+    </div>
+    <div class="py-4">
+      <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
+                        [statTitle]="'Input with button text/icon'">
+        <div class="flex flex-col gap-8 py-4">
+          <p class="text-sm font-semibold text-textSecondary">Text</p>
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+            ></app-input-default>
+            <app-input-default class="w-64"
+                               [variant]="'filled'"
+                               [size]="'lg'"
+                               [rounded]="'md'"
+                               [statStyle]="'relative z-0'"
+                               [statButtonLabel]="'Invite'"
+                               [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0   px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+            ></app-input-default>
           </div>
-          <div class="relative z-0 mt-4 flex items-center">
-            <input type="text" class="rounded-lg border-2
-                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg
-                text-textPrimary focus:text-textPrimary bg-transparent
-                border-0 border-b-2 border-textSecondary appearance-none
-                focus:outline-none focus:ring-0 focus:border-textPrimary peer" placeholder=" " />
-            <label class="absolute text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2
-                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9">Floating outside</label>
-            <button
-              class="absolute top-[10%] h-[82%] right-[4px] top-0 rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out "
-              type="button"
-              data-ripple-light="true"
-            >
-              <svg aria-hidden="true" class=" w-5 h-5 text-white peer-focus:text-textPrimary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-            </button>
+        </div>
+        <div class="flex flex-col gap-8 py-4">
+          <p class="text-sm font-semibold text-textSecondary">Text and icon</p>
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg '"
+            ></app-input-default>
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg mr-2'"
+            ></app-input-default>
+            <app-input-default
+              [statLabel]="'Inputs'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg  ml-2'"
+            ></app-input-default>
+          </div>
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg '"
+            ></app-input-default>
+
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [statLabel]="'Input'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="' absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg mr-2'"
+            ></app-input-default>
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [statLabel]="'Input'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonIconStyle]="'fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg  ml-2'"
+            ></app-input-default>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8 py-4">
+          <p class="text-sm font-semibold text-textSecondary">Text and img</p>
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="' w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+            <app-input-default
+              [statLabel]="'Inputs'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="'mr-2 w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="'ml-2 w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+          </div>
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="' w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonLabel]="'Invitessss'"
+              [statButtonStyle]="'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="'mr-2 w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+            <app-input-default
+              [variant]="'filled'"
+              [size]="'lg'"
+              [rounded]="'t-sm'"
+              [statStyle]="'relative z-0'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-sm  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [statButtonImageUrl]="'./assets/img/icons/email-48.png'"
+              [statButtonImageStyle]="'ml-2 w-5 h-5 top-2 z-10  transform right-3 text-xl text-textSecondary peer-focus:text-textPrimary'"
+            ></app-input-default>
+
           </div>
         </div>
         </app-card-default>
-<!--      </div>-->
+    </div>
+    <div class="py-4">
+      <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
+                        [statTitle]="'Input disabled'">
+        <div class="flex flex-col gap-8 py-4">
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [disabled]="true"
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'cursor-not-allowed opacity-50 rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'opacity-50 absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+            ></app-input-default>
+          </div>
+        </div>
+      </app-card-default>
+    </div>
+    <div class="py-4">
+      <app-card-default class="relative flex h-min flex-col rounded-sm bg-bgPrim shadow-md"
+                        [statTitle]="'Input helper text'">
+        <div class="flex flex-col gap-8 py-4">
+          <div class="flex flex-wrap items-end justify-start gap-8">
+            <app-input-default
+              [statLabel]="'Input'"
+              [statStyle]="'relative z-0 mt-4 flex items-center'"
+              [statInputStyle]="'rounded-lg border-2\n'+
+'                focus:border-textPrimary block px-3 py-1.5 px-0 w-full text-lg\n'+
+'                text-textPrimary focus:text-textPrimary bg-transparent\n'+
+'                border-0 border-b-2 border-textSecondary appearance-none\n'+
+'                focus:outline-none focus:ring-0 focus:border-textPrimary peer'"
+              [statLabelStyle]="'absolute  duration-150 transform  text-lg text-textSecondary peer-placeholder-shown:text-textPrimary  transform peer-placeholder-shown:left-2\n'+
+'                -translate-y-9 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-textSecondary\n'+
+'                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0  peer-focus:scale-75 peer-focus:-translate-y-9'"
+              [statButtonLabel]="'Invite'"
+              [statButtonStyle]="'absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+              [helperText]="'We’ll never share your details. Read our '"
+              [helperLinkText]="'Privacy Policy'"
+              [helperLink]="'/admin/users'"
+            ></app-input-default>
+          </div>
+        </div>
+      </app-card-default>
     </div>
   </div>
 </div>

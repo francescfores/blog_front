@@ -14,6 +14,7 @@ import {CardDefaultComponent} from "./cards/card-default/card-default.component"
 import {CardPricingComponent} from "./cards/card-pricing/card-pricing.component";
 import {CardBackgroundComponent} from "./cards/card-background/card-background.component";
 import { InputDefaultComponent } from './inputs/input-default/input-default.component';
+import {ButtonFilledComponent} from "./buttons/button-filled/button-filled.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InputDefaultComponent } from './inputs/input-default/input-default.comp
     PagesDropdownComponent,
     CardStatsComponent,
     ButtonDefaultComponent,
+    ButtonFilledComponent,
     CardDefaultComponent,
     CardPricingComponent,
     CardBackgroundComponent,
@@ -42,6 +44,7 @@ import { InputDefaultComponent } from './inputs/input-default/input-default.comp
     PagesDropdownComponent,
     CardStatsComponent,
     ButtonDefaultComponent,
+    ButtonFilledComponent,
     CardDefaultComponent,
     CardPricingComponent,
     CardBackgroundComponent,

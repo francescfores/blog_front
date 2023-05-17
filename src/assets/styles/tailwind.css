@@ -630,10 +630,6 @@ html {
   top: 10%;
 }
 
-.top-\[8\%\] {
-  top: 8%;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -648,6 +644,10 @@ html {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .z-50 {
@@ -923,12 +923,8 @@ html {
   height: 74px;
 }
 
-.h-\[82\%\] {
-  height: 82%;
-}
-
-.h-\[84\%\] {
-  height: 84%;
+.h-\[80\%\] {
+  height: 80%;
 }
 
 .h-auto {
@@ -1276,6 +1272,10 @@ html {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -2387,6 +2387,11 @@ html {
   color: inherit;
 }
 
+.text-link-color {
+  --tw-text-opacity: 1;
+  color: hsl(var(--twc-link-color) / var(--twc-link-color-opacity, var(--tw-text-opacity)));
+}
+
 .text-neutral-700 {
   --tw-text-opacity: 1;
   color: rgb(64 64 64 / var(--tw-text-opacity));
@@ -2680,11 +2685,13 @@ html {
   --twc-textPrimary-opacity: 0.74;
   --twc-textSecondary: 216 9.3% 57.6%;
   --twc-textTertiary: 0 0% 75.3%;
+  --twc-link-color: 134 47.5% 47.8%;
+  --twc-link-color-opacity: 0.93;
 }
 
 .theme-dark,[data-theme="dark"] {
-  --twc-primary: 133.60000000000002 100% 62.7%;
-  --twc-primary-opacity: 0.79;
+  --twc-primary: 134 47.5% 47.8%;
+  --twc-primary-opacity: 0.93;
   --twc-secondary: 39.69999999999999 90.4% 51.2%;
   --twc-secondary-opacity: 0.60;
   --twc-ternary: 228.20000000000005 38.3% 26.1%;
@@ -2706,11 +2713,17 @@ html {
   --twc-textSecondary: 254 20.2% 54.3%;
   --twc-textTertiary: 254.60000000000002 16.1% 50%;
   --twc-textTertiary-opacity: 0.73;
+  --twc-link-color: 133.60000000000002 100% 62.7%;
+  --twc-link-color-opacity: 0.79;
 }
 
 .theme-fontFamily,[data-theme="fontFamily"] {
   --twc-poppins: 0 0% 0%;
   --twc-nunito: 0 0% 0%;
+}
+
+.\[box-shadow\:0_1\.2px_0_0_\#9CFFB3BB\2c 0_6px_0_0_\#2C8A42C9\2c 0_9px_0_0_\#C0C0C047\] {
+  box-shadow: 0 1.2px 0 0 #9CFFB3BB,0 6px 0 0 #2C8A42C9,0 9px 0 0 #C0C0C047;
 }
 
 .\[box-shadow\:0_3px_0_0_\#004f5e\2c 0_6px_0_0_\#1b70f841\] {
@@ -3106,6 +3119,10 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .hover\:\!opacity-100:hover {
   opacity: 1 !important;
 }
@@ -3184,6 +3201,10 @@ html {
 
 .focus\:bg-primary\/\[\.65\]:focus {
   background-color: hsl(var(--twc-primary) / .65);
+}
+
+.focus\:bg-primary\/\[\.85\]:focus {
+  background-color: hsl(var(--twc-primary) / .85);
 }
 
 .focus\:text-textPrimary:focus {
@@ -3364,6 +3385,10 @@ html {
   box-shadow: 0 0px 0 0 #2a3b52,0 0px 0 0 #1b70f841;
 }
 
+.active\:\[box-shadow\:none\]:active {
+  box-shadow: none;
+}
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
@@ -3451,6 +3476,16 @@ html {
 
 .peer:placeholder-shown ~ .peer-placeholder-shown\:translate-y-1 {
   --tw-translate-y: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:translate-y-3 {
+  --tw-translate-y: 0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:placeholder-shown ~ .peer-placeholder-shown\:translate-y-3 {
+  --tw-translate-y: 0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

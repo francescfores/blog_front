@@ -54,6 +54,37 @@ export class ButtonDefaultComponent implements OnInit {
   }
   private _statIconPosition = "";
 
+  @Input()
+  get statImageStyle(): string {
+    return this._statImageStyle;
+  }
+  set statImageStyle(statImageStyle: string) {
+    this._statImageStyle =
+      statImageStyle === undefined ? "" : statImageStyle;
+  }
+  private _statImageStyle = "";
+
+
+  @Input()
+  get statImageUrl(): string {
+    return this._statImageUrl;
+  }
+  set statImageUrl(statImageUrl: string) {
+    this._statImageUrl =
+      statImageUrl === undefined ? "" : statImageUrl;
+  }
+  private _statImageUrl = "";
+
+  @Input()
+  get statImagePosition(): string {
+    return this._statImagePosition;
+  }
+  set statImagePosition(statImagePosition: string) {
+    this._statImagePosition =
+      statImagePosition === undefined ? "" : statImagePosition;
+  }
+  private _statImagePosition = "";
+
   constructor() {}
 
   ngOnInit(): void {}

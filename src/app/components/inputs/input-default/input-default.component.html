@@ -1,16 +1,93 @@
-<div class="{{statStyle}}">
-  <input type="text" class="{{statInputStyle}}" placeholder=" " />
-  <label class="{{statLabelStyle}}">{{statLabel}}</label>
+<div *ngIf="variant==='standard'">
+  <div
+    class="{{statStyle}} ">
+    <input type="text" class="{{statInputStyle}} w-full block px-3 py-2.5 px-0 text-sm text-textPrimary bg-transparent
+    border-0 border-b-2 border-textSecondary appearance-none
+    focus:outline-none focus:ring-0 focus:border-textSecondary peer"
+           placeholder=" " [disabled]="disabled"/>
+    <label class="{{statLabelStyle}} absolute text-sm text-textSecondary duration-300 transform
+      -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0
+      peer-focus:text-textSecondary peer-placeholder-shown:text-textPrimary
+      peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+      peer-focus:scale-75 peer-focus:-translate-y-6">{{statLabel}} </label>
+    <i *ngIf="statIconStyle!==''" class="{{statIconStyle}} fas fa-regular fa-envelope  text-white peer-focus:text-textPrimary text-lg  ml-2"></i>
+    <img *ngIf="statImageUrl!==''" aria-hidden="true" class="{{statImageStyle}}"
+         src="{{statImageUrl}}"/>
+    <app-button-default
+      *ngIf="statButtonLabel!=='' || statButtonIconStyle!=='' || statButtonImageStyle"
+      [statStyle]="statButtonStyle + 'flex-row-reverse absolute  top-[10%] h-[80%] right-[4px] top-0 rounded-md  px-4 py-0 font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
+'            transition-all duration-150 ease-in-out'"
+      [statTitle]="statButtonLabel"
+      [statIconName]="statButtonIconStyle"
+      [statImageUrl]="statButtonImageUrl"
+      [statImageStyle]="statButtonImageStyle"
+    ></app-button-default>
+  </div>
+  <p *ngIf="helperText!==''" class="mt-2 text-sm text-textTertiary">{{helperText}}
+    <a [routerLink]="[helperLink]" class="font-medium text-link-color hover:underline">{{helperLinkText}}</a>.</p>
+</div>
+<div *ngIf="variant==='filled'">
+  <div class="{{statStyle}} ">
+    <input type="text" id="dynamicInput" #dynamicInput
+           [ngClass]="{
+           'pt-3 text-sm':size==='md',
+           'pt-4 text-lg':size==='lg',
+           'pt-5 text-2xl':size==='xl',
+           }"
+           class="{{statInputStyle}} rounded-{{rounded}} z-30
+                block px-1.5 pb-1  w-full text-sm text-textPrimary
+                bg-bgSeco border-0 border-b-2
+                border-textSecondary appearance-none
+                focus:outline-none focus:ring-0
+                focus:border-textPrimary peer
+            " placeholder=" " [disabled]="disabled"/>
+    <label  (click)="focusInput()"
+      [ngClass]="{
+           'top-2 text-sm peer-placeholder-shown:translate-y-0':size==='md',
+           ' text-lg peer-placeholder-shown:translate-y-1':size==='lg',
+           ' text-xl peer-placeholder-shown:translate-y-3':size==='xl'
+           }"
+      class="{{statLabelStyle}}
+                absolute text-sm text-textSecondary
+                duration-300 transform -translate-y-4 scale-75 top-3  z-0 origin-[0]
+                left-1.5 peer-focus:text-textSecondary peer-placeholder-shown:scale-100
+                peer-placeholder-shown:text-textPrimary
+                peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4
+                absolute text-lg text-textSecondary
+                  ">{{statLabel}} </label>
+    <a href="">
     <i *ngIf="statIconStyle!==''" class="{{statIconStyle}}"></i>
-  <img *ngIf="statImageUrl!==''" aria-hidden="true" class="{{statImageStyle}}"
-       src="{{statImageUrl}}"/>
-    <button
-    class="absolute top-[10%] h-[82%] right-[4px] top-0 rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out "
-    type="button"
-    data-ripple-light="true"
-  >
-    <p>Invite</p>
-    <svg aria-hidden="true" class=" w-5 h-5 text-white peer-focus:text-textPrimary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-  </button>
+      <img *ngIf="statImageUrl!==''" aria-hidden="true" class="{{statImageStyle}}"
+                    src="{{statImageUrl}}"/>
+    </a>
+    <app-button-default
+      *ngIf="statButtonLabel!=='' || statButtonIconStyle!=='' || statButtonImageStyle"
+      [statStyle]="statButtonStyle+' rounded-'+rounded"
+      [statTitle]="statButtonLabel"
+      [statIconName]="statButtonIconStyle"
+      [statImageUrl]="statButtonImageUrl"
+      [statImageStyle]="statButtonImageStyle"
+    ></app-button-default>
+  </div>
+  <p *ngIf="helperText!==''" class="mt-2 text-sm text-textTertiary">{{helperText}}
+    <a [routerLink]="[helperLink]" class="font-medium text-link-color hover:underline">{{helperLinkText}}</a>.</p>
+</div>
+<div *ngIf="variant==='outsite'">
+  <div class="{{statStyle}}">
+    <input type="text" class="{{statInputStyle}}" placeholder=" " [disabled]="disabled"/>
+    <label class="{{statLabelStyle}}">{{statLabel}} </label>
+    <i *ngIf="statIconStyle!==''" class="{{statIconStyle}} "></i>
+    <img *ngIf="statImageUrl!==''" aria-hidden="true" class="{{statImageStyle}}"
+         src="{{statImageUrl}}"/>
+    <app-button-default
+      *ngIf="statButtonLabel!=='' || statButtonIconStyle!=='' || statButtonImageStyle"
+      [statStyle]="statButtonStyle"
+      [statTitle]="statButtonLabel"
+      [statIconName]="statButtonIconStyle"
+      [statImageUrl]="statButtonImageUrl"
+      [statImageStyle]="statButtonImageStyle"
+    ></app-button-default>
+  </div>
+  <p *ngIf="helperText!==''" class="mt-2 text-sm text-textTertiary">{{helperText}}
+    <a [routerLink]="[helperLink]" class="font-medium text-link-color hover:underline">{{helperLinkText}}</a>.</p>
 </div>

@@ -5,204 +5,183 @@ import { Component, OnInit, Input } from "@angular/core";
   templateUrl: "./card-background.component.html",
 })
 export class CardBackgroundComponent implements OnInit {
-  @Input()
 
   @Input()
-  get statItems(): string[] {
-    return this._statItems;
+  get style(): string {
+    return this._style;
   }
-  set statItems(statItems: string[]) {
-    this._statItems = statItems || [];
+  set style(style: string) {
+    this._style = style === undefined ? "" : style;
   }
-
-  private _statItems: string[] = [];
-
-  @Input()
-  get statStyle(): string {
-    return this._statStyle;
-  }
-  set statStyle(statStyle: string) {
-    this._statStyle = statStyle === undefined ? "" : statStyle;
-  }
-  private _statStyle = "";
+  private _style = "";
 
   @Input()
-  get statTitle(): string {
-    return this._statTitle;
+  get title(): string {
+    return this._title;
   }
-  set statTitle(statTitle: string) {
-    this._statTitle = statTitle === undefined ? "" : statTitle;
+  set title(title: string) {
+    this._title = title === undefined ? "" : title;
   }
-  private _statTitle = "";
+  private _title = "";
 
   @Input()
-  get statSubtitle(): string {
-    return this._statSubtitle;
+  get subtitle(): string {
+    return this._subtitle;
   }
-  set statSubtitle(statSubtitle: string) {
-    this._statSubtitle = statSubtitle === undefined ? "" : statSubtitle;
+  set subtitle(subtitle: string) {
+    this._subtitle = subtitle === undefined ? "" : subtitle;
   }
-  private _statSubtitle = "";
+  private _subtitle = "";
 
   @Input()
-  get statDescripiron(): string {
-    return this._statDescripiron;
+  get descripiron(): string {
+    return this._descripiron;
   }
-  set statDescripiron(statDescripiron: string) {
-    this._statDescripiron =
-      statDescripiron === undefined ? "" : statDescripiron;
+  set descripiron(descripiron: string) {
+    this._descripiron =
+      descripiron === undefined ? "" : descripiron;
   }
-  private _statDescripiron = "";
+  private _descripiron = "";
 
   @Input()
-  get statIconName(): string {
-    return this._statIconName;
+  get IconName(): string {
+    return this._IconName;
   }
-  set statIconName(statIconName: string) {
-    this._statIconName =
-      statIconName === undefined ? "" : statIconName;
+  set IconName(IconName: string) {
+    this._IconName =
+      IconName === undefined ? "" : IconName;
   }
-  private _statIconName = "";
+  private _IconName = "";
 
   @Input()
-  get statIconColor(): string {
-    return this._statIconColor;
+  get IconColor(): string {
+    return this._IconColor;
   }
-  set statIconColor(statIconColor: string) {
-    this._statIconColor =
-      statIconColor === undefined ? "" : statIconColor;
+  set IconColor(IconColor: string) {
+    this._IconColor =
+      IconColor === undefined ? "" : IconColor;
   }
-  private _statIconColor = "";
+  private _IconColor = "";
 
   @Input()
-  get statButtonLeft(): boolean {
-    return this._statButtonLeft;
+  get buttonLeft(): boolean {
+    return this._buttonLeft;
   }
-  set statButtonLeft(statButtonLeft: boolean) {
-    this._statButtonLeft =
-      statButtonLeft === undefined ? false : statButtonLeft;
+  set buttonLeft(buttonLeft: boolean) {
+    this._buttonLeft =
+      buttonLeft === undefined ? false : buttonLeft;
   }
-  private _statButtonLeft = false;
+  private _buttonLeft = false;
 
   @Input()
-  get statButtonLeftStyle(): string {
-    return this._statButtonLeftStyle;
+  get buttonLeftStyle(): string {
+    return this._buttonLeftStyle;
   }
-  set statButtonLeftStyle(statButtonLeftStyle: string) {
-    this._statButtonLeftStyle =
-      statButtonLeftStyle === undefined ? '' : statButtonLeftStyle;
+  set buttonLeftStyle(buttonLeftStyle: string) {
+    this._buttonLeftStyle =
+      buttonLeftStyle === undefined ? '' : buttonLeftStyle;
   }
-  private _statButtonLeftStyle = '';
+  private _buttonLeftStyle = '';
 
   @Input()
-  get statButtonLeftTitle(): string {
-    return this._statButtonLeftTitle;
+  get buttonLeftTitle(): string {
+    return this._buttonLeftTitle;
   }
-  set statButtonLeftTitle(statButtonLeftTitle: string) {
-    this._statButtonLeftTitle =
-      statButtonLeftTitle === undefined ? '' : statButtonLeftTitle;
+  set buttonLeftTitle(buttonLeftTitle: string) {
+    this._buttonLeftTitle =
+      buttonLeftTitle === undefined ? '' : buttonLeftTitle;
   }
-  private _statButtonLeftTitle = '';
+  private _buttonLeftTitle = '';
 
   @Input()
-  get statButtonLeftIcon(): string {
-    return this._statButtonLeftIcon;
+  get buttonLeftIcon(): string {
+    return this._buttonLeftIcon;
   }
-  set statButtonLeftIcon(statButtonLeftIcon: string) {
-    this._statButtonLeftIcon =
-      statButtonLeftIcon === undefined ? '' : statButtonLeftIcon;
+  set buttonLeftIcon(buttonLeftIcon: string) {
+    this._buttonLeftIcon =
+      buttonLeftIcon === undefined ? '' : buttonLeftIcon;
   }
-  private _statButtonLeftIcon = '';
+  private _buttonLeftIcon = '';
 
   @Input()
-  get statButtonLeftIconPosition(): string {
-    return this._statButtonLeftIconPosition;
+  get buttonLeftIconPosition(): string {
+    return this._buttonLeftIconPosition;
   }
-  set statButtonLeftIconPosition(statButtonLeftIconPosition: string) {
-    this._statButtonLeftIconPosition =
-      statButtonLeftIconPosition === undefined ? '' : statButtonLeftIconPosition;
+  set buttonLeftIconPosition(buttonLeftIconPosition: string) {
+    this._buttonLeftIconPosition =
+      buttonLeftIconPosition === undefined ? '' : buttonLeftIconPosition;
   }
-  private _statButtonLeftIconPosition = '';
+  private _buttonLeftIconPosition = '';
 
   @Input()
-  get statButtonRight(): boolean {
-    return this._statButtonRight;
+  get buttonRight(): boolean {
+    return this._buttonRight;
   }
-  set statButtonRight(statButtonRight: boolean) {
-    this._statButtonRight =
-      statButtonRight === undefined ? false : statButtonRight;
+  set buttonRight(buttonRight: boolean) {
+    this._buttonRight =
+      buttonRight === undefined ? false : buttonRight;
   }
-  private _statButtonRight = false;
+  private _buttonRight = false;
 
   @Input()
-  get statButtonRightStyle(): string {
-    return this._statButtonRightStyle;
+  get buttonRightStyle(): string {
+    return this._buttonRightStyle;
   }
-  set statButtonRightStyle(statButtonRightStyle: string) {
-    this._statButtonRightStyle =
-      statButtonRightStyle === undefined ? '' : statButtonRightStyle;
+  set buttonRightStyle(buttonRightStyle: string) {
+    this._buttonRightStyle =
+      buttonRightStyle === undefined ? '' : buttonRightStyle;
   }
-  private _statButtonRightStyle = '';
+  private _buttonRightStyle = '';
 
   @Input()
-  get statButtonRightTitle(): string {
-    return this._statButtonRightTitle;
+  get buttonRightTitle(): string {
+    return this._buttonRightTitle;
   }
-  set statButtonRightTitle(statButtonRightTitle: string) {
-    this._statButtonRightTitle =
-      statButtonRightTitle === undefined ? '' : statButtonRightTitle;
+  set buttonRightTitle(buttonRightTitle: string) {
+    this._buttonRightTitle =
+      buttonRightTitle === undefined ? '' : buttonRightTitle;
   }
-  private _statButtonRightTitle = '';
+  private _buttonRightTitle = '';
 
   @Input()
-  get statButtonRightIconPosition(): string {
-    return this._statButtonRightIconPosition;
+  get buttonRightIconPosition(): string {
+    return this._buttonRightIconPosition;
   }
-  set statButtonRightIconPosition(statButtonRightIconPosition: string) {
-    this._statButtonRightIconPosition =
-      statButtonRightIconPosition === undefined ? '' : statButtonRightIconPosition;
+  set buttonRightIconPosition(buttonRightIconPosition: string) {
+    this._buttonRightIconPosition =
+      buttonRightIconPosition === undefined ? '' : buttonRightIconPosition;
   }
-  private _statButtonRightIconPosition = '';
+  private _buttonRightIconPosition = '';
 
   @Input()
-  get statButtonRightIcon(): string {
-    return this._statButtonRightIcon;
+  get buttonRightIcon(): string {
+    return this._buttonRightIcon;
   }
-  set statButtonRightIcon(statButtonRightIcon: string) {
-    this._statButtonRightIcon =
-      statButtonRightIcon === undefined ? '' : statButtonRightIcon;
+  set buttonRightIcon(buttonRightIcon: string) {
+    this._buttonRightIcon =
+      buttonRightIcon === undefined ? '' : buttonRightIcon;
   }
-  private _statButtonRightIcon = '';
+  private _buttonRightIcon = '';
 
   @Input()
-  get statImg(): string {
-    return this._statImg;
+  get img(): string {
+    return this._img;
   }
-  set statImg(statImg: string) {
-    this._statImg =
-      statImg === undefined ? '' : statImg;
+  set img(img: string) {
+    this._img =
+      img === undefined ? '' : img;
   }
-  private _statImg = '';
+  private _img = '';
 
   @Input()
-  get statImgPosition(): string {
-    return this._statImgPosition;
+  get ImgStyle(): string {
+    return this._ImgStyle;
   }
-  set statImgPosition(statImgPosition: string) {
-    this._statImgPosition =
-      statImgPosition === undefined ? '' : statImgPosition;
+  set ImgStyle(ImgStyle: string) {
+    this._ImgStyle =
+      ImgStyle === undefined ? '' : ImgStyle;
   }
-  private _statImgPosition = '';
-
-  @Input()
-  get statImgStyle(): string {
-    return this._statImgStyle;
-  }
-  set statImgStyle(statImgStyle: string) {
-    this._statImgStyle =
-      statImgStyle === undefined ? '' : statImgStyle;
-  }
-  private _statImgStyle = '';
+  private _ImgStyle = '';
 
   constructor() {}
 
