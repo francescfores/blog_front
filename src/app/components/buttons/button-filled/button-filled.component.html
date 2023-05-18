@@ -1,7 +1,8 @@
-<button [disabled]="disabled"
+<button [disabled]="disabled" (click)="handleButtonClick($event)"
   [ngClass]="
   {
   'cursor-not-allowed opacity-75':disabled,
+  'ripple-button':ripple,
   }"
   class="
   {{style}}
@@ -9,15 +10,22 @@
   {{text}}
   {{font}}
   {{color}}
+  {{size}}
   {{padding}}
   {{margin}}
   {{outline}}
+  {{ring}}
   {{hover}}
+  {{text_color}}
   {{focus}}
   {{active}}
   {{transition}}"
 >
-<!--  <p>{{title}}</p>-->
+<!--  [class]="disabled ? 'bg-secondary' : hover"-->
+<!--  [class.style]="style"-->
+<!--  [class.rounded]="rounded"-->
+<!--  [class.text]="text"-->
+  <!--  <p>{{title}}</p>-->
 <!--  <i  class="{{icon}} "></i>-->
 <!--  <img class="{{imageStyle}}"-->
 <!--       src="{{imageUrl}}"/>-->
