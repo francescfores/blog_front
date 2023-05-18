@@ -19,24 +19,27 @@
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Variants</div>
       </div>
-      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+      <div class=" flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled>
-          <p>Filled</p>
+          <p>Filledd</p>
         </app-button-filled>
         <app-button-filled
+          [variant]="'text'"
           [text]="'text-xs'"
           [text_color]="'text-primary'"
-          [color]="'bg-transparent'">
-          <p>Link</p>
+          [bg_color]="'bg-transparent'">
+          <p>Linssk</p>
         </app-button-filled>
         <app-button-filled
+          [variant]="'outlined'"
           [text]="'text-xs'"
           [text_color]="'text-primary'"
-          [color]="'bg-transparent'"
+          [bg_color]="'bg-transparent'"
           [outline]="'outline outline-1 outline-primary'">
           <p>Outline</p>
         </app-button-filled>
         <app-button-filled
+          [variant]="'3d'"
           [hover]="''"
           [style]="'inline-flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] '"
           [active]="'active:[box-shadow:none] active:translate-y-2 '">
@@ -48,22 +51,51 @@
           <p>Disbaled</p>
         </app-button-filled>
       </div>
-      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+      <div class="hover:bg-primary/90 flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled
-          [variant]="'filled'">
-          <p>Filled</p>
+          [variant]="'filled'"
+        >
+          <p>Fillessd</p>
         </app-button-filled>
         <app-button-filled
-          [variant]="'text'">
+          [variant]="'text'"
+        >
           <p>Link</p>
         </app-button-filled>
         <app-button-filled
-          [variant]="'outlined'">
+          [variant]="'outlined'"
+        >
           <p>Outline</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'3d'">
           <p>Pressed</p>
+        </app-button-filled>
+        <app-button-filled
+          [disabled]="true">
+          <p>Disbaled</p>
+        </app-button-filled>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <app-button-filled
+          [variant]="'filled'"
+        >
+          <p>Filled</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'text'"
+        >
+          <p>Lisnk</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'outlined'"
+          [bg_color]="'ternary'"
+        >
+          <p>Outline</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'3d'">
+          <p>Pressssed</p>
         </app-button-filled>
         <app-button-filled
           [disabled]="true">
@@ -148,72 +180,107 @@
           <p>Prim</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-secondary'">
+          [bg_color]="'bg-secondary'">
           <p>Seco</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-ternary'">
+          [bg_color]="'bg-ternary'">
           <p>Tern</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-success'">
+          [bg_color]="'bg-success'">
           <p>success</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-info'">
+          [bg_color]="'bg-info'">
           <p>info</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-warning'">
+          [bg_color]="'bg-warning'">
           <p>warning</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-help'">
+          [bg_color]="'bg-help'">
           <p>help</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-danger'">
+          [bg_color]="'bg-danger'">
+          <p>danger</p>
+        </app-button-filled>
+      </div>
+      <div class="hover:bg-secondary/80  flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <app-button-filled
+          [variant]="'filled'"
+          [bg_color]="'primary'">
+          <p>Prim</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'text'"
+          [bg_color]="'secondary'">
+        <p>Seco</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'outlined'"
+          [bg_color]="'ternary'">
+          <p>Tern</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'3d'"
+          [bg_color]="'success'">
+          <p>success</p>
+        </app-button-filled>
+        <app-button-filled
+          [bg_color]="'info'">
+          <p>info</p>
+        </app-button-filled>
+        <app-button-filled
+          [bg_color]="'warning'">
+          <p>warning</p>
+        </app-button-filled>
+        <app-button-filled
+          [bg_color]="'help'">
+          <p>help</p>
+        </app-button-filled>
+        <app-button-filled
+          [bg_color]="'danger'">
           <p>danger</p>
         </app-button-filled>
       </div>
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
         <app-button-filled
-          [color]="'info'"
-          [text_color]="'text-red-500'">
-          <p>Prim</p>
+          [variant]="''"
+        >
+          <p>Prims</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'text'"
-          [color]="'bg-red-900'">
-          <p>Seco</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'text'">
-          <p>Seco</p>
+          [bg_color]="'secondary'">
+        <p>Seco</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'outlined'"
-          [color]="'ternary'">
+          [bg_color]="'ternary'">
           <p>Tern</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-success'">
+          [variant]="'3d'"
+          [bg_color]="'success'">
           <p>success</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-info'">
+          [bg_color]="'info'">
           <p>info</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-warning'">
+          [bg_color]="'warning'">
           <p>warning</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-help'">
+          [bg_color]="'help'">
           <p>help</p>
         </app-button-filled>
         <app-button-filled
-          [color]="'bg-danger'">
+          [bg_color]="'danger'">
           <p>danger</p>
         </app-button-filled>
       </div>
@@ -245,9 +312,13 @@
         </app-button-filled>
         <app-button-filled
           [rounded]="'rounded-full'"
-          [active]="'active:[box-shadow:none]  active:translate-y-2'"
-          [style]="'[box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]'"
+          [variant]="'3d'"
         ><p>Pressed</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'3d'"
+          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
+        >Pressed
         </app-button-filled>
       </div>
 
@@ -268,28 +339,22 @@
         </app-button-filled>
         <app-button-filled
           [style]="'flex items-center'"
-          [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'">
+          [variant]="'text'">
           <i  class="fas fa-regular fa-envelope mr-2"></i>
           <p>Link</p>
         </app-button-filled>
         <app-button-filled
           [style]="'flex items-center'"
-          [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'"
-          [outline]="'outline outline-1 outline-primary'"
-        >
+          [variant]="'outlined'">
           <p>Outline</p>
           <i  class="fas fa-regular fa-envelope ml-2"></i>
         </app-button-filled>
         <app-button-filled
-          [active]="'active:[box-shadow:none]  active:translate-y-2'"
-          [style]="'flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]'"
-        >
+          [style]="'flex items-center'"
+          [variant]="'3d'">
           <i  class="fas fa-regular fa-envelope mr-2"></i>
           <p>Pressed</p>
         </app-button-filled>
-
       </div>
     </div>
     <div class=" py-2 space-y-2">
@@ -305,13 +370,13 @@
         <app-button-filled
           [ring]="' ring-offset-bgPrim'"
           [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'"
+          [bg_color]="'bg-transparent'"
           [active]="'active:ring-offset-1 active:ring-1 active:ring-primary'">
           <p>Link</p>
         </app-button-filled>
         <app-button-filled
           [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'"
+          [bg_color]="'bg-transparent'"
           [outline]="'outline outline-1 outline-primary'"
           [ring]="' ring-offset-bgPrim'"
           [active]="'active:ring-offset-2 active:ring-1 active:ring-primary'">
@@ -323,7 +388,29 @@
           [active]="'active:ring-offset-1 active:ring-1 active:ring-primary active:translate-y-2 '"
         >Pressed
         </app-button-filled>
+      </div>
+      <div class="flex flex-wrap justify-start items-end overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <app-button-filled
+          [ring]="' ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary'">
+          <p>Filled</p>
+        </app-button-filled>
 
+        <app-button-filled
+          [variant]="'text'"
+          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
+        >Link
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'outlined'"
+          [ring]="'ring-offset-bgPrim active:ring-offset-2 active:ring-1 active:ring-primary'">
+          <p>Outline</p>
+        </app-button-filled>
+
+        <app-button-filled
+          [variant]="'3d'"
+          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
+        >Pressed
+        </app-button-filled>
       </div>
     </div>
     <div class=" py-2 space-y-2">
@@ -357,7 +444,7 @@
           [disabled]="buttonloading"
           [style]="'inline-flex items-center'"
           [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'"
+          [bg_color]="'bg-transparent'"
         >
           <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"
                xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -374,7 +461,7 @@
           [disabled]="buttonloading"
           [style]="'inline-flex items-center'"
           [text]="'text-xs text-primary'"
-          [color]="'bg-transparent'"
+          [bg_color]="'bg-transparent'"
           [outline]="'outline outline-1 outline-primary'"
         >
           <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"

@@ -3019,6 +3019,14 @@ html {
   background-color: hsl(var(--twc-primary) / 0.1);
 }
 
+.hover\:bg-primary\/20:hover {
+  background-color: hsl(var(--twc-primary) / 0.2);
+}
+
+.hover\:bg-primary\/80:hover {
+  background-color: hsl(var(--twc-primary) / 0.8);
+}
+
 .hover\:bg-primary\/\[\.08\]:hover {
   background-color: hsl(var(--twc-primary) / .08);
 }
@@ -3042,6 +3050,10 @@ html {
 
 .hover\:bg-success\/\[\.08\]:hover {
   background-color: hsl(var(--twc-success) / .08);
+}
+
+.hover\:bg-ternary\/20:hover {
+  background-color: hsl(var(--twc-ternary) / 0.2);
 }
 
 .hover\:bg-ternary\/\[\.08\]:hover {
@@ -3106,6 +3118,10 @@ html {
 
 .hover\:opacity-75:hover {
   opacity: 0.75;
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
 }
 
 .hover\:opacity-90:hover {

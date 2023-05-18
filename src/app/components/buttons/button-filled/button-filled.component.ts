@@ -1,43 +1,66 @@
 import {Component, OnInit, Input, ElementRef, Renderer2, HostListener} from "@angular/core";
 
+const sizes:
+  {
+    [key: string]: { text: string; padding: string }
+  } =
+  {
+    sm: { text: 'text-[11px]', padding: 'px-3 py-1.5' },
+    md: { text: 'text-xs', padding: 'px-3 py-2' },
+    lg: { text: 'text-xs', padding: 'px-5 py-3' },
+    xl: { text: 'text-xs', padding: 'px-8 py-3' }
+  };
+const roundeds:
+  {
+    [key: string]:any
+  } =
+  {
+    sm: '',
+    md: '',
+    lg: '',
+    full: ''
+  };
 @Component({
   selector: "app-button-filled",
   templateUrl: "./button-filled.component.html",
 })
+
 export class ButtonFilledComponent implements OnInit {
-  @Input() variant = "";
+  @Input() variant = "filled";
   @Input() style = "";
   @Input() disabled = false;
   @Input() ripple = true;
-  @Input() title = "Button";
+  // @Input() title = "Button";
   @Input() rounded = "rounded-md";
   @Input() text = "text-xs";
   @Input() text_color = "";
   @Input() font = "font-semibold";
-  @Input() color = "";
-  @Input() opacity = "opacity-100";
-  @Input() size = "";
+  @Input() bg_color = "";
+  @Input() opacity = "";
+  @Input() size = "md";
   @Input() padding = "px-3 py-2";
   @Input() margin = "";
   @Input() outline = "";
   @Input() ring = "";
-  @Input() hover = "hover:opacity-90";
-  @Input() focus = "";
+  @Input() hover = "";
+  @Input() focus = "hover:bg-primary/90";
   @Input() active = "active:opacity-75";
   @Input() transition = "duration-150 transition-all ease-in-out";
-  @Input() icon = "";
-  @Input() imageStyle = "";
-  @Input() imageUrl = "";
-  @Input() imagePosition = "";
+  // @Input() icon = "";
+  // @Input() imageStyle = "";
+  // @Input() imageUrl = "";
+  // @Input() imagePosition = "";
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
-  variants=['filled',
+  variants=[
+    'filled',
     'text',
     'outlined',
     '3d',
   ]
-  colors=['primary',
+  colors=[
+    'primary',
     'white',
     'secondary',
     'ternary',
@@ -47,83 +70,48 @@ export class ButtonFilledComponent implements OnInit {
     'help',
     'danger'
   ]
+
   ngOnInit(): void {
-   if(!this.variants.some(x => x === this.variant)){
-      // this.color=this.color!=''?this.color:'bg-primary'
-      // this.padding=this.padding!=''?this.padding:'px-3 py-2'
-      // this.text_color=this.text_color!=''?this.text_color:'text-white'
+    // if(!this.variants.some(x => x === this.variant)){
+    //   // this.hover=this.hover==='' ? 'hover:bg-primary/80' :   this.hover;
+    // }
 
-    // this.color = this.color===''
-    //   ? 'bg-primary'
-    //   : this.colors.some(x => x === this.color)
-    //     ? 'bg-' + this.color
-    //     :  this.color;
-    // this.text_color = this.text_color===''
-    //   ? 'text-white'
-    //   : this.colors.some(x => x === this.text_color)
-    //     ? 'text-' + this.text_color
-    //     :  this.text_color;
-    }
-    //default
-
-
-    //check color
-    //color
-    //variants
-    if(this.variant==='filled'){
-      this.color = this.color==='' ? 'bg-primary': this.colors.some(x => x === this.color) ? 'bg-' + this.color:this.color;
-      this.text_color = this.text_color==='' ? 'text-white' : this.colors.some(x => x === this.text_color) ? 'text-' + this.text_color :  this.text_color;
-      // this.color=this.color!=''?this.color:'bg-primary'
-      // this.text_color=this.text_color!=''?this.text_color:'text-white'
-      // this.color=this.colors.some(x => x === this.color)?"bg-"+this.color: this.color;
-      // this.text_color=this.colors.some(x => x === this.text_color)?"text-"+this.text_color: this.text_color;
+    //variant color
+    if(this.variant==='filled' || this.variant==='3d' ){
+      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/80' : this.hover==='' ? 'hover:bg-primary/80' :   this.hover;
+      this.bg_color = this.colors.some(x => x === this.bg_color) ? 'bg-' + this.bg_color: this.bg_color==='' ? 'bg-primary': this.bg_color;
+      this.text_color = this.text_color==='' ? 'text-white' :   this.text_color;
     }
     if(this.variant==='text'){
-      this.color = this.color==='' ? 'bg-transparent': this.colors.some(x => x === this.color) ? 'bg-' + this.color:this.color;
-      this.text_color = this.text_color==='' ? 'text-white' : this.colors.some(x => x === this.text_color) ? 'text-' + this.text_color :  this.text_color;
-      // this.color=this.color!=''?this.color:'bg-transparent'
-      // this.color=this.colors.some(x => x === this.color)?"bg-"+this.color: this.color;
-      // this.text_color=this.colors.some(x => x === this.color)?"text-"+this.color: this.color;
-
-      // this.color = "bg-transparent";
+      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/20' : this.hover==='' ? 'hover:bg-primary/20' :   this.hover;
+      this.text_color = this.colors.some(x => x === this.bg_color) ? 'text-' + this.bg_color : this.text_color==='' ? 'text-primary ' :   this.text_color;
+      this.bg_color = this.bg_color==='' ? 'bg-transparent ': this.bg_color;
     }
     if(this.variant==='outlined'){
-      this.color = this.color==='' ? 'bg-transparent': this.colors.some(x => x === this.color) ? 'bg-' + this.color:this.color;
-      this.text_color = this.text_color==='' ? 'text-white' : this.colors.some(x => x === this.text_color) ? 'text-' + this.text_color :  this.text_color;
-      // this.text_color = "text-primary";
-      // this.color = "bg-transparent";
-      this.outline = "outline outline-1 outline-primary";
-      // this.checkColor()
+      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/20' : this.hover==='' ? 'hover:bg-primary/20' :   this.hover;
+      this.outline = this.outline==='' ? 'outline outline-1 outline-'+this.text_color : this.outline;
+      this.text_color = this.colors.some(x => x === this.bg_color) ? 'text-' + this.bg_color : this.text_color==='' ? 'text-primary ' :   this.text_color;
+      this.bg_color = this.bg_color==='' ? 'bg-transparent ': this.bg_color;
     }
+    //variants
     if(this.variant==='3d'){
-      this.text_color = "text-white";
-      this.color = "bg-primary";
       this.style="inline-flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] "
       this.active="active:[box-shadow:none] active:translate-y-2 "
+      // this.active="active:translate-y-2 " //flaoting button     // remove active:[box-shadow:none]
     }
+    //state
     if(this.disabled){
       this.hover='';
     }
     //size
-    if(this.size==='sm'){
-      this.text="text-[11px]";
-      this.padding="px-3 py-1.5";
+    if (sizes[this.size]) {
+      const { text, padding } = sizes[this.size];
+      this.text = text;
+      this.padding = padding;
     }
-    if(this.size==='md'){
-      this.text="text-xs";
-      this.padding="px-3 py-2";
+    if (roundeds[this.rounded]) {
+      this.rounded = roundeds[this.rounded];
     }
-    if(this.size==='lg'){
-      this.text="text-xs";
-      this.padding="px-5 py-3";
-    }
-    if(this.size==='xl'){
-      this.text="text-xs";
-      this.padding="px-8 py-3";
-    }
-    //colors
-
-
   }
 
 
