@@ -16,6 +16,8 @@ import { ComponentsComponent } from './pages/components/components.component';
 import { CardsComponent } from './pages/components/cards/cards.component';
 import { ButtonsComponent } from './pages/components/buttons/buttons.component';
 import { InputsComponent } from './pages/components/inputs/inputs.component';
+import { Btn3dComponent } from './components/btn3d/btn3d.component';
+import { Buttons3dComponent } from './pages/buttons3d/buttons3d.component';
 
 
 
@@ -33,7 +35,9 @@ import { InputsComponent } from './pages/components/inputs/inputs.component';
     ComponentsComponent,
     CardsComponent,
     ButtonsComponent,
-    InputsComponent
+    InputsComponent,
+    Btn3dComponent,
+    Buttons3dComponent
   ],
   imports: [
     CommonModule,

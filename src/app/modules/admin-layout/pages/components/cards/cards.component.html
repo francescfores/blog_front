@@ -95,6 +95,114 @@
 '          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65] px-4 py-2'"
         ></app-card-default>
       </div>
+      <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
+        <app-card class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md ">
+          <ng-template #headerTemplate >
+            <div class="p-6">
+              <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+            </div>
+          </ng-template>
+          <div class="p-6">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+          </p>
+          </div>
+          <ng-template #footerTemplate class="flex justify-between">
+            <div class="flex justify-between p-6 pt-0">
+              <app-button-filled>
+                Save
+              </app-button-filled>
+              <app-button-filled>
+                Save
+              </app-button-filled>
+            </div>
+          </ng-template>
+        </app-card>
+        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
+          <div class="p-6">
+            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+              UI/UX Review Check
+            </h5>
+            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk
+              and near to "Naviglio" where you can enjoy the main night life in
+              Barcelona.
+            </p>
+          </div>
+          <div class="p-6 pt-0 flex justify-between">
+            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent
+            active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out">Read More</button>
+            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
+            transition-all duration-150 ease-in-out">View item</button>
+          </div>
+        </div>
+        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
+          <div class="p-6">
+            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+              UI/UX Review Check
+            </h5>
+            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk
+              and near to "Naviglio" where you can enjoy the main night life in
+              Barcelona.
+            </p>
+          </div>
+          <div class="p-6 pt-0 flex justify-between">
+            <button class='button
+          rounded-md  text-xs font-semibold
+          bg-bgTern text-textPrimary/[.75] active:bg-transparent
+            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]
+          active:translate-y-2
+          active:border-b-[0px]
+          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]
+          border-b-[1px] border-white/[.8]
+          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out'>
+              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full  font-bold text-xs '>Read More</span>
+            </button>
+            <button class='button
+          rounded-md  text-xs font-semibold  bg-primary text-white
+          active:translate-y-2
+          active:border-b-[0px]
+          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
+          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out
+          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65]'>
+              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>View item</span>
+            </button>
+          </div>
+        </div>
+        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md "
+                          [statTitle]="'Title'"
+                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
+                          [statButtonLeft]="true"
+                          [statButtonLeftTitle]="'Read More'"
+                          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out'"
+                          [statButtonRight]="true"
+                          [statButtonRightTitle]="'View item'"
+                          [statButtonRightStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
+        ></app-card-default>
+        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md"
+                          [statTitle]="'Title'"
+                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
+                          [statButtonLeft]="true"
+                          [statButtonLeftTitle]="'Read More'"
+                          [statButtonLeftStyle]="'rounded-md  text-xs font-semibold\n'+
+'          bg-bgTern text-textPrimary/[.75] active:bg-transparent\n'+
+'            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]\n'+
+'          active:translate-y-2\n'+
+'          active:border-b-[0px]\n'+
+'          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]\n'+
+'          border-b-[1px] border-white/[.8]\n'+
+'          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out px-4 py-2'"
+                          [statButtonRight]="true"
+                          [statButtonRightTitle]="'View item'"
+                          [statButtonRightStyle]="'text-xs font-semibold  bg-primary text-white\n'+
+'          active:translate-y-2\n'+
+'          active:border-b-[0px]\n'+
+'          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]\n'+
+'          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out\n'+
+'          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65] px-4 py-2'"
+        ></app-card-default>
+      </div>
     </div>
     <div class="py-4">
       <div class="text-xs font-medium text-textTertiary">

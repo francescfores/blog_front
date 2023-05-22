@@ -1,5 +1,4 @@
-import {Component, OnInit, Input, ElementRef, Renderer2, HostListener} from "@angular/core";
-
+import {Component, OnInit, Input, ElementRef, Renderer2, HostListener, ViewChild} from "@angular/core";
 const sizes:
   {
     [key: string]: { text: string; padding: string }
@@ -10,49 +9,61 @@ const sizes:
     lg: { text: 'text-xs', padding: 'px-5 py-3' },
     xl: { text: 'text-xs', padding: 'px-8 py-3' }
   };
+
 const roundeds:
   {
     [key: string]:any
   } =
   {
-    sm: '',
-    md: '',
-    lg: '',
-    full: ''
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    full: 'rounded-full'
+  };
+
+const rings:
+  {
+    [key: string]:any
+  } =
+  {
+    none: 'active:[box-shadow:none]',
+    sm: 'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary',
+    md: 'ring-offset-bgPrim active:ring-offset-1 active:ring-2 active:ring-primary',
+    lg: 'ring-offset-bgPrim active:ring-offset-2 active:ring-2 active:ring-primary',
   };
 @Component({
   selector: "app-button-filled",
   templateUrl: "./button-filled.component.html",
 })
 
+
 export class ButtonFilledComponent implements OnInit {
+
   @Input() variant = "filled";
   @Input() style = "";
+  @Input() customStyle = "";
+  @Input() defaultStyle = true;
   @Input() disabled = false;
   @Input() ripple = true;
-  // @Input() title = "Button";
-  @Input() rounded = "rounded-md";
+  @Input() rounded = "md";
   @Input() text = "text-xs";
   @Input() text_color = "";
   @Input() font = "font-semibold";
-  @Input() bg_color = "";
+  @Input() color = "";
   @Input() opacity = "";
   @Input() size = "md";
-  @Input() padding = "px-3 py-2";
-  @Input() margin = "";
+  @Input() padding = "";
   @Input() outline = "";
-  @Input() ring = "";
-  @Input() hover = "";
-  @Input() focus = "hover:bg-primary/90";
+  @Input() ring = "none";
+  @Input() hover ="";
+  // @Input() hover = "focus:opacity-90";
+  // @Input() focus = "focus:opacity-75";
+  @Input() focus = "";
   @Input() active = "active:opacity-75";
   @Input() transition = "duration-150 transition-all ease-in-out";
-  // @Input() icon = "";
-  // @Input() imageStyle = "";
-  // @Input() imageUrl = "";
-  // @Input() imagePosition = "";
-
+  //para cambiar un estilo o omitirlo solo se tiene que comentar el atributo o sobreescribirlo
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
-
   variants=[
     'filled',
     'text',
@@ -72,61 +83,61 @@ export class ButtonFilledComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    // if(!this.variants.some(x => x === this.variant)){
-    //   // this.hover=this.hover==='' ? 'hover:bg-primary/80' :   this.hover;
-    // }
+    if(this.defaultStyle){
+      this.assignVariantStyles();
+      this.assignSizeStyles();
+      this.assignRoundedStyle();
+      this.assignRingStyle();
+    }
 
-    //variant color
-    if(this.variant==='filled' || this.variant==='3d' ){
-      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/80' : this.hover==='' ? 'hover:bg-primary/80' :   this.hover;
-      this.bg_color = this.colors.some(x => x === this.bg_color) ? 'bg-' + this.bg_color: this.bg_color==='' ? 'bg-primary': this.bg_color;
-      this.text_color = this.text_color==='' ? 'text-white' :   this.text_color;
+  }
+
+  private assignVariantStyles() {
+    if (this.variant === 'filled' || this.variant === '3d') {
+      this.style = this.style + ' ' + (this.colors.includes(this.color) ? 'hover:bg-' + this.color + '/80' : (this.hover === '' ? 'hover:bg-primary/80' : this.hover));
+      this.style = this.style + ' ' + (this.colors.includes(this.color) ? 'bg-' + this.color : (this.color === '' ? 'bg-primary' : this.color));
+      this.style = this.style + ' ' + (this.text_color === '' ? 'text-white' : this.text_color);
+
+      // this.hover = this.colors.includes(this.color) ? 'hover:bg-' + this.color + '/80' : this.hover === '' ? 'hover:bg-primary/80' : this.hover;
+      // this.color = this.colors.includes(this.color) ? 'bg-' + this.color : this.color === '' ? 'bg-primary' : this.color;
+      // this.text_color = this.text_color === '' ? 'text-white' : this.text_color;
     }
-    if(this.variant==='text'){
-      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/20' : this.hover==='' ? 'hover:bg-primary/20' :   this.hover;
-      this.text_color = this.colors.some(x => x === this.bg_color) ? 'text-' + this.bg_color : this.text_color==='' ? 'text-primary ' :   this.text_color;
-      this.bg_color = this.bg_color==='' ? 'bg-transparent ': this.bg_color;
+    if (this.variant === 'outlined') {
+      this.style = this.style + ' ' + (this.outline === '' ? 'outline outline-1' : this.outline);      // this.outline = this.outline === '' ? 'outline outline-1 ': this.outline;
+      // this.outline = this.outline === '' ? 'outline outline-1 outline-' + this.text_color : this.outline;
     }
-    if(this.variant==='outlined'){
-      this.hover = this.colors.some(x => x === this.bg_color) ? 'hover:bg-'+this.bg_color+'/20' : this.hover==='' ? 'hover:bg-primary/20' :   this.hover;
-      this.outline = this.outline==='' ? 'outline outline-1 outline-'+this.text_color : this.outline;
-      this.text_color = this.colors.some(x => x === this.bg_color) ? 'text-' + this.bg_color : this.text_color==='' ? 'text-primary ' :   this.text_color;
-      this.bg_color = this.bg_color==='' ? 'bg-transparent ': this.bg_color;
+    if (this.variant === 'text' || this.variant === 'outlined') {
+      this.style = this.style + ' ' + (this.colors.includes(this.color) ? 'hover:bg-' + this.color + '/20' : (this.hover === '' ? 'hover:bg-primary/20' : this.hover));
+      this.style = this.style + ' ' + (this.colors.includes(this.color) ? 'text-' +  this.color : (this.text_color === '' ? 'text-primary' : this.text_color));
+      this.style = this.style + ' ' + (this.color === '' ? 'bg-transparent' : this.color);
     }
-    //variants
-    if(this.variant==='3d'){
-      this.style="inline-flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] "
-      this.active="active:[box-shadow:none] active:translate-y-2 "
-      // this.active="active:translate-y-2 " //flaoting button     // remove active:[box-shadow:none]
+    if (this.variant === '3d') {
+      this.style = this.style + ' ' + 'active:translate-y-2 [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047]';
     }
-    //state
-    if(this.disabled){
-      this.hover='';
-    }
-    //size
+  }
+
+  private assignSizeStyles() {
     if (sizes[this.size]) {
       const { text, padding } = sizes[this.size];
       this.text = text;
       this.padding = padding;
     }
+  }
+
+  private assignRoundedStyle() {
     if (roundeds[this.rounded]) {
       this.rounded = roundeds[this.rounded];
     }
   }
 
-
-  reverseColor(){
-
+  private assignRingStyle() {
+    if (rings[this.ring]) {
+      this.ring = rings[this.ring];
+    }
   }
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll(event: Event) {
-  //   if(this.ripple) {
-  //     this.removeRippleEffect();
-  //   }
-  // }
 
   handleButtonClick(event: MouseEvent) {
-    if(this.ripple) {
+    if (this.ripple) {
       this.removeRippleEffect();
       const btn = this.elementRef.nativeElement.querySelector('.ripple-button');
       const circle = this.renderer.createElement('span');
@@ -150,9 +161,12 @@ export class ButtonFilledComponent implements OnInit {
   private removeRippleEffect() {
     const btn = this.elementRef.nativeElement.querySelector('.ripple-button');
     const ripple = btn.querySelector('.ripple');
-    console.log('scroll')
+    console.log('scroll');
     if (ripple) {
       this.renderer.removeChild(btn, ripple);
     }
   }
+
+
+
 }

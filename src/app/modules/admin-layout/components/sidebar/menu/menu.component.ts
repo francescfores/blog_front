@@ -28,6 +28,7 @@ export class MenuComponent implements OnInit {
         new MenuItem('Alerts', null,'/admin/components/alerts',null,'pt-0',false,null),
         new MenuItem('Badge', null,'/admin/components/badge',null,'pt-0',false,null),
         new MenuItem('Buttons', null,'/admin/components/buttons',null,'pt-0',false,null),
+        new MenuItem('Buttons3d', null,'/admin/components/buttons3d',null,'pt-0',false,null),
         new MenuItem('Cards', null,'/admin/components/cards',null,'pt-0',false,null),
         new MenuItem('Dropdowns', null,'/admin/components/dropdowns',null,'pt-0',false,null),
         new MenuItem('Images', null,'/admin/components/images',null,'pt-0',false,null),

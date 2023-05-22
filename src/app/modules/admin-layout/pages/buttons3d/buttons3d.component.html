@@ -1,0 +1,81 @@
+<div class="mx-auto px-2 py-4 sm:px-8 lg:container min-h-screen">
+  <div class="mb-4 flex justify-between">
+    <div class="inline-block">
+      <h3 class="font-semibold text-textPrimary">Buttons</h3>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <div class="flex flex-col w-full">
+          <div class="flex items-center gap-4">
+            <input (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="300" [(ngModel)]="height" [value]="height">
+            <p class="flex-1">Height{{height}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="300" [(ngModel)]="width" [value]="width">
+            <p class="flex-1">Width {{width}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="-100" max="100" [(ngModel)]="raise" [value]="raise">
+            <p class="flex-1">Raise radius {{raise}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="100" [(ngModel)]="rounded" [value]="rounded">
+            <p class="flex-1">Border radius {{rounded}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="100" [(ngModel)]="font_size" [value]="font_size">
+            <p class="flex-1">Font size {{font_size}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="100" [(ngModel)]="front_border" [value]="front_border">
+            <p class="flex-1">Border px {{front_border}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="w-10 h-5 " type="color" [(ngModel)]="shadow_bg_color" [value]="shadow_bg_color">
+            <p class="flex-1">Shadow bg color {{shadow_bg_color}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="w-10 h-5 " type="color" [(ngModel)]="back_bg_color" [value]="back_bg_color">
+            <p class="flex-1">Back bg color {{back_bg_color}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="w-10 h-5 " type="color" [(ngModel)]="front_bg_color" [value]="front_bg_color">
+            <p class="flex-1">Front bg color {{front_bg_color}}</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="w-10 h-5 " type="color" [(ngModel)]="front_border_color" [value]="front_border_color">
+            <p class="flex-1">Front bg color {{front_border_color}}</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="w-10 h-5 " type="color" [(ngModel)]="font_color" [value]="font_color">
+            <p class="flex-1">font color {{font_color}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+          <div [class]="dynamicClass+' '" id="myButton">
+            <div class="back">
+              <div class="front">
+                <p>Button</p>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>

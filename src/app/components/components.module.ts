@@ -15,6 +15,7 @@ import {CardPricingComponent} from "./cards/card-pricing/card-pricing.component"
 import {CardBackgroundComponent} from "./cards/card-background/card-background.component";
 import { InputDefaultComponent } from './inputs/input-default/input-default.component';
 import {ButtonFilledComponent} from "./buttons/button-filled/button-filled.component";
+import { CardComponent } from './cards/card/card.component';
 
 @NgModule({
   declarations: [
@@ -31,24 +32,26 @@ import {ButtonFilledComponent} from "./buttons/button-filled/button-filled.compo
     CardPricingComponent,
     CardBackgroundComponent,
     InputDefaultComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
   ],
-  exports: [
-    UserDropdownComponent,
-    IndexDropdownComponent,
-    NotificationDropdownComponent,
-    TableDropdownComponent,
-    PagesDropdownComponent,
-    CardStatsComponent,
-    ButtonDefaultComponent,
-    ButtonFilledComponent,
-    CardDefaultComponent,
-    CardPricingComponent,
-    CardBackgroundComponent,
-    InputDefaultComponent,
-  ]
+    exports: [
+        UserDropdownComponent,
+        IndexDropdownComponent,
+        NotificationDropdownComponent,
+        TableDropdownComponent,
+        PagesDropdownComponent,
+        CardStatsComponent,
+        ButtonDefaultComponent,
+        ButtonFilledComponent,
+        CardDefaultComponent,
+        CardPricingComponent,
+        CardBackgroundComponent,
+        InputDefaultComponent,
+        CardComponent,
+    ]
 })
 export class ComponentsModule { }

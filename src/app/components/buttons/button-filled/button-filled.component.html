@@ -1,34 +1,51 @@
 <button [disabled]="disabled" (click)="handleButtonClick($event)"
-  [ngClass]="
-  {
-  'cursor-not-allowed opacity-75':disabled,
-  'ripple-button':ripple,
+        [ngClass]="{
+    'cursor-not-allowed opacity-75': disabled,
+    'ripple-button': ripple
   }"
-  class="
-  {{style}}
-  {{rounded}}
-  {{text}}
-  {{font}}
-  {{bg_color}}
-  {{size}}
-  {{padding}}
-  {{margin}}
-  {{outline}}
-  {{ring}}
-  {{hover}}
-  {{text_color}}
-  {{focus}}
-  {{active}}
-  {{transition}}"
+   [class]="[
+    style,
+    customStyle,
+    rounded,
+    text,
+    font,
+    color,
+    size,
+    padding,
+    outline,
+    ring,
+    hover,
+    text_color,
+    focus,
+    active,
+    transition
+  ].join(' ')"
 >
-<!--  [class]="disabled ? 'bg-secondary' : hover"-->
-<!--  [class.style]="style"-->
-<!--  [class.rounded]="rounded"-->
-<!--  [class.text]="text"-->
-  <!--  <p>{{title}}</p>-->
-<!--  <i  class="{{icon}} "></i>-->
-<!--  <img class="{{imageStyle}}"-->
-<!--       src="{{imageUrl}}"/>-->
   <ng-content></ng-content>
-
 </button>
+
+<!--<button [disabled]="disabled" (click)="handleButtonClick($event)"-->
+<!--  [ngClass]="-->
+<!--  {-->
+<!--  'cursor-not-allowed opacity-75':disabled,-->
+<!--  'ripple-button':ripple,-->
+<!--  }"-->
+<!--  class="-->
+<!--  {{style}}-->
+<!--  {{rounded}}-->
+<!--  {{text}}-->
+<!--  {{font}}-->
+<!--  {{bg_color}}-->
+<!--  {{size}}-->
+<!--  {{padding}}-->
+<!--  {{outline}}-->
+<!--  {{ring}}-->
+<!--  {{hover}}-->
+<!--  {{text_color}}-->
+<!--  {{focus}}-->
+<!--  {{active}}-->
+<!--  {{transition}}"-->
+<!--&gt;-->
+<!--  <ng-content></ng-content>-->
+
+<!--</button>-->

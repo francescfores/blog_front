@@ -10,7 +10,86 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
       </div>
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <app-button-filled >
+        <div class="flex flex-col w-full">
+          <div class="flex items-center gap-4">
+            <input (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="300" [(ngModel)]="height" [value]="height">
+            <p class="flex-1">Height{{height}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="300" [(ngModel)]="width" [value]="width">
+            <p class="flex-1">Width {{width}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="-100" max="100" [(ngModel)]="raise" [value]="raise">
+            <p class="flex-1">Raise radius{{raise}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="range" min="0" max="100" [(ngModel)]="rounded" [value]="rounded">
+            <p class="flex-1">Border radius{{rounded}}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input  (change)="generateAndApplyStyles()" class="flex-1 h-1.5 bg-blueGray-300 rounded-full appearance-none
+        cursor-pointer dark:bg-gray-700" type="color" [(ngModel)]="color" [value]="color">
+            <p class="flex-1">Color{{color}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+        <button class="aws-btn aws-btn--primary aws-btn--visible false" >
+          <span class="aws-btn__wrapper">
+            <span class="aws-btn__content">
+              <span>PrimaryPrimaryPrimaryPrimary</span>
+            </span>
+          </span>
+        </button>
+
+        <button class="aws-btn aws-btn--primary aws-btn--visible false aws-btn--left" role="button" data-role="customizable" style="--button-default-height: 100px; --button-default-font-size: 14px; --button-default-border-radius: 0px; --button-horizontal-padding: 16px; --button-raise-level: 10px; --button-hover-pressure: 4; --transform-speed: 0.15s; --button-primary-color: #1e88e5; --button-primary-color-dark: #1360a4; --button-primary-color-light: #ffffff; --button-primary-color-hover: #187bd1; --button-primary-color-active: #166dba; --button-primary-border: none; --button-secondary-color: #f2f6f9; --button-secondary-color-dark: #1360a4; --button-secondary-color-light: #1e88e5; --button-secondary-color-hover: #e1eaf1; --button-secondary-color-active: #cfdee9; --button-secondary-border: 2px solid #1e88e5; --button-anchor-color: #0e4f88; --button-anchor-color-dark: #072743; --button-anchor-color-light: #ffffff; --button-anchor-color-hover: #0d4a7f; --button-anchor-color-active: #0c4271; --button-anchor-border: none; --button-danger-color: #c42e2e; --button-danger-color-dark: #861f1f; --button-danger-color-light: #ffffff; --button-danger-color-hover: #bc2c2c; --button-danger-color-active: #af2929; --button-danger-border: none;"><span class="aws-btn__wrapper"><span class="aws-btn__content"><span>Reset Styles</span></span></span></button>
+        <button class="aws-btn aws-btn--primary aws-btn--visible false aws-btn--right" role="button" data-role="customizable" style="--button-default-height: 100px; --button-default-font-size: 14px; --button-default-border-radius: 0px; --button-horizontal-padding: 16px; --button-raise-level: 10px; --button-hover-pressure: 4; --transform-speed: 0.15s; --button-primary-color: #1e88e5; --button-primary-color-dark: #1360a4; --button-primary-color-light: #ffffff; --button-primary-color-hover: #187bd1; --button-primary-color-active: #166dba; --button-primary-border: none; --button-secondary-color: #f2f6f9; --button-secondary-color-dark: #1360a4; --button-secondary-color-light: #1e88e5; --button-secondary-color-hover: #e1eaf1; --button-secondary-color-active: #cfdee9; --button-secondary-border: 2px solid #1e88e5; --button-anchor-color: #0e4f88; --button-anchor-color-dark: #072743; --button-anchor-color-light: #ffffff; --button-anchor-color-hover: #0d4a7f; --button-anchor-color-active: #0c4271; --button-anchor-border: none; --button-danger-color: #c42e2e; --button-danger-color-dark: #861f1f; --button-danger-color-light: #ffffff; --button-danger-color-hover: #bc2c2c; --button-danger-color-active: #af2929; --button-danger-border: none;"><span class="aws-btn__wrapper"><span class="aws-btn__content"><span>Reset Styles</span></span></span></button>
+        <button class="aws-btn  aws-btn--visible false aws-btn--right" role="button" data-role="customizable" style="--button-default-height: 100px; --button-default-font-size: 14px; --button-default-border-radius: 0px; --button-horizontal-padding: 16px; --button-raise-level: 10px; --button-hover-pressure: 4; --transform-speed: 0.15s; --button-primary-color: #1e88e5; --button-primary-color-dark: #1360a4; --button-primary-color-light: #ffffff; --button-primary-color-hover: #187bd1; --button-primary-color-active: #166dba; --button-primary-border: none; --button-secondary-color: #f2f6f9; --button-secondary-color-dark: #1360a4; --button-secondary-color-light: #1e88e5; --button-secondary-color-hover: #e1eaf1; --button-secondary-color-active: #cfdee9; --button-secondary-border: 2px solid #1e88e5; --button-anchor-color: #0e4f88; --button-anchor-color-dark: #072743; --button-anchor-color-light: #ffffff; --button-anchor-color-hover: #0d4a7f; --button-anchor-color-active: #0c4271; --button-anchor-border: none; --button-danger-color: #c42e2e; --button-danger-color-dark: #861f1f; --button-danger-color-light: #ffffff; --button-danger-color-hover: #bc2c2c; --button-danger-color-active: #af2929; --button-danger-border: none;"><span class="aws-btn__wrapper"><span class="aws-btn__content"><span>Reset Styles</span></span></span></button>
+        <button class="aws-btn  aws-btn--visible false aws-btn--right" role="button" data-role="customizable"
+                style="--button-default-height: 100px; --button-default-font-size: 14px; --button-default-border-radius: 0px;
+                --button-horizontal-padding: 16px; --button-raise-level: 10px; --button-hover-pressure: 4; --transform-speed: 0.15s;
+                --button-primary-color: #1e88e5; --button-primary-color-dark: #1360a4; --button-primary-color-light: #ffffff;
+                --button-primary-color-hover: #187bd1; --button-primary-color-active: #166dba; --button-primary-border: none;
+                --button-secondary-color: #f2f6f9; --button-secondary-color-dark: #1360a4; --button-secondary-color-light: #1e88e5;
+                --button-secondary-color-hover: #e1eaf1; --button-secondary-color-active: #cfdee9; --button-secondary-border: 2px solid #1e88e5;
+                 --button-anchor-color: #0e4f88; --button-anchor-color-dark: #072743; --button-anchor-color-light: #ffffff;
+                 --button-anchor-color-hover: #0d4a7f; --button-anchor-color-active: #0c4271; --button-anchor-border: none;
+                 --button-danger-color: #c42e2e; --button-danger-color-dark: #861f1f; --button-danger-color-light: #ffffff;
+                 --button-danger-color-hover: #bc2c2c; --button-danger-color-active: #af2929; --button-danger-border: none;">
+          <span class="aws-btn__wrapper">
+            <span class="aws-btn__content">
+            </span>
+          </span>
+        </button>
+        <div class="back">
+          <div class="front">
+            <p>Button</p>
+          </div>
+
+        </div>
+        <div [class]="dynamicClass+' flex-1 w-full'" id="myButton">
+          <div class="back">
+              <div class="front">
+                <p>Button</p>
+            </div>
+
+          </div>
+        </div>
+<!--        <app-button-filled [variant]="''" (click)="generateAndApplyStyles()" [customStyle]="dynamicClass">Contenido</app-button-filled>-->
+
+      </div>
+    </div><div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
+        <app-button-filled
+        >
           <p>Button</p>
         </app-button-filled>
       </div>
@@ -19,64 +98,7 @@
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Variants</div>
       </div>
-      <div class=" flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <app-button-filled>
-          <p>Filledd</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'text'"
-          [text]="'text-xs'"
-          [text_color]="'text-primary'"
-          [bg_color]="'bg-transparent'">
-          <p>Linssk</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'outlined'"
-          [text]="'text-xs'"
-          [text_color]="'text-primary'"
-          [bg_color]="'bg-transparent'"
-          [outline]="'outline outline-1 outline-primary'">
-          <p>Outline</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'3d'"
-          [hover]="''"
-          [style]="'inline-flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] '"
-          [active]="'active:[box-shadow:none] active:translate-y-2 '">
-          <p>Pressed</p>
-        </app-button-filled>
-        <app-button-filled
-          [disabled]="true"
-          [hover]="''">
-          <p>Disbaled</p>
-        </app-button-filled>
-      </div>
-      <div class="hover:bg-primary/90 flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <app-button-filled
-          [variant]="'filled'"
-        >
-          <p>Fillessd</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'text'"
-        >
-          <p>Link</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'outlined'"
-        >
-          <p>Outline</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'3d'">
-          <p>Pressed</p>
-        </app-button-filled>
-        <app-button-filled
-          [disabled]="true">
-          <p>Disbaled</p>
-        </app-button-filled>
-      </div>
-      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+      <div class="flex  flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled
           [variant]="'filled'"
         >
@@ -89,7 +111,41 @@
         </app-button-filled>
         <app-button-filled
           [variant]="'outlined'"
-          [bg_color]="'ternary'"
+        >
+          <p>Outline</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'3d'">
+          <p>Pressssed</p>
+        </app-button-filled>
+        <app-button-filled
+          [disabled]="true">
+          <p>Disbaled</p>
+        </app-button-filled>
+      </div>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <app-button-filled
+          [ripple]=false
+          [variant]="'filled'"
+          [color]="'bg-green-500'"
+          [text_color]="'text-red-500'"
+          [hover]="' '"
+          [text]="'text-xl'"
+          [rounded]="'full'"
+        >
+          <p>Filled</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'text'"
+          [color]="'bg-ternary'"
+          [text_color]="'text-[#EF476F]'"
+          [hover]="'hover:bg-[#F3A712]/20'"
+          [size]="'xl'"
+        >
+          <p>texsssssst</p>
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'outlined'"
         >
           <p>Outline</p>
         </app-button-filled>
@@ -128,28 +184,6 @@
       </div>
       <div class="flex flex-wrap justify-start items-center overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled
-          [ripple]="true"
-          [text]="'text-[11px] text-white'"
-          [padding]="'px-3 py-1.5'"
-        >
-          <p>Small</p>
-        </app-button-filled>
-        <app-button-filled>
-          <p>Medium</p>
-        </app-button-filled>
-        <app-button-filled
-          [padding]="'px-5 py-3'"
-        >
-          <p>Large</p>
-        </app-button-filled>
-        <app-button-filled
-          [padding]="'px-8 py-3'"
-        >
-          <p>Extra large</p>
-        </app-button-filled>
-      </div>
-      <div class="flex flex-wrap justify-start items-center overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <app-button-filled
           [size]="'sm'"
         >
           <p>Small</p>
@@ -175,112 +209,74 @@
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Colors</div>
       </div>
+<!--      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">-->
+<!--        <app-button-filled>-->
+<!--          <p>Prim</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-secondary'">-->
+<!--          <p>Seco</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-ternary'">-->
+<!--          <p>Tern</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-success'">-->
+<!--          <p>success</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-info'">-->
+<!--          <p>info</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-warning'">-->
+<!--          <p>warning</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-help'">-->
+<!--          <p>help</p>-->
+<!--        </app-button-filled>-->
+<!--        <app-button-filled-->
+<!--          [color]="'bg-danger'">-->
+<!--          <p>danger</p>-->
+<!--        </app-button-filled>-->
+<!--      </div>-->
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <app-button-filled>
-          <p>Prim</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-secondary'">
-          <p>Seco</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-ternary'">
-          <p>Tern</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-success'">
-          <p>success</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-info'">
-          <p>info</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-warning'">
-          <p>warning</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-help'">
-          <p>help</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'bg-danger'">
-          <p>danger</p>
-        </app-button-filled>
-      </div>
-      <div class="hover:bg-secondary/80  flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
         <app-button-filled
           [variant]="'filled'"
-          [bg_color]="'primary'">
-          <p>Prim</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'text'"
-          [bg_color]="'secondary'">
-        <p>Seco</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'outlined'"
-          [bg_color]="'ternary'">
-          <p>Tern</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'3d'"
-          [bg_color]="'success'">
-          <p>success</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'info'">
-          <p>info</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'warning'">
-          <p>warning</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'help'">
-          <p>help</p>
-        </app-button-filled>
-        <app-button-filled
-          [bg_color]="'danger'">
-          <p>danger</p>
-        </app-button-filled>
-      </div>
-      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <app-button-filled
-          [variant]="''"
         >
           <p>Prims</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'text'"
-          [bg_color]="'secondary'">
+          [color]="'secondary'">
         <p>Seco</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'outlined'"
-          [bg_color]="'ternary'">
+          [color]="'ternary'">
           <p>Tern</p>
         </app-button-filled>
         <app-button-filled
           [variant]="'3d'"
-          [bg_color]="'success'">
+          [color]="'success'">
           <p>success</p>
         </app-button-filled>
         <app-button-filled
-          [bg_color]="'info'">
+          [color]="'info'">
           <p>info</p>
         </app-button-filled>
         <app-button-filled
-          [bg_color]="'warning'">
+          [color]="'warning'">
           <p>warning</p>
         </app-button-filled>
         <app-button-filled
-          [bg_color]="'help'">
+          [color]="'help'">
           <p>help</p>
         </app-button-filled>
         <app-button-filled
-          [bg_color]="'danger'">
+          [color]="'danger'">
           <p>danger</p>
         </app-button-filled>
       </div>
@@ -291,34 +287,29 @@
       </div>
       <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled
-          [rounded]="'rounded-none'">
+          [rounded]="'none'">
           <p>None</p>
         </app-button-filled>
         <app-button-filled
-          [rounded]="'rounded-sm'">
+          [rounded]="'sm'">
           <p>Sm</p>
         </app-button-filled>
         <app-button-filled
-          [rounded]="'rounded-md'">
+          [rounded]="'md'">
           <p>Md</p>
         </app-button-filled>
         <app-button-filled
-          [rounded]="'rounded-lg'">
+          [rounded]="'lg'">
           <p>Lg</p>
         </app-button-filled>
         <app-button-filled
-          [rounded]="'rounded-full'">
+          [rounded]="'full'">
           <p>full</p>
         </app-button-filled>
         <app-button-filled
-          [rounded]="'rounded-full'"
+          [rounded]="'full'"
           [variant]="'3d'"
         ><p>Pressed</p>
-        </app-button-filled>
-        <app-button-filled
-          [variant]="'3d'"
-          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
-        >Pressed
         </app-button-filled>
       </div>
 
@@ -334,26 +325,29 @@
         <app-button-filled
           [size]="'h-8 w-8'"
           [padding]="''"
-          [rounded]="'rounded-full'">
+          [rounded]="'full'">
           <i  class="fas fa-regular fa-envelope"></i>
         </app-button-filled>
         <app-button-filled
-          [style]="'flex items-center'"
           [variant]="'text'">
-          <i  class="fas fa-regular fa-envelope mr-2"></i>
-          <p>Link</p>
+          <div class="flex items-center">
+            <i  class="fas fa-regular fa-envelope mr-2"></i>
+            <p>Text</p>
+          </div>
         </app-button-filled>
         <app-button-filled
-          [style]="'flex items-center'"
           [variant]="'outlined'">
-          <p>Outline</p>
-          <i  class="fas fa-regular fa-envelope ml-2"></i>
+          <div class="flex items-center">
+            <p>Outline</p>
+            <i  class="fas fa-regular fa-envelope ml-2"></i>
+          </div>
         </app-button-filled>
         <app-button-filled
-          [style]="'flex items-center'"
           [variant]="'3d'">
-          <i  class="fas fa-regular fa-envelope mr-2"></i>
-          <p>Pressed</p>
+          <div class="flex items-center">
+            <i  class="fas fa-regular fa-envelope mr-2"></i>
+            <p>Pressed</p>
+          </div>
         </app-button-filled>
       </div>
     </div>
@@ -363,53 +357,28 @@
       </div>
       <div class="flex flex-wrap justify-start items-end overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
         <app-button-filled
-          [ring]="' ring-offset-bgPrim'"
-          [active]="'active:ring-offset-1 active:ring-1 active:ring-primary'">
+          [ring]="'sm'">
           <p>Filled</p>
         </app-button-filled>
-        <app-button-filled
-          [ring]="' ring-offset-bgPrim'"
-          [text]="'text-xs text-primary'"
-          [bg_color]="'bg-transparent'"
-          [active]="'active:ring-offset-1 active:ring-1 active:ring-primary'">
-          <p>Link</p>
-        </app-button-filled>
-        <app-button-filled
-          [text]="'text-xs text-primary'"
-          [bg_color]="'bg-transparent'"
-          [outline]="'outline outline-1 outline-primary'"
-          [ring]="' ring-offset-bgPrim'"
-          [active]="'active:ring-offset-2 active:ring-1 active:ring-primary'">
-          <p>Outline</p>
-        </app-button-filled>
-        <app-button-filled
-          [style]="' [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] '"
-          [ring]="'ring-offset-bgPrim'"
-          [active]="'active:ring-offset-1 active:ring-1 active:ring-primary active:translate-y-2 '"
-        >Pressed
-        </app-button-filled>
-      </div>
-      <div class="flex flex-wrap justify-start items-end overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <app-button-filled
-          [ring]="' ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary'">
-          <p>Filled</p>
-        </app-button-filled>
-
         <app-button-filled
           [variant]="'text'"
-          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
-        >Link
+          [ring]="'md'">
+          Text
         </app-button-filled>
         <app-button-filled
           [variant]="'outlined'"
-          [ring]="'ring-offset-bgPrim active:ring-offset-2 active:ring-1 active:ring-primary'">
-          <p>Outline</p>
+          [ring]="'lg'">
+        <p>Outline</p>
         </app-button-filled>
-
         <app-button-filled
           [variant]="'3d'"
-          [ring]="'ring-offset-bgPrim active:ring-offset-1 active:ring-1 active:ring-primary  '"
-        >Pressed
+          [ring]="'md'">
+        Pressed
+        </app-button-filled>
+        <app-button-filled
+          [variant]="'3d'"
+          [ring]="''">
+          floating
         </app-button-filled>
       </div>
     </div>
@@ -418,80 +387,83 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Loading</div>
       </div>
       <div class="flex flex-wrap justify-start items-end overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <app-button-filled (click)="loading()"
-          [disabled]="!buttonloading"
-          [style]="'inline-flex items-center'" >
-          <svg class="mr-2 -ml-1 text-white animate-spin transition-all duration-150 ease-in-out"
-               xmlns="http://www.w3.org/2000/svg" fill="none"
-               viewBox="0 0 24 24"
-               [ngClass]="{'h-0 w-0 hidden':buttonloading,'w-3 h-3 ':!buttonloading}">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-            </path>
-          </svg>
-          <p>Svg</p>
+        <app-button-filled (click)="loading()">
+            <p>Click</p>
         </app-button-filled>
-        <app-button-filled (click)="loading()"
-          [disabled]="buttonloading"
-          [style]="'inline-flex items-center'" >
+        <app-button-filled
+          [defaultStyle]="false"
+          [disabled]="buttonloading">
+          <div class="inline-flex items-center">
+            <svg class="mr-2 -ml-1 text-white animate-spin transition-all duration-150 ease-in-out"
+                 xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24"
+                 [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <p>svg</p>
+          </div>
+        </app-button-filled>
+        <app-button-filled
+          [disabled]="buttonloading">
+          <div class="inline-flex items-center">
           <i [ngClass]="{'hidden':!buttonloading}"
              class="mr-2 fas fa-spinner animate-spin transition-all duration-150 ease-in-out"></i>
           <p>Icon</p>
+          </div>
         </app-button-filled>
         <app-button-filled
-          (click)="loading()"
           [disabled]="buttonloading"
-          [style]="'inline-flex items-center'"
-          [text]="'text-xs text-primary'"
-          [bg_color]="'bg-transparent'"
+          [variant]="'text'"
         >
-          <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"
-               xmlns="http://www.w3.org/2000/svg" fill="none"
-               viewBox="0 0 24 24"
-               [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-            </path>
-          </svg>
-          <p>Link</p>
-        </app-button-filled>
-        <app-button-filled (click)="loading()"
-          [disabled]="buttonloading"
-          [style]="'inline-flex items-center'"
-          [text]="'text-xs text-primary'"
-          [bg_color]="'bg-transparent'"
-          [outline]="'outline outline-1 outline-primary'"
-        >
-          <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"
-               xmlns="http://www.w3.org/2000/svg" fill="none"
-               viewBox="0 0 24 24"
-               [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-            </path>
-          </svg>
-          <p>Outline</p>
+          <div class="inline-flex items-center">
+            <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"
+                 xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24"
+                 [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <p>Text</p>
+          </div>
         </app-button-filled>
         <app-button-filled
-          (click)="loading()"
           [disabled]="buttonloading"
-          [hover]="''"
-          [style]="'inline-flex items-center [box-shadow:0_1.2px_0_0_#9CFFB3BB,0_6px_0_0_#2C8A42C9,0_9px_0_0_#C0C0C047] '"
-          [active]="' active:[box-shadow:none] active:translate-y-2 '"
+          [variant]="'outlined'"
         >
-          <p>Pressed</p>
-          <svg class="ml-2 -ml-1 text-white animate-spin transition-all duration-150 ease-in-out"
-               xmlns="http://www.w3.org/2000/svg" fill="none"
-               viewBox="0 0 24 24"
-               [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-            </path>
-          </svg>
+          <div class="inline-flex items-center">
+            <svg class="mr-2 -ml-1 text-primary animate-spin transition-all duration-150 ease-in-out"
+                 xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24"
+                 [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <p>Outline</p>
+          </div>
+        </app-button-filled>
+        <app-button-filled
+          [disabled]="buttonloading"
+          [variant]="'3d'"
+        >
+          <div class="inline-flex items-center">
+            <svg class="mr-2 -ml-1 text-white animate-spin transition-all duration-150 ease-in-out"
+                 xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24"
+                 [ngClass]="{'h-0 w-0 hidden':!buttonloading,'w-3 h-3 ':buttonloading}">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <p>Pressed</p>
+          </div>
         </app-button-filled>
       </div>
     </div>
@@ -501,16 +473,18 @@
       </div>
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
         <app-button-filled
-          [style]="'flex items-center'"
         >
-          <p>Icon</p>
-          <i  class="fas fa-regular fa-envelope ml-2"></i>
+         <div class="flex items-center">
+           <p>Icon</p>
+           <i  class="fas fa-regular fa-envelope ml-2"></i>
+         </div>
         </app-button-filled>
-        <app-button-filled
-          [style]="'flex items-center'"
+        <app-button-filled [variant]="'text'"
         >
-          <i  class="fas fa-regular fa-envelope mr-2"></i>
-          <p>Icon</p>
+          <div class="flex items-center">
+            <i  class="fas fa-regular fa-envelope mr-2"></i>
+            <p>Icon</p>
+          </div>
         </app-button-filled>
       </div>
     </div>
@@ -519,41 +493,50 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Change color on active</div>
       </div>
       <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-transparent active:text-primary transition-all duration-300">Normal</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary active:bg-primary active:text-white transition-all duration-300">Text</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary outline outline-1 outline-primary active:bg-primary active:text-white transition-all duration-300">Outline</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-transparent active:text-primary transition-all duration-300">Hover</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white focus:bg-primary/[.65] active:bg-transparent active:text-primary transition-all duration-300">Focused</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-primary text-white active:bg-primary/[.65] active:bg-transparent active:text-primary transition-all duration-300">Active</button>
-        <div class='button
-          rounded-md  h-6  text-xs font-semibold  bg-primary text-white
-          active:translate-y-2  active:[box-shadow:0_0px_0_0_#2a3b52,0_0px_0_0_#1b70f841]
-          active:border-b-[0px]
-          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
-          border-b-[1px] border-[#3592a4]
-          active:bg-transparent z-10 transition-all duration-300'>
-          <span class=' h-6 px-4 py-2 z-50 flex flex-col justify-center items-center h-full text-white active:text-primary font-bold text-xs '>Pressed</span>
-        </div>
-        <button class=" rounded-md  px-4 py-2 text-xs font-semibold  bg-primary/[.65] text-white cursor-not-allowed ">Disabled</button>
+        <app-button-filled
+        [active]="'active:bg-transparent active:text-primary'"
+        ><p>prim</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'text'"
+          [active]="'active:bg-primary active:text-white'"
+        ><p>Text</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'outlined'"
+          [active]="'active:bg-primary active:text-white active:outline-transparent'"
+        ><p>Outlined</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'3d'"
+          [active]="'active:bg-transparent active:text-primary'"
+                           [ring]="'sm'"
+        ><p>Pressed</p>
+        </app-button-filled>
       </div>
     </div>
-
     <div class=" py-2 space-y-2">
       <div class="text-xs font-medium text-textTertiary">
-        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Text hover background on active</div>
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Change color on active</div>
       </div>
-      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 ">
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-primary hover:bg-primary/[.08] active:bg-primary/[.2] "> Prim</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-secondary hover:bg-secondary/[.08] active:bg-secondary/[.2] "> Seco</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-ternary hover:bg-ternary/[.08] active:bg-ternary/[.2] "> Tern</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-success hover:bg-success/[.08] active:bg-success/[.2] ">success</button>
-
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-info hover:bg-info/[.08] active:bg-info/[.2] ">info</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-warning hover:bg-warning/[.08] active:bg-warning/[.2] ">warning</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-help hover:bg-help/[.08] active:bg-help/[.2] ">help</button>
-        <button class="rounded-md  px-4 py-2 text-xs font-semibold  bg-transparent text-danger hover:bg-danger/[.08] active:bg-danger/[.2] ">danger</button>
+      <div class="flex flex-wrap justify-start items-start overflow-hidden rounded-lg bg-bgPrim p-4 gap-4 h-auto">
+        <app-button-filled
+        [active]="'active:bg-transparent active:text-primary'"
+        ><p>prim</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'text'"
+          [active]="'active:bg-primary active:text-white'"
+        ><p>Text</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'outlined'"
+          [active]="'active:bg-primary active:text-white active:outline-transparent'"
+        ><p>Outlined</p>
+        </app-button-filled>
+        <app-button-filled [variant]="'3d'"
+          [active]="'active:bg-transparent active:text-primary'"
+                           [ring]="'sm'"
+        ><p>Pressed</p>
+        </app-button-filled>
       </div>
     </div>
+
     <div class="space-x-1 text-xs font-medium text-textTertiary">
       <div class="flex items-end justify-between text-sm font-semibold text-textTertiary"> Mix text/hover/background primary
       </div>
