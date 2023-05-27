@@ -66,16 +66,211 @@
         </div>
       </div>
       <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
-          <div [class]="dynamicClass+' '" id="myButton">
-            <div class="back">
-              <div class="front">
-                <p>Button</p>
-              </div>
+        <div [class]="dynamicClass+' '" id="myButton">
+          <div class="back">
+            <div class="front">
+              <p>Button</p>
+            </div>
 
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap rounded-lg bg-bgPrim " #myElement>
+        <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-2 text-xs font-semibold">
+          <p class="text-textPrimary">Code Playground</p>
+          <div class="flex justify-between gap-4">
+            <p (click)="ejecutarCodigo(0)" class="text-textPrimary">run</p>
+            <p class="text-textPrimary">Reset</p>
+          </div>
+        </div>
+        <div class=" w-full flex items-start   px-4 py-4">
+          <div class="flex justify-between gap-4">
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[0],'html')"
+               [ngClass]="{'text-textPrimary':windowsCode[0]['html'],
+               'text-textSecondary':!windowsCode[0]['html']}">Html</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[0],'css')"
+               [ngClass]="{'text-textPrimary':windowsCode[0]['css'],
+               'text-textSecondary':!windowsCode[0]['css']}">Css</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[0],'js')"
+               [ngClass]="{'text-textPrimary':windowsCode[0]['js'],
+               'text-textSecondary':!windowsCode[0]['js']}">Js</p>
+          </div>
+        </div>
+        <div class="flex w-full px-4 py-4 rounded-lg">
+
+          <div #leftPanel class="split__left">
+            <div class="flex-1 code-editor-container">
+              <div class="html-editor " [ngClass]="{'w-0 hidden':windowsCode[0]['html']===false , 'w-full block':!windowsCode[0]['html']===false}">
+                <ngx-codemirror [(ngModel)]="htmlCodes[0]" class="bg-transparent"
+                                [options]="{
+                                  htmlMode: true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'htmlmixed',
+
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="css-editor " *ngIf="windowsCode[0]['css']===true" [ngClass]="{'w-full block':!windowsCode[0]['css']===false}">
+                <ngx-codemirror [(ngModel)]="cssCodes[0]" class="bg-transparent ng-touched"
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'css',
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="js-editor " *ngIf="windowsCode[0]['js']===true" [ngClass]="{'w-full block':!windowsCode[0]['js']===false}">
+                <ngx-codemirror [(ngModel)]="jsCodes[0]" class="bg-transparent "
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'javascript',
+                                    }"></ngx-codemirror>
+              </div>
             </div>
           </div>
+          <div #splitBar class="split__bar"></div>
+          <div class="split__right">
+            <div class="flex-1 iframe-container flex justify-center items-start h-full">
+              <iframe *ngIf="loading" (load)="generateHTML(0)" sandbox="allow-same-origin allow-scripts "  [srcdoc]="generatedHTML[0]" id="iframe-0"></iframe>
+            </div>            </div>
+        </div>
       </div>
-    </div>
+      <div class="flex flex-wrap rounded-lg bg-bgPrim " #myElement>
+        <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-2 text-xs font-semibold">
+          <p class="text-textPrimary">Code Playground</p>
+          <div class="flex justify-between gap-4">
+            <p (click)="ejecutarCodigo(1)" class="text-textPrimary">run</p>
+            <p class="text-textPrimary">Reset</p>
+          </div>
+        </div>
+        <div class=" w-full flex items-start   px-4 py-4">
+          <div class="flex justify-between gap-4">
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[1],'html')"
+               [ngClass]="{'text-textPrimary':windowsCode[1]['html'],
+               'text-textSecondary':!windowsCode[1]['html']}">Html</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[1],'css')"
+               [ngClass]="{'text-textPrimary':windowsCode[1]['css'],
+               'text-textSecondary':!windowsCode[1]['css']}">Css</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[1],'js')"
+               [ngClass]="{'text-textPrimary':windowsCode[1]['js'],
+               'text-textSecondary':!windowsCode[1]['js']}">Js</p>
+          </div>
+        </div>
+        <div class="flex w-full px-4 py-4 rounded-lg">
 
+          <div #leftPanel class="split__left">
+            <div class="flex-1 code-editor-container">
+              <div class="html-editor " [ngClass]="{'w-1 hidden':windowsCode[1]['html']===false , 'w-full block':!windowsCode[1]['html']===false}">
+                <ngx-codemirror [(ngModel)]="htmlCodes[1]" class="bg-transparent"
+                                [options]="{
+                                  htmlMode: true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'htmlmixed',
+
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="css-editor " *ngIf="windowsCode[1]['css']===true" [ngClass]="{'w-full block':!windowsCode[1]['css']===false}">
+                <ngx-codemirror [(ngModel)]="cssCodes[1]" class="bg-transparent ng-touched"
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'css',
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="js-editor " *ngIf="windowsCode[1]['js']===true" [ngClass]="{'w-full block':!windowsCode[1]['js']===false}">
+                <ngx-codemirror [(ngModel)]="jsCodes[1]" class="bg-transparent "
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'javascript',
+                                    }"></ngx-codemirror>
+              </div>
+            </div>
+          </div>
+          <div #splitBar class="split__bar"></div>
+          <div class="split__right">
+            <div class="flex-1 iframe-container flex justify-center items-start h-full">
+              <iframe *ngIf="loading" (load)="generateHTML(1)" sandbox="allow-same-origin allow-scripts "  [srcdoc]="generatedHTML[1]" id="iframe-1"></iframe>
+            </div>            </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap rounded-lg bg-bgPrim " #myElement>
+        <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-2 text-xs font-semibold">
+          <p class="text-textPrimary">Code Playground</p>
+          <div class="flex justify-between gap-4">
+            <p (click)="ejecutarCodigo(2)" class="text-textPrimary">run</p>
+            <p class="text-textPrimary">Reset</p>
+          </div>
+        </div>
+        <div class=" w-full flex items-start   px-4 py-4">
+          <div class="flex justify-between gap-4">
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[2],'html')"
+               [ngClass]="{'text-textPrimary':windowsCode[2]['html'],
+               'text-textSecondary':!windowsCode[2]['html']}">Html</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[2],'css')"
+               [ngClass]="{'text-textPrimary':windowsCode[2]['css'],
+               'text-textSecondary':!windowsCode[2]['css']}">Css</p>
+            <p class="text-textPrimary" (click)="changeWindow(windowsCode[2],'js')"
+               [ngClass]="{'text-textPrimary':windowsCode[2]['js'],
+               'text-textSecondary':!windowsCode[2]['js']}">Js</p>
+          </div>
+        </div>
+        <div class="flex w-full px-4 py-4 rounded-lg">
+
+          <div #leftPanel class="split__left">
+            <div class="flex-1 code-editor-container">
+              <div class="html-editor " [ngClass]="{'w-2 hidden':windowsCode[2]['html']===false , 'w-full block':!windowsCode[2]['html']===false}">
+                <ngx-codemirror [(ngModel)]="htmlCodes[2]" class="bg-transparent"
+                                [options]="{
+                                  htmlMode: true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'htmlmixed',
+
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="css-editor " *ngIf="windowsCode[2]['css']===true" [ngClass]="{'w-full block':!windowsCode[2]['css']===false}">
+                <ngx-codemirror [(ngModel)]="cssCodes[2]" class="bg-transparent ng-touched"
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'css',
+                                    }"></ngx-codemirror>
+              </div>
+              <div class="js-editor " *ngIf="windowsCode[2]['js']===true" [ngClass]="{'w-full block':!windowsCode[2]['js']===false}">
+                <ngx-codemirror [(ngModel)]="jsCodes[2]" class="bg-transparent "
+                                [options]="{
+                                autoFocus:true,
+                                isFocused:true,
+                                   lineNumbers:
+                                   true, theme: 'material',
+                                    mode: 'javascript',
+                                    }"></ngx-codemirror>
+              </div>
+            </div>
+          </div>
+          <div #splitBar class="split__bar"></div>
+          <div class="split__right">
+            <div class="flex-1 iframe-container flex justify-center items-start h-full">
+              <iframe *ngIf="loading" (load)="generateHTML(2)" sandbox="allow-same-origin allow-scripts "  [srcdoc]="generatedHTML[2]" id="iframe-2"></iframe>
+            </div>            </div>
+        </div>
+      </div>
+
+      <app-codeplayground [id]="0" ></app-codeplayground>
+      <app-codeplayground [id]="1"></app-codeplayground>
+    </div>
   </div>
 </div>

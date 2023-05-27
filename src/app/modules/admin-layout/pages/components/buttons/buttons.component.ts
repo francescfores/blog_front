@@ -19,13 +19,12 @@ export class ButtonsComponent implements OnInit{
   buttonRaiseLevel = 2;
   buttonShadowDivisor = 4;
   button:any;
-  private rotateX=45;
-  private rotateY=5;
-  private rotateZ=5;
-
-  private rotate_X=-45;
-  private rotate_Y=-5;
-  private rotate_Z=-5;
+  private rotateX=0;
+  private rotateY=0;
+  private rotateZ=0;
+  private rotate_X=0;
+  private rotate_Y=0;
+  private rotate_Z=0;
 
 
   constructor(private dynamicStyleService: DynamicStyleService) {
@@ -95,14 +94,10 @@ export class ButtonsComponent implements OnInit{
     }
   }
 
-
-
   generateAndApplyStyles(): void {
     const aspectRatio = (this.height / this.width);
     let rotationDegrees = Math.atan(aspectRatio) * (8 / Math.PI) ;
     const maxRotationDegrees = this.raise/5; // Máximo ángulo de rotación deseado
-
-
     // let rotationDegrees = Math.atan(aspectRatio) * (180 / Math.PI) * this.raise;
     console.log('maxRotationDegrees')
     console.log(maxRotationDegrees)

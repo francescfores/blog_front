@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
         new MenuItem('Analytics', null,'/admin/charts','Base','pt-0',false,null),
       ]),
       new MenuItem('Settings', 'fas fa-light fa-gear','/admin/settings','', 'pt-1',false, null),
+      new MenuItem('Tutorials', 'fas fa-light fa-gear','/admin/tutorials','', 'pt-1',false, null),
       new MenuItem('Users', 'fas fa-light fa-users','/admin/users','', 'pt-1',false, null),
       new MenuItem('Notification', 'fas fa-light fa-bell','/admin/notification','','pt-1 border-bgTern', true, null),
 

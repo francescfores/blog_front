@@ -16,6 +16,12 @@ import {CardBackgroundComponent} from "./cards/card-background/card-background.c
 import { InputDefaultComponent } from './inputs/input-default/input-default.component';
 import {ButtonFilledComponent} from "./buttons/button-filled/button-filled.component";
 import { CardComponent } from './cards/card/card.component';
+import { CodeplaygroundComponent } from './codeplayground/codeplayground.component';
+import { HtmlEditorComponent } from './codeplayground/html-editor/html-editor.component';
+import { CssEditorComponent } from './codeplayground/css-editor/css-editor.component';
+import { JsEditorComponent } from './codeplayground/js-editor/js-editor.component';
+import {CodemirrorModule} from "@ctrl/ngx-codemirror";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -33,25 +39,32 @@ import { CardComponent } from './cards/card/card.component';
     CardBackgroundComponent,
     InputDefaultComponent,
     CardComponent,
+    CodeplaygroundComponent,
+    HtmlEditorComponent,
+    CssEditorComponent,
+    JsEditorComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    CodemirrorModule,
+    FormsModule,
   ],
-    exports: [
-        UserDropdownComponent,
-        IndexDropdownComponent,
-        NotificationDropdownComponent,
-        TableDropdownComponent,
-        PagesDropdownComponent,
-        CardStatsComponent,
-        ButtonDefaultComponent,
-        ButtonFilledComponent,
-        CardDefaultComponent,
-        CardPricingComponent,
-        CardBackgroundComponent,
-        InputDefaultComponent,
-        CardComponent,
-    ]
+  exports: [
+    UserDropdownComponent,
+    IndexDropdownComponent,
+    NotificationDropdownComponent,
+    TableDropdownComponent,
+    PagesDropdownComponent,
+    CardStatsComponent,
+    ButtonDefaultComponent,
+    ButtonFilledComponent,
+    CardDefaultComponent,
+    CardPricingComponent,
+    CardBackgroundComponent,
+    InputDefaultComponent,
+    CardComponent,
+    CodeplaygroundComponent,
+  ]
 })
 export class ComponentsModule { }

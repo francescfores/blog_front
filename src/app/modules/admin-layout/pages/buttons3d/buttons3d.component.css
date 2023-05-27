@@ -24,3 +24,55 @@ input[type="range"]::-moz-range-thumb {
   border: none; /* Quitar el borde */
 }
 
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.split__left {
+  width: 50%;
+  background-color:  transparent !important;
+}
+
+.split__right {
+  flex: 1;
+  background-color: #b4b4b7;
+}
+
+.split__bar {
+  background-color: #3c3530;
+  width: 8px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+iframe{
+  /*width: 100%;*/
+  height: 100%;
+  padding: 2px;
+}
+
+.cm-editor.cm-focused { background-color:  transparent !important; }
+.cm-editor .cm-content { background-color:  transparent !important; }
+.cm-s-material.CodeMirror {
+  background-color:  transparent !important;
+  color: #EEFFFF;
+}
+.CodeMirror {
+  background-color:  transparent !important;
+  color: #EEFFFF;
+}
+/*iframe html{*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
+/*.iframe-container iframe {*/
+/*  justify-content: center; !* Centrar horizontalmente *!*/
+/*  align-items: center; !* Centrar verticalmente *!*/
+/*  height: 100%!important;*/
+/*  width: 100%;*/
+/*}*/
+
+

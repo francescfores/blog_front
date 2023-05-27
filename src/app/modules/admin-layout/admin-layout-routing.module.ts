@@ -9,6 +9,7 @@ import {ButtonsComponent} from "./pages/components/buttons/buttons.component";
 import {CardsComponent} from "./pages/components/cards/cards.component";
 import {InputsComponent} from "./pages/components/inputs/inputs.component";
 import {Buttons3dComponent} from "./pages/buttons3d/buttons3d.component";
+import {TutorialComponent} from "./pages/tutorial/tutorial.component";
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "users", component: UsersComponent },
       { path: "settings", component: SettingsComponent },
+      { path: "tutorials", component: TutorialComponent },
       { path: "components", component: ComponentsComponent,
       children:[
         { path: "buttons", component: ButtonsComponent },

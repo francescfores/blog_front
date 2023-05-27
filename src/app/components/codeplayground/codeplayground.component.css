@@ -1,0 +1,51 @@
+
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.split__left {
+  width: 33.33%;
+  height: 100%;
+  /*background-color:  transparent !important;*/
+}
+.split__center {
+  width: 33.33%;
+  height: 100%;
+  /*background-color: #b4b4b7;*/
+}
+.split__right {
+  width: 33.33%;
+  height: 100%;
+  /*background-color: #b4b4b7;*/
+}
+
+.split__bar {
+  background-color: #3c3530;
+  width: 12px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.split__bar_horizontal {
+  width: 100%;
+  height: 12px;
+  cursor: row-resize; /* Cursor de ajuste vertical */
+  background-color: #3c3530;
+}
+
+
+.iframe-container{
+  height: 100%;
+}
+iframe{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  background-color: #b4b4b7;
+}
+
+/*the style codemirror is in styles.css file */

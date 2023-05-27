@@ -6,3 +6,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~codemirror/lib/codemirror.css';
+@import '~codemirror/theme/material.css';
+
+/*//codemirrror color back*/
+.cm-s-material.CodeMirror {
+  background-color:  transparent !important;
+}
+.CodeMirror {
+  background-color:  transparent !important;
+  height: 100%;
+}
+.CodeMirror-scroll {
+  /*height: 50vh;*/
+}
+/*.CodeMirror textarea {*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*}*/
+.cm-s-material .CodeMirror-gutters {
+  background-color:  transparent !important;
+}

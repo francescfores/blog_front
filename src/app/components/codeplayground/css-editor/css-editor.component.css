@@ -1,0 +1,187 @@
+
+
+.btn{
+  --font-body-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  --height: 70px;
+  --raise: 15px;
+  --rounded: 10px;
+  --rotate: 1;
+  --rotate_invers: 1 * - 1;
+  --border:3px;
+
+  --border_style:solid #004c65 var(--border);
+  --bg-shadow-color: #4B4B4B84;
+  --bg-back-color: #004c65;
+  --bg-front-color: #00FFC4;
+  --font-color: white;
+  --font-body-weight:800;
+}
+.btn p{
+  font-weight:var(--font-body-weight)
+}
+.btn_shadow {
+  height: calc(var(--height) + var(--raise));
+  display:flex;
+  flex:1;
+  font-family:var(--font-body-family);
+  color:var(--font-color);
+}
+.btn_shadow:before {
+  content:" ";
+  position:absolute;
+  height: var(--height);
+  margin-top: calc(var(--raise) + 10px);
+  left: 0;
+  right: 0;
+  background: var(--bg-shadow-color);
+  border-radius: var(--rounded);
+  transition:transform 0.2s ease-out;
+}
+.btn_shadow .btn_back:before{
+  content:" ";
+  position: absolute;
+  height: var(--height);
+  margin-top: var(--raise);
+  left: 0;
+  right: 0;
+  background: var(--bg-back-color);
+  border-radius:var(--rounded);
+  transition:transform 0.1s ease-out;
+}
+.btn_shadow .btn_front{
+  position: absolute;
+  height: var(--height);
+  left: 0;
+  right: 0;
+  background: var(--bg-front-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:var(--rounded);
+  border: var(--border_style);
+  transition:transform 0.1s ease-out;
+}
+
+/*btn_shadow events*/
+.btn_shadow_left:before{
+  transition: transform 0.2s ease-out;
+  transform:skewY(calc(1deg * var(--rotate_invers)));
+}
+.btn_shadow_right:before{
+  transition:transform 0.2s ease-out;
+  transform:skewY(calc(1deg * var(--rotate)));
+}
+.btn_shadow_default:before{
+  transform:skew(0) translateZ(0);
+}
+
+.btn_shadow_default:hover:before{
+  transform: translateY(-5px);
+}
+.btn_shadow_default:active:before{
+  transform: translateY(-10px);
+}
+.btn_shadow_left:active:before{
+  transform: translateY(-10px);
+}
+.btn_shadow_right:active:before{
+  transform: translateY(-10px);
+}
+/*btn_front events*/
+.btn_front_left{
+  transform:skewY(calc(1deg * var(--rotate_invers)));
+}
+.btn_front_right{
+  transform:skewY(calc(1deg * var(--rotate)));
+  transition:transform 0.2s ease-out;
+}
+.btn_front_default{
+  transform:skew(0) translateZ(0);
+  transition:transform 0.2s ease-out;
+}
+
+.btn_front_left:active{
+  transform:skewY(0) translateY(var(--raise));
+
+}
+.btn_front_right:active{
+  transform:skewY(0) translateY(var(--raise));
+}
+.btn_front_default:hover{
+  transform: translateY(calc(var(--raise) * 0.5));
+
+}
+.btn_front_default:active{
+  transform:skewY(0) translateY(var(--raise));
+}
+
+/*loading*/
+.btn_loading_wrapp{
+  position: absolute;
+  height: var(--height);
+  left: 0;
+  right: 0;
+  margin-left:calc(var(--border)*-1);/* padding for borders of parent */
+  margin-right:calc(var(--border)*-1);/* padding for borders of parent */
+  background: var(--bg-back-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:var(--rounded);
+  border: var(--border_style);
+  overflow: hidden;
+  z-index:1;
+}
+
+.btn_loading_wrapp:before{
+  content:" ";
+  position: absolute;
+  height: var(--height);
+  width: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-front-color);
+  z-index:-1;
+}
+
+.btn_loading_2:before{
+  width:100%;
+  transition: width 1s ease-in;
+}
+.opacity-0{
+  opacity:0;
+}
+.hidden{
+  display:none;
+}
+.flex{
+  display:flex;
+}
+
+/*animation text*/
+.btn_loading_2 .txt_loading{
+  animation: slide-up 0.5s ease-in-out;
+}
+.btn_loading_2 .txt_loaded{
+  animation: slide-down 0.5s ease-in-out;
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
