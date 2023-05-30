@@ -1,0 +1,46 @@
+<div class="mx-auto px-2 py-4 sm:px-8 lg:container min-h-screen">
+  <div class="mb-4 flex justify-between">
+    <div class="inline-block">
+      <h3 class="font-semibold text-textPrimary">Buttons</h3>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class=" py-2 space-y-2">
+      <div class="text-xs font-medium text-textTertiary">
+        <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Default</div>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+        <app-button3d [type]="'btn_primary'" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_secondary'" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_ternary'"  [loading_type]="'waves'" (click)="load1()" [loading]="loading1"></app-button3d>
+        <app-button3d [type]="'btn_anchor'" ></app-button3d>
+        <app-button3d [type]="'btn_danger'" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_disabled'" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+      </div>
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+      <app-button3d [type]="'btn_primary'" [raise]="0"></app-button3d>
+      <app-button3d [type]="'btn_secondary'" [raise]="0"></app-button3d>
+      <app-button3d [type]="'btn_ternary'" [raise]="0"></app-button3d>
+      <app-button3d [type]="'btn_anchor'" [raise]="0"></app-button3d>
+      <app-button3d [type]="'btn_danger'" [raise]="0"></app-button3d>
+      <app-button3d [type]="'btn_disabled'" [raise]="0">
+      </app-button3d>
+      </div>
+
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+        <app-button3d [type]="'btn_primary'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_secondary'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_ternary'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_anchor'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_danger'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d [type]="'btn_disabled'" [raise]="0" [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+      </div>
+
+      <div class="flex flex-wrap overflow-hidden rounded-lg bg-bgPrim p-10 gap-4 " #myElement>
+        <app-button3d [loading_type]="'waves'" (click)="load1()" [loading]="loading1" ></app-button3d>
+        <app-button3d height="30px"  [loading_type]="'slideInLeft'" (click)="load2()" [loading]="loading2" ></app-button3d>
+        <app-button3d height="30px"  [loading_type]="'slideInLeft'" (click)="load2()" [loading]="loading2" ></app-button3d>
+      </div>
+    </div>
+  </div>
+</div>

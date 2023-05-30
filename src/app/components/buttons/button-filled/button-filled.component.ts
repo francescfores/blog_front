@@ -5,7 +5,7 @@ const sizes:
   } =
   {
     sm: { text: 'text-[11px]', padding: 'px-3 py-1.5' },
-    md: { text: 'text-xs', padding: 'px-3 py-2' },
+    md: { text: 'text-md', padding: 'px-3 py-2' },
     lg: { text: 'text-xs', padding: 'px-5 py-3' },
     xl: { text: 'text-xs', padding: 'px-8 py-3' }
   };

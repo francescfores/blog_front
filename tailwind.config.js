@@ -147,7 +147,7 @@ module.exports = {
     createThemes({
       light: {
 
-        'primary': '#40B45BED', //green 70C1B3 //red EF476F //yellow FFC43D //blue 0091AD
+        'primary': '#95D44A', //green 70C1B3 //red EF476F //yellow FFC43D //blue 0091AD
         'secondary': '#F3A712', //'#70d0f8',
         'ternary': '#29335C', //'#29335C',
         'success': '#70c183', //'#70C1B3',
@@ -170,9 +170,47 @@ module.exports = {
         // 'route-link-active': '#E85651',
         'link-color': '#40B45BED',
         // 'border-color': '#E85651',
+
+        //for 3d button
+        'btn_primary_border_style': '#5bbd3a',
+        'btn_primary_bg_front_color': '#95D44A',
+        'btn_primary_bg_shadow_color': '#D9D9D949',
+        'btn_primary_bg_back_color': '#52A934',
+        'btn_primary_font_color': '#3F8228',
+
+        'btn_secondary_border_style': '#b3e5e1',
+        'btn_secondary_bg_front_color': '#FAFAFA',
+        'btn_secondary_bg_shadow_color': '#D9D9D949',
+        'btn_secondary_bg_back_color': '#349890',
+        'btn_secondary_font_color': '#1A4C48',
+
+        'btn_ternary_border_style': '#69b5e0',
+        'btn_ternary_bg_front_color': '#AAD3EA',
+        'btn_ternary_bg_shadow_color': '#D9D9D949',
+        'btn_ternary_bg_back_color': '#57A9D4',
+        'btn_ternary_font_color': '#2875A0',
+
+        'btn_anchor_border_style': 'transparent',
+        'btn_anchor_bg_front_color': 'transparent',
+        'btn_anchor_bg_shadow_color': 'transparent',
+        'btn_anchor_bg_back_color': 'transparent',
+        'btn_anchor_font_color': '#95D44A',
+
+        'btn_danger_border_style': '#531849',
+        'btn_danger_bg_front_color': '#8B3357',
+        'btn_danger_bg_shadow_color': '#D9D9D949',
+        'btn_danger_bg_back_color': '#531849',
+        'btn_danger_font_color': '#fff',
+
+        'btn_disabled_border_style': '#838383',
+        'btn_disabled_bg_front_color': '#C1C1C1',
+        'btn_disabled_bg_shadow_color': '#D9D9D949',
+        'btn_disabled_bg_back_color': '#838383',
+        'btn_disabled_font_color': '#555753',
+
       },
       dark: {
-        'primary': '#40B45BED',//0091ADB2 ///41FF6CDA
+        'primary': '#7cad41',//0091ADB2 ///41FF6CDA
         'secondary': '#F3A71299', ///F3A71299 //FBB02DE5
         'ternary': '#29335C99', ///29335C99 //17BEBBE4
         'success': '#70C18399', //'#70C1B3',
@@ -186,7 +224,7 @@ module.exports = {
         // 'secondary': '#CBF7ED',
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',
-        'textPrimary': '#b5b2ff',//CBF7ED
+        'textPrimary': '#d8d6ff',//CBF7ED
         'textSecondary': '#7e73a2',//658cbb
         'textTertiary': '#756B94BB',//364c69
         // 'primary-bg': '#404040',
@@ -197,6 +235,43 @@ module.exports = {
         // 'route-link-active': '#E85651',
         'link-color': '#41FF6CCA',
         // 'border-color': '#E85651',
+
+        //for 3d button
+        'btn_primary_border_style': 'rgba(91,189,58,0.8)',
+        'btn_primary_bg_front_color': 'rgba(149,212,74,0.8)',
+        'btn_primary_bg_shadow_color': '#4B4B4B20',
+        'btn_primary_bg_back_color': 'rgba(82,169,52,0.8)',
+        'btn_primary_font_color': '#3F8228',
+
+        'btn_secondary_border_style': '#b3e5e1',
+        'btn_secondary_bg_front_color': '#FAFAFA',
+        'btn_secondary_bg_shadow_color': '#D9D9D949',
+        'btn_secondary_bg_back_color': '#349890',
+        'btn_secondary_font_color': '#1A4C48',
+
+        'btn_ternary_border_style': '#57A9D4',
+        'btn_ternary_bg_front_color': '#AAD3EA',
+        'btn_ternary_bg_shadow_color': '#D9D9D949',
+        'btn_ternary_bg_back_color': '#57A9D4',
+        'btn_ternary_font_color': '#2875A0',
+
+        'btn_anchor_border_style': 'transparent',
+        'btn_anchor_bg_front_color': 'transparent',
+        'btn_anchor_bg_shadow_color': 'transparent',
+        'btn_anchor_bg_back_color': 'transparent',
+        'btn_anchor_font_color': '#95D44A',
+
+        'btn_danger_border_style': '#531849',
+        'btn_danger_bg_front_color': '#8B3357',
+        'btn_danger_bg_shadow_color': '#D9D9D949',
+        'btn_danger_bg_back_color': '#531849',
+        'btn_danger_font_color': '#fff',
+
+        'btn_disabled_border_style': '#838383',
+        'btn_disabled_bg_front_color': '#C1C1C1',
+        'btn_disabled_bg_shadow_color': '#D9D9D949',
+        'btn_disabled_bg_back_color': '#838383',
+        'btn_disabled_font_color': '#555753',
       },
       fontFamily: {
         // sans: [

@@ -1,11 +1,18 @@
-<div class="card">
-  <div class="header">
-    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
-  </div>
+<!--<div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md ">-->
+<div #card class="card flex " [ngClass]="{
+'card_vertical':type==='vertical',
+'card_horizontal':type==='horizontal',
+'bg_gradient':bg_gradient
+}">
+  <ng-container *ngTemplateOutlet="headerImgTemplate"></ng-container>
+
   <div class="content">
+    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+<!--  </div>-->
+<!--  <div class="content">-->
     <ng-content></ng-content>
-  </div>
-  <div class="footer">
+<!--  </div>-->
+<!--  <div class="footer">-->
     <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
   </div>
 </div>

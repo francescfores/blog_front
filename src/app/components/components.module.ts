@@ -22,6 +22,7 @@ import { CssEditorComponent } from './codeplayground/css-editor/css-editor.compo
 import { JsEditorComponent } from './codeplayground/js-editor/js-editor.component';
 import {CodemirrorModule} from "@ctrl/ngx-codemirror";
 import {FormsModule} from "@angular/forms";
+import { Button3dComponent } from './buttons/button3d/button3d.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {FormsModule} from "@angular/forms";
     HtmlEditorComponent,
     CssEditorComponent,
     JsEditorComponent,
+    Button3dComponent,
   ],
   imports: [
     CommonModule,
@@ -50,21 +52,22 @@ import {FormsModule} from "@angular/forms";
     CodemirrorModule,
     FormsModule,
   ],
-  exports: [
-    UserDropdownComponent,
-    IndexDropdownComponent,
-    NotificationDropdownComponent,
-    TableDropdownComponent,
-    PagesDropdownComponent,
-    CardStatsComponent,
-    ButtonDefaultComponent,
-    ButtonFilledComponent,
-    CardDefaultComponent,
-    CardPricingComponent,
-    CardBackgroundComponent,
-    InputDefaultComponent,
-    CardComponent,
-    CodeplaygroundComponent,
-  ]
+    exports: [
+        UserDropdownComponent,
+        IndexDropdownComponent,
+        NotificationDropdownComponent,
+        TableDropdownComponent,
+        PagesDropdownComponent,
+        CardStatsComponent,
+        ButtonDefaultComponent,
+        ButtonFilledComponent,
+        CardDefaultComponent,
+        CardPricingComponent,
+        CardBackgroundComponent,
+        InputDefaultComponent,
+        CardComponent,
+        CodeplaygroundComponent,
+        Button3dComponent,
+    ]
 })
 export class ComponentsModule { }

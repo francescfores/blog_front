@@ -10,198 +10,84 @@
         <div class="flex items-end justify-between text-lg font-semibold text-textSecondary">Default card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
-          <div class="p-6">
-            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
-              UI/UX Review Check
-            </h5>
-            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
-              The place is close to Barceloneta Beach and bus stop just 2 min by walk
-              and near to "Naviglio" where you can enjoy the main night life in
-              Barcelona.
-            </p>
-          </div>
-          <div class="p-6 pt-0 flex justify-between">
-            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent
-            active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out">Read More</button>
-            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out">View item</button>
-          </div>
-        </div>
-        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
-          <div class="p-6">
-            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
-              UI/UX Review Check
-            </h5>
-            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
-              The place is close to Barceloneta Beach and bus stop just 2 min by walk
-              and near to "Naviglio" where you can enjoy the main night life in
-              Barcelona.
-            </p>
-          </div>
-          <div class="p-6 pt-0 flex justify-between">
-            <button class='button
-          rounded-md  text-xs font-semibold
-          bg-bgTern text-textPrimary/[.75] active:bg-transparent
-            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]
-          active:translate-y-2
-          active:border-b-[0px]
-          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]
-          border-b-[1px] border-white/[.8]
-          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out'>
-              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full  font-bold text-xs '>Read More</span>
-            </button>
-            <button class='button
-          rounded-md  text-xs font-semibold  bg-primary text-white
-          active:translate-y-2
-          active:border-b-[0px]
-          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
-          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out
-          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65]'>
-              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>View item</span>
-            </button>
-          </div>
-        </div>
-        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md "
-                          [statTitle]="'Title'"
-                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-                          [statButtonLeft]="true"
-                          [statButtonLeftTitle]="'Read More'"
-                          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out'"
-                          [statButtonRight]="true"
-                          [statButtonRightTitle]="'View item'"
-                          [statButtonRightStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
-        ></app-card-default>
-        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md"
-                          [statTitle]="'Title'"
-                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-                          [statButtonLeft]="true"
-                          [statButtonLeftTitle]="'Read More'"
-                          [statButtonLeftStyle]="'rounded-md  text-xs font-semibold\n'+
-'          bg-bgTern text-textPrimary/[.75] active:bg-transparent\n'+
-'            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]\n'+
-'          active:translate-y-2\n'+
-'          active:border-b-[0px]\n'+
-'          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]\n'+
-'          border-b-[1px] border-white/[.8]\n'+
-'          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out px-4 py-2'"
-                          [statButtonRight]="true"
-                          [statButtonRightTitle]="'View item'"
-                          [statButtonRightStyle]="'text-xs font-semibold  bg-primary text-white\n'+
-'          active:translate-y-2\n'+
-'          active:border-b-[0px]\n'+
-'          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]\n'+
-'          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out\n'+
-'          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65] px-4 py-2'"
-        ></app-card-default>
-      </div>
-      <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <app-card class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md ">
+        <app-card class="w-96">
           <ng-template #headerTemplate >
-            <div class="p-6">
-              <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                UI/UX Review Check
+              </h5>
             </div>
           </ng-template>
-          <div class="p-6">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
+          <div class="py-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk
+              and near to "Naviglio" where you can enjoy the main night life in
+              Barcelona.
+            </p>
           </div>
           <ng-template #footerTemplate class="flex justify-between">
-            <div class="flex justify-between p-6 pt-0">
-              <app-button-filled>
-                Save
-              </app-button-filled>
-              <app-button-filled>
-                Save
-              </app-button-filled>
+            <div class="flex flex-wrap gap-2 justify-between items-center">
+              <!--            <app-button3d [width]="'120px'" [type]="'btn_disabled'"   [height]="'20px'"  [raise]="5"></app-button3d>-->
+              <!--            <app-button3d [width]="'120px'" [type]="'btn_primary'"  [height]="'30px'" [raise]="5"  ></app-button3d>-->
+
+              <app-button3d [title]="''" [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+              <p>January 10</p>
             </div>
           </ng-template>
         </app-card>
-        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
-          <div class="p-6">
-            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
-              UI/UX Review Check
-            </h5>
-            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+        <app-card class="w-96">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                UI/UX Review Check
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
               The place is close to Barceloneta Beach and bus stop just 2 min by walk
               and near to "Naviglio" where you can enjoy the main night life in
               Barcelona.
             </p>
           </div>
-          <div class="p-6 pt-0 flex justify-between">
-            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent
-            active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out">Read More</button>
-            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out">View item</button>
-          </div>
-        </div>
-        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
-          <div class="p-6">
-            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
-              UI/UX Review Check
-            </h5>
-            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+          <ng-template #footerTemplate class="flex flex-wrap gap-2 justify-between items-center">
+            <div class="flex justify-between">
+<!--            <app-button3d [width]="'120px'" [type]="'btn_disabled'"   [height]="'20px'"  [raise]="5"></app-button3d>-->
+<!--            <app-button3d [width]="'120px'" [type]="'btn_primary'"  [height]="'30px'" [raise]="5"  ></app-button3d>-->
+              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>
+              <app-button3d title="View" [height]="'30px'" [type]="'btn_primary'"  ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+        <app-card class="w-96">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                UI/UX Review Check
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
               The place is close to Barceloneta Beach and bus stop just 2 min by walk
               and near to "Naviglio" where you can enjoy the main night life in
               Barcelona.
             </p>
           </div>
-          <div class="p-6 pt-0 flex justify-between">
-            <button class='button
-          rounded-md  text-xs font-semibold
-          bg-bgTern text-textPrimary/[.75] active:bg-transparent
-            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]
-          active:translate-y-2
-          active:border-b-[0px]
-          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]
-          border-b-[1px] border-white/[.8]
-          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out'>
-              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full  font-bold text-xs '>Read More</span>
-            </button>
-            <button class='button
-          rounded-md  text-xs font-semibold  bg-primary text-white
-          active:translate-y-2
-          active:border-b-[0px]
-          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]
-          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out
-          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65]'>
-              <span class='h-8 px-4 py-2 flex flex-col justify-center items-center h-full text-white font-bold text-xs '>View item</span>
-            </button>
-          </div>
-        </div>
-        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md "
-                          [statTitle]="'Title'"
-                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-                          [statButtonLeft]="true"
-                          [statButtonLeftTitle]="'Read More'"
-                          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgSeco text-textSecondary active:bg-transparent active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out'"
-                          [statButtonRight]="true"
-                          [statButtonRightTitle]="'View item'"
-                          [statButtonRightStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
-        ></app-card-default>
-        <app-card-default class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md"
-                          [statTitle]="'Title'"
-                          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-                          [statButtonLeft]="true"
-                          [statButtonLeftTitle]="'Read More'"
-                          [statButtonLeftStyle]="'rounded-md  text-xs font-semibold\n'+
-'          bg-bgTern text-textPrimary/[.75] active:bg-transparent\n'+
-'            active:text-textPrimary/[.75] hover:text-textPrimary/[.65]\n'+
-'          active:translate-y-2\n'+
-'          active:border-b-[0px]\n'+
-'          [box-shadow:0_4px_0_0_#89919D,0_6px_0_0_#c0c0c0]\n'+
-'          border-b-[1px] border-white/[.8]\n'+
-'          active:ring-offset-1 active:ring-1 active:ring-textPrimary/[.75] ring-offset-bgPrim transition-all duration-300 ease-in-out px-4 py-2'"
-                          [statButtonRight]="true"
-                          [statButtonRightTitle]="'View item'"
-                          [statButtonRightStyle]="'text-xs font-semibold  bg-primary text-white\n'+
-'          active:translate-y-2\n'+
-'          active:border-b-[0px]\n'+
-'          [box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]\n'+
-'          border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out\n'+
-'          active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65] px-4 py-2'"
-        ></app-card-default>
+          <ng-template #footerTemplate class="flex flex-wrap gap-2 justify-between items-center">
+            <div class="flex justify-between">
+<!--            <app-button3d [width]="'120px'" [type]="'btn_disabled'"   [height]="'20px'"  [raise]="5"></app-button3d>-->
+<!--            <app-button3d [width]="'120px'" [type]="'btn_primary'"  [height]="'30px'" [raise]="5"  ></app-button3d>-->
+              <app-button3d title="Read more" [border]="'0px'" [height]="'30px'" [type]="'btn_disabled'"  [raise]="0" ></app-button3d>
+              <app-button3d title="View" [border]="'0px'" [height]="'30px'" [type]="'btn_primary'"  [raise]="0" ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
       </div>
     </div>
     <div class="py-4">
@@ -209,85 +95,87 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Icon card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <div class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md">
-          <div class="p-6">
-            <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased  flex justify-start items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-                class="mr-4 h-8 w-8 text-primary"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
-                  clip-rule="evenodd"
-                ></path>
-                <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"></path>
-              </svg> <p>UI/UX Review Check</p>
-            </h5>
-            <p class="block font-sans text-textSecondary font-light leading-relaxed text-inherit antialiased">
-              Because it's about motivating the doers. Because I'm here to follow my
-              dreams and inspire others.
-            </p>
-          </div>
-          <div class="p-6 pt-0">
-            <a
-              class="!font-medium !text-blue-gray-900 !transition-colors hover:!text-pink-500"
-              href="#"
-            >
-              <button
-                class="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold
-                uppercase text-primary transition-all hover:bg-primary/10 active:bg-primary/30 disabled:pointer-events-none
-                disabled:opacity-50 disabled:shadow-none"
-                type="button"
-                data-ripple-dark="true"
-              >
-                Learn More
+        <app-card class="w-96">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased  flex justify-start items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
+                  fill="currentColor"
                   aria-hidden="true"
-                  class="h-4 w-4"
+                  class="mr-4 h-8 w-8 text-primary"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    fill-rule="evenodd"
+                    d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                    clip-rule="evenodd"
                   ></path>
+                  <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"></path>
                 </svg>
-              </button>
-            </a>
+                <p>UI/UX Review Check</p>
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk
+              and near to "Naviglio" where you can enjoy the main night life in
+              Barcelona.
+            </p>
           </div>
-        </div>
-        <app-card-default
-          class="relative flex w-96 h-min flex-col rounded-sm bg-bgPrim bg-clip-border  shadow-md"
-          [statTitle]="'Title'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statIconName]="'far fa-chart-bar'"
-          [statIconColor]="'text-primary'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'Read More'"
-          [statButtonLeftStyle]="'flex-row-reverse select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold\n'+
-          'uppercase text-primary transition-all hover:bg-primary/10 active:bg-primary/30 disabled:pointer-events-none\n'+
-          'disabled:opacity-50 disabled:shadow-none'"
-          [statButtonLeftIcon]="'fas fa-arrow-right text-primary'"
-          [statButtonLeftIconPosition]="'right'"
-          [statButtonRight]="false"
-        ></app-card-default>
-<!--
-          [statButtonRight]="true"
-          [statButtonRightTitle]="'Read More'"
-          [statButtonRightStyle]="'flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold\n'+
-          'uppercase text-primary transition-all hover:bg-primary/10 active:bg-primary/30 disabled:pointer-events-none\n'+
-          'disabled:opacity-50 disabled:shadow-none'"
-          [statButtonRightIcon]="'fas fa-arrow-left text-primary'"
-          [statButtonRightIconPosition]="'left'"
--->
+          <ng-template #footerTemplate class="flex justify-between">
+            <div class="flex justify-between">
+              <app-button3d [title]="''" [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+        <app-card class="w-96">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased  flex justify-start items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="mr-4 h-8 w-8 text-primary"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"></path>
+                </svg>
+                <p>UI/UX Review Check</p>
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk
+              and near to "Naviglio" where you can enjoy the main night life in
+              Barcelona.
+            </p>
+          </div>
+          <ng-template #footerTemplate class="flex flex-wrap gap-2 justify-between items-center">
+            <div class="flex justify-between">
+              <app-button-filled
+                [variant]="'text'">
+                <div class="flex items-center">
+                  <p>Read more</p>
+                  <i  class="fas fa-regular fa-arrow-right ml-2"></i>
+                </div>
+              </app-button-filled>
+            </div>
+          </ng-template>
+        </app-card>
       </div>
     </div>
     <div class="py-4">
@@ -295,47 +183,40 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Blog card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <div class="relative flex max-w-[24rem] flex-col rounded-xl bg-bgPrim bg-clip-border text-textPrimary shadow-md">
-          <div class="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border  shadow-none">
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
-              alt="ui/ux review check"
-            />
-          </div>
-          <div class="p-6">
-            <h4 class="block font-sans text-2xl font-semibold leading-snug tracking-normal  antialiased">
-              UI/UX Review Check
-            </h4>
-            <p class="text-textSecondary mt-3 block font-sans text-xl font-normal leading-relaxed  antialiased">
+        <app-card class="w-96">
+          <ng-template #headerImgTemplate >
+            <div class="relative m-0 overflow-hidden rounded-none bg-transparent  shadow-none">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+                alt="ui/ux review check"
+              />
+            </div>
+          </ng-template>
+          <h4 class="text-2xl font-semibold leading-snug tracking-normal  antialiased">
+            UI/UX Review Check
+          </h4>
+          <div class="py-6">
+
+            <p class="text-textSecondary mt-3 text-xl font-normal leading-relaxed  antialiased">
               Because it's about motivating the doers. Because I'm here to follow my
               dreams and inspire others.
             </p>
           </div>
-          <div class="flex items-center justify-between p-6">
-            <div class="flex items-center -space-x-3">
-              <button class="rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out">View item</button>
-            </div>
-            <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
-              January 10
-            </p>
-          </div>
-        </div>
+          <ng-template #footerTemplate class="flex flex-wrap gap-2 justify-between items-center">
+            <div class="flex flex-wrap gap-2 justify-between items-center">
+              <!--            <app-button3d [width]="'120px'" [type]="'btn_disabled'"   [height]="'20px'"  [raise]="5"></app-button3d>-->
+              <!--            <app-button3d [width]="'120px'" [type]="'btn_primary'"  [height]="'30px'" [raise]="5"  ></app-button3d>-->
 
-        <app-card-default
-          [statStyle]="'relative flex max-w-[24rem] flex-col rounded-xl bg-bgPrim bg-clip-border text-textPrimary shadow-md'"
-          [statTitle]="'Title'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'View item'"
-          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
-          [statButtonRight]="true"
-          [statButtonRightTitle]="'January 10 '"
-          [statButtonRightStyle]="'block font-sans text-base font-normal leading-relaxed text-inherit antialiased'"
-          [statImg]="'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80'"
-          [statImgPosition]="'top'"
-          [statImgStyle]="'relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border  shadow-none'"
-        ></app-card-default>
+              <app-button3d [title]="''" [font_color]="'hsl(var(--twc-textSecondary))'" [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+              <p>January 10</p>
+            </div>
+          </ng-template>
+        </app-card>
       </div>
     </div>
     <div class="py-4">
@@ -343,92 +224,87 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Blog card horizontal</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-<!--        <div class="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-bgPrim bg-clip-border text-gray-700 shadow-md">-->
-<!--          <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">-->
-<!--            <img-->
-<!--              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"-->
-<!--              alt="image"-->
-<!--              class="h-full w-full object-cover"-->
-<!--            />-->
-<!--          </div>-->
-<!--          <div class="p-6">-->
-<!--            <h6 class="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">-->
-<!--              startups-->
-<!--            </h6>-->
-<!--            <h4 class="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">-->
-<!--              Lyft launching cross-platform service this week-->
-<!--            </h4>-->
-<!--            <p class="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">-->
-<!--              Like so many organizations these days, Autodesk is a company in-->
-<!--              transition. It was until recently a traditional boxed software company-->
-<!--              selling licenses. Yet its own business model disruption is only part of-->
-<!--              the story-->
-<!--            </p>-->
-<!--            <a class="inline-block" href="#">-->
-<!--              <button-->
-<!--                class="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"-->
-<!--                type="button"-->
-<!--              >-->
-<!--                Learn More-->
-<!--                <svg-->
-<!--                  xmlns="http://www.w3.org/2000/svg"-->
-<!--                  fill="none"-->
-<!--                  viewBox="0 0 24 24"-->
-<!--                  stroke-width="2"-->
-<!--                  stroke="currentColor"-->
-<!--                  aria-hidden="true"-->
-<!--                  class="h-4 w-4"-->
-<!--                >-->
-<!--                  <path-->
-<!--                    stroke-linecap="round"-->
-<!--                    stroke-linejoin="round"-->
-<!--                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"-->
-<!--                  ></path>-->
-<!--                </svg>-->
-<!--              </button>-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </div>-->
-        <app-card-default
-          [statStyle]="'relative flex w-full max-w-[48rem] flex-row rounded-xl bg-bgPrim bg-clip-border  shadow-md'"
-          [statTitle]="'Title'"
-          [statSubtitle]="'Subtitlesssss'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'Read More'"
-          [statButtonLeftStyle]="'flex-row-reverse select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold\n'+
-          'uppercase text-primary transition-all hover:bg-primary/10 active:bg-primary/30 disabled:pointer-events-none\n'+
-          'disabled:opacity-50 disabled:shadow-none'"
-          [statButtonLeftIcon]="'fas fa-arrow-right text-primary'"
-          [statButtonLeftIconPosition]="'right'"
-          [statButtonRight]="false"
-          [statImg]="'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80'"
-          [statImgPosition]="'top'"
-          [statImgStyle]="'relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700'"
-        ></app-card-default>
-      </div>
+        <app-card [type]="'horizontal'" class="max-w-[48rem]" >
+          <ng-template #headerImgTemplate >
+            <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-sm rounded-r-none">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+                alt="image"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </ng-template>
+          <div class="">
+            <h6 class="mb-4 text-base font-semibold uppercase leading-relaxed antialiased text-primary">
+              startups
+            </h6>
+            <h4 class="text-2xl font-semibold leading-snug tracking-normal antialiased">
+              Lyft launching cross-platform service this week
+            </h4>
+            <div class="py-6"><p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+              where you can enjoy the main night life in Barcelona. </p>
+            </div>
+            <div class="flex flex-wrap gap-2 justify-between pt-6 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-textSecondary))'" [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
 
+              </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="max-w-[48rem]" >
+          <ng-template #headerImgTemplate >
+            <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-sm rounded-r-none">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+                alt="image"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </ng-template>
+          <div class="">
+            <h6 class="mb-4 text-base font-semibold uppercase leading-relaxed antialiased text-primary">
+              startups
+            </h6>
+            <h4 class="text-2xl font-semibold leading-snug tracking-normal antialiased">
+              Lyft launching cross-platform service this week
+            </h4>
+            <div class="py-6"><p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+              where you can enjoy the main night life in Barcelona. </p>
+            </div>
+            <div class="flex justify-between">
+              <app-button3d title="View" [border]="'0px'" [height]="'30px'" [type]="'btn_primary'"  [raise]="0" ></app-button3d>
+            </div>
+          </div>
+        </app-card>
+      </div>
     </div>
     <div class="py-4">
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Pricing card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <!-- <div class="relative flex w-full max-w-[20rem] flex-col rounded-md bg-bgPrim bg-clip-border p-8 text-textPrimary">
-          <div class="relative m-0 mb-8 overflow-hidden rounded-none border-b border-white/20 bg-transparent
-           bg-clip-border pb-8 text-center  shadow-none">
-            <p class="block font-sans text-sm font-normal uppercase leading-normal  antialiased">
-              standard
-            </p>
-            <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal  antialiased">
-              <span class="mt-2 text-4xl">$</span>29
-              <span class="self-end text-4xl">/mo</span>
-            </h1>
-          </div>
+        <app-card [class]="'max-w-[20rem] text-textPrimary'" [bg_color]="'hsl(var(--twc-bgTern))'">
+          <ng-template #headerTemplate class="p-8">
+            <div class="relative m-0 mb-8 overflow-hidden  border-b border-white/70  pb-8 text-center  shadow-none">
+              <p class="text-sm font-normal uppercase leading-normal  antialiased">
+                Standard
+              </p>
+              <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal  antialiased">
+                <span class="mt-2 text-4xl">$</span>100
+                <span class="self-end text-4xl">/mo</span>
+              </h1>
+            </div>
+          </ng-template>
           <div class="p-0">
-            <ul class="flex flex-col gap-4">
-              <li class="flex items-center gap-4">
-        <span class="rounded-full border border-textPrimary/30 bg-bgTern/60 p-1">
+            <ul  class="flex flex-col gap-4">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -445,12 +321,12 @@
             ></path>
           </svg>
         </span>
-                <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
                   5 team members
                 </p>
               </li>
-              <li class="flex items-center gap-4">
-        <span class="rounded-full border border-textPrimary/30 bg-bgTern/60 p-1">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -467,12 +343,12 @@
             ></path>
           </svg>
         </span>
-                <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
                   200+ components
                 </p>
               </li>
-              <li class="flex items-center gap-4">
-        <span class="rounded-full border border-textPrimary/30 bg-bgTern/60 p-1">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -489,12 +365,12 @@
             ></path>
           </svg>
         </span>
-                <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
                   40+ built-in pages
                 </p>
               </li>
-              <li class="flex items-center gap-4">
-        <span class="rounded-full border border-textPrimary/30 bg-bgTern/60 p-1">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -511,12 +387,12 @@
             ></path>
           </svg>
         </span>
-                <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
                   1 year free updates
                 </p>
               </li>
-              <li class="flex items-center gap-4">
-        <span class="rounded-full border border-textPrimary/30 bg-bgTern/60 p-1">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -533,116 +409,469 @@
             ></path>
           </svg>
         </span>
-                <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
                   Life time technical support
                 </p>
               </li>
             </ul>
           </div>
-          <div class="w-full mt-12 p-0">
-
-            <button class="rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]
-            transition-all duration-150 ease-in-out">View item</button>
+          <ng-template #footerTemplate>
+            <div class="flex justify-between mt-12">
+              <app-button3d title="View" [height]="'30px'" [type]="'btn_primary'"  ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+        <app-card [class]="'max-w-[20rem] text-white'" [bg_color]="'hsl(var(--twc-primary))'" >
+          <ng-template #headerTemplate class="p-8">
+            <div class="relative m-0 mb-8 overflow-hidden  border-b border-white/70  pb-8 text-center  shadow-none">
+              <p class="text-sm font-normal uppercase leading-normal  antialiased">
+                Standard
+              </p>
+              <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal  antialiased">
+                <span class="mt-2 text-4xl">$</span>100
+                <span class="self-end text-4xl">/mo</span>
+              </h1>
+            </div>
+          </ng-template>
+          <div class="p-0">
+            <ul  class="flex flex-col gap-4">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  5 team members
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  200+ components
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  40+ built-in pages
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  1 year free updates
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  Life time technical support
+                </p>
+              </li>
+            </ul>
           </div>
-        </div>-->
-        <app-card-pricing class="relative flex w-full max-w-[20rem] flex-col rounded-md bg-bgPrim bg-clip-border p-8 text-textPrimary"
-          [statStyle]="''"
-          [statTitle]="'standard'"
-          [statSubtitle]="'100'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'View item'"
-          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65]\n'+
-          'transition-all duration-150 ease-in-out'"
-          [statButtonRight]="false"
-          [statItems]="[
-          '5 team members',
-          '200+ components',
-          '40+ built-in pages',
-          '1 year free updates',
-          'Life time technical support',
-          ]"
-        ></app-card-pricing>
-        <app-card-pricing class="relative flex w-full max-w-[20rem] flex-col rounded-md bg-gradient-to-tr from-primary to-bgTern bg-clip-border p-8 text-white"
-          [statStyle]="''"
-          [statTitle]="'standard'"
-          [statSubtitle]="'100'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'View items'"
-          [statButtonLeftStyle]="'rounded-sm  px-4 py-2 text-xs font-semibold  bg-bgPrim text-primary active:bg-transparent ' +
-           'active:text-textPrimary/[.75] hover:text-textPrimary transition-all duration-300 ease-in-out'"
-          [statButtonRight]="false"
-          [statItems]="[
-          '5 team members',
-          '200+ components',
-          '40+ built-in pages',
-          '1 year free updates',
-          'Life time technical support',
-          ]"
-        ></app-card-pricing>
-        <app-card-pricing class="relative flex w-full max-w-[20rem] flex-col rounded-md bg-gradient-to-tr from-transparent to-bgPrim bg-clip-border p-8 text-textPrimary"
-          [statStyle]="''"
-          [statTitle]="'standard'"
-          [statSubtitle]="'100'"
-          [statDescripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [statButtonLeft]="true"
-          [statButtonLeftTitle]="'View item'"
-          [statButtonLeftStyle]="'rounded-md  text-xs font-semibold  bg-primary text-white\n'+
-          'active:translate-y-2\n'+
-          'active:border-b-[0px]\n'+
-          '[box-shadow:0_6px_0_0_#004f5e,0_8px_0_0_#1b70f841]\n'+
-          'border-b-[1px] border-[#3592a4] duration-300 transition-all ease-in-out\n'+
-          'active:ring-offset-1 active:ring-1 active:ring-primary/[.65] ring-offset-bgPrim hover:bg-primary/[.85] active:bg-primary/[.65] px-4 py-2'"
-          [statButtonRight]="false"
-          [statItems]="[
-          '5 team members',
-          '200+ components',
-          '40+ built-in pages',
-          '1 year free updates',
-          'Life time technical support',
-          ]"
-        ></app-card-pricing>
-        </div>
+          <ng-template #footerTemplate>
+            <div class="flex justify-between mt-12">
+              <app-button3d title="View" [height]="'30px'" [type]="'btn_primary'"  ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+        <app-card [class]="'max-w-[20rem] text-white'"
+                  [bg_gradient]="true"
+                  [bg_gradient_from]="'hsl(var(--twc-primary))'"
+                  [bg_gradient_to]="'hsl(var(--twc-bgSeco))'" >
+          <ng-template #headerTemplate class="p-8">
+            <div class="relative m-0 mb-8 overflow-hidden  border-b border-white/70  pb-8 text-center  shadow-none">
+              <p class="text-sm font-normal uppercase leading-normal  antialiased">
+                Standard
+              </p>
+              <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal  antialiased">
+                <span class="mt-2 text-4xl">$</span>100
+                <span class="self-end text-4xl">/mo</span>
+              </h1>
+            </div>
+          </ng-template>
+          <div class="p-0">
+            <ul  class="flex flex-col gap-4">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  5 team members
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  200+ components
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  40+ built-in pages
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  1 year free updates
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  Life time technical support
+                </p>
+              </li>
+            </ul>
+          </div>
+          <ng-template #footerTemplate>
+            <div class="flex justify-between mt-12">
+              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+        <app-card [class]="'max-w-[20rem] text-textPrimary'" [bg_gradient]="true" [bg_gradient_from]="'hsl(var(--twc-bgSeco))'"
+                  [bg_gradient_to]="'hsl(var(--twc-bgPrim))'" >
+          <ng-template #headerTemplate class="p-8">
+            <div class="relative m-0 mb-8 overflow-hidden  border-b border-white/70  pb-8 text-center  shadow-none">
+              <p class="text-sm font-normal uppercase leading-normal  antialiased">
+                Standard
+              </p>
+              <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal  antialiased">
+                <span class="mt-2 text-4xl">$</span>100
+                <span class="self-end text-4xl">/mo</span>
+              </h1>
+            </div>
+          </ng-template>
+          <div class="p-0">
+            <ul  class="flex flex-col gap-4">
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  5 team members
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  200+ components
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  40+ built-in pages
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  1 year free updates
+                </p>
+              </li>
+              <li class="flex items-center gap-4" >
+              <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="h-3 w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            ></path>
+          </svg>
+        </span>
+                <p class="text-base font-normal leading-relaxed text-inherit antialiased">
+                  Life time technical support
+                </p>
+              </li>
+            </ul>
+          </div>
+          <ng-template #footerTemplate>
+            <div class="flex justify-between mt-12">
+              <app-button3d title="View" [height]="'30px'" [type]="'btn_primary'" [raise]="0" [border_style]="'transparent'" ></app-button3d>
+            </div>
+          </ng-template>
+        </app-card>
+      </div>
     </div>
     <div class="py-4">
       <div class="text-xs font-medium text-textTertiary">
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Background card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <!--<div class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
-          <div class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
-            <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
-          </div>
-           <div class="relative p-6 py-14 px-6 md:px-12">
-            <h2 class="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
-              How we design and code open-source projects?
-            </h2>
-            <h5 class="mb-4 block font-sans text-xl font-semibold leading-snug tracking-normal text-gray-400 antialiased">
+        <app-card class=" w-full max-w-[28rem] ">
+          <ng-template #headerImgTemplate >
+            <div class="z-0">
+              <div class="absolute inset-0 m-0 h-full w-full overflow-hidden  bg-transparent
+            bg-cover bg-clip-border bg-center text-gray-700 shadow-none"
+                   [style.background-image]="'url( '+ 'https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' +')'">
+                <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/20"></div>
+              </div>
+            </div>
+          </ng-template>
+          <div class="gap-2  flex flex-col justify-end items-center h-[40rem] py-6 z-10 ">
+            <h5 class=" text-center text-xl font-semibold leading-snug tracking-normal antialiased text-white/80">
               Candice Wu
             </h5>
-            <img
-              alt="candice wu"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-              class="relative inline-block h-[74px] w-[74px] rounded-full border-2 border-white object-cover object-center"
-            />
+            <p class=" text-center text-xl font-semibold leading-snug tracking-normal antialiased text-white">
+              How we design and code open-source projects?
+            </p>
+            <div class="mt-12 flex justify-between">
+              <app-button3d   [border]="'0px'" [height]="'30px'" [type]="'btn_secondary'"  [raise]="0" >View</app-button3d>
+            </div>
           </div>
-        </div>-->
-        <app-card-background
-          [style]="'relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700'"
-          [title]="' How we design and code open-source projects? '"
-          [subtitle]="' Candice Wu '"
-          [descripiron]="'Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story'"
-          [buttonLeft]="false"
-          [buttonLeftTitle]="'Read More'"
-          [buttonLeftStyle]="'mx-auto rounded-full  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
-          [buttonRight]="true"
-          [buttonRightTitle]="'View item'"
-          [buttonRightStyle]="'flex-row-reverse  mx-auto rounded-full  px-4 py-2 text-xs font-semibold  text-white bg-primary hover:bg-primary/[.85] active:bg-primary/[.65] transition-all duration-150 ease-in-out'"
-          [buttonRightIcon]="'fas fa-arrow-right text-white ml-2'"
-          [buttonRightIconPosition]="'right'"
-          [img]="'https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'"
-        ></app-card-background>
+        </app-card>
+        <app-card class=" w-full max-w-[28rem] ">
+          <ng-template #headerImgTemplate >
+            <div class="z-0">
+              <div class="absolute inset-0 m-0 h-full w-full overflow-hidden  bg-transparent
+            bg-cover bg-clip-border bg-center text-gray-700 shadow-none"
+                   [style.background-image]="'url( '+ 'https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' +')'">
+                <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/20"></div>
+              </div>
+            </div>
+          </ng-template>
+          <div class="gap-2 flex flex-col justify-end items-center h-[40rem] py-6 z-10 ">
+            <h5 class=" text-center text-xl font-semibold leading-snug tracking-normal antialiased text-white/80">
+              Candice Wu
+            </h5>
+            <p class=" text-center text-xl font-semibold leading-snug tracking-normal antialiased text-white">
+              How we design and code open-source projects?
+            </p>
+            <div class="mt-12 flex justify-between">
+              <app-button3d [bg_shadow_color]="'transparent'" [rounded]="'25px'" title="View" [height]="'30px'" [type]="'btn_primary'"  [raise]="5" [width]="'130px'" ></app-button3d>
+            </div>
+          </div>
+        </app-card>
       </div>
 
     </div>
@@ -653,8 +882,8 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Booking card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-          <div class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+        <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white text-gray-700 shadow-lg">
+          <div class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 text-white shadow-lg shadow-blue-gray-500/40">
             <img
               src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
               alt="ui/ux review check"
@@ -680,7 +909,7 @@
           </div>
           <div class="p-6">
             <div class="mb-3 flex items-center justify-between">
-              <h5 class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
+              <h5 class="text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                 Wooden House, Florida
               </h5>
               <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -700,7 +929,7 @@
                 5.0
               </p>
             </div>
-            <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
+            <p class="text-base font-light leading-relaxed text-gray-700 antialiased">
               Enter a freshly updated and thoughtfully furnished peaceful home
               surrounded by ancient trees, stone walls, and open meadows.
             </p>
@@ -849,6 +1078,58 @@
             </button>
           </div>
         </div>
+        <app-card class="w-96">
+          <ng-template #headerImgTemplate class="">
+            <div class=" p-4 relative m-0 overflow-hidden rounded-none bg-transparent  shadow-none ">
+              <img class="rounded-lg 0"
+                src="https://media-cdn.tripadvisor.com/media/photo-s/03/dc/d0/1c/98-acres-resort.jpg"
+                alt="ui/ux review check"
+              />
+            </div>
+            <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+            </button>
+          </ng-template>
+          <div class="">
+            <div class=" flex items-center justify-between">
+              <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                Wooden House, Florida
+              </h5>
+              <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="-mt-0.5 h-5 w-5 text-yellow-700"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                5.0
+              </p>
+            </div>
+            <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+              Enter a freshly updated and thoughtfully furnished peaceful home
+              surrounded by ancient trees, stone walls, and open meadows.
+            </p>
+            <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+              <div class="flex gap-3 justify-between items-center uppercase">
+                <p>Read More </p>
+                <i class="fas fa-light fa-arrow-right  text-xs"></i>
+              </div>
+            </app-button3d>
+          </div>
+
+        </app-card>
       </div>
     </div>
     <div class="py-4">
@@ -856,100 +1137,103 @@
         <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Testimonial card</div>
       </div>
       <div class="flex flex-wrap overflow-hidden  rounded-lg gap-4 py-4 justify-center ">
-        <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <div class="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
-            <img
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-              alt="candice wu"
-              class="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center"
-            />
-            <div class="flex w-full flex-col gap-0.5">
-              <div class="flex items-center justify-between">
-                <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                  Candice Wu
-                </h5>
-                <div class="5 flex items-center gap-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    class="h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    class="h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    class="h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    class="h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    class="h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
+        <app-card class="w-96">
+          <ng-template #headerTemplate >
+            <div class="relative flex items-center overflow-hidden gap-4  text-textPrimary shadow-none">
+              <img
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+                alt="candice wu"
+                class="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center"
+              />
+              <div class="flex w-full flex-col gap-0.5">
+                <div class="flex items-center justify-between">
+                  <h5 class="text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                    Candice Wu
+                  </h5>
+                  <div class="5 flex items-center gap-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="h-5 w-5 text-yellow-700"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="h-5 w-5 text-yellow-700"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="h-5 w-5 text-yellow-700"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="h-5 w-5 text-yellow-700"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="h-5 w-5 text-yellow-700"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
+                <p class="text-base font-light leading-relaxed text-blue-gray-900 antialiased">
+                  Frontend Lead @ Google
+                </p>
               </div>
-              <p class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased">
-                Frontend Lead @ Google
-              </p>
             </div>
-          </div>
-          <div class="mb-6 p-0">
-            <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-              "I found solution to all my design needs from Creative Tim. I use them
-              as a freelancer in my hobby projects for fun! And its really affordable,
-              very humble guys !!!"
+          </ng-template>
+          <div class="pt-6">
+            <p class="text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+              "I found solution to all my design needs from Creative Tim.
+              I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"
             </p>
           </div>
-        </div>
+        </app-card>
       </div>
+
+
     </div>
   </div>
 </div>

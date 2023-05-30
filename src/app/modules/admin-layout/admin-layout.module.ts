@@ -17,7 +17,7 @@ import { CardsComponent } from './pages/components/cards/cards.component';
 import { ButtonsComponent } from './pages/components/buttons/buttons.component';
 import { InputsComponent } from './pages/components/inputs/inputs.component';
 import { Btn3dComponent } from './components/btn3d/btn3d.component';
-import { Buttons3dComponent } from './pages/buttons3d/buttons3d.component';
+import { Buttons3dComponent } from './pages/components/buttons3d/buttons3d.component';
 import {CodemirrorModule} from "@ctrl/ngx-codemirror";
 import { TutorialComponent } from './pages/tutorial/tutorial.component';
 

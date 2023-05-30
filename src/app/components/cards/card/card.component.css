@@ -1,0 +1,47 @@
+.card{
+  --bg_color: hsl(var(--twc-bgPrim));
+  --bg_gradient_to: hsl(var(--twc-bgPrim));
+  --bg_gradient_from: hsl(var(--twc-bgSeco));
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-wrap:wrap;
+  overflow: hidden;
+  word-break: break-word;
+  border-radius: var(--rounded-md);
+  background: var(--bg_color);
+  /*background: linear-gradient(219deg, var(--bg_gradient_to), var(--bg_gradient_from) );*/
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.card.bg_gradient{
+  background: linear-gradient(219deg, var(--bg_gradient_to), var(--bg_gradient_from) );
+}
+.card.card_vertical{
+  /*width:100%;*/
+  /*width: 24rem;*/
+  display: flex;
+  flex-direction: column;
+  /*padding: 2rem;*/
+}
+.card.card_horizontal{
+  /*width:100%;*/
+  /*max-width: 48rem;*/
+  display: flex;
+  flex-direction: row;
+}
+.card.card_vertical .content{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.card.card_horizontal .content{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.card.booking_card{
+
+}
