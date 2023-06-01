@@ -10,18 +10,32 @@ import {CardsComponent} from "./pages/components/cards/cards.component";
 import {InputsComponent} from "./pages/components/inputs/inputs.component";
 import {Buttons3dComponent} from "./pages/components/buttons3d/buttons3d.component";
 import {TutorialComponent} from "./pages/tutorial/tutorial.component";
+import {EditorComponent} from "./pages/editor/editor.component";
+// import {LandingPage1Component} from "../front-layout/pages/landing-pages/landing-page1/landing-page1.component";
+// import {LandingPage2Component} from "../front-layout/pages/landing-pages/landing-page2/landing-page2.component";
+// import {LandingPagesComponent} from "../front-layout/pages/landing-pages/landing-pages.component";
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
+
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     children: [
+
       { path: "dashboard", component: DashboardComponent },
+      // { path: "landings", component: LandingPagesComponent,
+      //   children: [
+      //     {path: "landing1", component: LandingPagesComponent},
+      //     {path: "landing1", component: LandingPage1Component},
+      //     {path: "landing2", component: LandingPage2Component},
+      //   ],
+      // },
       { path: "users", component: UsersComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tutorials", component: TutorialComponent },
+      { path: "editor", component: EditorComponent },
       { path: "components", component: ComponentsComponent,
       children:[
         { path: "buttons", component: ButtonsComponent },

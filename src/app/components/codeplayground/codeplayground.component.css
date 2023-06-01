@@ -36,9 +36,10 @@
   background-color: #3c3530;
 }
 
-
 .iframe-container{
   height: 100%;
+  width: 100%;
+
 }
 iframe{
   display: flex;
@@ -49,3 +50,21 @@ iframe{
 }
 
 /*the style codemirror is in styles.css file */
+/*//codemirrror color back*/
+.cm-s-material.CodeMirror {
+  background-color:  transparent !important;
+}
+.CodeMirror {
+  background-color:  transparent !important;
+  height: 100%;
+}
+.CodeMirror-scroll {
+  height: 100%;
+}
+.CodeMirror textarea {
+  height: 100%;
+  width: 100%;
+}
+.cm-s-material .CodeMirror-gutters {
+  background-color:  transparent !important;
+}

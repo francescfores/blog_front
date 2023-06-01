@@ -65,7 +65,7 @@
 <!--  </div>-->
 
 <!--</div>-->
-<div  #contentPanel class="h-[800px] flex flex-wrap w-full rounded-lg bg-bgPrim">
+<div  #contentPanel class=" flex flex-wrap w-full rounded-lg bg-bgPrim">
   <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-1 text-xs font-semibold">
     <p class="text-textPrimary">Code Playground</p>
     <div class="flex justify-between gap-4">
@@ -86,7 +86,7 @@
                'text-textSecondary':!windowsCode['js']}">Js</p>
     </div>
   </div>
-  <div #upPanel class="flex w-full h-1/2">
+  <div #upPanel class="flex w-full ">
     <div #leftPanel class="split__left" >
       <ngx-codemirror *ngIf="windowsCode['html']===true" (keyup)="generateHTML()" [(ngModel)]="htmlCodes" class="bg-transparent"
                       [options]="{
@@ -118,9 +118,9 @@
     </div>
   </div>
   <div #splitBarVertical class="split__bar_horizontal"></div>
-  <div #downPanel class="flex w-full h-1/2">
-            <div class="flex-1 iframe-container flex justify-center items-start">
-              <iframe *ngIf="loading" (load)="generateHTML()"   [srcdoc]="generatedHTML" id="iframe-{{id}}"></iframe>
+  <div #downPanel class="flex w-full ">
+            <div class=" iframe-container flex justify-center items-start">
+              <iframe *ngIf="loading" (load)="generateHTML()" sandbox="allow-scripts allow-same-origin"  [srcdoc]="generatedHTML" id="iframe-{{id}}"></iframe>
             </div>
   </div>
 </div>

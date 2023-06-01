@@ -5,9 +5,9 @@ button {
 .gap-10 {
   gap: 35px;
 }
-.flex-col{
-  flex-direction: column;
-}
+/*.flex-col{*/
+/*  flex-direction: column;*/
+/*}*/
 .btn{
   /*--font-body-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;*/
   --height: 100px;
@@ -25,9 +25,9 @@ button {
   --font_color: white;
   --font_body_weight:800;
   --font_size:14px;
-  display: flex;
-  flex-wrap: wrap;
-  flex:1;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*flex:1;*/
 }
 
 .btn {
@@ -199,15 +199,15 @@ button {
   }
 }
 
-.opacity-0{
-  opacity:0;
-}
-.hidden{
-  display:none;
-}
-.flex{
-  display:flex;
-}
+/*.opacity-0{*/
+/*  opacity:0;*/
+/*}*/
+/*.hidden{*/
+/*  display:none;*/
+/*}*/
+/*.flex{*/
+/*  display:flex;*/
+/*}*/
 
 
 

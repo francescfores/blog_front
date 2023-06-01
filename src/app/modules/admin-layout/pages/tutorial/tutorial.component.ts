@@ -1387,7 +1387,7 @@ myButtons.forEach(myButton => {
 
     this.htmlCodes[8]=
       `
-<div class="flex gap-10">
+<div class="flex flex-wrap overflow-x-hidden gap-10">
 <div class="btn btn_primary btn_shadow btn_loading" >
   <div class="btn_back">
     <div class="btn_front">
@@ -1653,9 +1653,9 @@ flex-direction: column;
 .hidden{
   display:none;
 }
-.flex{
+/*.flex{
   display:flex;
-}
+}*/
 
 /*animation text*/
 .btn_loading_2 .txt_loading{

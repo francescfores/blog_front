@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
+  {
+    path: 'front',
+    loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
+  },
   // admin views
   // { path: "", component: AppComponent },
   // { path: "**", redirectTo: "", pathMatch: "full" },

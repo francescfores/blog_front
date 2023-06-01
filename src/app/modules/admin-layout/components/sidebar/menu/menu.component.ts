@@ -20,6 +20,12 @@ export class MenuComponent implements OnInit {
         new MenuItem('Dashboard', null,'/admin/dashboard','Base','pt-0',false,null),
         new MenuItem('Analytics', null,'/admin/charts','Base','pt-0',false,null),
       ]),
+      new MenuItem('Editor', 'fas fa-light fa-gear','/admin/editor','', 'pt-1',false, null),
+      new MenuItem('Landings', 'fas fa-light fa-code','/admin/landings/','widgets','pt-1',null,[
+        new MenuItem('Landings', null,'/front/landings/landings',null,'pt-0',false,null),
+        new MenuItem('Landing1', null,'/front/landings/landing1',null,'pt-0',false,null),
+        new MenuItem('Landing2', null,'/front/landings/landing2',null,'pt-0',false,null),
+      ]),
       new MenuItem('Settings', 'fas fa-light fa-gear','/admin/settings','', 'pt-1',false, null),
       new MenuItem('Tutorials', 'fas fa-light fa-gear','/admin/tutorials','', 'pt-1',false, null),
       new MenuItem('Users', 'fas fa-light fa-users','/admin/users','', 'pt-1',false, null),

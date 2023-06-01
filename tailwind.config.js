@@ -210,9 +210,9 @@ module.exports = {
 
       },
       dark: {
-        'primary': '#7cad41',//0091ADB2 ///41FF6CDA
-        'secondary': '#F3A71299', ///F3A71299 //FBB02DE5
-        'ternary': '#29335C99', ///29335C99 //17BEBBE4
+        'primary': '#ce4e42',//0091ADB2 ///41FF6CDA  7cad41
+        'secondary': '#913428', ///F3A71299 //FBB02DE5 F3A71299
+        'ternary': '#d56858', ///29335C99 //17BEBBE4 29335C99
         'success': '#70C18399', //'#70C1B3',
         'info': '#2E72B299', //'#29335C',
         'warning': '#FFC43D99', //'#FFC43D',

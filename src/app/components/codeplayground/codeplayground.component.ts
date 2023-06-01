@@ -1,6 +1,5 @@
 import {Component, ElementRef, HostListener, Input, QueryList, Renderer2, ViewChild, ViewChildren} from '@angular/core';
 import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
-
 @Component({
   selector: 'app-codeplayground',
   templateUrl: './codeplayground.component.html',
@@ -226,6 +225,10 @@ body{
 var $ = jQuery = window.parent.$;
 // var $ = selector => document.querySelector(selector);
 `+ "</script>"));
+    // $('#iframe-' + this.id).contents().find("body").append('  <script src="../../../../tailwind.config.js"></script>');
+    $('#iframe-' + this.id).contents().find("body").append('  <script src="https://cdn.tailwindcss.com"></script>');
+    // $('#iframe-' + this.id).contents().find("head").append("<link rel='stylesheet' href='../../../../src/styles.css'>");
+    // $('#iframe-' + this.id).contents().find("head").append("<link rel='stylesheet' href='../../../assets/styles/tailwind.css'>");
     $('#iframe-' + this.id).contents().find("body").append($(this.jsCodes));
   }
   generateHTML() {

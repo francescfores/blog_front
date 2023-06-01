@@ -1,0 +1,486 @@
+<div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable}" class="transition-colors duration-500 ">
+  <app-navbar_landing_2
+    [transparent]="false"
+  ></app-navbar_landing_2>
+  <div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable }" class="relative">
+    <!--<app-admin-navbar></app-admin-navbar>
+    <app-header-stats></app-header-stats>
+    <div class="px-4 md:px-10 mx-auto w-full -m-24">-->
+    <div class="flex flex-col">
+      <!-- Sidebar TODO change to componente -->
+      <app-sidebar_landing_2 class="bg-bgPrim"></app-sidebar_landing_2>
+
+      <!-- Main -->
+      <!--      <div class="flex-grow py-16 bg-[conic-gradient(at_bottom_right,_var(&#45;&#45;tw-gradient-stops))] from-bgPrim via-bgTern to-bgPrim duration-500 transition-all ease-in-out"-->
+      <div class="flex-grow bg-bgSeco py-14 duration-500 transition-all ease-in-out"
+      >
+        <section class=" h-screen content_3d_card">
+          <div class="py-0">
+            <app-slider-marvel></app-slider-marvel>
+          </div>
+        </section>
+        <section class=" h-screen content_3d_card">
+          <div class="py-32">
+            <div class="text-xs font-medium text-textTertiary">
+              <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Booking card</div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 rounded-lg gap-20 py-4  px-10">
+              <app-card bg_color="transparent" class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure1">
+                      <svg class="svg_back svg_back_clip1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad"><stop stop-color="hsl(272, 99%, 54%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 38%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad)" fill="none" transform="rotate(180, 400, 400)"><polygon points="400,50 50,750 750,750" filter="url(#nnneon-filter)"></polygon><polygon points="422,50 72,750 772,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="378,50 28,750 728,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="400,50 50,750 750,750"></polygon></g></svg>
+                      <img class="amt_2" src="https://clipart-library.com/images_k/venom-silhouette/venom-silhouette-1.png">
+                      <figcaption>Venom</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure2">
+                      <svg class="svg_back svg_back_clip2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad2"><stop stop-color="hsl(89, 78%, 53%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 31%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad2)" fill="none" transform="rotate(180, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g></svg>
+                      <img  class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/GreenGoblin%2FGreenGoblin_Foreground.webp?v12" alt="Druid">
+                      <figcaption>Green goblin</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure3">
+
+                      <svg class="svg_back svg_back_clip3" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad3"><stop stop-color="hsl(0, 0%, 100%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad3)" fill="none" transform="rotate(180, 400, 400)"><rect width="700" height="700" x="50" y="50" filter="url(#nnneon-filter)" rx="0" ry="0"></rect><rect width="700" height="700" x="72" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="28" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="50" y="50" rx="0" ry="0"></rect>
+                      </g>
+                      </svg>
+                      <img class="amt_2" src="https://cdn141.picsart.com/310979491555211.png">
+                      <figcaption>Rhino</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure4">
+                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>
+                      </svg>
+                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">
+                      <figcaption>Miles</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+            </div>
+          </div>
+        </section>
+        <section class=" h-screen content_3d_card">
+          <div class="py-32">
+            <div class="text-xs font-medium text-textTertiary">
+              <div class="flex items-end justify-between text-sm font-semibold text-textSecondary">Booking card</div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 rounded-lg gap-20 py-4  px-10">
+              <app-card bg_color="transparent" class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure1">
+                      <svg class="svg_back svg_back_clip1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad"><stop stop-color="hsl(272, 99%, 54%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 38%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad)" fill="none" transform="rotate(180, 400, 400)"><polygon points="400,50 50,750 750,750" filter="url(#nnneon-filter)"></polygon><polygon points="422,50 72,750 772,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="378,50 28,750 728,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="400,50 50,750 750,750"></polygon></g></svg>
+                      <img class="amt_2" src="https://clipart-library.com/images_k/venom-silhouette/venom-silhouette-1.png">
+                      <figcaption>Venom</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure2">
+                      <svg class="svg_back svg_back_clip2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad2"><stop stop-color="hsl(89, 78%, 53%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 31%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad2)" fill="none" transform="rotate(180, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g></svg>
+                      <img  class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/GreenGoblin%2FGreenGoblin_Foreground.webp?v12" alt="Druid">
+                      <figcaption>Green goblin</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure3">
+
+                      <svg class="svg_back svg_back_clip3" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad3"><stop stop-color="hsl(0, 0%, 100%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad3)" fill="none" transform="rotate(180, 400, 400)"><rect width="700" height="700" x="50" y="50" filter="url(#nnneon-filter)" rx="0" ry="0"></rect><rect width="700" height="700" x="72" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="28" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="50" y="50" rx="0" ry="0"></rect>
+                      </g>
+                      </svg>
+                      <img class="amt_2" src="https://cdn141.picsart.com/310979491555211.png">
+                      <figcaption>Rhino</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+              <app-card class="w-full flex">
+                <ng-template #headerImgTemplate class="">
+                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                    <figure class="figure figure4">
+                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>
+                      </svg>
+                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">
+                      <figcaption>Miles</figcaption>
+                    </figure>
+                  </div>
+                  <button type="button" data-ripple-dark="true" class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z">
+                    </path>
+                </svg>
+              </span>
+                  </button>
+                </ng-template>
+                <div class="">
+                  <div class=" flex items-center justify-between">
+                    <h5 class="text-xl font-medium leading-snug tracking-normal text-textPrimary antialiased">
+                      Wooden House, Florida
+                    </h5>
+                    <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-textPrimary antialiased">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="-mt-0.5 h-5 w-5 text-yellow-700"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      5.0
+                    </p>
+                  </div>
+                  <p class="py-6 text-base font-light leading-relaxed text-textSecondary antialiased">
+                    Enter a freshly updated and thoughtfully furnished peaceful home
+                    surrounded by ancient trees, stone walls, and open meadows.
+                  </p>
+                  <app-button3d [rounded]="'5px'" [title]="''" [height]="'40px'" [type]="'btn_secondary'"  [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </app-card>
+            </div>
+          </div>
+        </section>
+      </div>
+      <app-footer-admin_landing_2 [ngClass]="{'pl-64': sidebarOpen, 'pl-0 sm:pl-20': !sidebarOpen}"
+                        class="w-full z-50 fixed py-2 bg-bgPrim bottom-0 overflow-hidden duration-500 transition-all ease-in-out"></app-footer-admin_landing_2>
+    </div>
+  </div>
+</div>
+

@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-wrap:wrap;
-  overflow: hidden;
+  /*overflow: hidden;*/
   word-break: break-word;
   border-radius: var(--rounded-md);
   background: var(--bg_color);
