@@ -44,7 +44,8 @@ button {
 }
 .btn_shadow:before {
   content:" ";
-  position:absolute;
+  position:absolute;  top:0;
+
   height: var(--height);
   margin-top: calc(var(--raise) + (var(--raise)/1.2));
   width:var(--width);
@@ -58,7 +59,8 @@ button {
 }
 .btn_shadow .btn_back:before{
   content:" ";
-  position: absolute;
+  position: absolute;  top:0;
+
   height: var(--height);
   margin-top: var(--raise);
   width:var(--width);
@@ -69,9 +71,9 @@ button {
 }
 .btn_shadow .btn_front{
   position: absolute;
-  height: var(--height);
+  height: calc(var(--height));
   width:var(--width);
-
+  top:0;
   background: var(--bg_front_color);
   display: flex;
   align-items: center;
@@ -80,9 +82,9 @@ button {
   border: var(--border_style);
   transition:transform 0.1s ease-out;
 }
-.btn:hover{
-  opacity: 0.90;
-}
+/*.btn:hover{*/
+/*  opacity: 0.90;*/
+/*}*/
 .btn:active{
   opacity: 0.80;
 }
@@ -146,7 +148,7 @@ button {
   margin-left:calc(var(--border)*-1);/* padding for borders of parent */
   margin-right:calc(var(--border)*-1);/* padding for borders of parent */
   background: var(--bg_back_color);
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   justify-content: center;
   border-radius:var(--rounded);

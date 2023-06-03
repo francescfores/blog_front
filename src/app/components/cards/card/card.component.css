@@ -28,7 +28,7 @@
   /*width:100%;*/
   /*max-width: 48rem;*/
   display: flex;
-  flex-direction: row;
+  /*flex-direction: row;*/
 }
 .card.card_vertical .content{
   display: flex;
@@ -38,8 +38,8 @@
 .card.card_horizontal .content{
   display: flex;
   flex: 1;
-  flex-direction: row;
-  padding: 2rem;
+  /*flex-direction: row;*/
+  /*padding: 2rem;*/
 }
 
 .card.booking_card{

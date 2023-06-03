@@ -9,6 +9,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {MenuComponent} from "./sidebar/menu/menu.component";
 import {SubmenuComponent} from "./sidebar/submenu/submenu.component";
 import {SliderMarvelComponent} from "./slider-marvel/slider-marvel.component";
+import {ComponentsModule} from "../../../../../../components/components.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {SliderMarvelComponent} from "./slider-marvel/slider-marvel.component";
     CommonModule,
     RouterModule,
     FormsModule,
+    ComponentsModule,
   ],
     exports: [
         FooterAdminComponent,

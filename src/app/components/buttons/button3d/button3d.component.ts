@@ -73,6 +73,8 @@ export class Button3dComponent implements OnInit{
           const childElement= myButton.querySelector('.btn_loading_wrapp') as HTMLElement;
           let txt_loaded=childElement.querySelector('.txt_loaded') as HTMLElement;
           let txt_loading=childElement.querySelector('.txt_loading') as HTMLElement;
+          childElement.classList.remove('hidden');
+
           if(!loading){
             txt_loaded.classList.remove('hidden');
             bubble.classList.remove('hidden');

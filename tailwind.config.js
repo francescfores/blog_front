@@ -147,8 +147,8 @@ module.exports = {
     createThemes({
       light: {
 
-        'primary': '#95D44A', //green 70C1B3 //red EF476F //yellow FFC43D //blue 0091AD
-        'secondary': '#F3A712', //'#70d0f8',
+        'primary': '#e35245', //green 70C1B3 //red EF476F //yellow FFC43D //blue 0091AD
+        'secondary': '#7e7d7d', //'#70d0f8',
         'ternary': '#29335C', //'#29335C',
         'success': '#70c183', //'#70C1B3',
         'info': '#2E72B2', //'#29335C',
@@ -161,7 +161,7 @@ module.exports = {
         // 'secondary': '#CBF7ED',
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',
-        'textPrimary': 'rgba(14,26,42,0.74)', //0e1a2a
+        'textPrimary': 'rgba(17,17,21,0.9)', //0e1a2a
         'textSecondary': '#89919d',//89919d
         'textTertiary': '#c0c0c0',//c0c0c0
         // 'nav-color': '#242b3b',
@@ -210,17 +210,17 @@ module.exports = {
 
       },
       dark: {
-        'primary': '#ce4e42',//0091ADB2 ///41FF6CDA  7cad41
-        'secondary': '#913428', ///F3A71299 //FBB02DE5 F3A71299
+        'primary': '#92d93a',//0091ADB2 ///41FF6CDA  7cad41
+        'secondary': '#F3A71299', ///F3A71299 //FBB02DE5 F3A71299
         'ternary': '#d56858', ///29335C99 //17BEBBE4 29335C99
         'success': '#70C18399', //'#70C1B3',
         'info': '#2E72B299', //'#29335C',
         'warning': '#FFC43D99', //'#FFC43D',
         'help': '#55319199', //'#29335C',
         'danger': '#EF476F99', //'#29335C',
-        'bgPrim': 'rgba(36, 28, 81)', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
-        'bgSeco': 'rgba(28, 20, 69)',//0A131F
-        'bgTern': 'rgba(60,51,108)',//1e314b
+        'bgPrim': '#1E1F1E', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
+        'bgSeco': '#141514',//0A131F
+        'bgTern': '#242524',//1e314b #474954
         // 'secondary': '#CBF7ED',
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',

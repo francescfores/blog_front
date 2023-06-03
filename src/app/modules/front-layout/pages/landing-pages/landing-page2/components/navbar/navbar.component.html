@@ -1,10 +1,9 @@
 <nav id="navbar"
-     class="text-textPrimary transition-colors duration-500 top-0 fixed z-20 w-full">
+     class="text-textPrimary transition-colors duration-500 top-0 fixed z-50 w-full py-1 justify-center items-center">
 <!--  <nav id="navbar"-->
 <!--       class="  text-textPrimary transition-colors duration-1000 top-0 fixed z-20 w-full flex flex-wrap items-center-->
 <!--    justify-between navbar-expand-lg">-->
-  <div class="w-screen ">
-    <div class="py-1 pr-6 flex w-full justify-start items-center">
+    <div class="pr-6 flex w-full justify-start items-center">
       <button [ngClass]="{'opacity-0':sidebarOpen}"
                class='z-50 px-8 flex-grow-0 flex-shrink-0  items-start flex flex-col rounded justify-start group pr-2 transition-all duration-500' (click)="toggleSidebar()">
         <div [ngClass]="{
@@ -43,7 +42,6 @@
       </div>
     </div>
     <!-- Responsive navbar -->
-  </div>
   <div
     [ngClass]="{ 'translate-x-0 ': loginOpen, 'translate-x-full': !loginOpen, 'opacity-100': loginOpen, 'opacity-0': !loginOpen}"
     class="top-0 right-0 w-auto divide-neutral-700 text-neutral-700
