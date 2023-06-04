@@ -10,7 +10,6 @@ import {ThemeService} from "../../../../../services/theme/theme.service";
 export class LandingPage2Component implements OnInit {
   isDarkEnable = false;
   sidebarOpen= false;
-
   constructor(
     public themeService: ThemeService,
     // public sidebarService: SidebarService
@@ -23,5 +22,10 @@ export class LandingPage2Component implements OnInit {
     // this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
     //   this.sidebarOpen = sidebarOpen;
     // });
+
   }
+  // Función para detectar el scroll y determinar la dirección
+
+// Evento de desplazamiento
+
 }

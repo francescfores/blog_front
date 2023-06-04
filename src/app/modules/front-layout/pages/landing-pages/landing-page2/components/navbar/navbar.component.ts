@@ -15,14 +15,16 @@ import {SidebarService} from "../sidebar/services/sidebar.service";
 
 @HostListener('window:scroll', ['$event'])
 
+
 export class NavbarComponent implements OnInit {
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
   isDarkEnable=false;
   @Input() transparent = false;
   sidebarOpen = false;
-
   loginOpen = false;
   // client :Client;
+
+  lastScrollPosition = 0;
 
   constructor(
     private router: Router,
@@ -51,6 +53,8 @@ export class NavbarComponent implements OnInit {
       $('#navbar').removeClass('bg-bgPrim');
       window.addEventListener('scroll', this.scroll, true)
     }
+        window.addEventListener("scroll", this.detectScrollDirection);
+
   }
 
   changeTheme() {
@@ -78,5 +82,23 @@ export class NavbarComponent implements OnInit {
   logOut(){
     // this.authenticationService.logout();
   }
+     detectScrollDirection() {
+    var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollPosition > this.lastScrollPosition) {
+      // Scroll hacia abajo
+      console.log('abajo');
+      $('#navbar').addClass('-translate-y-[60px]');
+      // handleScrollDown();
+    } else if (currentScrollPosition < this.lastScrollPosition) {
+      // Scroll hacia arriba
+      // handleScrollUp();
+      $('#navbar').removeClass('-translate-y-[60px]');
+
+      console.log('arriba')
+    }
+    this.lastScrollPosition = currentScrollPosition;
+  }
+
 }
 
