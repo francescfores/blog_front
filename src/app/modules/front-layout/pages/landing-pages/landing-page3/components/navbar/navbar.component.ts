@@ -9,9 +9,11 @@ import {SidebarService} from "../sidebar/services/sidebar.service";
 // import {Client} from "../../../models/client";
 
 @Component({
-  selector: "app-navbar_landing_2",
+  selector: "app-navbar_landing_3",
   templateUrl: "./navbar.component.html",
+  styleUrls: ['./navbar.component.css']
 })
+
 
 @HostListener('window:scroll', ['$event'])
 
@@ -54,12 +56,50 @@ export class NavbarComponent implements OnInit {
       window.addEventListener('scroll', this.scroll, true)
     }
         window.addEventListener("scroll", this.detectScrollDirection);
+    this.animationSunMoon();
 
+    // if(this.isDarkEnable){
+    //   $('.moon_sun').click(() => {
+    //
+    //   });
+    // }
   }
 
   changeTheme() {
     this.isDarkEnable = !this.isDarkEnable;
     this.themeService.changeTheme(this.isDarkEnable);
+    this.animationSunMoon();
+  }
+  animationSunMoon(){
+    console.log('this.isDarkEnable',this.isDarkEnable);
+    if(!this.isDarkEnable){
+      console.log('Sun ',this.isDarkEnable);
+      $('.moon_sun').css("fill", "black");
+      $('.moon_sun g circle').css("transform", "scale(1)");
+      // $('.moon_sun').css("transform", "rotate(-20deg)");
+      setTimeout(function() {
+        $('.moon_sun').css("transform", "rotate(90deg)");
+        $('#moon-mask-main-nav circle').attr('r', '8');
+      }, 500);
+      $('#moon-mask-main-nav circle').attr('cx', '25');
+      $('#moon-mask-main-nav circle').attr('cy', '0');
+      $('#moon-mask-main-nav circle').attr('r', '8');
+      $('.moon_sun circle').css("background", "green");
+      $('.moon_sun > circle').attr("r", "5");
+    }else{
+      console.log('Mooon ',this.isDarkEnable);
+      $('.moon_sun').css("fill", "white");
+      $('.moon_sun g circle').css("transform", "scale(0)");
+      $('.moon_sun').css("transform", "rotate(90deg)");
+      $('#moon-mask-main-nav circle').attr('cx', '10');
+      $('#moon-mask-main-nav circle').attr('cy', '2');
+      $('#moon-mask-main-nav circle').attr('r', '7');
+      $('.moon_sun > circle').attr("r", "8");
+      $('.moon_sun').css("transform", "rotate(100deg)");
+      setTimeout(function() {
+        $('.moon_sun').css("transform", "rotate(50deg)");
+      }, 500);
+    }
   }
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
@@ -82,9 +122,9 @@ export class NavbarComponent implements OnInit {
   logOut(){
     // this.authenticationService.logout();
   }
-  detectScrollDirection() {
+     detectScrollDirection() {
     var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    var scrollDistance = currentScrollPosition - this.lastScrollPosition;
+       var scrollDistance = currentScrollPosition - this.lastScrollPosition;
     if (currentScrollPosition > this.lastScrollPosition && scrollDistance > 20) {
       console.log(scrollDistance)
       // Scroll hacia abajo

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LandingPage1Component} from "./landing-page1/landing-page1.component";
 import {LandingPage2Component} from "./landing-page2/landing-page2.component";
 import {IndexComponent} from "./index/index.component";
+import {LandingPage3Component} from "./landing-page3/landing-page3.component";
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     children: [
           {path: "landing1", component: LandingPage1Component},
           {path: "landing2", component: LandingPage2Component},
+          {path: "landing3", component: LandingPage3Component},
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

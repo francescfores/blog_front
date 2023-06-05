@@ -20,6 +20,8 @@ import {ComponentsModuleLanding2} from "./landing-page2/components/components.mo
 import {FrontLayoutRoutingModule} from "../../front-layout-routing.module";
 import {IndexComponent} from "./index/index.component";
 import {ComponentsModule} from "../../../../components/components.module";
+import {ComponentsModuleLanding3} from "./landing-page3/components/components.module";
+import {LandingPage3Component} from "./landing-page3/landing-page3.component";
 
 
 
@@ -33,7 +35,8 @@ import {ComponentsModule} from "../../../../components/components.module";
     // FooterAdminComponent,
     // EditorComponent,
     LandingPage1Component,
-    LandingPage2Component
+    LandingPage2Component,
+    LandingPage3Component
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,7 @@ import {ComponentsModule} from "../../../../components/components.module";
     LandingPagesRoutingModule,
     ComponentsModuleLanding1,
     ComponentsModuleLanding2,
+    ComponentsModuleLanding3,
     ComponentsModule
   ],
   exports: [IndexComponent],

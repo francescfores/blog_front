@@ -1,14 +1,14 @@
 <div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable}" class="transition-colors duration-500 landing_page1">
-  <app-navbar_landing_2
+  <app-navbar_landing_3
     [transparent]="false"
-  ></app-navbar_landing_2>
+  ></app-navbar_landing_3>
   <div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable }" class="relative">
     <!--<app-admin-navbar></app-admin-navbar>
     <app-header-stats></app-header-stats>
     <div class="px-4 md:px-10 mx-auto w-full -m-24">-->
     <div class="flex flex-col">
       <!-- Sidebar TODO change to componente -->
-      <app-sidebar_landing_2 class="bg-bgPrim"></app-sidebar_landing_2>
+      <app-sidebar_landing_3 class="bg-bgPrim"></app-sidebar_landing_3>
 
       <!-- Main -->
       <!--      <div class="flex-grow py-16 bg-[conic-gradient(at_bottom_right,_var(&#45;&#45;tw-gradient-stops))] from-bgPrim via-bgTern to-bgPrim duration-500 transition-all ease-in-out"-->
@@ -16,8 +16,11 @@
       >
         <section class="  content_3d_card">
           <div class="py-0">
-            <app-slider-marvel></app-slider-marvel>
+            <app-slider-3></app-slider-3>
           </div>
+        </section>
+        <section class=" bg-bgPrim flex h-20 w-full">
+
         </section>
         <section class="section_1 overflow-hidden ">
           <div class=" ">
@@ -56,7 +59,7 @@ background-size: cover;
               <div class=" -mt-8 flex relative  overflow-x-auto overflow-y-visible  gap-2 sm:gap-5  h-full w-full pt-16 pb-8  ">
                 <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
                   <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " src="https://cdn.marvel.com/u/prod/marvel/i/mg/9/60/645111ec6ec9d/portrait_uncanny.jpg" srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/9/60/645111ec6ec9d/portrait_uncanny.jpg" alt="Silk (2023) #1">
-                <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+                <p class="text-xs md:text-sm">Avengssssers (2023) #1</p>
               </div>
                 <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
                   <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " src="https://cdn.marvel.com/u/prod/marvel/i/mg/3/e0/63ed3857f1670/portrait_uncanny.jpg" srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/3/e0/63ed3857f1670/portrait_uncanny.jpg" alt="Silk (2023) #1">
@@ -900,10 +903,10 @@ background-size: cover;
 <!--          </div>-->
 <!--        </section>-->
       </div>
-      <app-footer-admin_landing_2
+      <app-footer-admin_landing_3
                         class="w-full z-20
                         bg-bgPrim bottom-0
-                        overflow-hidden duration-500 transition-all ease-in-out"></app-footer-admin_landing_2>
+                        overflow-hidden duration-500 transition-all ease-in-out"></app-footer-admin_landing_3>
     </div>
   </div>
 </div>
