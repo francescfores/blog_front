@@ -115,7 +115,7 @@ input{
 .claw_main {
   @apply absolute top-[0] w-full h-[500px]  ;
   /*filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));*/
-  /*animation: claw_main 10s ease-in-out infinite;*/
+  /*animation: claw_main 6s ease-in-out forwards;;;*/
 }
 @keyframes claw_main {
   90%{
@@ -129,9 +129,9 @@ input{
   }
 .claw {
   @apply absolute text-center top-[-360px] w-[120px] right-[0px];
-  z-index: 2;
+  z-index: 30;
   filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));
-  animation: slide_down 10s ease-in-out infinite;
+  animation: slide_down 6s ease-in-out infinite;;;
 }
 @keyframes slide_down {
   10% {
@@ -158,8 +158,14 @@ input{
   80% {
     transform: translatey(40px) translatex(0px) ;
   }
-  90% {
-    transform: translatey(40px) translatex(150px) ;
+  85% {
+    transform: translatey(130px) translatex(0px) ;
+  }
+  91% {
+    transform: translatey(130px) translatex(0px) ;
+  }
+  92% {
+    /*transform: translatey(130px) translatex(0px) ;*/
   }
   100% {
     transform: translatey(0px) translatex(0px) ;
@@ -170,15 +176,15 @@ input{
   /*@apply absolute text-center top-[-200px] w-[5px] right-[325px] fill-textPrimary h-[265px] bg-[#53c9df] rounded-b-md;*/
   @apply w-[3px] mx-auto fill-textPrimary top-[0px] h-[400px] bg-[#53c9df] rounded-b-md ;
   filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));
-  /*animation: float 10s ease-in-out infinite;*/
+  /*animation: float 6s ease-in-out infinite;;;*/
 }
 
 .claw_body{
-  @apply px-5;
-  animation: rotate 11s ease-in-out forwards;
+  @apply px-5 absolute ;
+  animation: rotate 11s ease-in-out infinite;
 }
 .claw_support {
-  @apply  mt-1 w-[80%] mx-auto;
+  @apply  mt-1 w-[80%] mx-auto z-50;
 }
 
 @keyframes rotate {
@@ -215,7 +221,7 @@ input{
 
 .claw_support_left {
   @apply absolute w-[32%] left-[7%] ;
-  animation: claw_support_left 10s ease-in-out infinite;
+  animation: claw_support_left 6s ease-in-out infinite;;;
 }
 @keyframes claw_support_left {
   10% {
@@ -247,16 +253,16 @@ input{
     /*transform: translatey(20px) translatex(220px) ;*/
   }
   90% {
-    /*transform: translatey(0px) translatex(0px) ;*/
+    transform: rotateZ(30deg) ;
   }
   100% {
     /*transform: translatey(0px) translatex(100px) ;*/
-    transform: rotateZ(-20deg) ;
+    transform: rotateZ(0deg) ;
   }
 }
 .claw_support_right {
   @apply absolute w-[32%] right-[7%] ;
-  animation: claw_support_right 10s ease-in-out infinite;
+  animation: claw_support_right 6s ease-in-out infinite;;;
 }
 @keyframes claw_support_right {
   10% {
@@ -285,29 +291,31 @@ input{
     /*transform: translatey(0px) translatex(-250px) ;*/
   }
   80% {
-    /*transform: translatey(20px) translatex(220px) ;*/
   }
   90% {
+    transform: rotateZ(-30deg) ;
     /*transform: translatey(0px) translatex(0px) ;*/
   }
   100% {
     /*transform: translatey(0px) translatex(100px) ;*/
-    transform: rotateZ(20deg) ;
+    transform: rotateZ(0deg) ;
   }
 }
 .claw_support_center {
   @apply absolute mt-2 w-[14%] left-[43%] h-[160%] ;
-  /*animation: float 10s ease-in-out infinite;*/
+  /*animation: float 6s ease-in-out infinite;;;*/
 }
 
 .claw_toy{
-  @apply absolute bottom-0 p-5 w-[120px]  right-[250px] ;
-  animation: claw_toy 10s ease-in-out infinite, bounceInUp 1s;
+  @apply absolute bottom-[-20px] p-5 w-[100px]  right-[250px] ;
+  animation: claw_toy 6s ease-in-out infinite, bounceInUp 1s;
   z-index: 10;
 }
 @keyframes claw_toy {
   0% {
     /*opacity: 0;*/
+    @apply absolute bottom-[-20px] p-5 w-[100px]  right-[250px] ;
+
   }
   10% {
     /*opacity: 0.5;*/
@@ -322,13 +330,15 @@ input{
   }
   40%{
     /*transform: translatey(0px) translatex(-250px);*/
+    @apply absolute bottom-[-18px] p-5 w-[100px]  right-[250px] ;
   }
   50% {
     transform: rotateZ(0deg);
-
+    @apply absolute bottom-[-18px] p-5 w-[120px]  right-[250px] ;
     /*transform: translatey(300px) translatex(-250px) ;*/
   }
   60% {
+    @apply absolute bottom-[0px] p-5 w-[120px]  right-[250px] ;
     transform: translatey(0px) translatex(0px) rotateZ(20deg) ;
   }
   70% {
@@ -338,34 +348,36 @@ input{
     transform: translatey(-270px) translatex(250px) rotateZ(10deg);
   }
   90% {
-    transform: translatey(-270px) translatex(400px) ;
+    transform: translatey(130px) translatex(250px) ;
     opacity:1;
+    @apply absolute bottom-[0px] p-5 w-[120px]  right-[250px] ;
   }
   91% {
-    transform: translatey(-270px) translatex(400px) ;
+    transform: translatey(130px) translatex(0px) ;
     opacity: 0;
   }
   92% {
-    transform: translatey(-30px) translatex(0px) ;
+    transform: translatey(130px) translatex(0px) ;
+    /*transform: translatey(-30px) translatex(0px) ;*/
     opacity: 0;
   }
   100% {
     transform: translatey(0px) translatex(0px) ;
-    opacity:1;
+    opacity: 0;
   }
 }
 
 .claw_toys{
-  @apply absolute bottom-0 w-[120px]  right-[250px] ;
-  /*animation: claw_limit 10s ease-in-out infinite;*/
-  z-index: 40;
+  @apply absolute bottom-0 w-[120px]  ;
+  /*animation: claw_limit 6s ease-in-out infinite;;;*/
+  z-index: 30;
   animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 .claw_limit{
-  @apply absolute bottom-[-20px] rounded-[100%] bg-gray-500/20 w-[100px] h-[10px] right-[0px];
-  animation: claw_limit 10s ease-in-out infinite;
+  @apply absolute bottom-[-20px] rounded-[100%] bg-gray-500/20 w-[100px] h-[14px] right-[0px];
+  animation: claw_limit 6s ease-in-out infinite;
   /*filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));*/
   z-index: 100;
 }
@@ -378,29 +390,44 @@ input{
     /*transform: translatey(0px) translatex(100px);*/
   }
   30%{
-    @apply bottom-[-10px];
-    transform: translatey(0px) translatex(-200px);
+    @apply bottom-[-10px] w-[130px];
+    transform: translatey(0px) translatex(-230px);
   }
   40%{
     transform: translatey(0px) translatex(-250px);
   }
   50% {
-    transform: translatey(0px) translatex(-250px) ;
-    @apply bottom-[0px];
+    transform: translatey(0px) translatex(-230px) ;
+    @apply bottom-[0px] w-[140px];
   }
   60% {
-    transform: translatey(0px) translatex(-250px) ;
+    @apply bottom-[0px] w-[140px];
+    transform: translatey(0px) translatex(-230px) ;
   }
   70% {
-    transform: translatey(0px) translatex(-250px) ;
+    transform: translatey(0px) translatex(-240px) ;
   }
   80% {
+    @apply bottom-[-20px] w-[120px];
+    transform: translatey(0px) translatex(0px) ;
+  }
+  85% {
+    @apply bottom-[-20px] h-[10px] w-[120px];
     transform: translatey(0px) translatex(0px) ;
   }
   90% {
-    transform: translatey(0px) translatex(150px) ;
+    @apply bottom-[-20px]  h-[0px] w-[70px];
+    transform: translatey(0px) translatex(-20px) ;
+  }
+  95.5% {
+    /*transform: translatey(0px) translatex(0px) ;*/
+    /*@apply bottom-[-20px] w-[100px] h-[10px];*/
+    @apply bottom-[-20px] h-[10px]  w-[140px] ;
+    transform: translatey(0px) translatex(0px) ;
   }
   100% {
+    @apply bottom-[-20px] w-[100px];
+
     transform: translatey(0px) translatex(0px) ;
   }
 }
