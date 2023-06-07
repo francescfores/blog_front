@@ -14,6 +14,7 @@ import {FrontLayoutRoutingModule} from "./front-layout-routing.module";
 import {AppComponent} from "../../app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "../../app-routing.module";
+// import { BreadcrumbsComponent } from './pages/landing-pages3/components/breadcrumbs/breadcrumbs.component';
 // import {MenuComponent} from "./components/sidebar/menu/menu.component";
 // import {SubmenuComponent} from "./components/sidebar/submenu/submenu.component";
 

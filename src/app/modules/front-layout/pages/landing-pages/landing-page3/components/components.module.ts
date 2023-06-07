@@ -10,6 +10,7 @@ import {MenuComponent} from "./sidebar/menu/menu.component";
 import {SubmenuComponent} from "./sidebar/submenu/submenu.component";
 import {Slider3Component} from "./slider-3/slider-3.component";
 import {ComponentsModule} from "../../../../../../components/components.module";
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ComponentsModule} from "../../../../../../components/components.module";
     SubmenuComponent,
     NavbarComponent,
     FooterAdminComponent,
-    Slider3Component
+    Slider3Component,
+    BreadcrumbsComponent
   ],
   imports: [
     CommonModule,
@@ -29,11 +31,12 @@ import {ComponentsModule} from "../../../../../../components/components.module";
     FormsModule,
     ComponentsModule,
   ],
-    exports: [
-        FooterAdminComponent,
-        SidebarComponent,
-        NavbarComponent,
-        Slider3Component
-    ]
+  exports: [
+    FooterAdminComponent,
+    SidebarComponent,
+    NavbarComponent,
+    Slider3Component,
+    BreadcrumbsComponent
+  ]
 })
 export class ComponentsModuleLanding3 { }

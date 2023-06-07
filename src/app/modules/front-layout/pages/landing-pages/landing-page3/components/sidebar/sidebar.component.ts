@@ -4,7 +4,7 @@ import {MenuItem} from "./models/menu-item";
 import {ThemeService} from "../../../../../../../services/theme/theme.service";
 
 @Component({
-  selector: "app-sidebar_landing_3",
+  selector: "app-sidebar_landing_4",
   templateUrl: "./sidebar.component.html",
 })
 export class SidebarComponent implements OnInit {

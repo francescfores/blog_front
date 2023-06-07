@@ -22,6 +22,7 @@ import {IndexComponent} from "./index/index.component";
 import {ComponentsModule} from "../../../../components/components.module";
 import {ComponentsModuleLanding3} from "./landing-page3/components/components.module";
 import {LandingPage3Component} from "./landing-page3/landing-page3.component";
+// import { BreadcrumbsComponent } from './landing-pages3/components/breadcrumbs/breadcrumbs.component';
 
 
 
@@ -36,7 +37,8 @@ import {LandingPage3Component} from "./landing-page3/landing-page3.component";
     // EditorComponent,
     LandingPage1Component,
     LandingPage2Component,
-    LandingPage3Component
+    LandingPage3Component,
+    // BreadcrumbsComponent
   ],
   imports: [
     CommonModule,

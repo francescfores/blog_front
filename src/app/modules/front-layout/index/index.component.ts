@@ -1,6 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from "@angular/core";
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from "@angular/core";
 import {ThemeService} from "../../../services/theme/theme.service";
 import {BehaviorSubject} from "rxjs";
+import {BreadcrumbService} from "../pages/landing-pages/landing-page3/components/breadcrumbs/breadcrumService";
 // import {SidebarService} from "../services/sidebar.service";
 
 @Component({
@@ -9,14 +10,18 @@ import {BehaviorSubject} from "rxjs";
   styles: [],
   encapsulation: ViewEncapsulation.None
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit  {
   isDarkEnable = false;
   sidebarOpen= false;
 
   constructor(
     public themeService: ThemeService,
+    private breadcrumbService: BreadcrumbService
     // public sidebarService: SidebarService
-  ) {}
+  ) {
+    console.log('frontfrontfront')
+  }
+
 
   ngOnInit(): void {
     this.themeService.getCurrentTheme().subscribe(theme => {

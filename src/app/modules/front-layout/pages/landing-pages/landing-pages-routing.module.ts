@@ -10,12 +10,22 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
+    data: { breadcrumb: 'landings' },
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     children: [
-          {path: "landing1", component: LandingPage1Component},
-          {path: "landing2", component: LandingPage2Component},
-          {path: "landing3", component: LandingPage3Component},
+      {
+        path: "landing1", component: LandingPage1Component,
+        data: { breadcrumb: 'landing1' },
+      },
+      {
+        path: "landing2", component: LandingPage2Component,
+        data: {breadcrumb: 'landing2'},
+      },
+      {
+        path: "landing3", component: LandingPage3Component,
+        data: { breadcrumb: 'landing3' },
+      },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

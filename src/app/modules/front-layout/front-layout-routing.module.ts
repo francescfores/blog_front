@@ -16,24 +16,22 @@ import {IndexComponent} from './index/index.component';
 // import {InputsComponent} from "../admin-layout/pages/components/inputs/inputs.component";
 
 const routes: Routes = [
-  {
-    path: 'landings',
-    loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
-  },
+  // {
+  //   path: 'landings', data: { breadcrumb: 'landings' },
+  //   loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
+  // },
   {
     path: '',
     component: IndexComponent,
 
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
-    // children: [
-    //   { path: "landings", component: LandingPagesComponent,
-    //     children: [
-    //       {path: "landing1", component: LandingPagesComponent},
-    //       {path: "landing1", component: LandingPage1Component},
-    //       {path: "landing2", component: LandingPage2Component},
-    //     ],
-    //   },
+    children: [
+      {
+        path: 'landings', data: { breadcrumb: 'landings' },
+        loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
+      }
+        ],
     //   // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     // ],
   },

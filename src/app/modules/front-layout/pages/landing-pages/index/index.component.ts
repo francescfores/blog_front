@@ -1,6 +1,8 @@
-import {Component, OnInit, ViewEncapsulation} from "@angular/core";
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from "@angular/core";
 // import {ThemeService} from "../../../services/theme/theme.service";
 import {BehaviorSubject} from "rxjs";
+import {ThemeService} from "../../../../../services/theme/theme.service";
+import {BreadcrumbService} from "../landing-page3/components/breadcrumbs/breadcrumService";
 // import {SidebarService} from "../services/sidebar.service";
 
 @Component({
@@ -9,21 +11,16 @@ import {BehaviorSubject} from "rxjs";
   styles: [],
   encapsulation: ViewEncapsulation.None
 })
-export class IndexComponent{
+export class IndexComponent implements OnInit {
   isDarkEnable = false;
   sidebarOpen= false;
 
-  // constructor(
-  //   public themeService: ThemeService,
-  //   public sidebarService: SidebarService
-  // ) {}
-  //
-  // ngOnInit(): void {
-  //   this.themeService.getCurrentTheme().subscribe(theme => {
-  //     this.isDarkEnable = theme === 'theme-dark';
-  //   });
-  //   this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
-  //     this.sidebarOpen = sidebarOpen;
-  //   });
-  // }
+  constructor(
+    public themeService: ThemeService,
+    private breadcrumbService: BreadcrumbService
+    // public sidebarService: SidebarService
+  ) {
+  }
+  ngOnInit(): void {}
+
 }

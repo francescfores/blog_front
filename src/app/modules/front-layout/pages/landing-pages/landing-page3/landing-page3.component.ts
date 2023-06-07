@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ThemeService} from "../../../../../services/theme/theme.service";
+import {BreadcrumbService} from "./components/breadcrumbs/breadcrumService";
 // import {SidebarService} from "./components/sidebar/services/sidebar.service";
 
 @Component({
@@ -12,9 +13,10 @@ export class LandingPage3Component implements OnInit {
   sidebarOpen= false;
   constructor(
     public themeService: ThemeService,
+    private breadcrumbService: BreadcrumbService
     // public sidebarService: SidebarService
-) {}
-
+) {
+  }
   ngOnInit(): void {
     this.themeService.getCurrentTheme().subscribe(theme => {
       this.isDarkEnable = theme === 'theme-dark';

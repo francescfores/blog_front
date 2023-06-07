@@ -210,17 +210,17 @@ module.exports = {
 
       },
       dark: {
-        'primary': '#92d93a',//0091ADB2 ///41FF6CDA  7cad41
-        'secondary': '#F3A71299', ///F3A71299 //FBB02DE5 F3A71299
+        'primary': '#BA2C73',//0091ADB2 ///41FF6CDA  7cad41
+        'secondary': '#5C95FF', ///F3A71299 //FBB02DE5 F3A71299
         'ternary': '#d56858', ///29335C99 //17BEBBE4 29335C99
         'success': '#70C18399', //'#70C1B3',
         'info': '#2E72B299', //'#29335C',
         'warning': '#FFC43D99', //'#FFC43D',
         'help': '#55319199', //'#29335C',
         'danger': '#EF476F99', //'#29335C',
-        'bgPrim': '#1E1F1E', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
-        'bgSeco': '#141514',//0A131F
-        'bgTern': '#242524',//1e314b #474954
+        'bgPrim': '#1C1C35', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
+        'bgSeco': '#151528',//0A131F
+        'bgTern': '#2A2A50',//1e314b #474954
         // 'secondary': '#CBF7ED',
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',

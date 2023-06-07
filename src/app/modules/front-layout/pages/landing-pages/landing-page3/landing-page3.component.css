@@ -6,17 +6,23 @@ fonts
 @import url('https://fonts.cdnfonts.com/css/hyper-viper');
 @import url('https://fonts.cdnfonts.com/css/lazer84');
 @import url('https://fonts.cdnfonts.com/css/da-mad-rave');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.cdnfonts.com/css/rollcage');
 @font-face {
   font-family: "Exoct";
   src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")
 }
-.text_font_marvel{
+
+body{
   src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf");
   /*font-family: "Exoct";*/
   /*font-family: 'Hyper Viper', sans-serif;*/
   /*font-family: 'lazer84', sans-serif;*/
   /*font-family: 'Shlop', sans-serif;*/
-  font-family: 'Da Mad Rave', sans-serif;
+  /*font-family: 'Ubuntu', sans-serif;*/
+  font-family: 'Rollcage', sans-serif;
+  letter-spacing: 2px; /* Espacio de 2 píxeles entre las letras */
 }
 /* Firefox */
 * {

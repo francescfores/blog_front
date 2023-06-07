@@ -47,15 +47,19 @@ export class NavbarComponent implements OnInit {
     //   //this.router.navigate(['/auth/login']);
     // }
 
-    $('#navbar').removeClass('bg-transparent');
-    $('#navbar').addClass('bg-bgPrim');
+
 
     if(this.transparent){
       $('#navbar').addClass('bg-transparent');
       $('#navbar').removeClass('bg-bgPrim');
-      window.addEventListener('scroll', this.scroll, true)
+      // window.addEventListener('scroll', this.scroll, true)
+    }else {
+      $('#navbar').removeClass('bg-transparent');
+      $('#navbar').addClass('bg-bgPrim');
     }
-        window.addEventListener("scroll", this.detectScrollDirection);
+        // window.addEventListener("scroll", this.detectScrollDirection);
+    window.addEventListener('scroll', this.scroll, true)
+
     this.animationSunMoon();
 
     // if(this.isDarkEnable){
@@ -74,7 +78,7 @@ export class NavbarComponent implements OnInit {
     console.log('this.isDarkEnable',this.isDarkEnable);
     if(!this.isDarkEnable){
       console.log('Sun ',this.isDarkEnable);
-      $('.moon_sun').css("fill", "black");
+      $('.moon_sun').css("fill", "hsl(var(--twc-textPrimary))");
       $('.moon_sun g circle').css("transform", "scale(1)");
       // $('.moon_sun').css("transform", "rotate(-20deg)");
       setTimeout(function() {
@@ -88,7 +92,7 @@ export class NavbarComponent implements OnInit {
       $('.moon_sun > circle').attr("r", "5");
     }else{
       console.log('Mooon ',this.isDarkEnable);
-      $('.moon_sun').css("fill", "white");
+      $('.moon_sun').css("fill", "hsl(var(--twc-textPrimary))");
       $('.moon_sun g circle').css("transform", "scale(0)");
       $('.moon_sun').css("transform", "rotate(90deg)");
       $('#moon-mask-main-nav circle').attr('cx', '10');
@@ -105,14 +109,14 @@ export class NavbarComponent implements OnInit {
     this.sidebarService.toggleSidebar();
   }
   scroll = (): void => {
-    if(window.scrollY <= 50){
+    if(window.scrollY <= 480){
       $('#navbar').addClass('bg-transparent');
-      $('#navbar').removeClass('bg-primary');
+      $('#navbar').removeClass('bg-bgPrim');
     }else {
       $('#navbar').removeClass('bg-transparent');
-      $('#navbar').addClass('bg-primary');
+      $('#navbar').addClass('bg-bgPrim');
     }
-
+    this.detectScrollDirection()
   }
 
   setLoginOpen() {
@@ -122,22 +126,39 @@ export class NavbarComponent implements OnInit {
   logOut(){
     // this.authenticationService.logout();
   }
-     detectScrollDirection() {
+  detectScrollDirection() {
     var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-       var scrollDistance = currentScrollPosition - this.lastScrollPosition;
-    if (currentScrollPosition > this.lastScrollPosition && scrollDistance > 20) {
-      console.log(scrollDistance)
-      // Scroll hacia abajo
-      console.log('abajo');
-      $('#navbar').addClass('-translate-y-[60px]');
-      // handleScrollDown();
-    } else if (currentScrollPosition < this.lastScrollPosition) {
-      // Scroll hacia arriba
-      // handleScrollUp();
-      $('#navbar').removeClass('-translate-y-[60px]');
+    var scrollDistance = document.documentElement.scrollTop;
+    console.log(this.sidebarOpen)
+    console.log(scrollDistance)
+    if(!this.sidebarOpen){
+      if (currentScrollPosition > this.lastScrollPosition && scrollDistance > 450) {
+        console.log(scrollDistance)
+        // Scroll hacia abajo
+        console.log('abasssjo');
+        $('#navbar').addClass('-translate-y-[60px]');
 
-      console.log('arriba')
+        $('#navbar').addClass('z-30');
+        $('#navbar').removeClass('z-50');
+        // handleScrollDown();
+      } else if (currentScrollPosition < this.lastScrollPosition) {
+        // Scroll hacia arriba
+        // handleScrollUp();
+        $('#navbar').removeClass('-translate-y-[60px]');
+        $('#navbar').addClass('z-50');
+        $('#navbar').removeClass('z-30');
+        console.log('arriba')
+      }
+      if (currentScrollPosition < this.lastScrollPosition && scrollDistance < 400){
+        $('#navbar').addClass('z-30');
+        $('#navbar').removeClass('z-50');
+      }
+    }else{
+      $('#navbar').removeClass('-translate-y-[60px]');
+      $('#navbar').addClass('z-50');
+      $('#navbar').removeClass('z-30');
     }
+
     this.lastScrollPosition = currentScrollPosition;
   }
 
