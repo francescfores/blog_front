@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "2.0",
     "@angular/animations": "^15.1.0",
     "@angular/common": "^15.1.0",
     "@angular/compiler": "^15.1.0",
@@ -26,6 +27,7 @@
     "file-saver": "^2.0.5",
     "jquery": "^3.6.4",
     "moment": "^2.29.4",
+    "ngx-toastr": "^16.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "tw-colors": "^1.2.6",

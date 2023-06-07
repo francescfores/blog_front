@@ -4,6 +4,9 @@ import * as $ from "jquery";
 import {Router} from "@angular/router";
 import {ThemeService} from "../../../../services/theme/theme.service";
 import {SidebarService} from "../../services/sidebar.service";
+import {User} from "../../../../models/user";
+import {AuthenticationService} from "../../../../services/api/authentication.service";
+import {AuthenticationAdminService} from "../../../../services/api/authentication-admin.service";
 // import {AuthenticationService} from "../../../services/api/authentication.service";
 // import {Cart} from "../../../models/cart";
 // import {Client} from "../../../models/client";
@@ -22,12 +25,13 @@ export class NavbarComponent implements OnInit {
   sidebarOpen = false;
 
   loginOpen = false;
-  // client :Client;
+  client!:User;
 
   constructor(
     private router: Router,
     public themeService: ThemeService,
-    public sidebarService: SidebarService
+    public sidebarService: SidebarService,
+    public authenticationAdminService: AuthenticationAdminService
   ) {
   }
 
@@ -38,10 +42,10 @@ export class NavbarComponent implements OnInit {
     this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
       this.sidebarOpen = sidebarOpen;
     });
-    // this.client = this.authenticationService.currentClientValue
-    // if (!this.client) {
-    //   //this.router.navigate(['/auth/login']);
-    // }
+    this.client = this.authenticationAdminService.currentUserValue
+    if (!this.client) {
+      //this.router.navigate(['/auth/login']);
+    }
 
     $('#navbar').removeClass('bg-transparent');
     $('#navbar').addClass('bg-bgPrim');
@@ -76,7 +80,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut(){
-    // this.authenticationService.logout();
+    this.authenticationAdminService.logout();
   }
 }
 

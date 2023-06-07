@@ -130,7 +130,7 @@ input{
 .claw {
   @apply absolute text-center top-[-360px] w-[120px] right-[0px];
   z-index: 30;
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.62));
   animation: slide_down 6s ease-in-out infinite;;;
 }
 @keyframes slide_down {
@@ -175,7 +175,7 @@ input{
 .claw_wire {
   /*@apply absolute text-center top-[-200px] w-[5px] right-[325px] fill-textPrimary h-[265px] bg-[#53c9df] rounded-b-md;*/
   @apply w-[3px] mx-auto fill-textPrimary top-[0px] h-[400px] bg-[#53c9df] rounded-b-md ;
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.62));
   /*animation: float 6s ease-in-out infinite;;;*/
 }
 

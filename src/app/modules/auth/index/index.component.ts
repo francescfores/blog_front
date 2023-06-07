@@ -12,6 +12,7 @@ import {SidebarService} from "../../admin-layout/services/sidebar.service";
 export class IndexComponent implements OnInit {
   isDarkEnable = false;
   sidebarOpen= false;
+  registerOpen = false;
 
   constructor(
     public themeService: ThemeService,
@@ -23,5 +24,9 @@ export class IndexComponent implements OnInit {
       this.isDarkEnable = theme === 'theme-dark';
     });
 
+  }
+  register(){
+    console.log('register');
+    this.registerOpen = !this.registerOpen;
   }
 }

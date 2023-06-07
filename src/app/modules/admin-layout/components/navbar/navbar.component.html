@@ -49,16 +49,15 @@
        ease-in-out duration-300
       ">
     <div class="divide-y divide-solid divide-neutral-700 w-1/4 ">
-<!--      <div *ngIf="client">-->
-<!--        <a  (click)="logOut()"-->
-<!--            class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"-->
-<!--        > Logout </a>-->
-<!--        <a [routerLink]="['/shop/profile']"-->
-<!--          class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"-->
-<!--        > Account </a>-->
-
-<!--      </div>-->
-<!--      <div *ngIf="!client">-->
+      <div *ngIf="client">
+        <a  (click)="logOut()"
+            class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+        > Logout </a>
+        <a [routerLink]="['/shop/profile']"
+          class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+        > Account </a>
+      </div>
+      <div *ngIf="!client">
       <div >
         <a
           [routerLink]="['/auth/login']"
@@ -69,5 +68,6 @@
       </div>
 
     </div>
+  </div>
   </div>
 </nav>
