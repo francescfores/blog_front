@@ -12,6 +12,7 @@ import {Buttons3dComponent} from "./pages/components/buttons3d/buttons3d.compone
 import {TutorialComponent} from "./pages/tutorial/tutorial.component";
 import {EditorComponent} from "./pages/editor/editor.component";
 import {AuthGuard} from "../../services/guards/auth.guard";
+import {NonAuthGuard} from "../../services/guards/non-auth.guard";
 // import {LandingPage1Component} from "../front-layout/pages/landing-pages/landing-page1/landing-page1.component";
 // import {LandingPage2Component} from "../front-layout/pages/landing-pages/landing-page2/landing-page2.component";
 // import {LandingPagesComponent} from "../front-layout/pages/landing-pages/landing-pages.component";
@@ -26,7 +27,6 @@ const routes: Routes = [
       roles: ['superadmin','admin']
     },
     children: [
-
       { path: "dashboard", component: DashboardComponent },
       // { path: "landings", component: LandingPagesComponent,
       //   children: [
@@ -47,9 +47,15 @@ const routes: Routes = [
         { path: "inputs", component: InputsComponent }
       ],
       },
+      {
+        path: 'blog',
+        loadChildren: () => import('./../../modules/blog/blog.module').then(m => m.BlogModule)
+      },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
+
+
 ];
 
 @NgModule({

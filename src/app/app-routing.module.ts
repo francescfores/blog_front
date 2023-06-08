@@ -24,6 +24,7 @@ const routes: Routes = [
     path: 'front',
     loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
   },
+
   { path: "",redirectTo: "auth/login",  pathMatch: "full" },
   // admin views
   // { path: "**", redirectTo: "", pathMatch: "full" },

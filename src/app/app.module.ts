@@ -11,6 +11,7 @@ import {GoogleInitOptions, GoogleLoginProvider, SocialAuthServiceConfig} from "@
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthenticationAdminService} from "./services/api/authentication-admin.service";
+import {SharedService} from "./services/shared.service";
 // import {ClientService} from "./services/api/client.service";
 
 const googleLoginOptions: GoogleInitOptions = { oneTapEnabled: false}// default is true };
@@ -33,6 +34,7 @@ const googleLoginOptions: GoogleInitOptions = { oneTapEnabled: false}// default 
   ],
   providers: [
     AuthenticationService,
+    SharedService,
     AuthenticationAdminService,
     {
       provide: 'SocialAuthServiceConfig',

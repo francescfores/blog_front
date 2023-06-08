@@ -21,6 +21,7 @@ import { Buttons3dComponent } from './pages/components/buttons3d/buttons3d.compo
 import {CodemirrorModule} from "@ctrl/ngx-codemirror";
 import { TutorialComponent } from './pages/tutorial/tutorial.component';
 import { EditorComponent } from './pages/editor/editor.component';
+import {BlogModule} from "../blog/blog.module";
 // import { LandingPagesComponent } from './pages/landing-pages/landing-pages.component';
 // import { LandingPage1Component } from './pages/landing-pages/landing-page1/landing-page1.component';
 // import { LandingPage2Component } from './pages/landing-pages/landing-page2/landing-page2.component';
@@ -47,13 +48,14 @@ import { EditorComponent } from './pages/editor/editor.component';
     TutorialComponent,
     EditorComponent,
   ],
-    imports: [
+  imports: [
         CommonModule,
         ComponentsModule,
         ReactiveFormsModule,
         FormsModule,
         AdminLayoutRoutingModule,
         CodemirrorModule,
+        BlogModule,
     ],
   exports: [
     IndexComponent,
