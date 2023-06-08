@@ -12,6 +12,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {GoogleSigninButtonModule} from "@abacritt/angularx-social-login";
 import {LoginComponent} from "./pages/client/login/login.component";
 import {RegisterComponent} from "./pages/client/register/register.component";
+import {ComponentsModule} from "../../components/components.module";
+import {AdminLayoutModule} from "../admin-layout/admin-layout.module";
+import {ComponentsAuthModule} from "./components/components-auth.module";
 
 
 
@@ -22,7 +25,10 @@ import {RegisterComponent} from "./pages/client/register/register.component";
     AuthRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    ComponentsModule,
+    AdminLayoutModule,
+    ComponentsAuthModule
   ],
   exports: [IndexComponent],
 })

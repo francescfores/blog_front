@@ -11,6 +11,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import {of} from "rxjs";
 import {AuthenticationAdminService} from "../../../../../services/api/authentication-admin.service";
+import {ThemeService} from "../../../../../services/theme/theme.service";
 
 @Component({
   selector: "app-login-admin",
@@ -23,11 +24,13 @@ export class LoginAdminComponent implements OnInit, AfterViewInit {
   public loginForm!: UntypedFormGroup;
   loading = false;
   submited = false;
+  public isDarkEnable= false;
 
   constructor(
     private router: Router,
     private authenticationAdminService: AuthenticationAdminService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private themeService: ThemeService
   ) {
   }
   ngAfterViewInit():void{
@@ -37,6 +40,9 @@ export class LoginAdminComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.themeService.getCurrentTheme().subscribe(theme => {
+      this.isDarkEnable = theme === 'theme-dark';
+    });
     this.loginForm = new UntypedFormGroup({
       email: new UntypedFormControl('superadmin@gmail.com', Validators.required),
       password: new UntypedFormControl('123456', Validators.required)
@@ -59,10 +65,12 @@ export class LoginAdminComponent implements OnInit, AfterViewInit {
             this.router.navigate(['/admin/dashboard']);
           },
           error => {
+            console.log('eeeeeeeerr')
             this.loading = false;
             this.toastr.error('Invalid username or password');
           });
     } else {
+      console.log('eeeeeeeerr')
       this.loading=false;
       this.toastr.error('Email and password are required!');
     }

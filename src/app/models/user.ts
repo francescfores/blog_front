@@ -9,5 +9,5 @@ export class User {
   firstName!: string;
   lastName!: [];
   token!: string;
-  roles!: any[];
+  roles: any[]=[];
 }

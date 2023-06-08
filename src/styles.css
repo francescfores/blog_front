@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr'; /* You can add global styles to this file, and also import other style files */
+@import '~codemirror/lib/codemirror.css';
+@import '~codemirror/theme/material.css';
 /*
   tailwind config
 */
@@ -6,10 +8,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '~codemirror/lib/codemirror.css';
-@import '~codemirror/theme/material.css';
-/*@import "assets/styles/index.css";*/
 
+/*@import "assets/styles/index.css";*/
 :root{
   --rounded-sm: 0.125rem;
   --rounded: 0.25rem;

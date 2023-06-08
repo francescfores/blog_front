@@ -10,6 +10,7 @@ import {
   SocialUser,
 } from '@abacritt/angularx-social-login';
 import {of} from "rxjs";
+import {ThemeService} from "../../../../../services/theme/theme.service";
 
 @Component({
   selector: "app-login",
@@ -29,12 +30,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
   isLoggedin=false;
   declare  gapi: any;
   errorMessage!: string;
+
+  isDarkEnable=false;
+
+
+
   constructor(
     public router: Router,
     public authenticationService: AuthenticationService,
     public socialAuthService: SocialAuthService,
-    private toastr: ToastrService
-  ) {
+    private toastr: ToastrService,
+  public themeService: ThemeService,
+) {
   }
 
   ngAfterViewInit():void{
@@ -44,6 +51,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.themeService.getCurrentTheme().subscribe(theme => {
+      this.isDarkEnable = theme === 'theme-dark';
+    });
     this.loginForm = new UntypedFormGroup({
       email: new UntypedFormControl('client_ecommerce@gmail.com',
         [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),

@@ -1,17 +1,23 @@
-<div [ngClass]="{'theme-light': isDarkEnable, 'theme-dark': !isDarkEnable}" class="transition-colors duration-1000 ">
-  <main>
-    <section class="pt-12 w-full  min-h-screen   flex justify-center items-center bg-white ">
-      <!--<div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
-        style="background-image: url('assets/img/register_bg_2.png')"></div>-->
-      <!--      <app-login (onClick)='register()'-->
-      <!--                 [ngClass]="{ '-translate-x-0 ': !registerOpen, '-translate-x-full': registerOpen  }"-->
-      <!--                 class="w-full transition ease-in-out duration-1000 fixed"></app-login>-->
-      <!--      <app-register (onClick)='register()'-->
-      <!--                    [ngClass]="{ 'translate-x-0 ': registerOpen, 'translate-x-full': !registerOpen  }"-->
-      <!--                    class="w-full transition ease-in-out duration-1000 fixed"></app-register>-->
-      <router-outlet></router-outlet>
-      <!--<app-footer-small [absolute]="true"></app-footer-small>-->
-    </section>
-  </main>
-</div>
+<div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable}" class="transition-colors duration-500 ">
+  <app-navbar-auth
+    [transparent]="false"
+  ></app-navbar-auth>
+  <div [ngClass]="{'theme-light': !isDarkEnable, 'theme-dark': isDarkEnable }" class="relative">
+    <!--<app-admin-navbar></app-admin-navbar>
+    <app-header-stats></app-header-stats>
+    <div class="px-4 md:px-10 mx-auto w-full -m-24">-->
+    <div class="flex flex-col">
+      <!-- Sidebar TODO change to componente -->
+      <app-sidebar-auth class="bg-bgPrim"></app-sidebar-auth>
 
+      <!-- Main -->
+      <!--      <div class="flex-grow py-16 bg-[conic-gradient(at_bottom_right,_var(&#45;&#45;tw-gradient-stops))] from-bgPrim via-bgTern to-bgPrim duration-500 transition-all ease-in-out"-->
+      <div class="bg-bgSeco  duration-500 transition-all ease-in-out"
+      >
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer-auth [ngClass]="{'pl-64': sidebarOpen, 'pl-0 sm:pl-20': !sidebarOpen}"
+                       class="w-full z-50 fixed py-2 bg-bgPrim bottom-0 overflow-hidden duration-500 transition-all ease-in-out"></app-footer-auth>
+    </div>
+  </div>
+</div>

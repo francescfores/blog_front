@@ -1,0 +1,73 @@
+<nav id="navbar"
+     class="text-textPrimary bg-bgPrim transition-colors duration-500 top-0 fixed z-20 w-full">
+  <!--  <nav id="navbar"-->
+  <!--       class="  text-textPrimary transition-colors duration-1000 top-0 fixed z-20 w-full flex flex-wrap items-center-->
+  <!--    justify-between navbar-expand-lg">-->
+  <div class="w-screen ">
+    <div class="py-4 pr-6 flex w-full justify-start items-center ">
+      <button [ngClass]="{'opacity-0':sidebarOpen}"
+              class='flex md:hidden z-50 px-8 flex-grow-0 flex-shrink-0  items-start flex flex-col rounded justify-start group pr-2 transition-all duration-500' (click)="toggleSidebar()">
+        <div [ngClass]="{
+        'h-0.5 w-4 mb-1 bg-primary transition ease transform duration-300':true,
+        'rotate-45 translate-y-1.5 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}"> </div>
+        <div [ngClass]="{
+        'h-0.5 w-4 mb-1 bg-primary transition ease transform duration-300':true,
+        'opacity-0' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}">        </div>
+        <div [ngClass]="{
+        'h-0.5 w-4  mb-1 bg-primary transition ease transform duration-300':true,
+        '-rotate-45 -translate-y-1.5 opacity-50 group-hover:opacity-100' : sidebarOpen,
+        'opacity-50 group-hover:opacity-100': !sidebarOpen}">
+        </div>
+      </button>
+      <div [ngClass]="{'opacity-0':sidebarOpen}" class="flex px-8 justify-center items-center transition-all duration-500 ease-in-out">
+        <div>
+          <img *ngIf="isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo_dark.png" >
+          <img *ngIf="!isDarkEnable" class="w-6" src="./assets/img/logo/thunder_logo.png" >
+        </div>
+        <div class="text-xl text-textPrimary tracking-wide ml-2 font-semibold">Thunder</div>
+      </div>
+      <!-- Nav Links -->
+      <div class="flex-grow  space-x-5 flex justify-end">
+        <a class="flex items-center hover:text-gray-200" *ngIf="!isDarkEnable" (click)="changeTheme()" mode-button style="font-size:18px"><i class="fa-solid fa-moon"></i></a>
+        <a class="flex items-center hover:text-gray-200" *ngIf="isDarkEnable" (click)="changeTheme()" mode-button style="font-size:16px"><i class="fa-solid fa-sun"></i></a>
+        <!--        <app-notification-dropdown></app-notification-dropdown>-->
+        <a class="flex items-center hover:text-gray-200" (click)="setLoginOpen()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- Responsive navbar -->
+  </div>
+  <div
+    [ngClass]="{ 'translate-x-0 ': loginOpen, 'translate-x-full': !loginOpen, 'opacity-100': loginOpen, 'opacity-0': !loginOpen}"
+    class="top-0 right-0 w-auto divide-neutral-700 text-neutral-700
+       px-5 mt-16 fixed z-0 bg-white
+       ease-in-out duration-300
+      ">
+    <div class="divide-y divide-solid divide-neutral-700 w-1/4 ">
+      <div *ngIf="client">
+        <a  (click)="logOut()"
+            class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+        > Logout </a>
+        <a [routerLink]="['/shop/profile']"
+           class=" w-full text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+        > Account </a>
+      </div>
+      <div *ngIf="!client">
+        <div >
+          <a
+            [routerLink]="['/auth/login']"
+            class=" text-sm leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
+          >
+            Login
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>

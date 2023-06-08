@@ -11,14 +11,14 @@ import {Category} from "../../models/category";
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationAdminService {
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  private currentUserSubject: BehaviorSubject<User | null>;
+  public currentUser: Observable<User| null> ;
   public user:User;
 
   constructor(private http: HttpClient, private router: Router,  private socialAuthService: SocialAuthService
   ) {
     const storedUser = localStorage.getItem('currentUser');
-    this.currentUserSubject = new BehaviorSubject<User>(storedUser !== null ? JSON.parse(storedUser) : null);
+    this.currentUserSubject = new BehaviorSubject<User | null>(storedUser !== null ? JSON.parse(storedUser) : null);
     this.currentUser = this.currentUserSubject.asObservable();
     this.user= new User();
   }
@@ -106,8 +106,8 @@ export class AuthenticationAdminService {
     //   console.log('removeItem');
     //
     // }
-    this.currentUserSubject.next(new User());
-    this.socialAuthService.signOut();
+    this.currentUserSubject.next(null);
+    // this.socialAuthService.signOut();
     this.router.navigate(['/auth/login'], { queryParams: { returnUrl: '' }});
   }
 

@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {AuthenticationService} from "../../../../../services/api/authentication.service";
 import {first} from "rxjs/operators";
 import {ToastrService} from "ngx-toastr";
+import {ThemeService} from "../../../../../services/theme/theme.service";
 
 @Component({
   selector: "app-register",
@@ -15,11 +16,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   loading = false;
   submited = false;
   private errorMessage!: string;
+  isDarkEnable=false;
 
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private themeService: ThemeService
   ) {
   }
   ngAfterViewInit():void{
@@ -29,6 +32,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.themeService.getCurrentTheme().subscribe(theme => {
+      this.isDarkEnable = theme === 'theme-dark';
+    });
     this.loginForm = new UntypedFormGroup({
       email: new UntypedFormControl('client_ecommerce@gmail.com',
         [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),

@@ -1,19 +1,19 @@
-<form class="" [formGroup]="loginForm">
-  <div class="w-full  min-h-screen flex justify-center items-center bg-white">
-    <div class="p-10 border-[1px]  border-slate-200 rounded-md flex flex-col items-center space-y-3">
+<form  [formGroup]="loginForm">
+  <div class="w-full  min-h-screen flex justify-center items-center ">
+    <div class="p-10 border-[1px]  border-bgTern rounded-md flex flex-col items-center space-y-3">
       <div class="py-4">
-        <img width="80" class="-mt-10" src="./assets/img/logo.png" />
-      </div>
+        <img *ngIf="isDarkEnable" class="w-10" src="./assets/img/logo/thunder_logo_dark.png" >
+        <img *ngIf="!isDarkEnable" class="w-10" src="./assets/img/logo/thunder_logo.png" >      </div>
       <input value="superadmin@gmail.com"
              type="email" formControlName="email" [ngClass]="{ 'border-solid border-b-2 border-b-red-500': submited && f['email'].errors }"
-             class="p-3 border-[1px] border-slate-500 rounded-full" placeholder="E-Mail" />
+             class="p-3 border-[1px] border-bgTern rounded-full" placeholder="E-Mail" />
       <div *ngIf="submited && f['email'].errors" >
         <div *ngIf="f['email'].errors['required']">Correo electronico requerido</div>
       </div>
       <div class="flex flex-col space-y-1">
         <input type="password" value="123456" formControlName="password" [ngClass]="{ 'border-solid border-b-2 border-b-red-500': submited && f['password'].errors }"
-               class="p-3 border-[1px] border-slate-500 rounded-full" placeholder="Password" />
-        <p class="font-bold text-[#0070ba]">Forgot password?</p>
+               class="p-3 border-[1px] border-bgTern rounded-full" placeholder="Password" />
+        <p class="font-bold text-textPrimary">Forgot password?</p>
         <div *ngIf="submited && f['password'].errors">
           <div *ngIf="f['password'].errors['required']">¿Se te olvidó tu contraseña?</div>
         </div>
@@ -21,13 +21,10 @@
       <div class="flex flex-col space-y-5 w-full">
         <button [disabled]="loading"
                 (click)="logIn()" class="w-full bg-primary hover:bg-secondary rounded-3xl p-3 text-white font-bold transition duration-200 ">Log in</button>
-        <div class="flex items-center justify-center border-t-[1px] border-t-slate-300 w-full relative">
-          <div class="-mt-1 font-bod bg-white px-5 absolute">O</div>
-        </div>
-        <!--      <button [routerLink]="['/auth2/admin/register']" class="w-full border-slate-300-->
-        <!--      border-[1px] rounded-3xl p-3 text-[#0070ba] font-bold transition duration-200">Registrarse</button>-->
-        <a [routerLink]="['/auth/login']" class="w-full border-slate-300 text-center
-      border-[1px] rounded-3xl p-3 text-[#0070ba] font-bold transition duration-200">client</a>
+        <button [routerLink]="['/auth/admin/register']" class="w-full border-bgTern border-[1px]
+           rounded-3xl p-3 text-textPrimary font-bold transition duration-200">Registrarse</button>
+        <a [routerLink]="['/auth/login']" class="w-full border-bgTern text-center
+      border-[1px] rounded-3xl p-3 text-textPrimary font-bold transition duration-200">client</a>
       </div>
       <!--
       <div class="flex space-x-1 p-10 text-sm">

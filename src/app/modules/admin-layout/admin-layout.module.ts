@@ -53,9 +53,12 @@ import { EditorComponent } from './pages/editor/editor.component';
         ReactiveFormsModule,
         FormsModule,
         AdminLayoutRoutingModule,
-        CodemirrorModule
+        CodemirrorModule,
     ],
-  exports: [IndexComponent],
+  exports: [
+    IndexComponent,
+    NavbarComponent
+  ],
   providers: []
 })
 export class AdminLayoutModule { }

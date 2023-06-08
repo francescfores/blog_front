@@ -3,7 +3,7 @@ import {BehaviorSubject} from "rxjs";
 import * as $ from "jquery";
 import {Router} from "@angular/router";
 import {ThemeService} from "../../../../services/theme/theme.service";
-import {SidebarService} from "../../services/sidebar.service";
+import {SidebarService} from "../services/sidebar.service";
 import {User} from "../../../../models/user";
 import {AuthenticationService} from "../../../../services/api/authentication.service";
 import {AuthenticationAdminService} from "../../../../services/api/authentication-admin.service";
@@ -12,7 +12,7 @@ import {AuthenticationAdminService} from "../../../../services/api/authenticatio
 // import {Client} from "../../../models/client";
 
 @Component({
-  selector: "app-navbar",
+  selector: "app-navbar-auth",
   templateUrl: "./navbar.component.html",
 })
 
@@ -62,6 +62,7 @@ export class NavbarComponent implements OnInit {
     this.themeService.changeTheme(this.isDarkEnable);
   }
   toggleSidebar() {
+    console.log('eeee')
     this.sidebarService.toggleSidebar();
   }
   scroll = (): void => {

@@ -29,7 +29,6 @@ const routes: Routes = [
       { path: "login", component: LoginAdminComponent },
       { path: "register", component: RegisterAdminComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
-      { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
 ];

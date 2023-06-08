@@ -11,6 +11,7 @@ import {InputsComponent} from "./pages/components/inputs/inputs.component";
 import {Buttons3dComponent} from "./pages/components/buttons3d/buttons3d.component";
 import {TutorialComponent} from "./pages/tutorial/tutorial.component";
 import {EditorComponent} from "./pages/editor/editor.component";
+import {AuthGuard} from "../../services/guards/auth.guard";
 // import {LandingPage1Component} from "../front-layout/pages/landing-pages/landing-page1/landing-page1.component";
 // import {LandingPage2Component} from "../front-layout/pages/landing-pages/landing-page2/landing-page2.component";
 // import {LandingPagesComponent} from "../front-layout/pages/landing-pages/landing-pages.component";
@@ -19,9 +20,11 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-
-    // canActivate: [NonAuthGuard],
-    // canActivateChild: [NonAuthGuard],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+    data: {
+      roles: ['superadmin','admin']
+    },
     children: [
 
       { path: "dashboard", component: DashboardComponent },

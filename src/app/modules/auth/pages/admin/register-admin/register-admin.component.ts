@@ -3,6 +3,7 @@ import {UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
 import {AuthenticationAdminService} from "../../../../../services/api/authentication-admin.service";
+import {ThemeService} from "../../../../../services/theme/theme.service";
 
 @Component({
   selector: "app-register-admin",
@@ -13,10 +14,12 @@ export class RegisterAdminComponent implements OnInit, AfterViewInit {
   public loginForm: any;
   loading = false;
   submited = false;
+  isDarkEnable=false;
 
   constructor(
     private router: Router,
     private authenticationAdminService: AuthenticationAdminService,
+    public themeService: ThemeService,
   ) {
   }
   ngAfterViewInit():void{
@@ -26,6 +29,9 @@ export class RegisterAdminComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.themeService.getCurrentTheme().subscribe(theme => {
+      this.isDarkEnable = theme === 'theme-dark';
+    });
     this.loginForm = new UntypedFormGroup({
       email: new UntypedFormControl('', Validators.required),
       password: new UntypedFormControl('', Validators.required)

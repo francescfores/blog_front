@@ -11,6 +11,7 @@ import {
 import { Observable } from 'rxjs';
 
 import { AuthenticationService } from '../api/authentication.service';
+import {AuthenticationAdminService} from "../api/authentication-admin.service";
 
 @Injectable({
   providedIn: 'root'
@@ -18,20 +19,20 @@ import { AuthenticationService } from '../api/authentication.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationAdminService: AuthenticationAdminService
   ) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log('canActivate');
     //obtenemos los roles requeridos para la ruta
-    const expectedRoles = route.data.roles;
-    console.log(route.data.roles);
+    const expectedRoles = route.data['roles'];
+    console.log(route.data['roles']);
     //si exiten roles requeridos
-    if(route.data.roles){
+    if(route.data['roles']){
       console.log('if(route.data.roles)');
       // comporvamos los roles del usuario con la funcion checkRoles
       // Itera sobre los roles esperados y comprueba si el usuario tiene alguno de ellos
-      const isAuthorized = this.authenticationService.checkRoles(expectedRoles);
+      const isAuthorized = this.authenticationAdminService.checkRoles(expectedRoles);
       // si no tiene ninguno redireccionamos a /
       if (!isAuthorized) {
         console.log('if (!isAuthorized)');
@@ -45,7 +46,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       // si no se especifica ningun rol para la ruta
       //comporvamos que el usario ha iniciado session
       console.log('else');
-      const currentUser = this.authenticationService.currentClientValue;
+      const currentUser = this.authenticationAdminService.currentUserValue;
       if (currentUser) {
         console.log('if (currentUser)');
         //si ha iniciado session devolvemos true
@@ -56,17 +57,19 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         this.router.navigate(['/']);
       }
     }
+    return false;
+
   }
 
   canActivate2(route: ActivatedRouteSnapshot, state: RouterStateSnapshot,) {
-    const currentUser = this.authenticationService.currentClientValue;
+    const currentUser = this.authenticationAdminService.currentUserValue;
     console.log('canActivate');
     console.log(currentUser.roles[0]);
-    console.log(route.data.roles);
-    console.log(route.data.roles.indexOf(currentUser.roles[0].name));
+    console.log(route.data['roles']);
+    console.log(route.data['roles'].indexOf(currentUser.roles[0].name));
     if (currentUser) {
       // check if route is restricted by role
-      if (route.data.roles && route.data.roles.indexOf(currentUser.roles[0].name) === -1) {
+      if (route.data['roles'] && route.data['roles'].indexOf(currentUser.roles[0].name) === -1) {
         // role not authorised so redirect to home page
         this.router.navigate(['/']);
         return false;
@@ -83,12 +86,12 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log('canActivateChild');
-    const currentUser = this.authenticationService.currentClientValue;
+    const currentUser = this.authenticationAdminService.currentUserValue;
     console.log(currentUser);
     if (currentUser) {
       console.log('if (currentUser)');
       // check if route is restricted by role
-      if (route.data.roles && route.data.roles.indexOf(currentUser.roles[0].name) === -1) {
+      if (route.data['roles'] && route.data['roles'].indexOf(currentUser.roles[0].name) === -1) {
         console.log('if (route.data.roles && route.data.roles.indexOf(currentUser.roles[0].name)');
         // role not authorised so redirect to home page
         this.router.navigate(['/']);

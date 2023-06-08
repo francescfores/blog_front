@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from "@angular/core";
 import {ThemeService} from "../../../services/theme/theme.service";
 import {BehaviorSubject} from "rxjs";
-import {SidebarService} from "../../admin-layout/services/sidebar.service";
+import {SidebarService} from "../components/services/sidebar.service";
 
 @Component({
   selector: 'app-index',
@@ -23,7 +23,9 @@ export class IndexComponent implements OnInit {
     this.themeService.getCurrentTheme().subscribe(theme => {
       this.isDarkEnable = theme === 'theme-dark';
     });
-
+    this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
+      this.sidebarOpen = sidebarOpen;
+    });
   }
   register(){
     console.log('register');
