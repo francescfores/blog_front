@@ -28,7 +28,7 @@ export class Button3dComponent implements OnInit{
   @Input() height ='30px';
   @Input() width ='';
   @Input() raise =5;
-  @Input() rounded ='';
+  @Input() rounded ='20px';
   // @Input() rotate ='';
   // @Input() rotate_invers ='';
   @Input() border ='';
@@ -75,10 +75,14 @@ export class Button3dComponent implements OnInit{
           let txt_loading=childElement.querySelector('.txt_loading') as HTMLElement;
           childElement.classList.remove('hidden');
 
+
           if(!loading){
             txt_loaded.classList.remove('hidden');
-            bubble.classList.remove('hidden');
             txt_loading.classList.add('hidden');
+            if (this.loading_type === 'waves') {
+              bubble.classList.remove('hidden');
+            }
+
             setTimeout(function() {
               childElement.classList.add('opacity-0');
               childElement.classList.remove('flex','btn_loading_slideInLeft');
@@ -89,13 +93,13 @@ export class Button3dComponent implements OnInit{
             myButton.style.pointerEvents = "none";
 
             txt_loaded.classList.add('hidden');
-            bubble.classList.add('flex');
 
             txt_loading.classList.remove('hidden');
             childElement.classList.remove('opacity-0');
             childElement.classList.add('flex');
 
             if (this.loading_type === 'waves') {
+              bubble.classList.add('flex');
               // Código a ejecutar si loading_type es 'waves'
               const water = myButton.querySelector(".water") as HTMLElement;
               let percent = 0;
@@ -116,6 +120,8 @@ export class Button3dComponent implements OnInit{
       }
     }
   }
+
+  loadWaves(){}
 
   // //with rxjs
   // private loadingSubject = new BehaviorSubject<boolean>(false);

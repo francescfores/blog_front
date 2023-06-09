@@ -25,6 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { Button3dComponent } from './buttons/button3d/button3d.component';
 import {BreadcrumbsComponent} from "./breadcrumbs/breadcrumbs.component";
 import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.component';
+import { SelectOutsideComponent } from './selects/select-outside/select-outside.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.comp
     Button3dComponent,
     BreadcrumbsComponent,
     InputOutsiteComponent,
+    SelectOutsideComponent,
   ],
     imports: [
         CommonModule,
@@ -57,24 +59,25 @@ import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.comp
         FormsModule,
         ReactiveFormsModule,
     ],
-    exports: [
-        UserDropdownComponent,
-        IndexDropdownComponent,
-        NotificationDropdownComponent,
-        TableDropdownComponent,
-        PagesDropdownComponent,
-        CardStatsComponent,
-        ButtonDefaultComponent,
-        ButtonFilledComponent,
-        CardDefaultComponent,
-        CardPricingComponent,
-        CardBackgroundComponent,
-        InputDefaultComponent,
-        CardComponent,
-        CodeplaygroundComponent,
-        Button3dComponent,
-        BreadcrumbsComponent,
-        InputOutsiteComponent
-    ]
+  exports: [
+    UserDropdownComponent,
+    IndexDropdownComponent,
+    NotificationDropdownComponent,
+    TableDropdownComponent,
+    PagesDropdownComponent,
+    CardStatsComponent,
+    ButtonDefaultComponent,
+    ButtonFilledComponent,
+    CardDefaultComponent,
+    CardPricingComponent,
+    CardBackgroundComponent,
+    InputDefaultComponent,
+    CardComponent,
+    CodeplaygroundComponent,
+    Button3dComponent,
+    BreadcrumbsComponent,
+    InputOutsiteComponent,
+    SelectOutsideComponent
+  ]
 })
 export class ComponentsModule { }

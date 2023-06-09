@@ -11,6 +11,8 @@ export class BreadcrumbsComponent implements AfterViewInit{
 
   constructor(private breadcrumbService: BreadcrumbService) {
     console.log('eeeeeee');
+    console.log(this.breadcrumbs);
+    this.breadcrumbs = this.breadcrumbService.breadcrumbs;
 
   }
 

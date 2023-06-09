@@ -9,6 +9,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class InputOutsiteComponent implements OnInit{
   @Input() formGroupParent!: FormGroup|any;
   @Input() formGroupControlName!: string;
+  @Input() value!: any;
 // FormControl store validators
   control!: FormControl;
   ngOnInit():void{

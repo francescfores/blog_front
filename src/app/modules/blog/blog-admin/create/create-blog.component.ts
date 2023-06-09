@@ -20,7 +20,7 @@ export class CreateBlogComponent {
   form!: FormGroup;
   public post!: Post;
   submit!: boolean;
-  private loading!: boolean;
+  loading=false;
   selectedImages: File[] = [];
   categories!: PostCategory[];
   private category: any;
@@ -51,7 +51,7 @@ export class CreateBlogComponent {
         name: ['name', Validators.required],
         desc: ['desc', Validators.required],
         img: ['img', Validators.required],
-        category: ['cat', Validators.required]
+        category: ['']
       }),
       // 'identity' : this.formBuilder.group({
       //   'firstname' : ['', Validators.required],
@@ -73,49 +73,50 @@ export class CreateBlogComponent {
         });
   }
 
-
   onFileChange(event: any) {
     this.selectedImages = event.target.files;
   }
 
   create() {
     this.submit = true;
-    console.log(this.form.value);
-    console.log(this.category);
 
-    if (this.form.valid){
-
-        this.loading = true;
+    if(!this.loading){
+      this.loading=true;
+      if (this.form.valid){
         let formData = this.form.value;
         this.post.name = formData.post.name;
         this.post.desc = formData.post.desc;
         this.post.category = formData.post.category;
         this.post.user = this.user.id;
 
-      const formData2 = new FormData();
-      for (let image of this.selectedImages) {
-        formData2.append('images[]', image);
-        console.log('image')
-        console.log(image)
-      }
-      console.log(this.selectedImages)
-      this.post.img = this.selectedImages;
+        const formData2 = new FormData();
+        for (let image of this.selectedImages) {
+          formData2.append('images[]', image);
+          console.log('image')
+          console.log(image)
+        }
+        console.log(this.selectedImages)
+        this.post.img = this.selectedImages;
+        setTimeout(() => {
 
-      this.userService.create(this.post)
-          .subscribe({
-            next: res => {
-              this.toastr.info(res.message);
-              this.loading=false;
-            },
-            error: (err: any) => {
-              this.loading=false;
-              this.toastr.error(err);
-            },
-            complete: () => { }
-          });
-    } else {
-      this.loading=false;
-      this.toastr.error('Form invalid!');
+          this.userService.create(this.post)
+            .subscribe({
+              next: res => {
+                this.toastr.info(res.message);
+                this.loading=false;
+              },
+              error: (err: any) => {
+                this.loading=false;
+                this.toastr.error(err);
+              },
+              complete: () => { }
+            });
+        }, 1000)
+
+      } else {
+        this.loading=false;
+        this.toastr.error('Form invalid!');
+      }
     }
   }
 

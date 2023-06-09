@@ -1,4 +1,4 @@
-<nav aria-label="breadcrumb" class="flex">
+<nav aria-label="breadcrumb" class="flex" *ngIf="breadcrumbs">
   <ul class="flex gap-3 text-textPrimary text-md bg-bgPrim p-2 rounded-md">
     <li class="flex items-center gap-3" *ngFor="let breadcrumb of breadcrumbs; let last= last">
       <a *ngIf="breadcrumb.url !== ''" [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>

@@ -12,7 +12,7 @@ import {SharedService} from "../../../../services/shared.service";
   styleUrls: ['./show-post.component.css']
 })
 export class ShowPostComponent {
-  categories:any;
+  posts:any;
   private category_id: any;
   private subcategory_id: any;
   create_category = false;
@@ -30,7 +30,7 @@ export class ShowPostComponent {
 
   constructor(
     private router: Router,
-    private categoryService: PostService,
+    private postService: PostService,
     private formBuilder: UntypedFormBuilder,
     private sharedService: SharedService,
     private toastr: ToastrService
@@ -62,12 +62,12 @@ export class ShowPostComponent {
     );
   }
   delete(id:number) {
-    this.categoryService.delete(id)
+    this.postService.delete(id)
       .subscribe({
         next: (res:any) => {
           this.toastr.info(res.message);
           this.submitted = false;
-          this.paginatedCategories(this.categories.current_page)
+          this.paginated(this.posts.current_page)
         },
         error: (err: any) => { },
         complete: () => { }
@@ -75,21 +75,24 @@ export class ShowPostComponent {
   }
 
   getCategorysPaginated(page:any){
-    this.categoryService.paginated(page)
+    console.log('getCategorysPaginated')
+    console.log(page)
+
+    this.postService.paginated(page)
       .subscribe({
         next: res => {
           console.log(res)
-          this.categories= res.data;
-          this.categories.current_page =res.data.current_page+'';
+          this.posts= res.data;
+          this.posts.current_page =res.data.current_page+'';
         },
         error: (err: any) => { },
         complete: () => { }
       });
   }
 
-  paginatedCategories(pr:any) {
-    this.categories.current_page=this.sharedService.paginated(pr, this.categories);
-    this.getCategorysPaginated(pr)
+  paginated(pr:any) {
+    this.posts.current_page=this.sharedService.paginated(pr, this.posts);
+    this.getCategorysPaginated(this.posts.current_page)
   }
 
   createCategory() {
@@ -100,13 +103,13 @@ export class ShowPostComponent {
       this.category.desc = this.fc['desc'].value;
       this.category.img = this.selectedFile;
 
-      this.categoryService.create(this.category)
+      this.postService.create(this.category)
         .subscribe({
           next: res => {
             this.toastr.info(res.message);
             this.submitted = false;
             this.loading = false;
-            this.paginatedCategories(this.categories.current_page)
+            this.paginated(this.posts.current_page)
           },
           error: (err: any) => {
             this.loading = false;
