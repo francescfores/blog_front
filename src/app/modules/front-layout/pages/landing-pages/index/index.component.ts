@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from "@angular/core";
 // import {ThemeService} from "../../../services/theme/theme.service";
 import {BehaviorSubject} from "rxjs";
 import {ThemeService} from "../../../../../services/theme/theme.service";
-import {BreadcrumbService} from "../landing-page3/components/breadcrumbs/breadcrumService";
+import {BreadcrumbService} from "../../../../../components/breadcrumbs/breadcrumService";
 // import {SidebarService} from "../services/sidebar.service";
 
 @Component({

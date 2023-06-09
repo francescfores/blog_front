@@ -23,11 +23,11 @@ const routes: Routes = [
     component: IndexComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
-    data: {
-      roles: ['superadmin','admin']
-    },
+    data: { breadcrumb: 'admin' },
     children: [
-      { path: "dashboard", component: DashboardComponent },
+      { path: "dashboard", component: DashboardComponent,
+        data: { breadcrumb: 'dashboard' },
+      },
       // { path: "landings", component: LandingPagesComponent,
       //   children: [
       //     {path: "landing1", component: LandingPagesComponent},

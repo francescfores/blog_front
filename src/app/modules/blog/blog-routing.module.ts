@@ -20,12 +20,24 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     data: {
-      roles: ['superadmin','admin']
+      breadcrumb: 'blog'
     },
     children: [
-      { path: "", component: ShowPostComponent },
-      { path: "create", component: CreateBlogComponent },
-      { path: "update", component: UpdateBlogComponent },
+      { path: "posts", component: ShowPostComponent,
+        data: {
+          breadcrumb: 'posts'
+        },
+      },
+      { path: "create", component: CreateBlogComponent,
+        data: {
+          breadcrumb: 'create'
+        },
+      },
+      { path: "update", component: UpdateBlogComponent,
+        data: {
+          breadcrumb: 'update'
+        },
+      },
     ]
   }
     // ],

@@ -21,7 +21,9 @@ export class MenuComponent implements OnInit {
         new MenuItem('Analytics', null,'/admin/charts','Base','pt-0',false,null),
       ]),
       new MenuItem('Blog', 'fas fa-light fa-chart-pie','','Admin Layouts','pt-2 border-t border-dashed border-bgTern',false,[
-        new MenuItem('Dashboard', null,'/admin/blog','Base','pt-0',false,null),
+        new MenuItem('Posts', null,'/admin/blog/posts','Base','pt-0',false,null),
+        new MenuItem('Create post', null,'/admin/blog/create','Base','pt-0',false,null),
+        // new MenuItem('Update post', null,'/admin/blog/update','Base','pt-0',false,null),
       ]),
       new MenuItem('Editor', 'fas fa-light fa-gear','/admin/editor','', 'pt-1',false, null),
       new MenuItem('Landings', 'fas fa-light fa-code','/admin/landings/','widgets','pt-1',null,[

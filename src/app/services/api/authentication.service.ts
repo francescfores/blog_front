@@ -7,7 +7,6 @@ import { environment } from '../../../environments/environment';
 import { Client } from '../../models/client';
 import {Router} from '@angular/router';
 import {SocialAuthService} from "@abacritt/angularx-social-login";
-import {Category} from "../../models/category";
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {

@@ -1,5 +1,5 @@
 
-export class Category {
+export class PostCategory {
   id!: number;
   name!: string;
   desc!: string;

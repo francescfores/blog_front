@@ -23,12 +23,12 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-
+    data: { breadcrumb: 'front' },
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     children: [
       {
-        path: 'landings', data: { breadcrumb: 'landings' },
+        path: 'landings',
         loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
       }
         ],

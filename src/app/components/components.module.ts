@@ -21,8 +21,10 @@ import { HtmlEditorComponent } from './codeplayground/html-editor/html-editor.co
 import { CssEditorComponent } from './codeplayground/css-editor/css-editor.component';
 import { JsEditorComponent } from './codeplayground/js-editor/js-editor.component';
 import {CodemirrorModule} from "@ctrl/ngx-codemirror";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { Button3dComponent } from './buttons/button3d/button3d.component';
+import {BreadcrumbsComponent} from "./breadcrumbs/breadcrumbs.component";
+import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +47,16 @@ import { Button3dComponent } from './buttons/button3d/button3d.component';
     CssEditorComponent,
     JsEditorComponent,
     Button3dComponent,
+    BreadcrumbsComponent,
+    InputOutsiteComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    CodemirrorModule,
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        CodemirrorModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
     exports: [
         UserDropdownComponent,
         IndexDropdownComponent,
@@ -68,6 +73,8 @@ import { Button3dComponent } from './buttons/button3d/button3d.component';
         CardComponent,
         CodeplaygroundComponent,
         Button3dComponent,
+        BreadcrumbsComponent,
+        InputOutsiteComponent
     ]
 })
 export class ComponentsModule { }

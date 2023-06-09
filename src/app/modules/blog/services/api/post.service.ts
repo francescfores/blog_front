@@ -27,10 +27,19 @@ export class PostService {
   }
 
   create(post: any) {
-    console.log('createpost');
-    let params = new HttpParams();
+    const params = new FormData();
     Object.keys(post).forEach(key => {
-      params = params.append(key, post[key]);
+      const value = post[key];
+
+      if (key === 'img') {
+        const images = value as FileList;
+        for (let i = 0; i < images.length; i++) {
+          const file = new File([images[i]], images[i].name);
+          params.append('img[]', file);
+        }
+      } else {
+        params.append(key, value);
+      }
     });
     return this.http.post<any>(`${environment.apiUrl}api/post`, params);
   }

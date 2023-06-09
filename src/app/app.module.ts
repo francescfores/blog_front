@@ -12,6 +12,7 @@ import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthenticationAdminService} from "./services/api/authentication-admin.service";
 import {SharedService} from "./services/shared.service";
+import {BreadcrumbService} from "./components/breadcrumbs/breadcrumService";
 // import {ClientService} from "./services/api/client.service";
 
 const googleLoginOptions: GoogleInitOptions = { oneTapEnabled: false}// default is true };
@@ -36,6 +37,7 @@ const googleLoginOptions: GoogleInitOptions = { oneTapEnabled: false}// default 
     AuthenticationService,
     SharedService,
     AuthenticationAdminService,
+    BreadcrumbService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import {AfterViewInit, Injectable, OnInit} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BreadcrumbService {
+export class BreadcrumbService  {
   breadcrumbs: { label: string, url: string }[];
 
   constructor(private router: Router, private route: ActivatedRoute) {
