@@ -7,8 +7,8 @@
   </div>
   <div class="w-full">
     <div class="">
-      <div class="flex flex-wrap rounded-lg  justify-start">
-        <app-card class="">
+      <div class="flex flex-wrap rounded-lg  justify-start ">
+        <app-card class="w-1/2">
           <ng-template #headerTemplate >
             <div class="">
               <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
@@ -18,11 +18,11 @@
           </ng-template>
           <div class="py-6 flex flex-wrap">
             <form  [formGroup]="form" class="flex flex-col gap-4 flex-wrap w-full">
-              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'"></app-input-outsite>
-              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'"></app-input-outsite>
-              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'"></app-input-outsite>
+              <app-input-outsite [label]="'Name'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'"></app-input-outsite>
+              <app-input-outsite [label]="'SubName'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'subname'" [value]="form.get(['post'])?.value?.subname"></app-input-outsite>
+              <app-input-outsite [label]="'Desc'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'"></app-input-outsite>
               <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'"></app-input-outsite>-->
-              <app-select-outside [items]="categories" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'" [value]="form.get(['post'])?.value?.category"></app-select-outside>
+              <app-select-outside [label]="'Categories'" [items]="categories" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'" [value]="form.get(['post'])?.value?.category"></app-select-outside>
               <input class="text-textPrimary flex flex-wrap" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
             </form>
           </div>

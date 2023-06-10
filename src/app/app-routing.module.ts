@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     canActivate: [NonAuthGuard],
     canActivateChild: [NonAuthGuard],
-    path: 'front',
+    path: '',
     loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
   },
 

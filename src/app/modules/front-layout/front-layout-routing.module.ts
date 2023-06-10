@@ -28,7 +28,7 @@ const routes: Routes = [
     // canActivateChild: [NonAuthGuard],
     children: [
       {
-        path: 'landings',
+        path: '',
         loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
       }
         ],

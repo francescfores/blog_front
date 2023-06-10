@@ -9,25 +9,40 @@ import { Post } from '../../models/post';
   providedIn: 'root'
 })
 
-export class PostService {
+export class PostContentService {
 
   constructor(private http: HttpClient) {
   }
   getAll() {
-    return this.http.get<any>(`${environment.apiUrl}api/post`, {  });
+    return this.http.get<any>(`${environment.apiUrl}api/post_content`, {  });
   }
 
+  //todo create service content-type
+  getAllTypes() {
+    return this.http.get<any>(`${environment.apiUrl}api/post_content_type`, {  });
+  }
+
+
   paginated(page:string) {
-    return this.http.get<any>(`${environment.apiUrl}api/post_paginated?page=`+page, {  });
+    return this.http.get<any>(`${environment.apiUrl}api/post_content_paginated?page=`+page, {  });
+  }
+
+  paginatedByPost(page:string, id:number) {
+    return this.http.get<any>(`${environment.apiUrl}api/post/${id}/post_content_paginated?page=`+page, {  });
   }
 
   get(id:any) {
     console.log('getpostById');
     console.log(id);
-    return this.http.get<any>(`${environment.apiUrl}api/post/${id}`);
+    return this.http.get<any>(`${environment.apiUrl}api/post_content/${id}`);
   }
 
   create(post: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'multipart/form-data',
+      }),
+    };
     const params = new FormData();
     Object.keys(post).forEach(key => {
       const value = post[key];
@@ -42,17 +57,8 @@ export class PostService {
         params.append(key, value);
       }
     });
-    return this.http.post<any>(`${environment.apiUrl}api/post`, params);
+    return this.http.post<any>(`${environment.apiUrl}api/post_content`, params);
   }
-
-  // update(id:number, post: any) {
-  //   let params = new HttpParams();
-  //   Object.keys(post).forEach(key => {
-  //     params = params.append(key, post[key]);
-  //   });
-  //   return this.http.put<any>(`${environment.apiUrl}api/post/${id}`, post, { params } );
-  // }
-  //
 
   update(id: number, post: any) {
     let httpOptions = {
@@ -78,16 +84,11 @@ export class PostService {
       }
     });
 
-    return this.http.post<any>(`${environment.apiUrl}api/post/${id}`, formData);
+    return this.http.post<any>(`${environment.apiUrl}api/post_content/${id}`, formData);
   }
-
 
   delete(id:any) {
     console.log('destroypost');
-    return this.http.delete<any>(`${environment.apiUrl}api/post/${id}`, { params: id });
-  }
-
-  getAllRoles() {
-    return this.http.get<any>(`${environment.apiUrl}api/role`, {  });
+    return this.http.delete<any>(`${environment.apiUrl}api/post_content/${id}`, { params: id });
   }
 }

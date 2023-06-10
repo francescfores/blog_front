@@ -8,7 +8,7 @@
   <div class="w-full">
     <div class="">
       <div class="flex flex-wrap rounded-lg  justify-start">
-        <app-card class="">
+        <app-card class="w-1/3 pr-4">
           <ng-template #headerTemplate >
             <div class="">
               <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
@@ -18,11 +18,12 @@
           </ng-template>
           <div class="py-6 flex flex-wrap">
             <form *ngIf="form" [formGroup]="form" class="flex flex-col gap-4 flex-wrap w-full">
-              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'" [value]="form.get(['post'])?.value?.name"></app-input-outsite>
-              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'" [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
+              <app-input-outsite [label]="'Name'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'" [value]="form.get(['post'])?.value?.name"></app-input-outsite>
+              <app-input-outsite [label]="'SubName'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'subname'" [value]="form.get(['post'])?.value?.subname"></app-input-outsite>
+              <app-input-outsite [label]="'Desc'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'" [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
 <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'" ></app-input-outsite>-->
               <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'"></app-input-outsite>-->
-              <app-select-outside [items]="categories" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'" [value]="form.get(['post'])?.value?.category"></app-select-outside>
+              <app-select-outside [label]="'Categories'" [items]="categories" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'" [value]="form.get(['post'])?.value?.category"></app-select-outside>
 
 <!--              <div class="col-span-2 sm:col-span-2" >-->
 <!--                <label class="block text-sm font-medium text-gray-700">Categoria</label>-->
@@ -46,6 +47,8 @@
             </div>
           </ng-template>
         </app-card>
+        <app-create-content class="w-2/3" [post_id]="post.id"></app-create-content>
+        <app-show-content class="w-full pr-4" [post_id]="post.id"></app-show-content>
       </div>
     </div>
   </div>

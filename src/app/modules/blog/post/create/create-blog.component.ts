@@ -28,7 +28,7 @@ export class CreateBlogComponent {
   constructor(
     private router: Router,
     private userService: PostService,
-    private categoryService: CategoryService,
+    private postCategoryService: CategoryService,
     private formBuilder: UntypedFormBuilder,
     private sharedService: SharedService,
     private toastr: ToastrService,
@@ -49,9 +49,10 @@ export class CreateBlogComponent {
     this.form = this.formBuilder.group({
       post : this.formBuilder.group({
         name: ['name', Validators.required],
+        subname: ['subname', Validators.required],
         desc: ['desc', Validators.required],
         img: ['img', Validators.required],
-        category: ['']
+        category: [null]
       }),
       // 'identity' : this.formBuilder.group({
       //   'firstname' : ['', Validators.required],
@@ -62,7 +63,7 @@ export class CreateBlogComponent {
       //   })
       // })
     });
-    this.categoryService.getAll()
+    this.postCategoryService.getAll()
       .pipe(first())
       .subscribe(
         res => {
@@ -85,6 +86,7 @@ export class CreateBlogComponent {
       if (this.form.valid){
         let formData = this.form.value;
         this.post.name = formData.post.name;
+        this.post.subname = formData.post.subname;
         this.post.desc = formData.post.desc;
         this.post.category = formData.post.category;
         this.post.user = this.user.id;

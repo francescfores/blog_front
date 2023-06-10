@@ -5,11 +5,11 @@ import {BlogModule} from './blog.module';
 import {UsersComponent} from "../admin-layout/pages/users/users.component";
 import {SettingsComponent} from "../admin-layout/pages/settings/settings.component";
 import {TutorialComponent} from "../admin-layout/pages/tutorial/tutorial.component";
-import {CreateBlogComponent} from "./blog-admin/create/create-blog.component";
-import {UpdateBlogComponent} from "./blog-admin/update/update-blog.component";
+import {CreateBlogComponent} from "./post/create/create-blog.component";
+import {UpdateBlogComponent} from "./post/update/update-blog.component";
 import {AuthGuard} from "../../services/guards/auth.guard";
 import {DashboardComponent} from "../admin-layout/pages/dashboard/dashboard.component";
-import {ShowPostComponent} from "./blog-admin/show/show-post.component";
+import {ShowPostComponent} from "./post/show/show-post.component";
 
 // import {InputsComponent} from "../admin-layout/pages/components/inputs/inputs.component";
 
@@ -33,7 +33,7 @@ const routes: Routes = [
           breadcrumb: 'create'
         },
       },
-      { path: "update", component: UpdateBlogComponent,
+      { path: 'update/:name', component: UpdateBlogComponent, pathMatch: 'prefix',
         data: {
           breadcrumb: 'update'
         },

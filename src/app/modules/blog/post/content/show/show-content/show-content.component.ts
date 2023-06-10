@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import {Post} from "../../models/post";
-import {Router} from "@angular/router";
-import {PostService} from "../../services/api/post.service";
+import {Component, Input} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
+import {Post} from "../../../../models/post";
+import {Router} from "@angular/router";
+import {PostService} from "../../../../services/api/post.service";
+import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
-import {SharedService} from "../../../../services/shared.service";
+import {PostContent} from "../../../../models/post-content";
+import {PostContentService} from "../../../../services/api/post-content.service";
 
 @Component({
-  selector: 'app-show-post',
-  templateUrl: './show-post.component.html',
-  styleUrls: ['./show-post.component.css']
+  selector: 'app-show-content',
+  templateUrl: './show-content.component.html',
+  styleUrls: ['./show-content.component.css']
 })
-export class ShowPostComponent {
+export class ShowContentComponent {
   posts:any;
   private category_id: any;
   private subcategory_id: any;
@@ -27,10 +29,11 @@ export class ShowPostComponent {
   private category: Post;
   selectedFile: any;
   loading=false;
+  @Input() post_id:any;
 
   constructor(
     private router: Router,
-    private postService: PostService,
+    private postService: PostContentService,
     private formBuilder: UntypedFormBuilder,
     private sharedService: SharedService,
     private toastr: ToastrService
@@ -48,7 +51,10 @@ export class ShowPostComponent {
   }
 
   ngOnInit() {
-    this.getCategorysPaginated(1);
+    this.paginatedByPost(1);
+    document.addEventListener('load', () => {
+      this.paginatedByPost(this.posts.current_page);
+    });
   }
   create() {
     this.router.navigate(
@@ -74,11 +80,11 @@ export class ShowPostComponent {
       });
   }
 
-  getCategorysPaginated(page:any){
-    console.log('getCategorysPaginated')
+  paginatedByPost(page:any){
+    console.log('paginatedByPost')
     console.log(page)
 
-    this.postService.paginated(page)
+    this.postService.paginatedByPost(page, this.post_id)
       .subscribe({
         next: res => {
           console.log(res)
@@ -92,7 +98,7 @@ export class ShowPostComponent {
 
   paginated(pr:any) {
     this.posts.current_page=this.sharedService.paginated(pr, this.posts);
-    this.getCategorysPaginated(this.posts.current_page)
+    this.paginatedByPost(this.posts.current_page)
   }
 
   createCategory() {

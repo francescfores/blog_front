@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { CreateBlogComponent } from './blog-admin/create/create-blog.component';
-import { UpdateBlogComponent } from './blog-admin/update/update-blog.component';
+import { CreateBlogComponent } from './post/create/create-blog.component';
+import { UpdateBlogComponent } from './post/update/update-blog.component';
 import {AdminLayoutRoutingModule} from "../admin-layout/admin-layout-routing.module";
 import {IndexComponent} from "./index/index.component";
 import {BlogRoutingModule} from "./blog-routing.module";
-import {ShowPostComponent} from "./blog-admin/show/show-post.component";
+import {ShowPostComponent} from "./post/show/show-post.component";
 import {ComponentsModule} from "../../components/components.module";
+import { CreateContentComponent } from './post/content/create/create-content/create-content.component';
+import { ShowContentComponent } from './post/content/show/show-content/show-content.component';
+import { UpdateContentComponent } from './post/content/update/update-content/update-content.component';
 
 
 
@@ -16,7 +19,10 @@ import {ComponentsModule} from "../../components/components.module";
     IndexComponent,
     ShowPostComponent,
     CreateBlogComponent,
-    UpdateBlogComponent
+    UpdateBlogComponent,
+    CreateContentComponent,
+    ShowContentComponent,
+    UpdateContentComponent,
   ],
   exports: [
     IndexComponent,

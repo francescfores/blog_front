@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import {FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
-import {Post} from "../../models/post";
-import {PostCategory} from "../../models/post-category";
-import {ActivatedRoute, Params, Router} from "@angular/router";
-import {PostService} from "../../services/api/post.service";
-import {CategoryService} from "../../services/api/post-category.service";
-import {SharedService} from "../../../../services/shared.service";
+import {Post} from "../../../../models/post";
+import {PostCategory} from "../../../../models/post-category";
+import {ActivatedRoute, Router} from "@angular/router";
+import {PostService} from "../../../../services/api/post.service";
+import {CategoryService} from "../../../../services/api/post-category.service";
+import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
-import {AuthenticationAdminService} from "../../../../services/api/authentication-admin.service";
+import {AuthenticationAdminService} from "../../../../../../services/api/authentication-admin.service";
 import {first} from "rxjs/operators";
 
 @Component({
-  selector: 'app-update-blog',
-  templateUrl: './update-blog.component.html',
-  styleUrls: ['./update-blog.component.css']
+  selector: 'app-update-content',
+  templateUrl: './update-content.component.html',
+  styleUrls: ['./update-content.component.css']
 })
-export class UpdateBlogComponent {
+export class UpdateContentComponent {
   form!: FormGroup;
   public post!: Post;
   submit!: boolean;
@@ -50,9 +50,9 @@ export class UpdateBlogComponent {
       .subscribe((params) => {
           this.queryObj = { ...params.keys, ...params };
           this.id =this.queryObj.params.id;
-        console.log(this.id);
-        this.getProduct();
-        this.getCategories();
+          console.log(this.id);
+          this.getProduct();
+          this.getCategories();
         }
       );
   }
@@ -179,3 +179,4 @@ export class UpdateBlogComponent {
     this.form.value.post.category = this.category.id;
   }
 }
+

@@ -9,6 +9,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class SelectOutsideComponent implements OnInit, AfterViewInit {
   @Input() formGroupParent!: FormGroup|any;
   @Input() formGroupControlName!: string;
+  @Input() label!: any;
   @Input() value!: any;
   @Input() items!: any[];
 // FormControl store validators

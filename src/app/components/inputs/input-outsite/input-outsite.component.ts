@@ -10,6 +10,7 @@ export class InputOutsiteComponent implements OnInit{
   @Input() formGroupParent!: FormGroup|any;
   @Input() formGroupControlName!: string;
   @Input() value!: any;
+  @Input() label!: any;
 // FormControl store validators
   control!: FormControl;
   ngOnInit():void{
