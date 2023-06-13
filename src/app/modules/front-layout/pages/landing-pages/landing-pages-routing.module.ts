@@ -23,7 +23,7 @@ const routes: Routes = [
         data: {breadcrumb: 'landing2'},
       },
       {
-        path: "", component: LandingPage3Component,
+        path: "landing3", component: LandingPage3Component,
         data: { breadcrumb: 'landing3' },
       },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },

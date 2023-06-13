@@ -1,11 +1,14 @@
 import {Post} from "./post";
+import {PostContentType} from "./post-content-type";
 
 export class PostContent {
   id!: number;
   num!: string;
   name!: string;
-  type!: string;
+  type!: PostContentType;
   desc!: string;
-  img!: File[];
+  img!: File[]|[];
   post!: Post | number;
+  created_at!: string;
+  images: any;
 }

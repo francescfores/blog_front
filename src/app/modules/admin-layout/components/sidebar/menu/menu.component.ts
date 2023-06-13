@@ -21,15 +21,15 @@ export class MenuComponent implements OnInit {
         new MenuItem('Analytics', null,'/admin/charts','Base','pt-0',false,null),
       ]),
       new MenuItem('Blog', 'fas fa-light fa-chart-pie','','Admin Layouts','pt-2 border-t border-dashed border-bgTern',false,[
-        new MenuItem('Posts', null,'/admin/blog/posts','Base','pt-0',false,null),
-        new MenuItem('Create post', null,'/admin/blog/create','Base','pt-0',false,null),
+        new MenuItem('Posts', null,'/admin/blog-admin/posts','Base','pt-0',false,null),
+        new MenuItem('Create post', null,'/admin/blog-admin/create','Base','pt-0',false,null),
         // new MenuItem('Update post', null,'/admin/blog/update','Base','pt-0',false,null),
       ]),
       new MenuItem('Editor', 'fas fa-light fa-gear','/admin/editor','', 'pt-1',false, null),
       new MenuItem('Landings', 'fas fa-light fa-code','/admin/landings/','widgets','pt-1',null,[
-        new MenuItem('Landings', null,'/front/landings/landings',null,'pt-0',false,null),
         new MenuItem('Landing1', null,'/front/landings/landing1',null,'pt-0',false,null),
         new MenuItem('Landing2', null,'/front/landings/landing2',null,'pt-0',false,null),
+        new MenuItem('Landing3', null,'/front/landings/landing3',null,'pt-0',false,null),
       ]),
       new MenuItem('Settings', 'fas fa-light fa-gear','/admin/settings','', 'pt-1',false, null),
       new MenuItem('Tutorials', 'fas fa-light fa-gear','/admin/tutorials','', 'pt-1',false, null),

@@ -724,6 +724,10 @@ html {
   grid-column: span 2 / span 2;
 }
 
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
 .float-left {
   float: left;
 }
@@ -866,6 +870,10 @@ html {
 
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mr-1 {
@@ -1229,6 +1237,10 @@ html {
   width: 180px;
 }
 
+.w-\[50\%\] {
+  width: 50%;
+}
+
 .w-\[58px\] {
   width: 58px;
 }
@@ -1266,6 +1278,10 @@ html {
   max-width: 72rem;
 }
 
+.max-w-\[100rem\] {
+  max-width: 100rem;
+}
+
 .max-w-\[20rem\] {
   max-width: 20rem;
 }
@@ -1288,6 +1304,10 @@ html {
 
 .max-w-\[68rem\] {
   max-width: 68rem;
+}
+
+.max-w-\[80rem\] {
+  max-width: 80rem;
 }
 
 .max-w-full {
@@ -1500,6 +1520,10 @@ html {
   flex-wrap: wrap;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1582,6 +1606,11 @@ html {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -1990,6 +2019,10 @@ html {
 .bg-bgTern {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--twc-bgTern) / var(--twc-bgTern-opacity, var(--tw-bg-opacity)));
+}
+
+.bg-bgTern\/60 {
+  background-color: hsl(var(--twc-bgTern) / 0.6);
 }
 
 .bg-black {
@@ -4322,6 +4355,10 @@ html {
     padding-bottom: 4rem;
   }
 
+  .md\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
   .md\:pr-10 {
     padding-right: 2.5rem;
   }
@@ -4399,6 +4436,10 @@ html {
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:flex-row {

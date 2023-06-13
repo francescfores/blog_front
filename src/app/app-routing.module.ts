@@ -21,11 +21,14 @@ const routes: Routes = [
   {
     canActivate: [NonAuthGuard],
     canActivateChild: [NonAuthGuard],
-    path: '',
+    path: 'front',
     loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
+  },
 
-  { path: "",redirectTo: "auth/login",  pathMatch: "full" },
   // admin views
   // { path: "**", redirectTo: "", pathMatch: "full" },
 ];

@@ -1,3 +1,4 @@
+import {PostContent} from "./post-content";
 
 export class Post {
   id!: number;
@@ -5,6 +6,7 @@ export class Post {
   subname!: string;
   desc!: string;
   img: File[]|[]=[];
+  contents: PostContent[]|[]=[];
   category!: any;
   user!: any;
   client!: any;

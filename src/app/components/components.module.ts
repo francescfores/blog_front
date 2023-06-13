@@ -26,6 +26,7 @@ import { Button3dComponent } from './buttons/button3d/button3d.component';
 import {BreadcrumbsComponent} from "./breadcrumbs/breadcrumbs.component";
 import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.component';
 import { SelectOutsideComponent } from './selects/select-outside/select-outside.component';
+import { GridFlexComponent } from './grid-flex/grid-flex.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SelectOutsideComponent } from './selects/select-outside/select-outside.
     BreadcrumbsComponent,
     InputOutsiteComponent,
     SelectOutsideComponent,
+    GridFlexComponent,
   ],
     imports: [
         CommonModule,
@@ -59,25 +61,26 @@ import { SelectOutsideComponent } from './selects/select-outside/select-outside.
         FormsModule,
         ReactiveFormsModule,
     ],
-  exports: [
-    UserDropdownComponent,
-    IndexDropdownComponent,
-    NotificationDropdownComponent,
-    TableDropdownComponent,
-    PagesDropdownComponent,
-    CardStatsComponent,
-    ButtonDefaultComponent,
-    ButtonFilledComponent,
-    CardDefaultComponent,
-    CardPricingComponent,
-    CardBackgroundComponent,
-    InputDefaultComponent,
-    CardComponent,
-    CodeplaygroundComponent,
-    Button3dComponent,
-    BreadcrumbsComponent,
-    InputOutsiteComponent,
-    SelectOutsideComponent
-  ]
+    exports: [
+        UserDropdownComponent,
+        IndexDropdownComponent,
+        NotificationDropdownComponent,
+        TableDropdownComponent,
+        PagesDropdownComponent,
+        CardStatsComponent,
+        ButtonDefaultComponent,
+        ButtonFilledComponent,
+        CardDefaultComponent,
+        CardPricingComponent,
+        CardBackgroundComponent,
+        InputDefaultComponent,
+        CardComponent,
+        CodeplaygroundComponent,
+        Button3dComponent,
+        BreadcrumbsComponent,
+        InputOutsiteComponent,
+        SelectOutsideComponent,
+        GridFlexComponent
+    ]
 })
 export class ComponentsModule { }

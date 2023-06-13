@@ -28,9 +28,9 @@ const routes: Routes = [
     // canActivateChild: [NonAuthGuard],
     children: [
       {
-        path: '',
+        path: 'landings',
         loadChildren: () => import('./pages/landing-pages/landing-pages.module').then(m => m.LandingPagesModule)
-      }
+      },
         ],
     //   // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     // ],

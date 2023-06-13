@@ -5,18 +5,26 @@ import {BlogModule} from './blog.module';
 import {UsersComponent} from "../admin-layout/pages/users/users.component";
 import {SettingsComponent} from "../admin-layout/pages/settings/settings.component";
 import {TutorialComponent} from "../admin-layout/pages/tutorial/tutorial.component";
-import {CreateBlogComponent} from "./post/create/create-blog.component";
-import {UpdateBlogComponent} from "./post/update/update-blog.component";
+import {CreateBlogComponent} from "./pages-admin/post-admin/create/create-blog.component";
+import {UpdateBlogComponent} from "./pages-admin/post-admin/update/update-blog.component";
 import {AuthGuard} from "../../services/guards/auth.guard";
 import {DashboardComponent} from "../admin-layout/pages/dashboard/dashboard.component";
-import {ShowPostComponent} from "./post/show/show-post.component";
+import {ShowPostComponent} from "./pages-admin/post-admin/show/show-post.component";
+import {PostsComponent} from "./pages/posts/posts.component";
+import {HomeComponent} from "./pages/home/home.component";
+import {IndexAdminComponent} from "./index-admin/index-admin.component";
+import {ContactComponent} from "./pages/contact/contact.component";
+import {BonusComponent} from "./pages/bonus/bonus.component";
+import {LatestComponent} from "./pages/latest/latest.component";
+import {CategoryComponent} from "./pages/posts/category/category.component";
+import {PostComponent} from "./pages/posts/post/post.component";
 
 // import {InputsComponent} from "../admin-layout/pages/components/inputs/inputs.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component: IndexComponent,
+    path: 'blog-admin',
+    component: IndexAdminComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     data: {
@@ -39,8 +47,56 @@ const routes: Routes = [
         },
       },
     ]
-  }
-    // ],
+  },
+  {
+    path: 'blog',
+    component: IndexComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+    // data: {
+    //   breadcrumb: 'blog'
+    // },
+    children: [
+      { path: "", component: HomeComponent,
+        // data: {
+        //   breadcrumb: 'home'
+        // },
+      },
+      { path: "latest", component: LatestComponent,
+        data: {
+          breadcrumb: 'latest'
+        },
+      },
+      { path: "posts", component: PostsComponent,
+        data: {
+          breadcrumb: 'posts'
+        },
+      },
+      { path: 'posts/:catname', component: CategoryComponent, pathMatch: 'prefix',
+        data: {
+          breadcrumb: ':category'
+        },
+      },
+      { path: 'posts/:catname/:postname', component: PostComponent, pathMatch: 'prefix',
+        data: {
+          breadcrumb: ':postname'
+        },
+      },
+      { path: "bonus", component: BonusComponent,
+        data: {
+          breadcrumb: 'bonus'
+        },
+      },
+      { path: "contact", component: ContactComponent,
+        data: {
+          breadcrumb: 'contact'
+        },
+      },
+    ]
+  },
+  // { path: '',redirectTo: "blog",  pathMatch: "full" },
+
+  // ],
 ];
 
 @NgModule({
