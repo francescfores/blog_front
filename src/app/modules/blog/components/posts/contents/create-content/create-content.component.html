@@ -16,7 +16,7 @@
 <!--        <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img_url'"></app-input-outsite>-->
 <!--        <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'"></app-input-outsite>-->
         <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'"></app-input-outsite>-->
-        <app-select-outside [label]="'Type'" [items]="types" [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'type'" [value]="form.get(['postContent'])?.value?.type"></app-select-outside>
+        <app-select-outside (change)="selectType()" [label]="'Type'" [items]="types" [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'type'" [value]="form.get(['postContent'])?.value?.type"></app-select-outside>
 
         <input class="text-textPrimary flex flex-wrap" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
       </form>

@@ -81,9 +81,7 @@ export class NavbarComponent implements OnInit {
     this.animationSunMoon();
   }
   animationSunMoon(){
-    console.log('this.isDarkEnable',this.isDarkEnable);
     if(!this.isDarkEnable){
-      console.log('Sun ',this.isDarkEnable);
       $('.moon_sun').css("fill", "hsl(var(--twc-textPrimary))");
       $('.moon_sun g circle').css("transform", "scale(1)");
       // $('.moon_sun').css("transform", "rotate(-20deg)");
@@ -97,7 +95,6 @@ export class NavbarComponent implements OnInit {
       $('.moon_sun circle').css("background", "green");
       $('.moon_sun > circle').attr("r", "5");
     }else{
-      console.log('Mooon ',this.isDarkEnable);
       $('.moon_sun').css("fill", "hsl(var(--twc-textPrimary))");
       $('.moon_sun g circle').css("transform", "scale(0)");
       $('.moon_sun').css("transform", "rotate(90deg)");
@@ -135,13 +132,9 @@ export class NavbarComponent implements OnInit {
   detectScrollDirection() {
     var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     var scrollDistance = document.documentElement.scrollTop;
-    console.log(this.sidebarOpen)
-    console.log(scrollDistance)
     if(!this.sidebarOpen){
       if (currentScrollPosition > this.lastScrollPosition && scrollDistance > 450) {
-        console.log(scrollDistance)
         // Scroll hacia abajo
-        console.log('abasssjo');
 
         $('#navbar').addClass('-translate-y-[60px]');
         $('#navbar').addClass('z-10');
@@ -154,7 +147,6 @@ export class NavbarComponent implements OnInit {
         $('#navbar').removeClass('-translate-y-[60px]');
         $('#navbar').addClass('z-50');
         $('#navbar').removeClass('z-30');
-        console.log('arriba')
       }
       if (currentScrollPosition < this.lastScrollPosition && scrollDistance < 480){
         $('#navbar').addClass('z-30');

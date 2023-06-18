@@ -1,6 +1,7 @@
 @import 'ngx-toastr/toastr'; /* You can add global styles to this file, and also import other style files */
 @import '~codemirror/lib/codemirror.css';
 @import '~codemirror/theme/material.css';
+/*@import '~codemirror/theme/3024-day.css';*/
 /*
   tailwind config
 */
@@ -18,9 +19,9 @@
   --rounded-xl: 0.75rem;
   --rounded-full: 0.75rem;
 }
-/*//codemirrror color back*/
+/*codemirrror color back*/
 .cm-s-material.CodeMirror {
-  background-color:  transparent !important;
+  /*background-color:  transparent !important;*/
 }
 .CodeMirror {
   background-color:  transparent !important;
@@ -28,10 +29,11 @@
 }
 .CodeMirror-scroll {
   height: 100%;
+  overflow: hidden;
 }
 .CodeMirror textarea {
   height: 100%;
-  width: 100%;
+  /*width: 100%;*/
 }
 .cm-s-material .CodeMirror-gutters {
   background-color:  transparent !important;

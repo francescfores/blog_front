@@ -1,0 +1,81 @@
+
+
+
+/*in styles css overrided styles codemirror*/
+
+.split__left {
+
+  width: 50%;
+  /*height: 100%;*/
+  /*background-color:  transparent !important;*/
+}
+.split__center {
+
+  width: 50%;
+  /*height: 100%;*/
+  /*background-color: #b4b4b7;*/
+}
+
+/*.split__bar {*/
+/*  background-color: #3c3530;*/
+/*  width: 10px;*/
+/*  height: 100%;*/
+/*  cursor: col-resize;*/
+/*}*/
+
+/*.split__bar_horizontal {*/
+/*  width: 100%;*/
+/*  height: 10px;*/
+/*  cursor: row-resize; !* Cursor de ajuste vertical *!*/
+/*  background-color: hsl(var(--twc-bgSeco));*/
+/*  z-index: 10;*/
+/*}*/
+
+.iframe-container{
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+}
+iframe{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+}
+
+
+.split__bar {
+  position: relative;
+  width: 15px;  pointer-events: auto;
+  cursor: col-resize;
+}
+.split__bar:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  background-color: #756B94BB;
+  width: 2px;
+  pointer-events: auto;
+}
+.split__bar:before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  background-color: #756B94BB;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.split__bar:hover:before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  background-color: #756B94BB;
+  opacity: 0.5;
+  transition: opacity .5s;
+}

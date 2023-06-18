@@ -22,7 +22,7 @@
 <!--  <div #contentPanel class="flex flex-wrap  w-full">-->
 <!--    <div #upPanel class="flex w-full px-4 pt-4 rounded-lg">-->
 <!--      <div #leftPanel class="split__left ">-->
-<!--        <ngx-codemirror *ngIf="windowsCode['html']===true" (keyup)="generateHTML()" [(ngModel)]="htmlCodes" class="bg-transparent"-->
+<!--        <ngx-codemirror *ngIf="windowsCode['html']===true" (keydown)="generateHTML()" [(ngModel)]="htmlCodes" class="bg-transparent"-->
 <!--                        [options]="{-->
 <!--                                  htmlMode: true,-->
 <!--                                   lineNumbers:-->
@@ -41,7 +41,7 @@
 <!--    <div #splitBarVertical class="split__bar_horizontal"></div>-->
 <!--    <div #downPanel class="flex w-full px-4 pb-4 rounded-lg">-->
 <!--      <div #leftPanel class="split__left ">-->
-<!--        <ngx-codemirror *ngIf="windowsCode['css']===true" (keyup)="generateHTML()" [(ngModel)]="cssCodes" class="bg-transparent"-->
+<!--        <ngx-codemirror *ngIf="windowsCode['css']===true" (keydown)="generateHTML()" [(ngModel)]="cssCodes" class="bg-transparent"-->
 <!--                        [options]="{-->
 <!--                                  htmlMode: true,-->
 <!--                                   lineNumbers:-->
@@ -52,7 +52,7 @@
 <!--      <div #splitBarHorizontal class="split__bar">-->
 <!--      </div>-->
 <!--      <div #rightPanel class="split__right"*ngIf="windowsCode['css']===true" >-->
-<!--        <ngx-codemirror *ngIf="windowsCode['js']===true" (keyup)="generateHTML()" [(ngModel)]="jsCodes" class="bg-transparent"-->
+<!--        <ngx-codemirror *ngIf="windowsCode['js']===true" (keydown)="generateHTML()" [(ngModel)]="jsCodes" class="bg-transparent"-->
 <!--                        [options]="{-->
 <!--                                  htmlMode: true,-->
 <!--                                   lineNumbers:-->
@@ -65,63 +65,70 @@
 <!--  </div>-->
 
 <!--</div>-->
-<div  #contentPanel class=" flex flex-wrap w-full rounded-lg bg-bgPrim">
-  <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-1 text-xs font-semibold">
-    <p class="text-textPrimary">Code Playground</p>
-    <div class="flex justify-between gap-4">
-      <p (click)="generateHTML()" class="text-textPrimary">run</p>
-      <p class="text-textPrimary">Reset</p>
+<div class="flex flex-col w-full bg-bgSeco">
+  <div   class=" flex flex-wrap w-full rounded-lg ">
+    <div class="rounded-t-lg w-full flex justify-between  bg-bgTern px-4 py-1 text-xs font-semibold">
+      <p class="text-textPrimary">Code Playground</p>
+      <div class="flex justify-between gap-4">
+        <p (click)="renderCode()" class="text-textPrimary">run</p>
+        <p class="text-textPrimary">Reset</p>
+      </div>
     </div>
-  </div>
-  <div class=" w-full flex items-start   px-4 py-2">
-    <div class="flex justify-between gap-4">
-      <p class="text-textPrimary" (click)="windowsCode['html']=!windowsCode['html']"
-         [ngClass]="{'text-textPrimary':windowsCode['html'],
+    <div class=" w-full flex items-start   px-4 py-2">
+      <div class="flex justify-between gap-4">
+        <p class="text-textPrimary" (click)="windowsCode['html']=!windowsCode['html']"
+           [ngClass]="{'text-textPrimary':windowsCode['html'],
                'text-textSecondary':!windowsCode['html']}">Html</p>
-      <p class="text-textPrimary" (click)="windowsCode['css']=!windowsCode['css']"
-         [ngClass]="{'text-textPrimary':windowsCode['css'],
+        <p class="text-textPrimary" (click)="windowsCode['css']=!windowsCode['css']"
+           [ngClass]="{'text-textPrimary':windowsCode['css'],
                'text-textSecondary':!windowsCode['css']}">Css</p>
-      <p class="text-textPrimary" (click)="windowsCode['js']=!windowsCode['js']"
-         [ngClass]="{'text-textPrimary':windowsCode['js'],
+        <p class="text-textPrimary" (click)="windowsCode['js']=!windowsCode['js']"
+           [ngClass]="{'text-textPrimary':windowsCode['js'],
                'text-textSecondary':!windowsCode['js']}">Js</p>
+      </div>
     </div>
   </div>
-  <div #upPanel class="flex w-full ">
-    <div #leftPanel class="split__left" >
-      <ngx-codemirror *ngIf="windowsCode['html']===true" (keyup)="generateHTML()" [(ngModel)]="htmlCodes" class="bg-transparent"
-                      [options]="{
+
+  <div  #contentPanel class=" flex flex-wrap w-full rounded-lg  h-[510px] bg-bgSeco">
+
+    <div #upPanel class="flex w-full h-[200px] ">
+      <div #leftPanel class="split__left" >
+        <ngx-codemirror *ngIf="windowsCode['html']===true" (keydown)="generateHTML()" [(ngModel)]="htmlCodes" class="bg-transparent  "
+                        [options]="{
                                         htmlMode: true,
                                          lineNumbers:
                                          true, theme: 'material',
                                           mode: 'css',
                                           }"></ngx-codemirror>
-    </div>
-    <div #splitBarHorizontal1 class="split__bar" ></div>
-    <div #centerPanel class="split__center">
-              <ngx-codemirror *ngIf="windowsCode['css']===true" (keyup)="generateHTML()" [(ngModel)]="cssCodes" class="bg-transparent"
-                              [options]="{
+      </div>
+      <div #splitBarHorizontal1 class="split__bar" ></div>
+      <div #centerPanel class="split__center">
+        <ngx-codemirror *ngIf="windowsCode['css']===true" (keydown)="generateHTML()" [(ngModel)]="cssCodes" class="bg-transparent"
+                        [options]="{
                                         htmlMode: true,
                                          lineNumbers:
                                          true, theme: 'material',
                                           mode: 'css',
                                           }"></ngx-codemirror>
-    </div>
-    <div #splitBarHorizontal2 class="split__bar" ></div>
-    <div #rightPanel class="split__right" >
-      <ngx-codemirror *ngIf="windowsCode['js']===true" (keyup)="generateHTML()" [(ngModel)]="jsCodes" class="bg-transparent"
-                      [options]="{
+      </div>
+      <div #splitBarHorizontal2 class="split__bar" ></div>
+      <div #rightPanel class="split__right" >
+        <ngx-codemirror *ngIf="windowsCode['js']===true" (keydown)="generateHTML()" [(ngModel)]="jsCodes" class="bg-transparent"
+                        [options]="{
                                           htmlMode: true,
                                            lineNumbers:
                                            true, theme: 'material',
                                             mode: 'javascript',
                                             }"></ngx-codemirror>
+      </div>
+    </div>
+    <div #splitBarVertical class="h-[10px] split__bar_horizontal"></div>
+    <div #downPanel class="flex w-full h-[300px]">
+      <div class=" iframe-container flex justify-center items-start">
+        <iframe #myIframe  [srcdoc]="safeCode" id="iframe-{{id}}"></iframe>
+      </div>
     </div>
   </div>
-  <div #splitBarVertical class="split__bar_horizontal"></div>
-  <div #downPanel class="flex w-full ">
-            <div class=" iframe-container flex justify-center items-start">
-              <iframe *ngIf="loading" (load)="generateHTML()" sandbox="allow-scripts allow-same-origin"  [srcdoc]="generatedHTML" id="iframe-{{id}}"></iframe>
-            </div>
-  </div>
+
 </div>
 

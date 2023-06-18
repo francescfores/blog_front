@@ -1,28 +1,50 @@
-<ng-container [formGroup]="formGroupParent">
-<!--  <div class="flex items-center mt-4 relative z-0">-->
-<!--    <input value="{{value}}" formControlName="{{formGroupControlName}}" type="text" placeholder=" " class="appearance-none bg-transparent block border-0 border-2 border-b-2 border-textSecondary-->
-<!--  focus:border-textPrimary focus:outline-none focus:ring-0 focus:text-textPrimary peer px-0 px-3 py-1.5 rounded-lg text-lg text-textPrimary-->
-<!--   w-full">-->
-<!--    <label class="-translate-y-9 -z-10 absolute duration-150 ease-in-out origin-[0]-->
-<!--  peer-focus:-translate-y-9 peer-focus:left-0 peer-focus:scale-75 peer-focus:text-textSecondary peer-placeholder-shown:left-2-->
-<!--   peer-placeholder-shown:scale-100 peer-placeholder-shown:text-textPrimary peer-placeholder-shown:translate-y-0 scale-75 text-lg-->
-<!--    text-textSecondary top-2 transform transition-all">{{formGroupControlName}} </label>-->
-<!--    <i  class="absolute bg-bgPrim fa-envelope-->
-<!--     fa-regular fas peer-focus:text-textPrimary right-3 text-textSecondary text-xl top-2 transform z-10"></i>-->
+<!--<ng-container [formGroup]="formGroupParent">-->
+<!--&lt;!&ndash;  <div class="flex items-center mt-4 relative z-0">&ndash;&gt;-->
+<!--&lt;!&ndash;    <input value="{{value}}" formControlName="{{formGroupControlName}}" type="text" placeholder=" " class="appearance-none bg-transparent block border-0 border-2 border-b-2 border-textSecondary&ndash;&gt;-->
+<!--&lt;!&ndash;  focus:border-textPrimary focus:outline-none focus:ring-0 focus:text-textPrimary peer px-0 px-3 py-1.5 rounded-lg text-lg text-textPrimary&ndash;&gt;-->
+<!--&lt;!&ndash;   w-full">&ndash;&gt;-->
+<!--&lt;!&ndash;    <label class="-translate-y-9 -z-10 absolute duration-150 ease-in-out origin-[0]&ndash;&gt;-->
+<!--&lt;!&ndash;  peer-focus:-translate-y-9 peer-focus:left-0 peer-focus:scale-75 peer-focus:text-textSecondary peer-placeholder-shown:left-2&ndash;&gt;-->
+<!--&lt;!&ndash;   peer-placeholder-shown:scale-100 peer-placeholder-shown:text-textPrimary peer-placeholder-shown:translate-y-0 scale-75 text-lg&ndash;&gt;-->
+<!--&lt;!&ndash;    text-textSecondary top-2 transform transition-all">{{formGroupControlName}} </label>&ndash;&gt;-->
+<!--&lt;!&ndash;    <i  class="absolute bg-bgPrim fa-envelope&ndash;&gt;-->
+<!--&lt;!&ndash;     fa-regular fas peer-focus:text-textPrimary right-3 text-textSecondary text-xl top-2 transform z-10"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+<!--  <div class="col-span-2 sm:col-span-2" >-->
+<!--    <label class="block text-sm font-medium text-gray-700">{{label}}</label>-->
+<!--    <select formControlName="{{formGroupControlName}}" (change)="selectItem($event)"-->
+<!--             autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">-->
+<!--      <option [value]="null">Selecciona una categoria</option>-->
+<!--      <option *ngFor="let value of items"-->
+<!--              [value]="value.id">-->
+<!--        {{value.name}}-->
+<!--      </option>-->
+<!--    </select>-->
 <!--  </div>-->
 
-  <div class="col-span-2 sm:col-span-2" >
-    <label class="block text-sm font-medium text-gray-700">{{label}}</label>
-    <select formControlName="{{formGroupControlName}}" (change)="selectItem($event)"
-             autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-      <option [value]="null">Selecciona una categoria</option>
+<!--</ng-container>-->
+
+
+<ng-container [formGroup]="formGroupParent">
+  <div class="flex items-center mt-4 relative z-0">
+    <select formControlName="{{formGroupControlName}}"   class="appearance-none bg-transparent block border-0 border-2 border-b-2 border-textSecondary
+  focus:border-textPrimary focus:outline-none focus:ring-0 focus:text-textPrimary peer px-0 px-3 py-1.5 rounded-lg text-lg text-textPrimary
+   w-full">
+      <option [value]="null"></option>
       <option *ngFor="let value of items"
               [value]="value.id">
         {{value.name}}
       </option>
     </select>
+    <label [ngClass]="{'translate-y-0 left-2 scale-100 text-textPrimary':value==null,'-translate-y-9':value!=null}" class="
+    -z-10 absolute duration-150 ease-in-out origin-[0]
+  peer-focus:-translate-y-9 peer-focus:left-0 peer-focus:scale-75 peer-focus:text-textSecondary
+   scale-75 text-lg
+    text-textSecondary top-2 transform transition-all">{{label}} </label>
+    <i  class="absolute bg-bgPrim fa-envelope
+     fa-regular fas peer-focus:text-textPrimary right-3 text-textSecondary text-xl top-2 transform z-10"></i>
   </div>
-
 </ng-container>
 
 

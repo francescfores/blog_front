@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-2 max-w-6xl mx-auto px-10">
+<div class="flex flex-col gap-2 w-full mx-auto px-10">
   <app-breadcrumbs></app-breadcrumbs>
   <div class="mt-4 flex justify-between">
     <div class="inline-block">
@@ -47,8 +47,16 @@
             </div>
           </ng-template>
         </app-card>
-        <app-create-content class="w-2/3" [post_id]="post.id"></app-create-content>
-        <app-show-content class="w-full " [post_id]="post.id"></app-show-content>
+        <app-create-content class="w-2/3" [post_id]="this.id"></app-create-content>
+        <app-show-content class="w-full " [post_id]="this.id"></app-show-content>
+        <div class="w-1/3">
+            <ng-container *ngFor="let content of post.contents" class="">
+              <app-paint-contents class="w-full" [content]="content" (selectContent)="selectContent($event)"></app-paint-contents>
+            </ng-container>
+        </div>
+
+        <app-update-content class="w-2/3" [postContent]="selectetContent" (updatedContent)="getProduct()"></app-update-content>
+        <div class="grid grid-cols-3"></div>
       </div>
     </div>
   </div>

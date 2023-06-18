@@ -1,12 +1,12 @@
 import {Component, Input} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
-import {Post} from "../../../../../models/post";
+import {Post} from "../../../../models/post";
 import {Router} from "@angular/router";
-import {PostService} from "../../../../../services/api/post.service";
-import {SharedService} from "../../../../../../../services/shared.service";
+import {PostService} from "../../../../services/api/post.service";
+import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
-import {PostContent} from "../../../../../models/post-content";
-import {PostContentService} from "../../../../../services/api/post-content.service";
+import {PostContent} from "../../../../models/post-content";
+import {PostContentService} from "../../../../services/api/post-content.service";
 
 @Component({
   selector: 'app-show-content',
@@ -81,8 +81,9 @@ export class ShowContentComponent {
   }
 
   paginatedByPost(page:any){
-    console.log('paginatedByPost')
+    console.log('paginatedByPos-----------------------------')
     console.log(page)
+    console.log(this.post_id)
 
     this.postService.paginatedByPost(page, this.post_id)
       .subscribe({

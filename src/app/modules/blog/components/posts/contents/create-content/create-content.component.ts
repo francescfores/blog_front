@@ -1,17 +1,18 @@
 import {Component, Input, ViewChild} from '@angular/core';
 import {FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
-import {Post} from "../../../../../models/post";
-import {PostContent} from "../../../../../models/post-content";
-import {PostCategory} from "../../../../../models/post-category";
+import {Post} from "../../../../models/post";
+import {PostContent} from "../../../../models/post-content";
+import {PostCategory} from "../../../../models/post-category";
 import {Router} from "@angular/router";
-import {PostService} from "../../../../../services/api/post.service";
-import {CategoryService} from "../../../../../services/api/post-category.service";
-import {SharedService} from "../../../../../../../services/shared.service";
+import {PostService} from "../../../../services/api/post.service";
+import {CategoryService} from "../../../../services/api/post-category.service";
+import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
-import {AuthenticationAdminService} from "../../../../../../../services/api/authentication-admin.service";
+import {AuthenticationAdminService} from "../../../../../../services/api/authentication-admin.service";
 import {first} from "rxjs/operators";
-import {PostContentService} from "../../../../../services/api/post-content.service";
-import {ShowContentComponent} from "../../show/show-content/show-content.component";
+import {PostContentService} from "../../../../services/api/post-content.service";
+import {ShowContentComponent} from "../show-content/show-content.component";
+import {PostContentType} from "../../../../models/post-content-type";
 
 @Component({
   selector: 'app-create-content',
@@ -26,7 +27,7 @@ export class CreateContentComponent {
   submit!: boolean;
   loading=false;
   selectedImages: File[] = [];
-  types!: PostCategory[];
+  types!: PostContentType[];
   private type: any;
   private user: any;
   @ViewChild(ShowContentComponent) showContentComponent!: ShowContentComponent;
@@ -95,7 +96,6 @@ export class CreateContentComponent {
         let formData = this.form.value;
         this.postContent.num = formData.postContent.num;
         this.postContent.name = formData.postContent.name;
-        this.postContent.type = formData.postContent.category;
         this.postContent.desc = formData.postContent.desc;
         this.postContent.type = formData.postContent.type;
         this.postContent.post = this.post_id;
@@ -134,8 +134,15 @@ export class CreateContentComponent {
     }
   }
 
-  selectType($event: any) {
-    this.type = this.types.find(x=> x.id===Number($event.target.value));
-    this.form.value.postContent.type = this.type.id;
+  selectType() {
+    console.log('eeeeeeeee')
+    console.log(this.postContent.type)
+    let type = this.types.find(x=>x.id==this.form.value.postContent.type)
+    console.log(type)
+    // loadAttributes()
+  }
+  loadAttributes()
+  {
+
   }
 }

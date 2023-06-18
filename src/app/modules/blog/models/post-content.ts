@@ -1,5 +1,6 @@
 import {Post} from "./post";
 import {PostContentType} from "./post-content-type";
+import {PostContentTypeAttribute} from "./post-content-type-attribute";
 
 export class PostContent {
   id!: number;
@@ -11,4 +12,6 @@ export class PostContent {
   post!: Post | number;
   created_at!: string;
   images: any;
+  attributes!: PostContentTypeAttribute[];
+  subcontents!: PostContent[];
 }

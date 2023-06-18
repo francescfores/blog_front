@@ -1,26 +1,45 @@
-import {Component, ElementRef, HostListener, Input, QueryList, Renderer2, ViewChild, ViewChildren} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 @Component({
   selector: 'app-codeplayground',
   templateUrl: './codeplayground.component.html',
   styleUrls: ['./codeplayground.component.css']
 })
-export class CodeplaygroundComponent {
+export class CodeplaygroundComponent implements OnInit {
   @Input() id:number=0;
   @Input() htmlCodes:string='';
   @Input() cssCodes:string='';
   @Input() jsCodes:string='';
-  constructor(private renderer: Renderer2) {}
+
+  safeCode: SafeHtml;
+
+  constructor(private renderer: Renderer2,
+              private sanitizer: DomSanitizer) {
+    this.safeCode = '';
+
+  }
   ngOnInit() {
 
     this.generateHTML();
+    this.renderCode()
   }
 
   //codereview
   loading=false;
   windowsCode: { [key: string]: boolean } = { html: true, css: false, js: false };
 
-  generatedHTML:string='';
+  generatedHTML:any;
 
   @ViewChild('contentPanel') contentPanel!: ElementRef;
   @ViewChild('upPanel') upPanel!: ElementRef;
@@ -41,66 +60,6 @@ export class CodeplaygroundComponent {
   startHorizontalWidth: number = 0;
   maxContainerHeight: number=0; // Establece aquí la altura máxima deseada
 
-
-  // /*
-  // Inicializa las variables y almacena las posiciones y dimensiones iniciales necesarias para ajustar
-  // la altura o el ancho de los elementos al mover las barras vertical y horizontal respectivamente.
-  //  */
-  // @HostListener('document:mousedown', ['$event'])
-  // onMouseDown(event: MouseEvent): void {
-  //   this.maxContainerHeight=this.contentPanel.nativeElement.offsetHeight;
-  //   if (event.target === this.splitBarVertical.nativeElement) {
-  //     this.isVerticalMouseDown = true;
-  //     this.startVerticalY = event.clientY;
-  //     this.startVerticalHeight = this.upPanel.nativeElement.offsetHeight;
-  //     // this.rightPanel.nativeElement.style.pointerEvents = 'none';
-  //   } else if (event.target === this.splitBarHorizontal.nativeElement) {
-  //     this.isHorizontalMouseDown = true;
-  //     this.startHorizontalX = event.clientX;
-  //     this.startHorizontalWidth = this.leftPanel.nativeElement.offsetWidth;
-  //     this.rightPanel.nativeElement.style.pointerEvents = 'none';
-  //   }
-  // }
-  // @HostListener('document:mousemove', ['$event'])
-  // onMouseMove(event: MouseEvent): void {
-  //   if (this.isVerticalMouseDown) {
-  //     const newHeight = this.startVerticalHeight + (event.clientY - this.startVerticalY);
-  //     console.log(newHeight);
-  //     if (newHeight <= this.maxContainerHeight) {
-  //       const newUpHeight = newHeight + 'px';
-  //       const newDownHeight = this.maxContainerHeight - newHeight + 'px';
-  //       this.upPanel.nativeElement.style.height = newUpHeight;
-  //       this.downPanel.nativeElement.style.height = newDownHeight;
-  //     }
-  // }else if (this.isHorizontalMouseDown) {
-  //     // const newWidth = this.startHorizontalWidth + (event.clientX - this.startHorizontalX);
-  //     // this.leftPanel.nativeElement.style.width = newWidth + 'px';
-  //     // this.rightPanel.nativeElement.style.width = newWidth + 'px';
-  //     const newWidth = this.startHorizontalWidth + (event.clientX - this.startHorizontalX);
-  //     this.leftPanels.forEach(panel => {
-  //       panel.nativeElement.style.width = newWidth + 'px';
-  //     });
-  //     this.rightPanels.forEach(panel => {
-  //       panel.nativeElement.style.width = newWidth + 'px';
-  //     });
-  //   }
-  // }
-  // // @HostListener('document:mouseup')
-  // // onMouseUp(): void {
-  // //   this.isVerticalMouseDown = false;
-  // //   this.isHorizontalMouseDown = false;
-  // // }
-  // @HostListener('document:mouseup')
-  // onMouseUp(): void {
-  //   if (this.isVerticalMouseDown || this.isHorizontalMouseDown) {
-  //     this.isVerticalMouseDown = false;
-  //     this.isHorizontalMouseDown = false;
-  //     this.rightPanel.nativeElement.style.pointerEvents = 'auto'; // Vuelve a habilitar los eventos del rightPanel después de soltar el botón del mouse
-  //   }
-  // }
-  //
-
-  /*layout 2*/
   @ViewChild('splitBarHorizontal1') splitBarHorizontal1!: ElementRef<HTMLElement>;
   @ViewChild('splitBarHorizontal2') splitBarHorizontal2!: ElementRef<HTMLElement>;
   @ViewChild('centerPanel') centerPanel!: ElementRef<HTMLElement>;
@@ -123,10 +82,11 @@ export class CodeplaygroundComponent {
       this.startCenterPanelWidth = this.centerPanel.nativeElement.offsetWidth;
       this.startRightPanelWidth = this.rightPanel.nativeElement.offsetWidth;
     }
-    this.maxContainerHeight=this.contentPanel.nativeElement.offsetHeight;
+    this.maxContainerHeight=this.contentPanel.nativeElement.offsetHeight-10;
       if (event.target === this.splitBarVertical.nativeElement) {
         this.isVerticalMouseDown = true;
         this.startVerticalY = event.clientY;
+        console.log('this.upPanel.nativeElement.offsetHeight')
         this.startVerticalHeight = this.upPanel.nativeElement.offsetHeight;
         this.downPanel.nativeElement.style.pointerEvents = 'none';
       }
@@ -172,13 +132,28 @@ export class CodeplaygroundComponent {
     }
     if (this.isVerticalMouseDown) {
       const newHeight = this.startVerticalHeight + (event.clientY - this.startVerticalY);
+      console.log('this.startVerticalHeight');
+      console.log(this.startVerticalHeight);
+      console.log('event.clientY');
+      console.log(event.clientY);
+      console.log('newHeight');
       console.log(newHeight);
-      if (newHeight <= this.maxContainerHeight) {
-        const newUpHeight = newHeight + 'px';
-        const newDownHeight = this.maxContainerHeight - newHeight + 'px';
-        this.upPanel.nativeElement.style.height = newUpHeight;
-        this.downPanel.nativeElement.style.height = newDownHeight;
-      }
+      console.log('maxContainerHeight');
+      console.log(this.maxContainerHeight);
+
+      if ( newHeight > 0 && newHeight <= this.maxContainerHeight) {
+        const newUpHeight = (newHeight) + 'px';
+        const newDownHeight = this.maxContainerHeight - (newHeight) + 'px';
+        console.log('newUpHeight');
+        console.log(newUpHeight);
+        console.log('newDownHeight');
+        console.log(newDownHeight);
+        // if(newHeight + (this.maxContainerHeight - newHeight) < this.maxContainerHeight){
+          this.upPanel.nativeElement.style.height = newUpHeight;
+          this.leftPanel.nativeElement.style.height = newUpHeight;
+
+          this.downPanel.nativeElement.style.height = newDownHeight;
+        }
     }
   }
 
@@ -225,34 +200,53 @@ body{
 var $ = jQuery = window.parent.$;
 // var $ = selector => document.querySelector(selector);
 `+ "</script>"));
+    $('#iframe-' + this.id).contents().find("body").append($("<script type='javascript'>"
+      +`
+      import FlowbiteReact from 'https://cdn.jsdelivr.net/npm/flowbite-react@0.4.2/+esm';
+`+ "</script>"));
     // $('#iframe-' + this.id).contents().find("body").append('  <script src="../../../../tailwind.config.js"></script>');
-    $('#iframe-' + this.id).contents().find("body").append('  <script src="https://cdn.tailwindcss.com"></script>');
+    // $('#iframe-' + this.id).contents().find("head").append('  <script src="https://cdn.tailwindcss.com"></script>');
     // $('#iframe-' + this.id).contents().find("head").append("<link rel='stylesheet' href='../../../../src/styles.css'>");
     // $('#iframe-' + this.id).contents().find("head").append("<link rel='stylesheet' href='../../../assets/styles/tailwind.css'>");
-    $('#iframe-' + this.id).contents().find("body").append($(this.jsCodes));
+    $('#iframe-' + this.id).contents().find("body").append($("<script >"+this.jsCodes+"</script>"));
+
+
   }
+  @ViewChild('myIframe') myIframe!: ElementRef;
   generateHTML() {
     console.log('generateHTML')
     console.log(this.htmlCodes)
 
-    this.generatedHTML = '';
+    // this.generatedHTML = '';
     this.generatedHTML = `
     <html>
       <head>
+        <style type='text/css'>${this.cssCodes}</style>
       </head>
       <body>
           ${this.htmlCodes}
+          <script >${this.jsCodes}</script>
+        <script src="https://cdn.tailwindcss.com"></script>
       </body>
+
     </html>
   `;
-    this.addStyle()
+    this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
+
+    // this.renderCode()
+   //  this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
+
   }
 
 
-  changes(htmlCodes: string) {
-    console.log('sdsddsd')
-    console.log(htmlCodes)
+  renderCode() {
+    this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
+    const iframeDoc = this.myIframe.nativeElement.contentDocument || this.myIframe.nativeElement.contentWindow.document;
+    this.generatedHTML=this.safeCode;
+    //
+    // iframeDoc.open();
+    // iframeDoc.write(this.safeCode);
+    // iframeDoc.close();
 
-    this.htmlCodes=htmlCodes;
   }
 }

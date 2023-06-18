@@ -1,0 +1,68 @@
+<div class="flex flex-col w-full overflow-hidden">
+  <div class=" flex flex-wrap w-full {{rounded}} ">
+    <div class="rounded-t-lg w-full flex justify-between  {{bg_color_2}} px-4 py-1 text-xs font-semibold">
+      <p class="{{text_color_1}}">Code Playground</p>
+      <div class="flex justify-between gap-4">
+        <p (click)="refreshHtml()" class="{{text_color_1}}">run</p>
+        <p class="{{text_color_1}}">Reset</p>
+      </div>
+    </div>
+  </div>
+  <div #contentPanel class=" flex flex-wrap rounded-b-lg {{height}}  w-full {{bg_color_1}} ">
+    <div #upPanel class="flex  h-[260px] w-full">
+      <div #leftPanel class="split__left w-full p-2 pr-0 " >
+        <div   class=" flex flex-wrap w-full  ">
+          <div class=" w-full flex items-start  pb-2">
+            <div class="flex justify-between gap-4">
+              <p [class]="windowsCode === 'html' ? text_color_1 : text_color_2" (click)="windowsCode='html'">Html</p>
+              <p [class]="windowsCode === 'css' ? text_color_1 : text_color_2" (click)="windowsCode='css'">Css</p>
+              <p [class]="windowsCode === 'js' ? text_color_1 : text_color_2" (click)="windowsCode='js'">Js</p>
+            </div>
+          </div>
+        </div>
+        <ngx-codemirror *ngIf="windowsCode==='html'" (keydown)="refreshHtml()" [(ngModel)]="htmlCodes" class="w-full "
+                        [options]="{
+                                        htmlMode: true,
+                                         lineNumbers:
+                                         false, theme: 'material',
+                                          mode: 'htmlmixed',
+                                          }">
+
+        </ngx-codemirror>
+        <ngx-codemirror  *ngIf="windowsCode==='css'" (keydown)="refreshHtml()" [(ngModel)]="cssCodes" class=""
+                         [options]="{
+                                                htmlMode: true,
+                                                 lineNumbers:
+                                         false, theme: 'material',
+                                                  mode: 'css',
+                                                  }"></ngx-codemirror>
+        <ngx-codemirror *ngIf="windowsCode==='js'" (keydown)="refreshHtml()" [(ngModel)]="jsCodes" class=""
+                        [options]="{
+                                          htmlMode: true,
+                                           lineNumbers:
+                                         false, theme: 'material',
+                                            mode: 'javascript',
+                                            }"></ngx-codemirror>
+      </div>
+      <div #splitBarHorizontal1 class="split__bar h-[300px]" ></div>
+      <div #centerPanel class="split__center {{bg_color_1}}  p-2 pl-0 w-full">
+        <div   class=" flex flex-wrap w-full ">
+          <div class=" w-full flex items-start pb-2 ">
+            <div class="flex justify-between gap-4">
+              <p class="{{text_color_1}}">Result</p>
+            </div>
+          </div>
+        </div>
+        <iframe class="{{rounded}} bg-white w-full" #myIframe  [srcdoc]="safeCode" id="iframe-{{id}}"></iframe>
+      </div>
+
+    </div>
+    <!--    <div #splitBarVertical class="h-[10px] split__bar_horizontal"></div>-->
+    <!--    <div #downPanel class="flex w-full h-[300px]">-->
+    <!--      <div class=" iframe-container flex justify-center items-start">-->
+    <!--        <iframe #myIframe  [srcdoc]="safeCode" id="iframe-{{id}}"></iframe>-->
+    <!--      </div>-->
+    <!--    </div>-->
+  </div>
+</div>
+

@@ -9,15 +9,15 @@ import {SharedService} from "../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
 import {AuthenticationAdminService} from "../../../../../services/api/authentication-admin.service";
 import {first} from "rxjs/operators";
-import {CreateContentComponent} from "../content/create/create-content/create-content.component";
-import {ShowContentComponent} from "../content/show/show-content/show-content.component";
+// import {CreateContentComponent} from "../content/create/create-content/create-content.component";
+// import {ShowContentComponent} from "../content/show/show-content/show-content.component";
 
 @Component({
-  selector: 'app-update-blog',
-  templateUrl: './update-blog.component.html',
-  styleUrls: ['./update-blog.component.css']
+  selector: 'app-update-post',
+  templateUrl: './update-post.component.html',
+  styleUrls: ['./update-post.component.css']
 })
-export class UpdateBlogComponent {
+export class UpdatePostComponent {
   form!: FormGroup;
   public post!: Post;
   submit!: boolean;
@@ -26,8 +26,9 @@ export class UpdateBlogComponent {
   categories!: PostCategory[];
   private category: any;
   private user: any;
-  private id: any;
+   id: any;
   queryObj:any;
+  selectetContent: any;
 
 
   constructor(
@@ -85,6 +86,8 @@ export class UpdateBlogComponent {
         data => {
           this.post = data.data;
           if (this.post) {
+            console.log('this.post------------------------------')
+            console.log(this.post)
             //this.subcategories= this.category.subcategories;
             //init forms
             // this.form.value.post.name=this.post.name;
@@ -177,5 +180,10 @@ export class UpdateBlogComponent {
   selectCategory($event: any) {
     this.category = this.categories.find(x=> x.id===Number($event.target.value));
     this.form.value.post.category = this.category.id;
+  }
+
+  selectContent(content:any) {
+    console.log('content',content)
+    this.selectetContent=content;
   }
 }

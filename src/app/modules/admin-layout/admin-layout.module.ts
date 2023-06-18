@@ -22,6 +22,7 @@ import {CodemirrorModule} from "@ctrl/ngx-codemirror";
 import { TutorialComponent } from './pages/tutorial/tutorial.component';
 import { EditorComponent } from './pages/editor/editor.component';
 import {BlogModule} from "../blog/blog.module";
+import {CodeEditorModule} from "@ngstack/code-editor";
 // import { LandingPagesComponent } from './pages/landing-pages/landing-pages.component';
 // import { LandingPage1Component } from './pages/landing-pages/landing-page1/landing-page1.component';
 // import { LandingPage2Component } from './pages/landing-pages/landing-page2/landing-page2.component';
@@ -48,7 +49,7 @@ import {BlogModule} from "../blog/blog.module";
     TutorialComponent,
     EditorComponent,
   ],
-  imports: [
+    imports: [
         CommonModule,
         ComponentsModule,
         ReactiveFormsModule,
@@ -56,6 +57,7 @@ import {BlogModule} from "../blog/blog.module";
         AdminLayoutRoutingModule,
         CodemirrorModule,
         BlogModule,
+        CodeEditorModule,
     ],
   exports: [
     IndexComponent,

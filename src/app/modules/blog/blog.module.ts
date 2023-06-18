@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { CreateBlogComponent } from './pages-admin/post-admin/create/create-blog.component';
-import { UpdateBlogComponent } from './pages-admin/post-admin/update/update-blog.component';
+import { CreatePostComponent } from './components/posts/create-post/create-post.component';
+import { UpdatePostComponent } from './components/posts/update-post/update-post.component';
 import {AdminLayoutRoutingModule} from "../admin-layout/admin-layout-routing.module";
 import {IndexComponent} from "./index/index.component";
 import {BlogRoutingModule} from "./blog-routing.module";
-import {ShowPostComponent} from "./pages-admin/post-admin/show/show-post.component";
+import {ShowPostComponent} from "./components/posts/show-post/show-post.component";
 import {ComponentsModule} from "../../components/components.module";
-import { CreateContentComponent } from './pages-admin/post-admin/content/create/create-content/create-content.component';
-import { ShowContentComponent } from './pages-admin/post-admin/content/show/show-content/show-content.component';
-import { UpdateContentComponent } from './pages-admin/post-admin/content/update/update-content/update-content.component';
+import { CreateContentComponent } from './components/posts/contents/create-content/create-content.component';
+import { ShowContentComponent } from './components/posts/contents/show-content/show-content.component';
+import { UpdateContentComponent } from './components/posts/contents/update-content/update-content.component';
 import { LatestComponent } from './pages/latest/latest.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BonusComponent } from './pages/bonus/bonus.component';
@@ -28,8 +28,8 @@ import { PostComponent } from './pages/posts/post/post.component';
     IndexComponent,
     IndexAdminComponent,
     ShowPostComponent,
-    CreateBlogComponent,
-    UpdateBlogComponent,
+    CreatePostComponent,
+    UpdatePostComponent,
     CreateContentComponent,
     ShowContentComponent,
     UpdateContentComponent,
@@ -45,8 +45,8 @@ import { PostComponent } from './pages/posts/post/post.component';
     IndexComponent,
     IndexAdminComponent,
     ShowPostComponent,
-    CreateBlogComponent,
-    UpdateBlogComponent
+    CreatePostComponent,
+    UpdatePostComponent
   ],
     imports: [
         CommonModule,

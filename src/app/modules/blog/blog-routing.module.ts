@@ -5,11 +5,11 @@ import {BlogModule} from './blog.module';
 import {UsersComponent} from "../admin-layout/pages/users/users.component";
 import {SettingsComponent} from "../admin-layout/pages/settings/settings.component";
 import {TutorialComponent} from "../admin-layout/pages/tutorial/tutorial.component";
-import {CreateBlogComponent} from "./pages-admin/post-admin/create/create-blog.component";
-import {UpdateBlogComponent} from "./pages-admin/post-admin/update/update-blog.component";
+import {CreatePostComponent} from "./components/posts/create-post/create-post.component";
+import {UpdatePostComponent} from "./components/posts/update-post/update-post.component";
 import {AuthGuard} from "../../services/guards/auth.guard";
 import {DashboardComponent} from "../admin-layout/pages/dashboard/dashboard.component";
-import {ShowPostComponent} from "./pages-admin/post-admin/show/show-post.component";
+import {ShowPostComponent} from "./components/posts/show-post/show-post.component";
 import {PostsComponent} from "./pages/posts/posts.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {IndexAdminComponent} from "./index-admin/index-admin.component";
@@ -36,12 +36,12 @@ const routes: Routes = [
           breadcrumb: 'posts'
         },
       },
-      { path: "create", component: CreateBlogComponent,
+      { path: "create", component: CreatePostComponent,
         data: {
           breadcrumb: 'create'
         },
       },
-      { path: 'update/:name', component: UpdateBlogComponent, pathMatch: 'prefix',
+      { path: 'update/:name', component: UpdatePostComponent, pathMatch: 'prefix',
         data: {
           breadcrumb: 'update'
         },
@@ -61,6 +61,11 @@ const routes: Routes = [
         // data: {
         //   breadcrumb: 'home'
         // },
+      },
+      { path: "editor/result", component: LatestComponent,
+        data: {
+          breadcrumb: 'latest'
+        },
       },
       { path: "latest", component: LatestComponent,
         data: {

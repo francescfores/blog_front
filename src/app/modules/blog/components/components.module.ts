@@ -10,6 +10,7 @@ import {MenuComponent} from "./sidebar/menu/menu.component";
 import {SubmenuComponent} from "./sidebar/submenu/submenu.component";
 import {Slider3Component} from "./slider-3/slider-3.component";
 import {ComponentsModule} from "../../../components/components.module";
+import { PaintContentsComponent } from './posts/contents/paint-contents/paint-contents.component';
 // import {ComponentsModule} from "../../../../../../components/components.module";
 
 @NgModule({
@@ -21,6 +22,7 @@ import {ComponentsModule} from "../../../components/components.module";
     SubmenuComponent,
     FooterAdminComponent,
     Slider3Component,
+    PaintContentsComponent,
   ],
   imports: [
     CommonModule,
@@ -29,11 +31,12 @@ import {ComponentsModule} from "../../../components/components.module";
     ComponentsModule,
     // ComponentsModule,
   ],
-  exports: [
-    FooterAdminComponent,
-    SidebarComponent,
-    NavbarComponent,
-    Slider3Component,
-  ]
+    exports: [
+        FooterAdminComponent,
+        SidebarComponent,
+        NavbarComponent,
+        Slider3Component,
+        PaintContentsComponent,
+    ]
 })
 export class ComponentsModuleBlog { }

@@ -27,6 +27,10 @@ import {BreadcrumbsComponent} from "./breadcrumbs/breadcrumbs.component";
 import { InputOutsiteComponent } from './inputs/input-outsite/input-outsite.component';
 import { SelectOutsideComponent } from './selects/select-outside/select-outside.component';
 import { GridFlexComponent } from './grid-flex/grid-flex.component';
+import { CodeEditorComponent } from './code-editor/code-editor.component';
+import {CodeEditorModule} from "@ngstack/code-editor";
+import {DynamicComponentLoaderComponent} from "./code-editor/dynamic-component-loader.component";
+import {Codeplayground_V2Component} from "./codeplayground_V2/codeplayground_V2.component";
 
 @NgModule({
   declarations: [
@@ -53,14 +57,18 @@ import { GridFlexComponent } from './grid-flex/grid-flex.component';
     InputOutsiteComponent,
     SelectOutsideComponent,
     GridFlexComponent,
+    CodeEditorComponent,
+    DynamicComponentLoaderComponent,
+    Codeplayground_V2Component
   ],
-    imports: [
-        CommonModule,
-        RouterModule,
-        CodemirrorModule,
-        FormsModule,
-        ReactiveFormsModule,
-    ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    CodemirrorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CodeEditorModule,
+  ],
     exports: [
         UserDropdownComponent,
         IndexDropdownComponent,
@@ -80,7 +88,10 @@ import { GridFlexComponent } from './grid-flex/grid-flex.component';
         BreadcrumbsComponent,
         InputOutsiteComponent,
         SelectOutsideComponent,
-        GridFlexComponent
-    ]
+        GridFlexComponent,
+        CodeEditorComponent,
+      Codeplayground_V2Component
+    ],
+  providers: [DynamicComponentLoaderComponent],
 })
 export class ComponentsModule { }

@@ -60,7 +60,7 @@ export class PostContentService {
     return this.http.post<any>(`${environment.apiUrl}api/post_content`, params);
   }
 
-  update(id: number, post: any) {
+  update(id: number, post: any, typeAttributes:any, attributes:any, subcontents:any) {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'form-data',
@@ -83,7 +83,18 @@ export class PostContentService {
         formData.append(key, value);
       }
     });
-
+    Object.keys(typeAttributes).forEach(key => {
+      const value = typeAttributes[key];
+        formData.append('type_attrs_'+key, value);
+    });
+    Object.keys(attributes).forEach(key => {
+      const value = attributes[key];
+      formData.append(key, value);
+    });
+    Object.keys(subcontents).forEach(key => {
+      const value = subcontents[key];
+      formData.append(key, value);
+    });
     return this.http.post<any>(`${environment.apiUrl}api/post_content/${id}`, formData);
   }
 

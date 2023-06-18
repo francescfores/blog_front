@@ -12,11 +12,11 @@ import {AuthenticationService} from "../../../../../services/api/authentication.
 import {AuthenticationAdminService} from "../../../../../services/api/authentication-admin.service";
 
 @Component({
-  selector: 'app-create-blog',
-  templateUrl: './create-blog.component.html',
-  styleUrls: ['./create-blog.component.css']
+  selector: 'app-create-post',
+  templateUrl: './create-post.component.html',
+  styleUrls: ['./create-post.component.css']
 })
-export class CreateBlogComponent {
+export class CreatePostComponent {
   form!: FormGroup;
   public post!: Post;
   submit!: boolean;
