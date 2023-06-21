@@ -47,10 +47,10 @@ const routes: Routes = [
         { path: "inputs", component: InputsComponent }
       ],
       },
-      {
-        path: '',
-        loadChildren: () => import('./../../modules/blog2/blog.module').then(m => m.BlogModule2)
-      },
+      // {
+      //   path: '',
+      //   loadChildren: () => import('./../../modules/blog2/blog.module').then(m => m.BlogModule2)
+      // },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
