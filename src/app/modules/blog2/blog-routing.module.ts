@@ -24,7 +24,7 @@ import {NonAuthGuard} from "../../services/guards/non-auth.guard";
 
 const routes: Routes = [
   {
-    path: 'blog-admin',
+    path: 'blog2-admin',
     component: IndexAdminComponent,
     // canActivate: [AuthGuard],
     // canActivateChild: [AuthGuard],
