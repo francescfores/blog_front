@@ -147,8 +147,12 @@ module.exports = {
     createThemes({
       light: {
 
-        'primary': '#e35245', //green 70C1B3 //red EF476F //yellow FFC43D //blue 0091AD
-        'secondary': '#7e7d7d', //'#70d0f8',
+        'primary': '#92c200',
+        'primary-2': '#d6ff5c',
+        'primary-3': '#e8ffa1',
+        'secondary': '#E5BA37E8', //'#70d0f8',
+        'secondary-2': '#D3B654E8', //'#70d0f8',
+        'secondary-3': '#E3D9B8E8', //'#70d0f8',
         'ternary': '#29335C', //'#29335C',
         'success': '#70c183', //'#70C1B3',
         'info': '#2E72B2', //'#29335C',
@@ -172,17 +176,17 @@ module.exports = {
         // 'border-color': '#E85651',
 
         //for 3d button
-        'btn_primary_border_style': '#5bbd3a',
-        'btn_primary_bg_front_color': '#95D44A',
-        'btn_primary_bg_shadow_color': '#D9D9D949',
-        'btn_primary_bg_back_color': '#52A934',
-        'btn_primary_font_color': '#3F8228',
+        'btn_primary_border_style': 'rgba(91,189,58,0.8)',
+        'btn_primary_bg_front_color': '#92c200',
+        'btn_primary_bg_shadow_color': '#4B4B4B20',
+        'btn_primary_bg_back_color': 'rgba(82,169,52,0.8)',
+        'btn_primary_font_color': '#eafcb7',
 
-        'btn_secondary_border_style': '#b3e5e1',
+        'btn_secondary_border_style': 'rgba(238,217,153,0.91)',
         'btn_secondary_bg_front_color': '#FAFAFA',
         'btn_secondary_bg_shadow_color': '#D9D9D949',
-        'btn_secondary_bg_back_color': '#349890',
-        'btn_secondary_font_color': '#1A4C48',
+        'btn_secondary_bg_back_color': '#E5BA37E8',
+        'btn_secondary_font_color': 'rgba(164,131,33,0.91)',
 
         'btn_ternary_border_style': '#69b5e0',
         'btn_ternary_bg_front_color': '#AAD3EA',
@@ -210,23 +214,27 @@ module.exports = {
 
       },
       dark: {
-        'primary': '#BA2C73',//0091ADB2 ///41FF6CDA  7cad41
-        'secondary': '#5C95FF', ///F3A71299 //FBB02DE5 F3A71299
-        'ternary': '#d56858', ///29335C99 //17BEBBE4 29335C99
+        'primary': '#92c200',
+        'primary-2': '#d6ff5c',
+        'primary-3': '#e8ffa1',
+        'secondary': '#E5BA37E8', //'#70d0f8',
+        'secondary-2': '#D3B654E8', //'#70d0f8',
+        'secondary-3': '#E3D9B8E8', //'#70d0f8',
+        'ternary': '#92c200', ///29335C99 //17BEBBE4 29335C99
         'success': '#70C18399', //'#70C1B3',
         'info': '#2E72B299', //'#29335C',
         'warning': '#FFC43D99', //'#FFC43D',
         'help': '#55319199', //'#29335C',
         'danger': '#EF476F99', //'#29335C',
-        'bgPrim': '#1C1C35', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
-        'bgSeco': '#151528',//0A131F
-        'bgTern': '#2A2A50',//1e314b #474954
+        'bgPrim': '#362f1b', ////0F1C2E //rgb(36, 28, 81) rgb(36, 28, 81) rgb(28, 20, 69)
+        'bgSeco': '#443b21',//0A131F
+        'bgTern': '#5e522f',//1e314b #474954
         // 'secondary': '#CBF7ED',
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',
-        'textPrimary': '#d8d6ff',//CBF7ED
-        'textSecondary': '#7e73a2',//658cbb
-        'textTertiary': '#756B94BB',//364c69
+        'textPrimary': '#ffefc9',//CBF7ED
+        'textSecondary': '#C9B05DE8',//658cbb
+        'textTertiary': '#7a6a3a',//364c69
         // 'primary-bg': '#404040',
         // 'bt-primary': 'rgb(34,80,77)',
         // 'nav-color': 'rgb(34,80,77)',

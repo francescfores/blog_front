@@ -1,0 +1,1044 @@
+<section class="">
+  <app-slider-blog></app-slider-blog>
+</section>
+<main class="relative bg-bgPrim  z-40">
+  <div class="max-w-6xl mx-auto px-10 py-10  ">
+    <section class="p-10  flex h-20 w-full">
+      <app-breadcrumbs></app-breadcrumbs>
+    </section>
+    <section class=" flex gap-10 flex-wrap    justify-center items-start min-h-screen"  *ngIf="posts!=null">
+      <section class="flex flex-col  lg:flex-1 ">
+        <p class="text_font_marvel text-lg  font-normal text-primary uppercase">Recentlys Published</p>
+        <ng-container *ngFor="let post of posts" >
+          <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+            <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+              <div class="  md:pt-0 pr-0 "
+                   [ngClass]="{'w-2/3  md:px-10 pt-10':post?.images.length>0,'w-full md:pr-10':post?.images.length===0}">
+                <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                  {{post.name}}
+                </h6>
+                <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                  {{post.subname}}
+                </h4>
+                <div class="py-6">
+                  <p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                    {{post.desc}}
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                  <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                                [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                  <p class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                    {{post.created_at| date:'dd/MM/yyyy' }}
+                  </p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/3" *ngIf="post?.images.length>0">
+                <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                  <img
+                    [src]="environment.apiUrl+'storage/blog/posts/'+post.id+'/'+post?.images[0]?.name"
+                    alt="image"
+                    class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </app-card>
+        </ng-container>
+      </section>
+
+      <section class="flex flex-col  lg:sticky lg:top-[62px]">
+        <div class="w-full min-h-screen ">
+          <div class="lg:sticky lg:top-[62px]">
+            <div class="flex flex-col">
+              <div class="">
+                <p class="text_font_marvel text-lg  font-normal  text-primary uppercase">Categories</p>
+                <div class="flex flex-col py-5 gap-5" >
+                  <a *ngFor="let category of categories" href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      {{category.name}}
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <div class="">
+                <p class="text_font_marvel text-lg  font-normal  text-primary uppercase">Popular Content</p>
+                <div class="flex flex-col py-5 gap-5">
+                  <a *ngFor="let post of posts" href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      {{post.name}}
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="  flex justify-lenter items-start min-h-screen">
+      <div class="flex flex-col w-3/4">
+        <p class="text_font_marvel text-lg  font-normal text-primary uppercase">Recentlys Published</p>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-lg font-semibold  text-textPrimary">
+                Lyft launching
+              </h6>
+              <h4 class="text-sm font-medium leading-snug tracking-normal antialiased text-textSecondary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-normal leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="rounded-xl border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+      </div>
+      <div class="flex flex-col w-1/4  sticky top-[62px]">
+        <div class="w-full min-h-screen ">
+          <div class="sticky top-[62px]">
+            <div class="flex flex-col">
+              <div class="">
+                <p class="text_font_marvel text-lg  font-normal  text-primary uppercase">Recentlys Published</p>
+                <div class="flex flex-col py-5 gap-5">
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <div class="">
+                <p class="text_font_marvel text-lg  font-normal  text-primary uppercase">Recentlys Published</p>
+                <div class="flex flex-col py-5 gap-5">
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                  <a href="" class="group flex items-center gap-5 text-lg font-semibold leading-snug tracking-normal antialiased ">
+                    <i _ngcontent-qxo-c41="" class="
+                group-hover:translate-x-2
+                fas fa-light fa-arrow-right
+                text-lg text-secondary transition-all duration-500 ease-in-out"></i>
+                    <p class="text-textPrimary">
+                      Lyft launching cross-
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section_1 overflow-hidden ">
+      <div class=" ">
+        <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 rounded-lg  ">
+          <div class="w-96 bg-gray-800 text-white
+               px-4 lg:px-20 py-10
+              section_1_left w-full relative flex flex-col z-20 h-full justify-center">
+            <img class="w-16" src="https://cdn.marvel.com/content/1x/mulogo_lob_log_eye_01_1.png" srcset="https://cdn.marvel.com/content/1x/mulogo_lob_log_eye_01_1.png" alt="mulogo_lob_log_eye_01_1" >
+            <p class="text-xl lg:text-3xl font-bold text_font_marvel mt-4">Gameplay Revealed</p>
+            <p class="text-xl my-6 ">Check out the all-new gameplay for 'Marvel's Spider-Man 2', just revealed at PlayStation Showcase 2023!</p>
+            <app-button3d class="w-full sm:w-1/2"
+                          [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg)' +
+                      ' center/cover'"
+                          font_size="22" font_body_weight="900" [height]="'55px'"
+                          [bg_back_color]="'#1e1e1e'"
+                          [border_style]="'solid #181818 var(--border)'"
+                          [width]="'100%'" [raise]="6">
+              <div class="flex gap-3 justify-between items-center uppercase">
+                <p>Read More </p>
+                <i class="fas fa-light fa-arrow-right  text-xs"></i>
+              </div>
+            </app-button3d>
+          </div>
+          <div class="section_1_right flex relative z-10 w-full h-[560px]" style="background-image: url(https://cdn.marvel.com/content/1x/20221227-newtomu_base_set_dsk.jpg);
+background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section_2  px-0 md:px-10 ">
+      <div class="py-0 z-20 relative  flex justify-center items-center   font-semibold text-textPrimary">
+        <div class=" max-w-6xl bg-bgPrim relative flex w-[100%] sm:w-[100%] px-4 sm:px-8 -mt-8 ">
+          <div class=" -mt-8 flex relative  overflow-x-auto overflow-y-visible  gap-2 sm:gap-5  h-full w-full pt-16 pb-8  ">
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " src="https://cdn.marvel.com/u/prod/marvel/i/mg/9/60/645111ec6ec9d/portrait_uncanny.jpg" srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/9/60/645111ec6ec9d/portrait_uncanny.jpg" alt="Silk (2023) #1">
+              <p class="text-xs md:text-sm">Avengssssers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " src="https://cdn.marvel.com/u/prod/marvel/i/mg/3/e0/63ed3857f1670/portrait_uncanny.jpg" srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/3/e0/63ed3857f1670/portrait_uncanny.jpg" alt="Silk (2023) #1">
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " mvl-type="lob"
+                   src="https://cdn.marvel.com/u/prod/marvel/i/mg/2/03/6451115fd5533/portrait_uncanny.jpg"
+                   srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/2/03/6451115fd5533/portrait_uncanny.jpg" alt="Avengers (2023) #1">
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " mvl-type="lob"
+                   src="https://cdn.marvel.com/u/prod/marvel/i/mg/d/00/63ed387cda7c9/portrait_uncanny.jpg"
+                   srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/d/00/63ed387cda7c9/portrait_uncanny.jpg"  alt="Avengers (2023) #1">
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " mvl-type="lob"
+                   src="https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/63ed38abc61b6/portrait_uncanny.jpg"
+                   srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/63ed38abc61b6/portrait_uncanny.jpg" alt="Avengers (2023) #1">
+
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " mvl-type="lob"
+                   src="https://cdn.marvel.com/u/prod/marvel/i/mg/e/d0/63ed38abbb3a4/portrait_uncanny.jpg"
+                   srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/e/d0/63ed38abbb3a4/portrait_uncanny.jpg"  alt="Avengers (2023) #1">
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+            <div class="flex-none h-full gap-5 flex flex-col hover:-translate-y-16 duration-500 ease-in-out">
+              <img class="w-full  h-[150px] sm:h-[200px] md:h-[250px] lg:h-[250px] " mvl-type="lob" src="https://cdn.marvel.com/u/prod/marvel/i/mg/5/a0/645111e2c5b2d/portrait_uncanny.jpg" srcset="https://cdn.marvel.com/u/prod/marvel/i/mg/5/a0/645111e2c5b2d/portrait_uncanny.jpg" alt="Avengers (2023) #1">
+              <p class="text-xs md:text-sm">Avengers (2023) #1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="  flex flex-col px-10 py-20  justify-center items-center">
+      <p class="text_font_marvel text-lg lg:text-4xl text-textPrimary font-extrabold mb-10">The Latest</p>
+      <div class=" divide-neutral-500 divide-solid  flex flex-col w-full max-w-[68rem] ">
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="md:px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-xs mb-4 font-semibold uppercase leading-relaxed antialiased text-primary">
+                startups
+              </h6>
+              <h4 class="text-2xl font-semibold leading-snug tracking-normal antialiased text-textPrimary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-light leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-primary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" [class]="'w-full py-5 md:py-10  flex  flex-row-reverse'" >
+          <div class="flex flex-col flex-col-reverse md:flex-row">
+            <div class="px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-xs mb-4 font-semibold uppercase leading-relaxed antialiased text-primary">
+                startups
+              </h6>
+              <h4 class="text-2xl font-semibold leading-snug tracking-normal antialiased text-textPrimary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-light leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-textSecondary))'" [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/venom_2018_17_cover.jpg"
+                  alt="image"
+                  class="border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [type]="'horizontal'" class="w-full py-5 md:py-10 " >
+          <div class="flex flex-col flex-col-reverse md:flex-row md:flex-row-reverse">
+            <div class="px-0 md:px-10 pt-10 md:pt-0">
+              <h6 class="text_font_marvel text-xs mb-4 font-semibold uppercase leading-relaxed antialiased text-primary">
+                startups
+              </h6>
+              <h4 class="text-2xl font-semibold leading-snug tracking-normal antialiased text-textPrimary">
+                Lyft launching cross-platform service this week
+              </h4>
+              <div class="py-6"><p class="text-base font-light leading-relaxed text-inherit antialiased text-textPrimary">
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
+                where you can enjoy the main night life in Barcelona. </p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-between pt-0 items-center">
+                <app-button3d [title]="''" [font_color]="'hsl(var(--twc-textSecondary))'"
+                              [width]="'130px'" [height]="'30px'" [type]="'btn_anchor'"  [raise]="5">
+                  <div class="flex gap-3 justify-between items-center uppercase">
+                    <p>Read More </p>
+                    <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                  </div>
+                </app-button3d>
+              </div>
+            </div>
+            <div>
+              <div class="relative m-0 h-full w-full shrink-0 overflow-hidden rounded-sm rounded-r-none">
+                <img
+                  src="https://cdn.marvel.com/content/1x/capcard_2.jpg"
+                  alt="image"
+                  class="border-solid border-8 border-neutral-900 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </app-card>
+      </div>
+    </section>
+    <section class="">
+      <div class="flex flex-col flex-col-reverse md:flex-row">
+        <div class="w-full">
+          <img class="w-full h-full " src="https://cdn.marvel.com/content/1x/01-mi-promo-april2020-featured-half-dsk-1140x680_4.jpg">
+        </div>
+        <div class="w-full p-10  bg-neutral-900 flex flex-col justify-center items-center text-white">
+          <div class=" flex flex-col justify-center items-center">
+            <h6 class="mb-4 text-lg font-semibold uppercase leading-relaxed antialiased text-primary">
+              Marvel Insider
+            </h6>
+            <h4 class="text-3xl font-semibold leading-snug tracking-normal antialiased text-textSecondary">
+              Watch, Earn, Redeem!​                </h4>
+            <div class="py-6">
+              <p class="mb-6 text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+                Get rewarded for doing what you already do as a fan.​</p>
+              <app-button3d
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 80%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class=" ">
+      <div class="">
+        <div class="pb-32 pt-16 px-10 ">
+          <h6 class="text_font_marvel text-xs border-l font-bold border-primary border-l-4
+              pl-4 mb-4 text-3xl  uppercase
+              leading-relaxed antialiased text-textPrimary">
+            Featured Characters
+          </h6>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 rounded-lg gap-10 py-4  px-4 md:px-10">
+          <app-card bg_color="transparent" class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure1">
+                  <!--                      <svg class="svg_back svg_back_clip1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad"><stop stop-color="hsl(272, 99%, 54%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 38%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad)" fill="none" transform="rotate(180, 400, 400)"><polygon points="400,50 50,750 750,750" filter="url(#nnneon-filter)"></polygon><polygon points="422,50 72,750 772,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="378,50 28,750 728,750" filter="url(#nnneon-filter2)" opacity="0.25"></polygon><polygon points="400,50 50,750 750,750"></polygon></g></svg>-->
+                  <!--                     -->
+                  <img class="amt_2" src="https://clipart-library.com/images_k/venom-silhouette/venom-silhouette-1.png">
+                  <figcaption>Venom</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure2">
+                  <!--                      <svg class="svg_back svg_back_clip2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad2"><stop stop-color="hsl(89, 78%, 53%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 31%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="12 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 9" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad2)" fill="none" transform="rotate(180, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g></svg>-->
+                  <img  class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/GreenGoblin%2FGreenGoblin_Foreground.webp?v12" alt="Druid">
+
+                  <figcaption>Green goblin</figcaption>
+                </figure>
+              </div>
+
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 90%)), ' +
+                     'url(https://i.redd.it/xg14j8iflnx71.jpg) center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure3">
+
+                  <!--                      <svg class="svg_back svg_back_clip3" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad3"><stop stop-color="hsl(0, 0%, 100%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad3)" fill="none" transform="rotate(180, 400, 400)"><rect width="700" height="700" x="50" y="50" filter="url(#nnneon-filter)" rx="0" ry="0"></rect><rect width="700" height="700" x="72" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="28" y="50" filter="url(#nnneon-filter2)" opacity="0.25" rx="0" ry="0"></rect><rect width="700" height="700" x="50" y="50" rx="0" ry="0"></rect>-->
+                  <!--                      </g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2" src="https://cdn141.picsart.com/310979491555211.png">
+                  <figcaption>Rhino</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://i.etsystatic.com/7049916/r/il/ba36cb/2923592479/il_570xN.2923592479_p0yc.jpg) center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure4">
+                  <!--                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/DoctorOctopus%2FDoctorOctopus_Foreground.webp?v12">
+                  <!--                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">-->
+                  <figcaption>Doc Ock</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure5">
+                  <!--                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2 px-10" src="https://qph.cf2.quoracdn.net/main-qimg-a52444afe50b5eb066550c50eb64e30a">
+
+                  <!--                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">-->
+                  <figcaption>Doc Ock</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure6">
+                  <!--                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2" src="https://qph.cf2.quoracdn.net/main-qimg-963d195c1aac0e83d0034bd8cdcbadac">
+                  <!--                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">-->
+                  <figcaption>Doc Ock</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure7">
+                  <!--                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/Scorpion_02%2FScorpion_02_Foreground.webp?v12">
+                  <!--                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">-->
+                  <figcaption>Doc Ock</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+          <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">
+            <ng-template #headerImgTemplate class="">
+              <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">
+                <figure class="figure figure8">
+                  <!--                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                  <!--                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>-->
+                  <!--                      </svg>-->
+                  <img class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/Carnage_04%2FCarnage_04_Foreground.webp?v12">
+                  <!--                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">-->
+                  <figcaption>Doc Ock</figcaption>
+                </figure>
+              </div>
+            </ng-template>
+            <div class="">
+              <p class="pt-0 pb-4  text-textPrimary ">
+                Driven by his brilliance as a scientist,
+                Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.
+              </p>
+              <app-button3d
+
+                [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                font_size="22" font_body_weight="900" [height]="'55px'"
+                [bg_back_color]="'#1e1e1e'"
+                [border_style]="'solid #181818 var(--border)'"
+                [width]="'100%'" [raise]="6">
+                <div class="flex gap-3 justify-between items-center uppercase">
+                  <p>Read More </p>
+                  <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                </div>
+              </app-button3d>
+            </div>
+          </app-card>
+
+          <!--              <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">-->
+          <!--                <ng-template #headerImgTemplate class="">-->
+          <!--                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">-->
+          <!--                    <figure class="figure figure5">-->
+          <!--&lt;!&ndash;                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>&ndash;&gt;-->
+          <!--&lt;!&ndash;                      </svg>&ndash;&gt;-->
+          <!--                      <img class="amt_2" src="https://cdn.shopify.com/s/files/1/0614/9675/4394/products/product-image-1930389237-removebg-preview.png?v=1652870854">-->
+          <!--&lt;!&ndash;                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">&ndash;&gt;-->
+          <!--                      <figcaption>Doc Ock</figcaption>-->
+          <!--                    </figure>-->
+          <!--                  </div>-->
+          <!--                </ng-template>-->
+          <!--                <div class="">-->
+          <!--                  <p class="pt-0 pb-4  text-textPrimary ">-->
+          <!--                    Driven by his brilliance as a scientist,-->
+          <!--                    Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.-->
+          <!--                  </p>-->
+          <!--                  <app-button3d-->
+
+          <!--                    [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +-->
+          <!--                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +-->
+          <!--                      ' center/cover'"-->
+          <!--                    font_size="22" font_body_weight="900" [height]="'55px'"-->
+          <!--                    [bg_back_color]="'#1e1e1e'"-->
+          <!--                    [border_style]="'solid #181818 var(&#45;&#45;border)'"-->
+          <!--                    [width]="'100%'" [raise]="6">-->
+          <!--                    <div class="flex gap-3 justify-between items-center uppercase">-->
+          <!--                      <p>Read More </p>-->
+          <!--                      <i class="fas fa-light fa-arrow-right  text-xs"></i>-->
+          <!--                    </div>-->
+          <!--                  </app-button3d>-->
+          <!--                </div>-->
+          <!--              </app-card>-->
+          <!--              <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">-->
+          <!--                <ng-template #headerImgTemplate class="">-->
+          <!--                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">-->
+          <!--                    <figure class="figure figure6">-->
+          <!--&lt;!&ndash;                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>&ndash;&gt;-->
+          <!--&lt;!&ndash;                      </svg>&ndash;&gt;-->
+          <!--                      <img class="amt_2" src="https://media.forbiddenplanet.com/products/69/b7/5db5aa73be0f693c4869551584307ef0c3a2.png">-->
+          <!--&lt;!&ndash;                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">&ndash;&gt;-->
+          <!--                      <figcaption>Doc Ock</figcaption>-->
+          <!--                    </figure>-->
+          <!--                  </div>-->
+          <!--                </ng-template>-->
+          <!--                <div class="">-->
+          <!--                  <p class="pt-0 pb-4  text-textPrimary ">-->
+          <!--                    Driven by his brilliance as a scientist,-->
+          <!--                    Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.-->
+          <!--                  </p>-->
+          <!--                  <app-button3d-->
+
+          <!--                    [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +-->
+          <!--                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +-->
+          <!--                      ' center/cover'"-->
+          <!--                    font_size="22" font_body_weight="900" [height]="'55px'"-->
+          <!--                    [bg_back_color]="'#1e1e1e'"-->
+          <!--                    [border_style]="'solid #181818 var(&#45;&#45;border)'"-->
+          <!--                    [width]="'100%'" [raise]="6">-->
+          <!--                    <div class="flex gap-3 justify-between items-center uppercase">-->
+          <!--                      <p>Read More </p>-->
+          <!--                      <i class="fas fa-light fa-arrow-right  text-xs"></i>-->
+          <!--                    </div>-->
+          <!--                  </app-button3d>-->
+          <!--                </div>-->
+          <!--              </app-card>-->
+          <!--              <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">-->
+          <!--                <ng-template #headerImgTemplate class="">-->
+          <!--                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">-->
+          <!--                    <figure class="figure figure7">-->
+          <!--&lt;!&ndash;                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>&ndash;&gt;-->
+          <!--&lt;!&ndash;                      </svg>&ndash;&gt;-->
+          <!--                      <img class="amt_2" src="https://snapjson.untapped.gg/art/render/framebreak/common/512/Carnage_07.webp">-->
+          <!--&lt;!&ndash;                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">&ndash;&gt;-->
+          <!--                      <figcaption>Doc Ock</figcaption>-->
+          <!--                    </figure>-->
+          <!--                  </div>-->
+          <!--                </ng-template>-->
+          <!--                <div class="">-->
+          <!--                  <p class="pt-0 pb-4  text-textPrimary ">-->
+          <!--                    Driven by his brilliance as a scientist,-->
+          <!--                    Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.-->
+          <!--                  </p>-->
+          <!--                  <app-button3d-->
+
+          <!--                    [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +-->
+          <!--                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +-->
+          <!--                      ' center/cover'"-->
+          <!--                    font_size="22" font_body_weight="900" [height]="'55px'"-->
+          <!--                    [bg_back_color]="'#1e1e1e'"-->
+          <!--                    [border_style]="'solid #181818 var(&#45;&#45;border)'"-->
+          <!--                    [width]="'100%'" [raise]="6">-->
+          <!--                    <div class="flex gap-3 justify-between items-center uppercase">-->
+          <!--                      <p>Read More </p>-->
+          <!--                      <i class="fas fa-light fa-arrow-right  text-xs"></i>-->
+          <!--                    </div>-->
+          <!--                  </app-button3d>-->
+          <!--                </div>-->
+          <!--              </app-card>-->
+          <!--              <app-card class="my-14 md:my-10 mx-auto max-w-xs w-full flex">-->
+          <!--                <ng-template #headerImgTemplate class="">-->
+          <!--                  <div class=" p-4 relative m-0  rounded-none bg-transparent  shadow-none ">-->
+          <!--                    <figure class="figure figure8">-->
+          <!--&lt;!&ndash;                      <svg class="svg_back svg_back_clip4" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad4"><stop stop-color="hsl(353, 98%, 41%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(0, 0%, 12%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="11 12" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter><filter id="nnneon-filter2" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">&ndash;&gt;-->
+          <!--&lt;!&ndash;                        <feGaussianBlur stdDeviation="9 10" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"></feGaussianBlur></filter></defs><g stroke-width="16" stroke="url(#nnneon-grad4)" fill="none" transform="rotate(195, 400, 400)"><circle r="350" cx="400" cy="400" filter="url(#nnneon-filter)"></circle><circle r="350" cx="422" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="378" cy="400" filter="url(#nnneon-filter2)" opacity="0.25"></circle><circle r="350" cx="400" cy="400"></circle></g>&ndash;&gt;-->
+          <!--&lt;!&ndash;                      </svg>&ndash;&gt;-->
+          <!--                      <img class="amt_2" src="https://game-assets.snap.fan/processed_source_images/Baked/Cards/Carnage_04%2FCarnage_04_Foreground.webp?v12">-->
+          <!--&lt;!&ndash;                      <img class="amt_2" src="https://www.maxpixel.net/static/photo/1x/Comic-Character-Spider-man-Spiderverse-Super-Hero-5998998.png">&ndash;&gt;-->
+          <!--                      <figcaption>Doc Ock</figcaption>-->
+          <!--                    </figure>-->
+          <!--                  </div>-->
+          <!--                </ng-template>-->
+          <!--                <div class="">-->
+          <!--                  <p class="pt-0 pb-4  text-textPrimary ">-->
+          <!--                    Driven by his brilliance as a scientist,-->
+          <!--                    Doc Ock becomes one of Spider-Man's most iconic and formidable adversaries.-->
+          <!--                  </p>-->
+          <!--                  <app-button3d-->
+
+          <!--                    [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 60%)), ' +-->
+          <!--                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +-->
+          <!--                      ' center/cover'"-->
+          <!--                    font_size="22" font_body_weight="900" [height]="'55px'"-->
+          <!--                    [bg_back_color]="'#1e1e1e'"-->
+          <!--                    [border_style]="'solid #181818 var(&#45;&#45;border)'"-->
+          <!--                    [width]="'100%'" [raise]="6">-->
+          <!--                    <div class="flex gap-3 justify-between items-center uppercase">-->
+          <!--                      <p>Read More </p>-->
+          <!--                      <i class="fas fa-light fa-arrow-right  text-xs"></i>-->
+          <!--                    </div>-->
+          <!--                  </app-button3d>-->
+          <!--                </div>-->
+          <!--              </app-card>-->
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
