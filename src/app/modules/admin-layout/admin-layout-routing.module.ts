@@ -21,8 +21,8 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // canActivate: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     data: { breadcrumb: 'admin' },
     children: [
       { path: "dashboard", component: DashboardComponent,
@@ -47,10 +47,10 @@ const routes: Routes = [
         { path: "inputs", component: InputsComponent }
       ],
       },
-      // {
-      //   path: '',
-      //   loadChildren: () => import('./../../modules/blog2/blog.module').then(m => m.BlogModule2)
-      // },
+      {
+        path: '',
+        loadChildren: () => import('./../../modules/blog/blog.module').then(m => m.BlogModule)
+      },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

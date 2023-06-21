@@ -18,6 +18,7 @@ import {BonusComponent} from "./pages/bonus/bonus.component";
 import {LatestComponent} from "./pages/latest/latest.component";
 import {CategoryComponent} from "./pages/posts/category/category.component";
 import {PostComponent} from "./pages/posts/post/post.component";
+import {NonAuthGuard} from "../../services/guards/non-auth.guard";
 
 // import {InputsComponent} from "../admin-layout/pages/components/inputs/inputs.component";
 
@@ -25,8 +26,8 @@ const routes: Routes = [
   {
     path: 'blog-admin',
     component: IndexAdminComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // canActivate: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     data: {
       breadcrumb: 'blog'
     },
@@ -51,8 +52,8 @@ const routes: Routes = [
   {
     path: 'blog2',
     component: IndexComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // canActivate: [NonAuthGuard],
+    // canActivateChild: [NonAuthGuard],
     // data: {
     //   breadcrumb: 'blog'
     // },
