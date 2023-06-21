@@ -25,10 +25,10 @@ const routes: Routes = [
     path: 'front',
     loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
   },
-  {
-    path: '',
-    loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
-  },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
+  // },
   {
     path: '',
     loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)

@@ -23,7 +23,7 @@ import {PostComponent} from "./pages/posts/post/post.component";
 
 const routes: Routes = [
   {
-    path: 'blog2-admin',
+    path: 'blog-admin',
     component: IndexAdminComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
