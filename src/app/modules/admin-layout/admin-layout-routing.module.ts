@@ -49,7 +49,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./../../modules/blog/blog.module').then(m => m.BlogModule)
+        loadChildren: () => import('./../../modules/blog2/blog.module').then(m => m.BlogModule2)
       },
       // { path: "**", redirectTo: "dashboard", pathMatch: "full" },
     ],
