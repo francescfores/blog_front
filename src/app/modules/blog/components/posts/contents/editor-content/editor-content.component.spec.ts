@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubmenuComponent } from './submenu.component';
+import { EditorContentComponent } from './editor-content.component';
 
-describe('SubmenuComponent', () => {
-  let component: SubmenuComponent;
-  let fixture: ComponentFixture<SubmenuComponent>;
+describe('EditorContentComponent', () => {
+  let component: EditorContentComponent;
+  let fixture: ComponentFixture<EditorContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubmenuComponent ]
+      declarations: [ EditorContentComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubmenuComponent);
+    fixture = TestBed.createComponent(EditorContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -20,6 +20,8 @@ import {ComponentsModuleBlog} from "./components/components.module";
 import {IndexAdminComponent} from "./index-admin/index-admin.component";
 import { CategoryComponent } from './pages/posts/category/category.component';
 import { PostComponent } from './pages/posts/post/post.component';
+import {EditorPostComponent} from "./components/posts/editor-post/editor-post.component";
+import {EditorContentComponent} from "./components/posts/contents/editor-content/editor-content.component";
 
 
 
@@ -30,6 +32,7 @@ import { PostComponent } from './pages/posts/post/post.component';
     ShowPostComponent,
     CreatePostComponent,
     UpdatePostComponent,
+    EditorPostComponent,
     CreateContentComponent,
     ShowContentComponent,
     UpdateContentComponent,
@@ -40,13 +43,16 @@ import { PostComponent } from './pages/posts/post/post.component';
     HomeComponent,
     CategoryComponent,
     PostComponent,
+    EditorContentComponent,
   ],
   exports: [
     IndexComponent,
     IndexAdminComponent,
     ShowPostComponent,
     CreatePostComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    EditorPostComponent,
+    EditorContentComponent,
   ],
     imports: [
         CommonModule,

@@ -22,14 +22,18 @@ const routes: Routes = [
   {
     canActivate: [NonAuthGuard],
     canActivateChild: [NonAuthGuard],
-    path: 'front',
+    path: '',
     loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
   },
   {
+    canActivate: [NonAuthGuard],
+    canActivateChild: [NonAuthGuard],
     path: '',
     loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
   },
   {
+    canActivate: [NonAuthGuard],
+    canActivateChild: [NonAuthGuard],
     path: '',
     loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)
   },

@@ -1,14 +1,15 @@
 <ng-container [formGroup]="formGroupParent">
   <div class="flex items-center mt-4 relative z-0">
     <input [value]="value" formControlName="{{formGroupControlName}}" type="text" placeholder=" " class="appearance-none bg-transparent block border-0 border-2 border-b-2 border-textSecondary
-  focus:border-textPrimary focus:outline-none focus:ring-0 focus:text-textPrimary peer px-0 px-3 py-1.5 rounded-lg text-lg text-textPrimary
+  focus:border-textPrimary focus:outline-none focus:ring-0 focus:text-textPrimary peer  px-2 py-1 rounded-lg text-sm text-textPrimary
    w-full">
-    <label class="-translate-y-9 -z-10 absolute duration-150 ease-in-out origin-[0]
-  peer-focus:-translate-y-9 peer-focus:left-0 peer-focus:scale-75 peer-focus:text-textSecondary peer-placeholder-shown:left-2
-   peer-placeholder-shown:scale-100 peer-placeholder-shown:text-textPrimary peer-placeholder-shown:translate-y-0 scale-75 text-lg
+    <label class="-translate-y-8 -z-10 absolute duration-150 ease-in-out origin-[0]
+  peer-focus:-translate-y-8 peer-focus:left-0 peer-focus:scale-75 peer-focus:text-textSecondary peer-placeholder-shown:left-2
+   peer-placeholder-shown:scale-100 peer-placeholder-shown:text-textPrimary peer-placeholder-shown:translate-y-0 scale-75 text-sm
     text-textSecondary top-2 transform transition-all">{{label}} </label>
-    <i  class="absolute bg-bgPrim fa-envelope
-     fa-regular fas peer-focus:text-textPrimary right-3 text-textSecondary text-xl top-2 transform z-10"></i>
+    <!--<i  class="absolute bg-bgPrim fa-envelope
+     fa-regular fas peer-focus:text-textPrimary right-3 text-textSecondary text-xl top-1 transform z-10"></i>
+     -->
   </div>
 </ng-container>
 

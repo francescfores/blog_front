@@ -74,9 +74,14 @@ export class ShowPostComponent {
       ['/admin/blog-admin/create'],
     );
   }
-  edit(id: number, name: string) {
+  update(id: number, name: string) {
     const state = { id };
     const route = ['/admin/blog-admin/update', name];
+    this.router.navigate(route, { state });
+  }
+  editor(id: number, name: string) {
+    const state = { id };
+    const route = ['/admin/blog-admin/editor', name];
     this.router.navigate(route, { state });
   }
   delete(id:number) {

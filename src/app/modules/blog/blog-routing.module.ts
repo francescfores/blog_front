@@ -18,6 +18,9 @@ import {BonusComponent} from "./pages/bonus/bonus.component";
 import {LatestComponent} from "./pages/latest/latest.component";
 import {CategoryComponent} from "./pages/posts/category/category.component";
 import {PostComponent} from "./pages/posts/post/post.component";
+import {EditorPostComponent} from "./components/posts/editor-post/editor-post.component";
+import {EditorComponent} from "../admin-layout/pages/editor/editor.component";
+import {EditorContentComponent} from "./components/posts/contents/editor-content/editor-content.component";
 
 // import {InputsComponent} from "../admin-layout/pages/components/inputs/inputs.component";
 
@@ -25,8 +28,8 @@ const routes: Routes = [
   {
     path: 'blog-admin',
     component: IndexAdminComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // canActivate: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     data: {
       breadcrumb: 'blog'
     },
@@ -41,9 +44,19 @@ const routes: Routes = [
           breadcrumb: 'create'
         },
       },
+      { path: "editor-components", component: EditorContentComponent,
+        data: {
+          breadcrumb: 'editor-components'
+        },
+      },
       { path: 'update/:name', component: UpdatePostComponent, pathMatch: 'prefix',
         data: {
           breadcrumb: 'update'
+        },
+      },
+      { path: 'editor/:name', component: EditorPostComponent, pathMatch: 'prefix',
+        data: {
+          breadcrumb: 'editor'
         },
       },
     ]
@@ -51,8 +64,8 @@ const routes: Routes = [
   {
     path: 'blog',
     component: IndexComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // canActivate: [NonAuthGuard],
+    // canActivateChild: [NonAuthGuard],
     // data: {
     //   breadcrumb: 'blog'
     // },

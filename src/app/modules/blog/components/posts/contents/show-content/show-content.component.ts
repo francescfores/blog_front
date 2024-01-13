@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Post} from "../../../../models/post";
 import {Router} from "@angular/router";
@@ -20,6 +20,7 @@ export class ShowContentComponent {
   create_category = false;
   public formCategory: UntypedFormGroup;
   submitted = false;
+  postContentsFiltered!: PostContent[];
 
   //alert
   text: any;
@@ -29,7 +30,8 @@ export class ShowContentComponent {
   private category: Post;
   selectedFile: any;
   loading=false;
-  @Input() post_id:any;
+  @Input() post_id:any=null;
+  @Output() showContentEv = new EventEmitter<number>();
 
   constructor(
     private router: Router,
@@ -51,9 +53,25 @@ export class ShowContentComponent {
   }
 
   ngOnInit() {
-    this.paginatedByPost(1);
-    document.addEventListener('load', () => {
-      this.paginatedByPost(this.posts.current_page);
+    if(this.post_id!=null){
+      this.paginatedByPost(1);
+      document.addEventListener('load', () => {
+        this.paginatedByPost(this.posts.current_page);
+      });
+    }else {
+      this.paginatedAll(1);
+      document.addEventListener('load', () => {
+        this.paginatedAll(this.posts.current_page);
+      });
+    }
+
+
+  }
+
+  onClick(content: any) {
+    setTimeout(() => {
+      this.showContentEv.emit(content);
+      console.log('Se hizo clic en el componente:', content);
     });
   }
   create() {
@@ -67,17 +85,31 @@ export class ShowContentComponent {
       { queryParams: { id } }
     );
   }
-  delete(id:number) {
-    this.postService.delete(id)
-      .subscribe({
-        next: (res:any) => {
-          this.toastr.info(res.message);
-          this.submitted = false;
-          this.paginated(this.posts.current_page)
-        },
-        error: (err: any) => { },
-        complete: () => { }
-      });
+  delete(component_id:number) {
+    if(this.post_id!=null){
+      this.postService.deleteRelation(this.post_id,component_id)
+        .subscribe({
+          next: (res:any) => {
+            this.toastr.info(res.message);
+            this.submitted = false;
+            this.paginated(this.posts.current_page)
+          },
+          error: (err: any) => { },
+          complete: () => { }
+        });
+    }else {
+      this.postService.delete(component_id)
+        .subscribe({
+          next: (res:any) => {
+            this.toastr.info(res.message);
+            this.submitted = false;
+            this.paginated(this.posts.current_page)
+          },
+          error: (err: any) => { },
+          complete: () => { }
+        });
+    }
+
   }
 
   paginatedByPost(page:any){
@@ -90,7 +122,29 @@ export class ShowContentComponent {
         next: res => {
           console.log(res)
           this.posts= res.data;
+          this.postContentsFiltered = this.posts.filter((x:any)=> x.global===1);
+
           this.posts.current_page =res.data.current_page+'';
+        },
+        error: (err: any) => { },
+        complete: () => { }
+      });
+  }
+  paginatedAll(page:any){
+    console.log('paginatedByPos-----------------------------')
+    console.log(page)
+    console.log(this.post_id)
+
+    this.postService.paginated(page)
+      .subscribe({
+        next: res => {
+          console.log(res)
+          this.posts= res.data;
+          this.postContentsFiltered = this.posts.data;
+          this.postContentsFiltered = this.postContentsFiltered.filter((x:any)=> x.global===1);
+          this.posts.current_page =res.data.current_page+'';
+          console.log(this.postContentsFiltered)
+
         },
         error: (err: any) => { },
         complete: () => { }
@@ -99,9 +153,13 @@ export class ShowContentComponent {
 
   paginated(pr:any) {
     this.posts.current_page=this.sharedService.paginated(pr, this.posts);
-    this.paginatedByPost(this.posts.current_page)
+    if(this.post_id!=null){
+      this.paginatedByPost(this.posts.current_page)
+    }else {
+      this.paginatedAll(this.posts.current_page)
+    }
   }
-
+/*
   createCategory() {
     this.submitted = true;
     if (this.formCategory.valid){
@@ -128,7 +186,7 @@ export class ShowContentComponent {
       this.toastr.info('Invalid form');
     }
   }
-
+*/
   onFileChanged(event:any) {
     this.selectedFile = event.target.files[0];
   }

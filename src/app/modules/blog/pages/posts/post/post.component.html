@@ -12,8 +12,8 @@
 <!--    w-1/12 w-1/12 w-2/12 w-8/12 pb-5 -mb-8 -ml8 -translate-y-3"></div>-->
     <section class="grid grid-cols-1 lg:grid-cols-6 gap-10 justify-start items-start "  >
       <section class="flex col-span-4 flex-wrap  justify-start items-start">
-        <p class="px-5 text_font_marvel text-lg w-full font-normal text-primary uppercase">{{post.name}}</p>
-          <div class="flex flex-wrap w-full">
+        <p class="text_font_marvel text-lg w-full font-normal text-primary uppercase">{{post.name}}</p>
+          <div class="w-full h-screen overflow-y-scroll bg-bgTern ng-star-inserted">
             <ng-container *ngFor="let content of postContents" class="">
 <!--              <p>id : {{content.id}}</p>-->
 <!--               <ng-container *ngIf="content?.type?.name==='card'">-->

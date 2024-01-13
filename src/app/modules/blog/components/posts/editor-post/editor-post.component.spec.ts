@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Btn3dComponent } from './btn3d.component';
+import { EditorPostComponent } from './editor-post.component';
 
-describe('Btn3dComponent', () => {
-  let component: Btn3dComponent;
-  let fixture: ComponentFixture<Btn3dComponent>;
+describe('EditorPostComponent', () => {
+  let component: EditorPostComponent;
+  let fixture: ComponentFixture<EditorPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Btn3dComponent ]
+      declarations: [ EditorPostComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Btn3dComponent);
+    fixture = TestBed.createComponent(EditorPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

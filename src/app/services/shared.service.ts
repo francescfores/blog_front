@@ -15,7 +15,12 @@ export class SharedService {
   paginated( pr:any, entity:any) {
     Number(entity.current_page)
     if(pr==='Previous'){
-      pr--;
+      pr = Number(entity.current_page)
+      if(pr === entity.current_page){
+        pr = Number(entity.current_page)
+      }else{
+        pr--;
+      }
     }else if(pr==='Next'){
       pr = Number(entity.current_page)
       if(pr === entity.last_page){

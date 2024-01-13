@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-    data: { breadcrumb: 'front' },
+    data: { breadcrumb: '' },
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     children: [

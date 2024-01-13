@@ -102,4 +102,8 @@ export class PostContentService {
     console.log('destroypost');
     return this.http.delete<any>(`${environment.apiUrl}api/post_content/${id}`, { params: id });
   }
+  deleteRelation(post_id:any, content_id:any) {
+    console.log('destroypost');
+    return this.http.delete<any>(`${environment.apiUrl}api/post/${post_id}/content/${content_id}`, { params: {post_id,content_id} });
+  }
 }

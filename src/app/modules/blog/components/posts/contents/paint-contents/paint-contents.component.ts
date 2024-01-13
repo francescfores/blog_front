@@ -4,9 +4,7 @@ import {environment} from '../../../../../../../environments/environment';
 @Component({
   selector: 'app-paint-contents',
   template: `
-    <!-- grid|card|etc -->
-    {{ content.id}} - {{ content.name}}
-    <div (click)="onClick(content)" [class]="getAtt(content, 'styles')+' border border-red-200'">
+    <div (click)="onClick(content)" [class]="getAtt(content, 'styles')+' border-2 border-red-200/10'">
       <ng-container *ngIf="content?.type?.name==='codeplayground_v2'" class="w-full">
                       <app-codeplayground_V2 class="flex w-full my-5"
                                              [id]="0"
@@ -24,15 +22,6 @@ import {environment} from '../../../../../../../environments/environment';
       <ng-container *ngIf="content?.type?.name==='text'">
           {{getAtt(content, 'text_label')}}
       </ng-container>
-      <ng-container *ngIf="content?.type?.name==='img'" class="w-full">
-<!--                      <div class="{{getAtt(content, 'styles')}} ">-->
-                        <img
-                          [src]="environment.apiUrl+'storage/blog/posts/'+content.post.id+'/'+content.id+'/'+content.images[getAtt(content, 'num')].name"
-                          alt="image"
-                          class="{{getAtt(content, 'img_styles')}}"
-                        />
-<!--                      </div>-->
-                    </ng-container>
       <ng-container *ngFor="let subcontent of content.subcontents">
         <app-paint-contents [content]="subcontent" (selectContent)="onClick($event)" (click)="$event.stopPropagation()"></app-paint-contents>
       </ng-container>
@@ -57,7 +46,7 @@ export class PaintContentsComponent {
   // onClick(content:any) {
   //   this.selectContent.emit(content);
   // }
-  getAtt(content: any, att: string): any {
+  getAtt2(content: any, att: string): any {
     let attribute;
     if(content?.attributes!==undefined){
       // console.log(content?.attributes)
@@ -69,6 +58,21 @@ export class PaintContentsComponent {
       // console.log(content.type)
       attribute =
         content.type.attributes.find((x: any) => x.name === att);
+    }
+
+    return attribute ? attribute.value : null;
+  }
+  getAtt(content: any, att: string): any {
+    let attribute;
+
+    if (content?.attributes !== undefined) {
+      // Si el objeto 'content' tiene la propiedad 'attributes'
+      attribute = content.attributes.find((x: any) => x.name === att);
+    }
+
+    if (attribute === undefined || attribute.value === null || attribute.value === 'null' ) {
+      // Si el atributo no se encuentra en 'content.attributes' y 'content.type.attributes' existe
+      attribute = content.type.attributes.find((x: any) => x.name === att);
     }
 
     return attribute ? attribute.value : null;

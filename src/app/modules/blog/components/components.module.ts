@@ -11,6 +11,8 @@ import {SubmenuComponent} from "./sidebar/submenu/submenu.component";
 import {Slider3Component} from "./slider-3/slider-3.component";
 import {ComponentsModule} from "../../../components/components.module";
 import { PaintContentsComponent } from './posts/contents/paint-contents/paint-contents.component';
+import { EditorPostComponent } from './posts/editor-post/editor-post.component';
+import { EditorContentComponent } from './posts/contents/editor-content/editor-content.component';
 // import {ComponentsModule} from "../../../../../../components/components.module";
 
 @NgModule({

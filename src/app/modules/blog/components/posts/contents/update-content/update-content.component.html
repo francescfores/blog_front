@@ -9,46 +9,128 @@
               </h5>
             </div>
           </ng-template>
-          <div class="py-6 flex flex-wrap w-full">
-            <form *ngIf="form" [formGroup]="form" class="grid grid-cols-1 w-full flex gap-10">
-              <div class="grid grid-cols-2 flex gap-5">
-                <p class="col-span-2 text-textPrimary">Data</p>
-                  <div class="col-span-1 flex gap-5">
-                    <app-input-outsite [label]="'name'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'" [value]="form.get(['post'])?.value?.name"></app-input-outsite>
-                    <app-input-outsite [label]="'desc'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'" [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
-                  </div>
-                  <div class="col-span-1 flex gap-5 items-center">
-                    <app-select-outside class="flex w-full" [label]="'type'" [items]="types" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'type'" [value]="form.get(['post'])?.value?.type"></app-select-outside>
-                    <input class="text-textPrimary flex flex-wrap w-full" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
-                  </div>
-               </div>
-              <div class="grid grid-cols-2 flex gap-5">
-                <div class="col-span-1 flex flex-col gap-5">
-                  <p class="text-textPrimary">Default attrs</p>
-                  <form  *ngIf="formAttr" [formGroup]="formAttr" class="flex flex-col gap-5 flex-wrap w-full">
-                    <div *ngFor="let attribute of postContent?.type?.attributes">
-                      <app-input-outsite [label]="attribute.name" [formGroupParent]="formAttr.get(['attr'])" [formGroupControlName]="attribute.name"
-                                         [value]="formAttr.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
-                    </div>
-                  </form>
+          <div class="py-2 flex flex-wrap">
+            <form  *ngIf="form" [formGroup]="form" class="grid grid-cols-12 w-full gap-4">
+              <app-input-outsite [label]="'num'" class="col-span-6  " [formGroupParent]="form.get(['post'])" [formGroupControlName]="'num'"
+                                 [value]="form.get(['post'])?.value?.num"></app-input-outsite>
+              <app-input-outsite [label]="'name'" class="col-span-6" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'"
+                                 [value]="form.get(['post'])?.value?.name"></app-input-outsite>
+              <app-input-outsite [label]="'desc'" class="col-span-6"  [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'"
+                                 [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
+              <app-select-outside *ngIf="types" class="col-span-6  "  [label]="'Type'" [items]="types" [formGroupParent]="form.get(['post'])"
+                                  [formGroupControlName]="'type'"  [value]="form.get(['post'])?.value?.type"></app-select-outside>
+              <div class="col-span-6 text-textPrimary flex flex-wrap items-center justify-between">
+                <input class="flex justify-between "  type="file" multiple (change)="onFileChange($event)">
+              </div>
+              <div class="col-span-6 flex ">
+                <p class=" text-md text-textPrimary  mr-auto ">
+                  Global components
+                </p>
+                <div class="  mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+                  <input
+                    [checked]="postContent?.global"
+                    class="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem]
+                border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem]
+                before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent
+                before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ml-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ml-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                    type="checkbox"
+                    value=""
+                    id="globalCheckbox"
+                    (change)="checkedGlobal($event)"
+                  />
                 </div>
-                <div class="col-span-1 flex flex-col gap-5">
-                  <p class="col-span-2 text-textPrimary">Override attrs</p>
-                  <form  *ngIf="formAttr2" [formGroup]="formAttr2" class="flex flex-col gap-5 flex-wrap w-full">
-                    <div *ngFor="let attribute of postContent.type.attributes">
-                      <app-input-outsite [label]="attribute.name" [formGroupParent]="formAttr2.get(['attr'])" [formGroupControlName]="attribute.name" [value]="formAttr2.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
-                    </div>
-                  </form>
+              </div>
+              <div class="col-span-6 items-end gap-4" *ngIf="postContent.copied_id!=null || postContent.recycled_id!=null ">
+                <p class=" text-md text-textPrimary">
+                  Component
+                  {{ postContent.copied_id ? ' copied of :' : '' }}
+                  {{ postContent.recycled_id ? ' recycled of :' : '' }}
+                </p>
+                <app-select-outside *ngIf="postContent.copied_id" class="col-span-12  "  [items]="postContents"
+                                    [formGroupParent]="form.get(['post'])" [formGroupControlName]="'copied'" [value]="postContent.copied_id"
+                ></app-select-outside>
+                <app-select-outside *ngIf="postContent.recycled_id" class="col-span-12  "   [label]="'component'" [items]="postContents"
+                                    [formGroupParent]="form.get(['post'])" [formGroupControlName]="'recycled'" [value]="postContent.recycled_id"
+                ></app-select-outside>
+                <div class="col-span-12 flex gap-4 justify-start">
+                  <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+                    <input
+                      [checked]="copyChecked"
+                      class="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem]
+                border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem]
+                before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent
+                before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ml-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ml-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                      type="checkbox"
+                      value=""
+                      id="copyChecked"
+                      (change)="checkCopy($event)"
+                    />
+                    <label
+                      class="inline-block pl-[0.15rem] hover:cursor-pointer"
+                      for="copyChecked">
+                      copy
+                    </label>
+                  </div>
+
+                  <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+                    <input
+                      [checked]="recycleChecked"
+                      class="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ml-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ml-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                      type="checkbox"
+                      value=""
+                      id="recycleChecked"
+                      (change)="checkRecycle($event)"
+                    />
+                    <label
+                      class="inline-block pl-[0.15rem] hover:cursor-pointer"
+                      for="recycleChecked">
+                      recycle
+                    </label>
+                  </div>
+
                 </div>
-               </div>
-              <div class="grid grid-cols-2 flex gap-5">
-                  <p class="col-span-2 text-textPrimary">Childs</p>
-                <form  *ngIf="formChilds && postContents" [formGroup]="formChilds" class="grid grid-cols-2 md:grid-cols-4 col-span-2 flex gap-5 flex-wrap w-full">
+
+              </div>
+              <div class="col-span-12"></div>
+              <div class="col-span-6 flex flex-col gap-5">
+                <p class="text-textPrimary">Default attrs</p>
+                <form  *ngIf="formAttr" [formGroup]="formAttr" class="flex flex-col gap-5 flex-wrap w-full">
+                  <div *ngFor="let attribute of postContent?.type?.attributes">
+                    <app-input-outsite class="col-span-6"  [label]="attribute.name" [formGroupParent]="formAttr.get(['attr'])" [formGroupControlName]="attribute.name"
+                                       [value]="formAttr.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
+                  </div>
+                </form>
+              </div>
+              <div class="col-span-6 flex flex-col gap-5">
+                <p class="col-span-2 text-textPrimary">Override attrs</p>
+                <form  *ngIf="formAttr2" [formGroup]="formAttr2" class="flex flex-col gap-5 flex-wrap w-full">
+                  <div *ngFor="let attribute of postContent.type.attributes">
+                    <app-input-outsite class="col-span-6"  [label]="attribute.name" [formGroupParent]="formAttr2.get(['attr'])" [formGroupControlName]="attribute.name" [value]="formAttr2.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
+                  </div>
+                </form>
+              </div>
+              <div class=" col-span-12 flex flex-col gap-2">
+                <p class=" text-textPrimary">Childs</p>
+                <app-button3d class="" title="Agregar" (click)="agregarSelect()" [type]="'btn_primary'"
+                              [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+                <form  *ngIf="formChilds && postContents" [formGroup]="formChilds"
+                       class="flex flex-wrap w-full">
                   <div *ngFor="let subcontent of postContent.subcontents; let i = index">
+                    <span id="badge-dismiss-dark" class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-gray-800 bg-gray-100 rounded dark:bg-gray-700 dark:text-gray-300">
+                      {{subcontent.name}}
+                      <button (click)="removeContent(subcontent)" type="button" class="inline-flex items-center p-1 ms-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300" data-dismiss-target="#badge-dismiss-dark" aria-label="Remove">
+                      <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Remove badge</span>
+                      </button>
+                    </span>
+                    <!--
                     <app-select-outside [label]="'type'" [items]="postContents"
                                         [formGroupParent]="formChilds.get(['childs'])"
                                         [formGroupControlName]="'subcontent_'+i"
                                         [value]="subcontent.id"></app-select-outside>
+                                        -->
                   </div>
                   <div *ngFor="let select of selects; let i = index">
                     <app-select-outside [label]="'type'" [items]="postContents"
@@ -56,14 +138,18 @@
                                         [formGroupControlName]="'subcontent_'+(i + postContent.subcontents.length)"
                                         [value]="null"></app-select-outside>
                   </div>
+
                 </form>
-                <button (click)="agregarSelect()">Agregar Select</button>
               </div>
+
+
             </form>
+
           </div>
           <ng-template #footerTemplate >
             <div class="flex justify-end items-center gap-2 flex-wrap">
               <!--              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>-->
+              <app-button3d (click)="delete(postContent)" title="Delete" [type]="'btn_danger'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
               <app-button3d title="Update" (click)="update()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
 
             </div>

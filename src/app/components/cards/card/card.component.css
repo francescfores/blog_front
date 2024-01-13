@@ -33,7 +33,7 @@
 .card.card_vertical .content{
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
 }
 .card.card_horizontal .content{
   display: flex;

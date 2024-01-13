@@ -1,9 +1,8 @@
 <div class="flex flex-col w-full">
       <div class="p-4 sm:px-0 flex flex-row justify-between items-center space-x-2">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Posts</h3>
-        <app-button3d class="self-end inline-flex justify-center" (click)="create()" title="Create" [raise]="0" [height]="'30px'" [type]="'btn_primary'"  ></app-button3d>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Lista de componentes</h3>
       </div>
-    <div class="mt-5">
+    <div class="">
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-bgPrim overflow-hidden text-textPrimary"
       >
@@ -76,7 +75,7 @@
                     </div>
                   </div>
 
-                  <svg (click)="edit(pr.id)" class="h-5 w-5 text-textPrimary"  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />  <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />  <line x1="16" y1="5" x2="19" y2="8" /></svg>
+                  <svg (click)="onClick(pr)" class="h-5 w-5 text-textPrimary"  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />  <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />  <line x1="16" y1="5" x2="19" y2="8" /></svg>
                   <svg (click)="delete(pr.id)" class="h-5 w-5 text-red-400"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="3 6 5 6 21 6" />  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
                 </div>
               </td>

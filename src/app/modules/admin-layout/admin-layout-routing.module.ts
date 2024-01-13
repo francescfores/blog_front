@@ -23,7 +23,6 @@ const routes: Routes = [
     component: IndexComponent,
     // canActivate: [AuthGuard],
     // canActivateChild: [AuthGuard],
-    data: { breadcrumb: 'admin' },
     children: [
       { path: "dashboard", component: DashboardComponent,
         data: { breadcrumb: 'dashboard' },

@@ -23,7 +23,7 @@ export class UpdateContentComponent implements OnChanges {
   formAttr!: FormGroup;
   formAttr2!: FormGroup;
   formChilds!: FormGroup;
-  public post!: Post;
+  public post!: PostContent;
   submit!: boolean;
   public loading=false;
   selectedImages: File[] = [];
@@ -41,19 +41,28 @@ export class UpdateContentComponent implements OnChanges {
   @Output() updatedContent = new EventEmitter<any>();
   selects: any[] = [];
   indexSubcontents=0;
+  copyChecked = false;
+  recycleChecked = false;
+  globalChecked = false;
+  protected selectetContent: any;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['postContent'] && !changes['postContent'].firstChange) {
       this.loading=true;
+
       // Realiza acciones adicionales aquí cuando la propiedad postContent cambie
       console.log('La propiedad postContent ha cambiado:', this.postContent);
 
       this.form = this.formBuilder.group({
         post : this.formBuilder.group({
+          num: [this.postContent.num, Validators.required],
           name: [this.postContent.name, Validators.required],
           desc: [this.postContent.desc, Validators.required],
+          global: [this.postContent.global],
           // img: ['', Validators.required],
-          type: [this.postContent.type && this.postContent.type.id ? this.postContent.type.id : null]
+          type: [this.postContent.type && this.postContent.type.id ? this.postContent.type.id : null],
+          recycled: [this.postContent.recycled_id ? this.postContent.recycled_id : null],
+          copied: [this.postContent.copied_id ? this.postContent.copied_id : null]
         }),
       });
 
@@ -97,6 +106,7 @@ export class UpdateContentComponent implements OnChanges {
       .subscribe(
         data => {
           this.postContent=data.data;
+
           console.log('this.postContentthis.postContentthis.postContentthis.postContentthis.postContent');
           console.log(this.postContent);
           this.getContents();
@@ -126,7 +136,7 @@ export class UpdateContentComponent implements OnChanges {
     private authAdminService: AuthenticationAdminService,
     private route: ActivatedRoute,
   ){
-    this.post = new Post();
+    this.post = new PostContent();
   }
   uploadImages() {
     const formData = new FormData();
@@ -165,11 +175,11 @@ export class UpdateContentComponent implements OnChanges {
 
   construirFormulario() {
     const formControls: { [key: string]: any } = {};
-
+/*
     this.postContent.subcontents.forEach((subcontent: any, index: number) => {
       formControls['subcontent_' + index] = [subcontent?.id, Validators.required];
     });
-
+*/
     this.selects.forEach((_, index) => {
       const newIndex = index + this.postContent.subcontents.length;
       formControls['subcontent_' + newIndex] = [null, Validators.required];
@@ -185,18 +195,22 @@ export class UpdateContentComponent implements OnChanges {
       .pipe(first())
       .subscribe(
         data => {
-          // this.postContent = data.data;
-          //
           const formControls: { [key: string]: any } = {};
           console.log('eeeeeeeeeeeeeeeeeeeeeeeeeee');
+          /*
           this.postContent.subcontents.forEach((subcontent: any, index: number) => {
             formControls['subcontent_'+index] = [subcontent?.id, Validators.required];
             });
+
+           */
             this.formChilds = this.formBuilder.group({
               childs: this.formBuilder.group(formControls)
             });
 
           this.postContents =  data.data;
+          console.log(this.postContents)
+          this.postContents= this.postContents.filter(x=> x.global===1);
+
           this.loading=false;
         },
         error => {
@@ -232,9 +246,17 @@ export class UpdateContentComponent implements OnChanges {
         let formData = this.form.value;
         this.post.name = formData.post.name;
         this.post.desc = formData.post.desc;
-        this.post.category = formData.post.category;
+        this.post.global = this.globalChecked;
+        console.log(this.post)
+        this.form.value.post.global=this.globalChecked;
+        if (this.copyChecked)
+          this.postContent.copied_id = this.selectetContent.id;
+        if (this.recycleChecked)
+          this.postContent.recycled_id = this.selectetContent.id;
 
-        this.postContentService.update(this.postContent.id,
+
+        this.postContentService.update(
+          this.postContent.id,
           this.form.value.post,
           this.formAttr.value.attr,
           this.formAttr2.value.attr,
@@ -274,6 +296,67 @@ export class UpdateContentComponent implements OnChanges {
       }
       return this.postContent.type.attributes
     // @ts-ignore
+  }
+  checkedGlobal(event: any) {
+
+    this.globalChecked = !this.globalChecked;
+    console.log(this.globalChecked)
+  }
+
+  removeContent(subcontent: PostContent) {
+    this.postContentService.delete(subcontent.id)
+      .subscribe({
+        next: (res:any) => {
+          this.postContent =res.data;
+          console.log(this.postContent)
+          this.toastr.info(res.message);
+          this.loading = false;
+          this.selects=[];
+          this.updatedContent.emit(this.postContent);
+        },
+        error: (err: any) => { },
+        complete: () => { }
+      });
+  }
+
+  delete(content: PostContent) {
+    this.postContentService.delete(content.id)
+      .subscribe({
+        next: (res:any) => {
+          this.postContent =res.data;
+          console.log(this.postContent)
+          this.toastr.info(res.message);
+          this.loading = false;
+          this.selects=[];
+          this.updatedContent.emit(this.postContent);
+        },
+        error: (err: any) => { },
+        complete: () => { }
+      });
+  }
+
+  checkRecycle(event: any) {
+    const isChecked = event.target.checked;
+    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
+
+    // Realiza acciones basadas en el estado del checkbox
+    if (isChecked && this.copyChecked) {
+      this.copyChecked =false
+    }
+    this.recycleChecked = !this.recycleChecked;
+    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
+
+  }
+
+  checkCopy(event: any) {
+    const isChecked = event.target.checked;
+    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
+    if (isChecked && this.recycleChecked) {
+      this.recycleChecked =false
+    }
+    this.copyChecked = !this.copyChecked;
+    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
+
   }
 }
 

@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
 import {Post} from "../../../../models/post";
 import {PostContent} from "../../../../models/post-content";
@@ -23,7 +23,12 @@ export class CreateContentComponent {
   form!: FormGroup;
   public post!: Post;
   public postContent!: PostContent;
-  @Input() post_id:any;
+  @Input() post_id:any=null;
+  @Input() postContent_id:any=null;
+  @Input() postContents!: PostContent[];
+  @Input() postContentsFiltered!: PostContent[];
+  @Output() createContentEv = new EventEmitter<any>();
+
   submit!: boolean;
   loading=false;
   selectedImages: File[] = [];
@@ -32,6 +37,11 @@ export class CreateContentComponent {
   private user: any;
   @ViewChild(ShowContentComponent) showContentComponent!: ShowContentComponent;
 
+   copyChecked = false;
+   recycleChecked = false;
+   globalChecked = false;
+  protected selectetContent: any;
+
   constructor(
     private router: Router,
     private postContentService: PostContentService,
@@ -39,7 +49,7 @@ export class CreateContentComponent {
     private formBuilder: UntypedFormBuilder,
     private sharedService: SharedService,
     private toastr: ToastrService,
-    private authAdminService: AuthenticationAdminService
+    private authAdminService: AuthenticationAdminService,
   ){
     this.post = new Post();
     this.postContent = new PostContent();
@@ -58,8 +68,9 @@ export class CreateContentComponent {
         num: ['num', Validators.required],
         name: ['name', Validators.required],
         desc: ['desc', Validators.required],
-        img: ['img', Validators.required],
-        type: ['']
+        img: ['img', ],
+        content: ['', ],
+        type: [ '',Validators.required],
       }),
       // 'identity' : this.formBuilder.group({
       //   'firstname' : ['', Validators.required],
@@ -71,6 +82,7 @@ export class CreateContentComponent {
       // })
     });
     this.getTypes();
+    this.getContents();
   }
   getTypes(){
   this.postContentService.getAllTypes()
@@ -92,13 +104,24 @@ export class CreateContentComponent {
 
     if(!this.loading){
       this.loading=true;
-      if (this.form.valid){
+      if (this.form.get(['postContent'])?.valid){
         let formData = this.form.value;
         this.postContent.num = formData.postContent.num;
         this.postContent.name = formData.postContent.name;
         this.postContent.desc = formData.postContent.desc;
         this.postContent.type = formData.postContent.type;
-        this.postContent.post = this.post_id;
+        if (this.copyChecked)
+          this.postContent.copied_id = this.selectetContent.id;
+        if (this.recycleChecked)
+          this.postContent.recycled_id = this.selectetContent.id;
+
+        this.postContent.global = this.globalChecked;
+        if(this.post_id!=undefined){
+          this.postContent.post = this.post_id;
+        }else{
+          this.postContent.subcontents = this.postContent_id;
+
+        }
         console.log(this.postContent)
 
         const formData2 = new FormData();
@@ -116,12 +139,15 @@ export class CreateContentComponent {
               next: res => {
                 this.toastr.info(res.message);
                 this.loading=false;
+                this.createContentEv.emit(res.data.id);
                 const event = new Event('load');
                 document.dispatchEvent(event);
+                this.postContent=new PostContent();
               },
               error: (err: any) => {
                 this.loading=false;
                 this.toastr.error(err);
+                this.postContent=new PostContent();
               },
               complete: () => { }
             });
@@ -132,6 +158,24 @@ export class CreateContentComponent {
         this.toastr.error('Form invalid!');
       }
     }
+  }
+  getContents(){
+    this.postContentService.getAll()
+      .pipe(first())
+      .subscribe(
+        data => {
+          const formControls: { [key: string]: any } = {};
+          console.log('eeeeeeeeeeeeeeeeeeeeeeeeeee');
+
+          this.postContents =  data.data;
+          this.loading=false;
+          console.log( this.postContents);
+          this.postContentsFiltered= this.postContents.filter(x=> x.global===1);
+          console.log( this.postContents);
+
+        },
+        error => {
+        });
   }
 
   selectType() {
@@ -145,4 +189,51 @@ export class CreateContentComponent {
   {
 
   }
+
+  selectContent(event: any) {
+    // Accede al valor seleccionado, por ejemplo, event.target.value
+    const selectedType = event.target.value;
+    console.log(selectedType)
+    console.log(this.postContents)
+    this.selectetContent=selectedType;
+    let content = this.postContents.find(x => x.id == this.selectetContent);
+    console.log(content)
+    this.selectetContent= content;
+      this.form.get('postContent.num')?.setValue(content?.num);
+      this.form.get('postContent.name')?.setValue(content?.name);
+      this.form.get('postContent.desc')?.setValue(content?.desc);
+      this.form.get('postContent.type')?.setValue(content?.type.id);
+      this.form.get('postContent.subcontent')?.setValue(content?.id);
+    console.log(content)
+  }
+
+  checkRecycle(event: any) {
+    const isChecked = event.target.checked;
+    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
+
+    // Realiza acciones basadas en el estado del checkbox
+    if (isChecked && this.copyChecked) {
+      this.copyChecked =false
+    }
+    this.recycleChecked = !this.recycleChecked;
+    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
+
+  }
+
+  checkCopy(event: any) {
+    const isChecked = event.target.checked;
+    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
+    if (isChecked && this.recycleChecked) {
+      this.recycleChecked =false
+    }
+    this.copyChecked = !this.copyChecked;
+    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
+
+  }
+  checkedGlobal(event: any) {
+
+    this.globalChecked = !this.globalChecked;
+
+  }
+
 }

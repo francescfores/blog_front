@@ -106,7 +106,7 @@ input{
   /*display: flex;*/
   /*justify-content: center;*/
   /*align-items: center;*/
-  z-index: 100;
+  z-index: 50;
   /*font-size: 0;  */
   height: 40px;
   @apply absolute top-[520px] bg-bgPrim;
