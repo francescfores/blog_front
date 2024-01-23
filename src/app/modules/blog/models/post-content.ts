@@ -14,8 +14,12 @@ export class PostContent {
   images: any;
   attributes!: PostContentTypeAttribute[];
   subcontents!: PostContent[];
+  component!: PostContent;
+  subcomponent_id!: number;
+  subcomponent_attributes!: PostContentTypeAttribute[];
   parents!: PostContent[];
   recycled_id!: number;
   copied_id!: number;
   global!: any;
+  copy_childs!: any;
 }

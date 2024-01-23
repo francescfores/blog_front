@@ -146,7 +146,6 @@ module.exports = {
   //   // }),
     createThemes({
       light: {
-
         'primary': '#92c200',
         'primary-2': '#d6ff5c',
         'primary-3': '#e8ffa1',
@@ -294,8 +293,13 @@ module.exports = {
   //   // require('tw-elements/dist/plugin'),
   //   // require('@tailwindcss/aspect-ratio'),
   ],
-  // safelist: [{
-  //   pattern: /.*/
-  // }]
+  safelist: [
+    'text-2xl',
+    'text-3xl',
+    {
+      pattern: /bg-(red|green|blue)-(100|200|300|600)/,
+      variants: ['dark','lg', 'hover', 'focus', 'lg:hover'],
+    },
+  ],
 };
 

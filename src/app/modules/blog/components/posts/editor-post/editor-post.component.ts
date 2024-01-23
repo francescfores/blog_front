@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
 import {Post} from "../../../models/post";
 import {PostCategory} from "../../../models/post-category";
@@ -17,7 +17,7 @@ import {first} from "rxjs/operators";
   templateUrl: './editor-post.component.html',
   styleUrls: ['./editor-post.component.css']
 })
-export class EditorPostComponent {
+export class EditorPostComponent implements OnInit{
   form!: FormGroup;
   public post!: Post;
   submit!: boolean;
@@ -29,7 +29,9 @@ export class EditorPostComponent {
   id: any;
   queryObj:any;
   selectetContent: any;
-  updateContent: boolean=false;
+  adding: boolean=false;
+  creating: boolean=false;
+  updating: boolean=false;
 
 
   constructor(
@@ -185,8 +187,31 @@ export class EditorPostComponent {
   }
 
   selectContent(content:any) {
-    this.updateContent=true;
+    this.updating=true;
+    this.creating=false;
+    this.adding=false;
+
     console.log('content',content)
     this.selectetContent=content;
+  }
+
+  addComponent() {
+    this.adding=true;
+    this.creating=false;
+    this.updating=false;
+  }
+  createComponent() {
+    this.creating=true;
+    this.adding=false;
+    this.updating=false;
+  }
+
+
+
+  updateComponent() {
+    this.updating=true;
+    this.creating=false;
+    this.adding=false;
+
   }
 }

@@ -34,7 +34,7 @@ export class UpdateContentComponent implements OnChanges {
   queryObj:any;
 
   /*new*/
-  @Input() postContent!: PostContent;
+  @Input() postContent!: any;
   @Input() postContents!: PostContent[];
   private type: any;
   types!: PostContentType[];
@@ -48,56 +48,45 @@ export class UpdateContentComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['postContent'] && !changes['postContent'].firstChange) {
-      this.loading=true;
-
-      // Realiza acciones adicionales aquí cuando la propiedad postContent cambie
-      console.log('La propiedad postContent ha cambiado:', this.postContent);
-
+      this.loading=false;
       this.form = this.formBuilder.group({
         post : this.formBuilder.group({
-          num: [this.postContent.num, Validators.required],
           name: [this.postContent.name, Validators.required],
           desc: [this.postContent.desc, Validators.required],
-          global: [this.postContent.global],
+          //global: [this.postContent.global],
           // img: ['', Validators.required],
-          type: [this.postContent.type && this.postContent.type.id ? this.postContent.type.id : null],
-          recycled: [this.postContent.recycled_id ? this.postContent.recycled_id : null],
-          copied: [this.postContent.copied_id ? this.postContent.copied_id : null]
+          type: [this.postContent.type.id ? this.postContent.type.id : null],
+          //recycled: [this.postContent.recycled_id ? this.postContent.recycled_id : null],
+          //copied: [this.postContent.copied_id ? this.postContent.copied_id : null]
         }),
       });
 
-      const attributes_default = this.postContent.type.attributes;
+      const attributes_default = this.postContent.attributes;
       const formControls: { [key: string]: any } = {};
       const formControls2: { [key: string]: any } = {};
 
       // Itera sobre los atributos y crea un control para cada uno
       attributes_default.forEach((attribute: any) => {
         formControls[attribute?.name] = [attribute?.value, Validators.required];
-        let name=this.postContent.attributes.find(x=>x.name===attribute?.name);
-        console.log(this.postContent.attributes)
-        console.log(attribute?.id)
-        console.log(this.postContent.attributes.find(x=>x.name===attribute?.name))
-        if (name) {
-          formControls2[attribute?.name] = [name.value, Validators.required];
-        }else {
-          formControls2[attribute?.name] = [attribute?.value, Validators.required];
+        if (this.postContent?.subcomponent_id!=undefined && this.postContent.subcomponent_attributes?.length > 0) {
+          const foundAttribute = this.postContent.subcomponent_attributes.find((x:any) => x.name === attribute?.name);
+          formControls2[attribute?.name] = [foundAttribute?.value || '', Validators.required];
+        } else {
+          formControls2[attribute?.name] = ['', Validators.required];
         }
-
       });
 
       // Crea el formulario utilizando el formBuilder
       this.formAttr = this.formBuilder.group({
         attr: this.formBuilder.group(formControls)
       });
+      if (this.postContent?.subcomponent_id!=undefined) {
+        this.formAttr2 = this.formBuilder.group({
+          attr: this.formBuilder.group(formControls2)
+        });
+      }
 
-      // Crea el formulario utilizando el formBuilder
-      this.formAttr2 = this.formBuilder.group({
-        attr: this.formBuilder.group(formControls2)
-      });
-
-      // this.getContent();
       this.getContents();
-
     }
   }
   getContent() {
@@ -106,9 +95,7 @@ export class UpdateContentComponent implements OnChanges {
       .subscribe(
         data => {
           this.postContent=data.data;
-
-          console.log('this.postContentthis.postContentthis.postContentthis.postContentthis.postContent');
-          console.log(this.postContent);
+          console.log('getContent',this.postContent);
           this.getContents();
         });
   }
@@ -118,12 +105,12 @@ export class UpdateContentComponent implements OnChanges {
       .subscribe(
         res => {
           this.types = res.data;
-          console.log(this.types);
         },
         error => {
         });
   }
   /**/
+  showTree=false;
   constructor(
     private router: Router,
     private productService: PostService,
@@ -166,7 +153,6 @@ export class UpdateContentComponent implements OnChanges {
     // });
 
     // this.getParams();
-    // console.log(this.postContent)
   }
   agregarSelect() {
     this.selects.push(null);
@@ -181,13 +167,14 @@ export class UpdateContentComponent implements OnChanges {
     });
 */
     this.selects.forEach((_, index) => {
-      const newIndex = index + this.postContent.subcontents.length;
+      const newIndex = index + this.postContent.subcomponents.length;
       formControls['subcontent_' + newIndex] = [null, Validators.required];
     });
 
     this.formChilds = this.formBuilder.group({
       childs: this.formBuilder.group(formControls)
     });
+
   }
 
   getContents(){
@@ -196,20 +183,16 @@ export class UpdateContentComponent implements OnChanges {
       .subscribe(
         data => {
           const formControls: { [key: string]: any } = {};
-          console.log('eeeeeeeeeeeeeeeeeeeeeeeeeee');
           /*
           this.postContent.subcontents.forEach((subcontent: any, index: number) => {
             formControls['subcontent_'+index] = [subcontent?.id, Validators.required];
             });
-
            */
             this.formChilds = this.formBuilder.group({
               childs: this.formBuilder.group(formControls)
             });
-
           this.postContents =  data.data;
-          console.log(this.postContents)
-          this.postContents= this.postContents.filter(x=> x.global===1);
+          //this.postContents= this.postContents.filter(x=> x.global===1);
 
           this.loading=false;
         },
@@ -221,7 +204,6 @@ export class UpdateContentComponent implements OnChanges {
       .pipe(first())
       .subscribe(
         res => {
-          console.log(res)
           this.categories = res.data.category;
         },
         error => {
@@ -229,42 +211,38 @@ export class UpdateContentComponent implements OnChanges {
   }
   onFileChange(event: any) {
     this.selectedImages = event.target.files;
-    this.form.value.post.img = event.target.files;
-
+    //this.form.value.post.img = event.target.files;
   }
 
   update() {
     this.submit = true;
-    // console.log(this.form.value);
-    // console.log(this.formAttr.value);
-    // console.log(this.formAttr2.value);
-    // console.log(this.formAttr2.value.attr);
-    console.log(this.formChilds.value.childs);
     if(!this.loading) {
       this.loading = true;
       if (this.form.valid) {
         let formData = this.form.value;
+        this.post.id = this.postContent.id;
         this.post.name = formData.post.name;
         this.post.desc = formData.post.desc;
         this.post.global = this.globalChecked;
-        console.log(this.post)
+        this.post.subcomponent_id = this.postContent.subcomponent_id;
         this.form.value.post.global=this.globalChecked;
-        if (this.copyChecked)
-          this.postContent.copied_id = this.selectetContent.id;
-        if (this.recycleChecked)
-          this.postContent.recycled_id = this.selectetContent.id;
 
 
+        const formData2 = new FormData();
+        for (let image of this.selectedImages) {
+          formData2.append('images[]', image);
+        }
+        this.post.img = this.selectedImages;
+        console.error(this.postContent.img)
         this.postContentService.update(
           this.postContent.id,
-          this.form.value.post,
+          this.post,
           this.formAttr.value.attr,
-          this.formAttr2.value.attr,
+          this.formAttr2?.value.attr ? this.formAttr2?.value.attr:[],
           this.formChilds.value.childs)
           .subscribe({
             next: res => {
               this.postContent =res.data;
-              console.log(this.postContent)
               this.toastr.info(res.message);
               this.loading = false;
               this.selects=[];
@@ -294,21 +272,19 @@ export class UpdateContentComponent implements OnChanges {
       if(this.form.value.post!=undefined){
         return  this.types.find(n=>n.id===this.form.value.post.type)?.attributes;
       }
-      return this.postContent.type.attributes
+      return this.postContent.attributes
     // @ts-ignore
   }
   checkedGlobal(event: any) {
 
     this.globalChecked = !this.globalChecked;
-    console.log(this.globalChecked)
   }
 
   removeContent(subcontent: PostContent) {
-    this.postContentService.delete(subcontent.id)
+    this.postContentService.deleteSubComponent(subcontent.id)
       .subscribe({
         next: (res:any) => {
           this.postContent =res.data;
-          console.log(this.postContent)
           this.toastr.info(res.message);
           this.loading = false;
           this.selects=[];
@@ -324,7 +300,6 @@ export class UpdateContentComponent implements OnChanges {
       .subscribe({
         next: (res:any) => {
           this.postContent =res.data;
-          console.log(this.postContent)
           this.toastr.info(res.message);
           this.loading = false;
           this.selects=[];
@@ -337,26 +312,36 @@ export class UpdateContentComponent implements OnChanges {
 
   checkRecycle(event: any) {
     const isChecked = event.target.checked;
-    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
-
     // Realiza acciones basadas en el estado del checkbox
     if (isChecked && this.copyChecked) {
       this.copyChecked =false
     }
     this.recycleChecked = !this.recycleChecked;
-    console.log('checkRecycle ',isChecked, this.recycleChecked, this.copyChecked);
-
   }
 
   checkCopy(event: any) {
     const isChecked = event.target.checked;
-    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
     if (isChecked && this.recycleChecked) {
       this.recycleChecked =false
     }
     this.copyChecked = !this.copyChecked;
-    console.log('checkRecycle ',isChecked, this.copyChecked, this.recycleChecked);
 
+  }
+  onClick(content: any) {
+    console.log('Se hizo clic en el componente:', content);
+    this.postContent = content;
+  }
+  normalizarSubcomponente(subcomponente: any): any {
+    return {
+      id: subcomponente.component.id,
+      subcomponent_id: subcomponente.id,
+      name: subcomponente.component.name,
+      desc: subcomponente.component.desc,
+      subcomponent_attributes: subcomponente.subcomponent_attributes,
+      subcomponents: subcomponente.subcomponents,
+      attributes: subcomponente.component.attributes,
+      type: subcomponente.component.type,
+    };
   }
 }
 

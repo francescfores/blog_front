@@ -34,7 +34,6 @@ export class SubmenuComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeRoute=false;
-        console.log('---------------this.activeRoute')
         this.checkActiveRoute()
       }
     });
@@ -45,7 +44,6 @@ export class SubmenuComponent implements OnInit {
 
   checkActiveRoute(){
     this.menuItem.children?.forEach((item) => {
-      console.log(this.router.isActive(item.route, true))
       if(this.router.isActive(item.route, true)){
         this.activeRoute=true;
         this.dropdownPopoverShow = true;

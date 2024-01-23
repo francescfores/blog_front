@@ -113,16 +113,14 @@ export class ShowContentComponent {
   }
 
   paginatedByPost(page:any){
-    console.log('paginatedByPos-----------------------------')
-    console.log(page)
-    console.log(this.post_id)
 
     this.postService.paginatedByPost(page, this.post_id)
       .subscribe({
         next: res => {
-          console.log(res)
+          console.log('res')
+          console.error(res)
           this.posts= res.data;
-          this.postContentsFiltered = this.posts.filter((x:any)=> x.global===1);
+          this.postContentsFiltered = this.posts;
 
           this.posts.current_page =res.data.current_page+'';
         },
@@ -131,20 +129,14 @@ export class ShowContentComponent {
       });
   }
   paginatedAll(page:any){
-    console.log('paginatedByPos-----------------------------')
-    console.log(page)
-    console.log(this.post_id)
 
     this.postService.paginated(page)
       .subscribe({
         next: res => {
-          console.log(res)
           this.posts= res.data;
           this.postContentsFiltered = this.posts.data;
           this.postContentsFiltered = this.postContentsFiltered.filter((x:any)=> x.global===1);
           this.posts.current_page =res.data.current_page+'';
-          console.log(this.postContentsFiltered)
-
         },
         error: (err: any) => { },
         complete: () => { }

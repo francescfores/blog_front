@@ -758,6 +758,14 @@ html {
   z-index: 50;
 }
 
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -1498,6 +1506,10 @@ html {
   max-width: 100%;
 }
 
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+
 .max-w-xs {
   max-width: 20rem;
 }
@@ -1749,6 +1761,10 @@ html {
   flex-wrap: nowrap;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1803,6 +1819,10 @@ html {
 
 .gap-12 {
   gap: 3rem;
+}
+
+.gap-16 {
+  gap: 4rem;
 }
 
 .gap-2 {
@@ -2198,10 +2218,6 @@ html {
   border-color: rgb(254 202 202 / var(--tw-border-opacity));
 }
 
-.border-red-200\/10 {
-  border-color: rgb(254 202 202 / 0.1);
-}
-
 .border-red-600 {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
@@ -2267,6 +2283,11 @@ html {
 .bg-\[\#2A2A50\] {
   --tw-bg-opacity: 1;
   background-color: rgb(42 42 80 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#3197d6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 151 214 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#4a154b\] {
@@ -3314,6 +3335,11 @@ html {
 .text-secondary-3 {
   --tw-text-opacity: 1;
   color: hsl(var(--twc-secondary-3) / var(--twc-secondary-3-opacity, var(--tw-text-opacity)));
+}
+
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 .text-textPrimary {
@@ -4991,6 +5017,10 @@ html {
 }
 
 @media (min-width: 768px) {
+  .md\:order-1 {
+    order: 1;
+  }
+
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -5015,6 +5045,10 @@ html {
 
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:flex {
@@ -5047,6 +5081,10 @@ html {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4 {
@@ -5117,6 +5155,10 @@ html {
     padding-bottom: 4rem;
   }
 
+  .md\:pb-24 {
+    padding-bottom: 6rem;
+  }
+
   .md\:pl-10 {
     padding-left: 2.5rem;
   }
@@ -5127,6 +5169,10 @@ html {
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:pt-12 {
+    padding-top: 3rem;
   }
 
   .md\:pt-20 {
@@ -5285,6 +5331,20 @@ html {
     line-height: 2.5rem;
   }
 
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:tracking-tight {
+    letter-spacing: -0.025em;
+  }
+
   .lg\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -5328,6 +5388,15 @@ html {
   .xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .xl\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .xl\:tracking-tighter {
+    letter-spacing: -0.05em;
   }
 }
 

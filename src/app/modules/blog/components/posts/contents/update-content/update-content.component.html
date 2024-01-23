@@ -3,16 +3,14 @@
       <div class="flex flex-wrap rounded-lg  justify-start">
         <app-card class="w-full">
           <ng-template #headerTemplate >
-            <div class="">
-              <h5 *ngIf="postContent" class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
-                Update content {{postContent.name}}
+            <div class="flex flex-wrap">
+              <h5 *ngIf="postContent" class="mr-auto text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                Update component {{postContent.name}}
               </h5>
             </div>
           </ng-template>
-          <div class="py-2 flex flex-wrap">
+          <div *ngIf="postContent " class="p-2 flex flex-wrap">
             <form  *ngIf="form" [formGroup]="form" class="grid grid-cols-12 w-full gap-4">
-              <app-input-outsite [label]="'num'" class="col-span-6  " [formGroupParent]="form.get(['post'])" [formGroupControlName]="'num'"
-                                 [value]="form.get(['post'])?.value?.num"></app-input-outsite>
               <app-input-outsite [label]="'name'" class="col-span-6" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'"
                                  [value]="form.get(['post'])?.value?.name"></app-input-outsite>
               <app-input-outsite [label]="'desc'" class="col-span-6"  [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'"
@@ -22,7 +20,7 @@
               <div class="col-span-6 text-textPrimary flex flex-wrap items-center justify-between">
                 <input class="flex justify-between "  type="file" multiple (change)="onFileChange($event)">
               </div>
-              <div class="col-span-6 flex ">
+              <!--<div class="col-span-6 flex ">
                 <p class=" text-md text-textPrimary  mr-auto ">
                   Global components
                 </p>
@@ -39,12 +37,11 @@
                     (change)="checkedGlobal($event)"
                   />
                 </div>
-              </div>
+              </div>-->
+             <!--
               <div class="col-span-6 items-end gap-4" *ngIf="postContent.copied_id!=null || postContent.recycled_id!=null ">
                 <p class=" text-md text-textPrimary">
                   Component
-                  {{ postContent.copied_id ? ' copied of :' : '' }}
-                  {{ postContent.recycled_id ? ' recycled of :' : '' }}
                 </p>
                 <app-select-outside *ngIf="postContent.copied_id" class="col-span-12  "  [items]="postContents"
                                     [formGroupParent]="form.get(['post'])" [formGroupControlName]="'copied'" [value]="postContent.copied_id"
@@ -91,11 +88,12 @@
                 </div>
 
               </div>
+              -->
               <div class="col-span-12"></div>
               <div class="col-span-6 flex flex-col gap-5">
                 <p class="text-textPrimary">Default attrs</p>
                 <form  *ngIf="formAttr" [formGroup]="formAttr" class="flex flex-col gap-5 flex-wrap w-full">
-                  <div *ngFor="let attribute of postContent?.type?.attributes">
+                  <div *ngFor="let attribute of postContent?.attributes">
                     <app-input-outsite class="col-span-6"  [label]="attribute.name" [formGroupParent]="formAttr.get(['attr'])" [formGroupControlName]="attribute.name"
                                        [value]="formAttr.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
                   </div>
@@ -104,7 +102,7 @@
               <div class="col-span-6 flex flex-col gap-5">
                 <p class="col-span-2 text-textPrimary">Override attrs</p>
                 <form  *ngIf="formAttr2" [formGroup]="formAttr2" class="flex flex-col gap-5 flex-wrap w-full">
-                  <div *ngFor="let attribute of postContent.type.attributes">
+                  <div *ngFor="let attribute of postContent?.attributes">
                     <app-input-outsite class="col-span-6"  [label]="attribute.name" [formGroupParent]="formAttr2.get(['attr'])" [formGroupControlName]="attribute.name" [value]="formAttr2.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
                   </div>
                 </form>
@@ -115,9 +113,9 @@
                               [loading_type]="'waves'" [loading]="loading" ></app-button3d>
                 <form  *ngIf="formChilds && postContents" [formGroup]="formChilds"
                        class="flex flex-wrap w-full">
-                  <div *ngFor="let subcontent of postContent.subcontents; let i = index">
+                  <div *ngFor="let subcontent of postContent?.subcomponents; let i = index">
                     <span id="badge-dismiss-dark" class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-gray-800 bg-gray-100 rounded dark:bg-gray-700 dark:text-gray-300">
-                      {{subcontent.name}}
+                      {{subcontent.component.name}}
                       <button (click)="removeContent(subcontent)" type="button" class="inline-flex items-center p-1 ms-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300" data-dismiss-target="#badge-dismiss-dark" aria-label="Remove">
                       <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
@@ -125,17 +123,11 @@
                       <span class="sr-only">Remove badge</span>
                       </button>
                     </span>
-                    <!--
-                    <app-select-outside [label]="'type'" [items]="postContents"
-                                        [formGroupParent]="formChilds.get(['childs'])"
-                                        [formGroupControlName]="'subcontent_'+i"
-                                        [value]="subcontent.id"></app-select-outside>
-                                        -->
                   </div>
                   <div *ngFor="let select of selects; let i = index">
                     <app-select-outside [label]="'type'" [items]="postContents"
                                         [formGroupParent]="formChilds.get(['childs'])"
-                                        [formGroupControlName]="'subcontent_'+(i + postContent.subcontents.length)"
+                                        [formGroupControlName]="'subcontent_'+(i + postContent.subcomponents.length)"
                                         [value]="null"></app-select-outside>
                   </div>
 

@@ -11,6 +11,7 @@ import {ToastrService} from "ngx-toastr";
 import {AuthenticationAdminService} from "../../../../../../services/api/authentication-admin.service";
 import {first} from "rxjs/operators";
 import {PostContentService} from "../../../../services/api/post-content.service";
+import {PostContent} from "../../../../models/post-content";
 
 @Component({
   selector: 'app-editor-content',
@@ -29,7 +30,7 @@ export class EditorContentComponent {
   private user: any;
   id: any;
   queryObj:any;
-  updateContent: any;
+  updateContent: any | undefined;
   paintContent: any;
 
 
@@ -73,8 +74,6 @@ export class EditorContentComponent {
         data => {
           this.updateContent = data.data;
           this.paintContent = data.data;
-          console.log('epaaaaaaepaaaaaa',this.updateContent)
-
         },
         error => {
         });
@@ -100,13 +99,11 @@ export class EditorContentComponent {
     this.form.value.post.category = this.category.id;
   }
   showContentEv(content:any) {
-    console.log('showContentEv',content)
     this.paintContent=content;
     this.updateContent=content;
   }
 
   createContentEv(content:any) {
-    console.log('createContentEv',content)
     this.getContent(content);
   }
 
@@ -115,9 +112,9 @@ export class EditorContentComponent {
   }
 
   paintContentEv(content:any) {
-    console.log('paintContentEv',content)
-
     this.updateContent=content;
 
   }
+
+  protected readonly PostContent = PostContent;
 }

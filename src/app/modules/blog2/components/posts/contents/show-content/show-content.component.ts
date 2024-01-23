@@ -81,14 +81,9 @@ export class ShowContentComponent {
   }
 
   paginatedByPost(page:any){
-    console.log('paginatedByPos-----------------------------')
-    console.log(page)
-    console.log(this.post_id)
-
     this.postService.paginatedByPost(page, this.post_id)
       .subscribe({
         next: res => {
-          console.log(res)
           this.posts= res.data;
           this.posts.current_page =res.data.current_page+'';
         },

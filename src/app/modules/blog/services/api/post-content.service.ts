@@ -60,6 +60,10 @@ export class PostContentService {
     return this.http.post<any>(`${environment.apiUrl}api/post_content`, params);
   }
 
+  add(post_id:any, component_id:any) {
+    console.log('destroypost');
+    return this.http.post<any>(`${environment.apiUrl}api/post/${post_id}/content/${component_id}`, { params: {post_id,component_id} });
+  }
   update(id: number, post: any, typeAttributes:any, attributes:any, subcontents:any) {
     let httpOptions = {
       headers: new HttpHeaders({
@@ -85,11 +89,11 @@ export class PostContentService {
     });
     Object.keys(typeAttributes).forEach(key => {
       const value = typeAttributes[key];
-        formData.append('type_attrs_'+key, value);
+        formData.append('default_attrs_'+key, value);
     });
     Object.keys(attributes).forEach(key => {
       const value = attributes[key];
-      formData.append(key, value);
+      formData.append('subcomponent_attributes_'+key, value);
     });
     Object.keys(subcontents).forEach(key => {
       const value = subcontents[key];
@@ -101,6 +105,10 @@ export class PostContentService {
   delete(id:any) {
     console.log('destroypost');
     return this.http.delete<any>(`${environment.apiUrl}api/post_content/${id}`, { params: id });
+  }
+  deleteSubComponent(id:any) {
+    console.log('destroypost');
+    return this.http.delete<any>(`${environment.apiUrl}api/destroySubcomponent/${id}`, { params: id });
   }
   deleteRelation(post_id:any, content_id:any) {
     console.log('destroypost');

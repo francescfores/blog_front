@@ -7,6 +7,7 @@ export class Post {
   desc!: string;
   img: File[]|[]=[];
   contents: PostContent[]|[]=[];
+  components: PostContent[]|[]=[];
   category!: any;
   user!: any;
   client!: any;

@@ -98,8 +98,10 @@ export class PostComponent {
       .pipe(first())
       .subscribe(
         data => {
+          console.error(data)
+
           this.post = data.data;
-          this.postContents = this.post.contents;
+          this.postContents = this.post.components;
           console.log(this.post)
           console.log(this.postContents)
           this.loading=false;

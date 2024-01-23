@@ -86,3 +86,7 @@
   background: rgba(85, 85, 85, 0.59);
 }
 
+@media (min-width: 768px)
+.md\:order-1 {
+  order: 1;
+}

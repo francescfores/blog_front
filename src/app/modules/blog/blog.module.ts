@@ -22,6 +22,7 @@ import { CategoryComponent } from './pages/posts/category/category.component';
 import { PostComponent } from './pages/posts/post/post.component';
 import {EditorPostComponent} from "./components/posts/editor-post/editor-post.component";
 import {EditorContentComponent} from "./components/posts/contents/editor-content/editor-content.component";
+import {AddContentComponent} from "./components/posts/contents/add-content/add-content.component";
 
 
 
@@ -44,6 +45,7 @@ import {EditorContentComponent} from "./components/posts/contents/editor-content
     CategoryComponent,
     PostComponent,
     EditorContentComponent,
+    AddContentComponent,
   ],
   exports: [
     IndexComponent,
@@ -54,13 +56,13 @@ import {EditorContentComponent} from "./components/posts/contents/editor-content
     EditorPostComponent,
     EditorContentComponent,
   ],
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        BlogRoutingModule,
-        ComponentsModule,
-        FormsModule,
-        ComponentsModuleBlog
-    ]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BlogRoutingModule,
+    ComponentsModule,
+    FormsModule,
+    ComponentsModuleBlog,
+  ]
 })
 export class BlogModule { }

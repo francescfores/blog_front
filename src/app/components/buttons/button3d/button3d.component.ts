@@ -67,7 +67,6 @@ export class Button3dComponent implements OnInit{
         if (loading !== previousValue && previousValue !==undefined) {
           // La propiedad 'loading' ha cambiado
           // Puedes realizar acciones aquí cuando se detecte un cambio en 'loading'
-          console.log('La propiedad ', loading,previousValue);
           const myButton = this.btn.nativeElement;
           const bubble = myButton.querySelector('.bubble') as HTMLElement;
           const childElement= myButton.querySelector('.btn_loading_wrapp') as HTMLElement;
@@ -177,7 +176,6 @@ export class Button3dComponent implements OnInit{
     style.setProperty('--font_size', this.font_size !== '' ? this.font_size : '');
 
     style.setProperty('--raise', this.raise+'px');
-    console.log(this.raise)
     let raise=this.raise;
     if(raise>0){
       btn.addEventListener('mousemove', event => {
@@ -206,7 +204,6 @@ export class Button3dComponent implements OnInit{
           btn_frt.classList.add('btn_front_default');
         }
         if(rotate_Y<-2){
-          console.log('right');
           btn.classList.remove('btn_shadow_right', 'btn_shadow_default');
           btn.classList.add('btn_shadow_left');
           btn_frt.classList.remove('btn_front_default', 'btn_front_left');
@@ -249,7 +246,6 @@ export class Button3dComponent implements OnInit{
   private removeRippleEffect() {
     const btn = this.elementRef.nativeElement.querySelector('.ripple-button');
     const ripple = btn.querySelector('.ripple');
-    console.log('scroll');
     if (ripple) {
       this.renderer.removeChild(btn, ripple);
     }

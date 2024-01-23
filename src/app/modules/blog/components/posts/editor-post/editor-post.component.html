@@ -1,14 +1,14 @@
 <div class="w-full">
-  <div class="grid grid-cols-12 gap-2 p-2">
+  <div class="grid grid-cols-12 gap-2">
 
-    <div *ngIf="post.contents.length>0" class="col-span-8 h-screen  overflow-y-scroll bg-bgTern" >
-      <ng-container *ngFor="let content of post.contents" class="">
+    <div *ngIf="post.components.length>0" class="col-span-8 h-screen  overflow-y-scroll bg-bgTern" >
+      <ng-container *ngFor="let content of post.components" class="">
         <app-paint-contents class=" " [content]="content"
                             (selectContent)="selectContent($event)"></app-paint-contents>
       </ng-container>
     </div>
     <div class="col-span-8 flex justify-center items-center h-screen  overflow-y-scroll bg-bgTern"
-         *ngIf="post.contents.length===0">
+         *ngIf="post.components.length===0">
       <app-card class="w-1/2 flex h-auto justify-center items-center p-4">
         <ng-template #headerImgTemplate class="flex  justify-center ">
           <div class="flex  justify-center items-center relative m-0 overflow-hidden rounded-none bg-transparent  shadow-none">
@@ -37,22 +37,30 @@
     <div class="flex flex-col col-span-4 gap-2">
       <ul class="w-full justify-center flex flex-wrap  text-sm font-medium overflow-hidden" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
         <li class="flex-grow">
-          <button (click)="updateContent=!updateContent"
-                  class="w-full p-4  text-textPrimary " >New Component</button>
-          <div [ngClass]="{ 'translate-y-full': updateContent, }"
+          <button (click)="addComponent()"
+                  class="w-full p-4  text-textPrimary " >Add Component</button>
+          <div [ngClass]="{ 'translate-y-full': !adding, }"
                class="border-2 border-textSecondary w-full  transition-all ease-in-out duration-500"></div>
         </li>
         <li class="flex-grow">
-          <button (click)="updateContent=!updateContent"
-                  class="w-full p-4 border-textPrimary text-textPrimary" >Update Component</button>
-          <div [ngClass]="{ 'translate-y-full': !updateContent, }"
+          <button (click)="createComponent()"
+                  class="w-full p-4  text-textPrimary " >New Component</button>
+          <div [ngClass]="{ 'translate-y-full': !creating, }"
+               class="border-2 border-textSecondary w-full  transition-all ease-in-out duration-500"></div>
+        </li>
+        <li class="flex-grow">
+          <button (click)="updateComponent()"
+                  class="w-full p-4 border-textPrimary text-textPrimary">Update Component</button>
+          <div [ngClass]="{ 'translate-y-full': !updating, }"
                class="border-2 border-textSecondary w-full  transition-all ease-in-out duration-500"></div>
         </li>
       </ul>
       <div id="default-tab-content">
-        <app-create-content *ngIf="!updateContent"
+        <app-add-content *ngIf="adding"
+          (createContentEv)="getProduct($event)" class="col-span-4" [post_id]="this.id"></app-add-content>
+        <app-create-content *ngIf="creating"
           (createContentEv)="getProduct($event)" class="col-span-4" [post_id]="this.id"></app-create-content>
-        <app-update-content [ngClass]="{ 'hidden': !updateContent,'block': updateContent, }"  class="col-span-4 flex lg:sticky"
+        <app-update-content [ngClass]="{ 'hidden': !updating,'block': updating, }"  class="col-span-4 flex lg:sticky"
                             [postContent]="selectetContent"
                             (updatedContent)="getProduct($event)"></app-update-content>
       </div>
