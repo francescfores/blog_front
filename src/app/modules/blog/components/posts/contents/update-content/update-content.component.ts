@@ -12,6 +12,14 @@ import {first} from "rxjs/operators";
 import {PostContent} from "../../../../models/post-content";
 import {PostContentService} from "../../../../services/api/post-content.service";
 import {PostContentType} from "../../../../models/post-content-type";
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDragPlaceholder,
+  CdkDropList,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+import {forEach} from "lodash";
 
 @Component({
   selector: 'app-update-content',
@@ -46,6 +54,33 @@ export class UpdateContentComponent implements OnChanges {
   globalChecked = false;
   protected selectetContent: any;
 
+  movies = [
+    'Episode I - The Phantom Menace',
+    'Episode II - Attack of the Clones',
+    'Episode III - Revenge of the Sith',
+    'Episode IV - A New Hope',
+    'Episode V - The Empire Strikes Back',
+    'Episode VI - Return of the Jedi',
+    'Episode VII - The Force Awakens',
+    'Episode VIII - The Last Jedi',
+    'Episode IX - The Rise of Skywalker',
+  ];
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.postContent.subcomponents, event.previousIndex, event.currentIndex);
+    this.postContent.subcomponents.forEach((sub: any) => {
+      console.log(sub.component.name)
+    });
+
+
+    this.postContentService.orderSubcomponents(this.postContent.id, this.postContent.subcomponents)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.postContent=data.data;
+          console.log('getContent',this.postContent);
+          this.updatedContent.emit(this.postContent);
+        });
+  }
   ngOnChanges(changes: SimpleChanges) {
     if (changes['postContent'] && !changes['postContent'].firstChange) {
       this.loading=false;

@@ -23,6 +23,7 @@ import { PostComponent } from './pages/posts/post/post.component';
 import {EditorPostComponent} from "./components/posts/editor-post/editor-post.component";
 import {EditorContentComponent} from "./components/posts/contents/editor-content/editor-content.component";
 import {AddContentComponent} from "./components/posts/contents/add-content/add-content.component";
+import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 
 
 
@@ -63,6 +64,8 @@ import {AddContentComponent} from "./components/posts/contents/add-content/add-c
     ComponentsModule,
     FormsModule,
     ComponentsModuleBlog,
+    CdkDrag,
+    CdkDropList,
   ]
 })
 export class BlogModule { }

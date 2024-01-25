@@ -30,7 +30,7 @@ export class EditorPostComponent implements OnInit{
   queryObj:any;
   selectetContent: any;
   adding: boolean=false;
-  creating: boolean=false;
+  creating: boolean=true;
   updating: boolean=false;
 
 

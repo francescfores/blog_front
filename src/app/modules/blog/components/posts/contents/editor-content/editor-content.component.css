@@ -1,0 +1,11 @@
+.draggable-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: move;
+}
+
+.dropzone {
+  padding: 20px;
+  border: 2px dashed #ccc;
+  margin-top: 20px;
+}

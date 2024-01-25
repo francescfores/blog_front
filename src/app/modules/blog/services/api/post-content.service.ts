@@ -114,4 +114,27 @@ export class PostContentService {
     console.log('destroypost');
     return this.http.delete<any>(`${environment.apiUrl}api/post/${post_id}/content/${content_id}`, { params: {post_id,content_id} });
   }
+
+  orderSubcomponents(id: number, subcontents: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'form-data',
+      }),
+    };
+
+    let newOrder: any[];
+    newOrder = [];
+    const formData = new FormData();
+    formData.append('_method', 'POST');
+    subcontents.forEach((key:any, index:any) => {
+      const value = key.id;
+      formData.append(index, value);
+      newOrder.push({ subcomponentId: key.id, order: index })
+    });
+    return this.http.post<any>(`${environment.apiUrl}api/post_content/reorder/${id}`, {newOrder:newOrder});
+  }
+
+  filterPaginated(filter: any) {
+    return this.http.post<any>(`${environment.apiUrl}api/component/filter`, {filter:filter});
+  }
 }

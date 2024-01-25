@@ -45,11 +45,11 @@ Open large modal
       <app-create-content class="p-2 w-full"
                           (createContentEv)="createContentEv($event)"
                           [post_id]="this.id"></app-create-content>
-      <app-update-content class="p-2 w-4/12  flex lg:sticky"
+      <app-update-content class="p-2 w-6/12  flex lg:sticky "
                           [postContent]="updateContent"
                           (updatedContent)="updateContentEv($event)"></app-update-content>
-          <div class="w-8/12 p-2 flex   " >
-              <app-paint-contents *ngIf="paintContent" class="w-full  " [content]="paintContent"
+          <div class="w-6/12 p-2 flex   " >
+              <app-paint-contents [showEditor]="true" *ngIf="paintContent" class="flex flex-col w-full  bg-slate-400  items-center" [content]="paintContent"
                                   (selectContent)="paintContentEv($event)"></app-paint-contents>
               <div class=" gap-4 flex flex-col" *ngIf="!paintContent">
                 <div class=" flex justify-center">
@@ -57,7 +57,6 @@ Open large modal
                 </div>
                 <p class="text-textPrimary border-red-600">Add or create new component </p>
               </div>
-
         </div>
       </div>
   </div>

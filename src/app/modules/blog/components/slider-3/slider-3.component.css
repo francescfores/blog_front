@@ -118,9 +118,9 @@ input{
 
 /* claw start */
 .claw_main {
-  @apply absolute top-[0] w-full h-[500px]  ;
+  @apply absolute top-[0] w-full h-[500px]  z-40;
   /*filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));*/
-  /*animation: claw_main 6s ease-in-out forwards;;;*/
+  /*animation: claw_main 4s ease-in-out forwards;;;*/
 }
 @keyframes claw_main {
   90%{
@@ -134,9 +134,9 @@ input{
   }
 .claw {
   @apply absolute text-center top-[-360px] w-[120px] right-[0px];
-  z-index: 30;
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.62));
-  animation: slide_down 6s ease-in-out infinite;;;
+  z-index: 50;
+  filter: drop-shadow(10px 10px 100px rgba(222, 255, 176, 0.16)) drop-shadow(0px 0px 10px rgb(113, 255, 159));
+  animation: slide_down 4s ease-in-out infinite;;;
 }
 @keyframes slide_down {
   10% {
@@ -180,13 +180,13 @@ input{
 .claw_wire {
   /*@apply absolute text-center top-[-200px] w-[5px] right-[325px] fill-textPrimary h-[265px] bg-[#53c9df] rounded-b-md;*/
   @apply w-[3px] mx-auto fill-textPrimary top-[0px] h-[400px] bg-[#53c9df] rounded-b-md ;
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.62));
-  /*animation: float 6s ease-in-out infinite;;;*/
+  filter: drop-shadow(10px 10px 100px rgba(222, 255, 176, 0.16)) drop-shadow(0px 0px 10px rgb(113, 255, 159));
+  /*animation: float 4s ease-in-out infinite;;;*/
 }
 
 .claw_body{
   @apply px-5 absolute ;
-  animation: rotate 11s ease-in-out infinite;
+  animation: rotate 12s ease-in-out infinite;
 }
 .claw_support {
   @apply  mt-1 w-[80%] mx-auto z-50;
@@ -226,7 +226,7 @@ input{
 
 .claw_support_left {
   @apply absolute w-[32%] left-[7%] ;
-  animation: claw_support_left 6s ease-in-out infinite;;;
+  animation: claw_support_left 4s ease-in-out infinite;;;
 }
 @keyframes claw_support_left {
   10% {
@@ -267,7 +267,7 @@ input{
 }
 .claw_support_right {
   @apply absolute w-[32%] right-[7%] ;
-  animation: claw_support_right 6s ease-in-out infinite;;;
+  animation: claw_support_right 4s ease-in-out infinite;;;
 }
 @keyframes claw_support_right {
   10% {
@@ -308,12 +308,12 @@ input{
 }
 .claw_support_center {
   @apply absolute mt-2 w-[14%] left-[43%] h-[160%] ;
-  /*animation: float 6s ease-in-out infinite;;;*/
+  /*animation: float 4s ease-in-out infinite;;;*/
 }
 
 .claw_toy{
   @apply absolute bottom-[-20px] p-5 w-[100px]  right-[250px] ;
-  animation: claw_toy 6s ease-in-out infinite, bounceInUp 1s;
+  animation: claw_toy 4s ease-in-out infinite, bounceInUp 1s;
   z-index:31;
 }
 @keyframes claw_toy {
@@ -374,7 +374,7 @@ input{
 
 .claw_toys{
   @apply absolute bottom-0 w-[120px]  ;
-  /*animation: claw_limit 6s ease-in-out infinite;;;*/
+  /*animation: claw_limit 4s ease-in-out infinite;;;*/
   z-index: 50;
   animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1s; /* don't forget to set a duration! */
@@ -382,7 +382,7 @@ input{
 
 .claw_limit{
   @apply absolute bottom-[-20px] rounded-[100%] bg-gray-500/20 w-[100px] h-[14px] right-[0px];
-  animation: claw_limit 6s ease-in-out infinite;
+  animation: claw_limit 4s ease-in-out infinite;
   /*filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));*/
   z-index: 100;
 }
@@ -441,7 +441,7 @@ input{
 .slider_img_claw_text {
   @apply absolute text-center top-[430px] w-[170px] right-[115px] fill-textPrimary;
   z-index: 100;
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.27));
+  filter: drop-shadow(10px 10px 100px rgb(222, 255, 176)) drop-shadow(-10px -10px 10px rgb(113, 255, 159));
 }
 
 

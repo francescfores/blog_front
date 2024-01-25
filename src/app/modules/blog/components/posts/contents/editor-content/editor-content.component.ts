@@ -116,5 +116,23 @@ export class EditorContentComponent {
 
   }
 
-  protected readonly PostContent = PostContent;
+   readonly PostContent = PostContent;
+
+  onDragStart(event: DragEvent) {
+    if (event && event.dataTransfer) {
+      const data = event.dataTransfer.getData('text/plain');
+      console.log('Elemento arrastrado con datos:', data);
+    }  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    if (event && event.dataTransfer) {
+      const data = event.dataTransfer.getData('text/plain');
+      console.log('Elemento arrastrado con datos:', data);
+    }
+  }
 }

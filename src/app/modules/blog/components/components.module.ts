@@ -14,6 +14,7 @@ import { PaintContentsComponent } from './posts/contents/paint-contents/paint-co
 import { EditorPostComponent } from './posts/editor-post/editor-post.component';
 import { EditorContentComponent } from './posts/contents/editor-content/editor-content.component';
 // import {ComponentsModule} from "../../../../../../components/components.module";
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EditorContentComponent } from './posts/contents/editor-content/editor-c
     RouterModule,
     FormsModule,
     ComponentsModule,
+    DragDropModule
     // ComponentsModule,
   ],
     exports: [

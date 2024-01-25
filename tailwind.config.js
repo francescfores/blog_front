@@ -165,8 +165,8 @@ module.exports = {
         // 'ternary': '#1D3557',
         // 'quaternary': '#1D3557',
         'textPrimary': 'rgba(17,17,21,0.9)', //0e1a2a
-        'textSecondary': '#89919d',//89919d
-        'textTertiary': '#c0c0c0',//c0c0c0
+        'textSecondary': 'rgba(46,48,61,0.9)',//89919d
+        'textTertiary': 'rgba(82,87,100,0.9)',//c0c0c0
         // 'nav-color': '#242b3b',
         // 'theme': '#fff',
         // 'header-color': '#404040',
@@ -296,9 +296,21 @@ module.exports = {
   safelist: [
     'text-2xl',
     'text-3xl',
+    'text-4xl',
+    'text-5xl',
+    'text-6xl',
+    'text-7xl',
+    'text-8xl',
+    'text-9xl',
     {
       pattern: /bg-(red|green|blue)-(100|200|300|600)/,
-      variants: ['dark','lg', 'hover', 'focus', 'lg:hover'],
+      //pattern: /bg-+/
+      variants: ['dark','sm','md','lg','xl', 'hover', 'focus', 'lg:hover'],
+    },
+    {
+      pattern: /text-(xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/,
+      //pattern: /bg-+/
+      variants: ['sm','md','lg','xl'],
     },
   ],
 };

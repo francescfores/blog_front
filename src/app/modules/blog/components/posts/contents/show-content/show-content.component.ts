@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Post} from "../../../../models/post";
 import {Router} from "@angular/router";
-import {PostService} from "../../../../services/api/post.service";
 import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
 import {PostContent} from "../../../../models/post-content";
@@ -32,12 +31,40 @@ export class ShowContentComponent {
   loading=false;
   @Input() post_id:any=null;
   @Output() showContentEv = new EventEmitter<number>();
+  table={
+    columns:[
+      {
+        column_name: 'name',
+        order: '',
+        value: ''
+      },
+      {
+        column_name: 'desc',
+        order: '',
+        value: ''
+      },
+      {
+        column_name: 'type',
+        order: '',
+        value: ''
+      },
+      {
+        column_name: 'actions',
+        order: '',
+        value: ''
+      },
+    ],
+    current_page: "1",
+    links: undefined,
+    data: undefined
+  };
 
   constructor(
     private router: Router,
-    private postService: PostContentService,
+    private postContentService: PostContentService,
     private formBuilder: UntypedFormBuilder,
     private sharedService: SharedService,
+
     private toastr: ToastrService
   ) {
     this.formCategory = this.formBuilder.group({
@@ -48,6 +75,7 @@ export class ShowContentComponent {
     this.category = new Post();
   }
 
+
   get fc() {
     return this.formCategory.controls;
   }
@@ -56,15 +84,20 @@ export class ShowContentComponent {
     if(this.post_id!=null){
       this.paginatedByPost(1);
       document.addEventListener('load', () => {
-        this.paginatedByPost(this.posts.current_page);
+        console.log('eeepa');
+        //this.paginatedByPost(this.table.current_page);
       });
     }else {
-      this.paginatedAll(1);
+      this.updateFilter();
       document.addEventListener('load', () => {
-        this.paginatedAll(this.posts.current_page);
+        console.log('eeepa2');
+       // this.paginatedAll(this.table.current_page);
       });
     }
 
+    this.table.columns.forEach((column:any)=>{
+      console.log(column.column_name)
+    })
 
   }
 
@@ -87,23 +120,23 @@ export class ShowContentComponent {
   }
   delete(component_id:number) {
     if(this.post_id!=null){
-      this.postService.deleteRelation(this.post_id,component_id)
+      this.postContentService.deleteRelation(this.post_id,component_id)
         .subscribe({
           next: (res:any) => {
             this.toastr.info(res.message);
             this.submitted = false;
-            this.paginated(this.posts.current_page)
+            this.paginated(this.table.current_page)
           },
           error: (err: any) => { },
           complete: () => { }
         });
     }else {
-      this.postService.delete(component_id)
+      this.postContentService.delete(component_id)
         .subscribe({
           next: (res:any) => {
             this.toastr.info(res.message);
             this.submitted = false;
-            this.paginated(this.posts.current_page)
+            this.paginated(this.table.current_page)
           },
           error: (err: any) => { },
           complete: () => { }
@@ -114,15 +147,15 @@ export class ShowContentComponent {
 
   paginatedByPost(page:any){
 
-    this.postService.paginatedByPost(page, this.post_id)
+    this.postContentService.paginatedByPost(page, this.post_id)
       .subscribe({
         next: res => {
           console.log('res')
           console.error(res)
           this.posts= res.data;
-          this.postContentsFiltered = this.posts;
+          //this.postContentsFiltered = this.posts;
 
-          this.posts.current_page =res.data.current_page+'';
+          this.table.current_page =res.data.current_page+'';
         },
         error: (err: any) => { },
         complete: () => { }
@@ -130,13 +163,13 @@ export class ShowContentComponent {
   }
   paginatedAll(page:any){
 
-    this.postService.paginated(page)
+    this.postContentService.paginated(page)
       .subscribe({
         next: res => {
           this.posts= res.data;
-          this.postContentsFiltered = this.posts.data;
-          this.postContentsFiltered = this.postContentsFiltered.filter((x:any)=> x.global===1);
-          this.posts.current_page =res.data.current_page+'';
+          //this.postContentsFiltered = this.posts.data;
+          //this.postContentsFiltered = this.postContentsFiltered.filter((x:any)=> x.global===1);
+          this.table.current_page =res.data.current_page+'';
         },
         error: (err: any) => { },
         complete: () => { }
@@ -144,42 +177,66 @@ export class ShowContentComponent {
   }
 
   paginated(pr:any) {
-    this.posts.current_page=this.sharedService.paginated(pr, this.posts);
+    this.table.current_page=this.sharedService.paginated(pr, this.table);
     if(this.post_id!=null){
-      this.paginatedByPost(this.posts.current_page)
+      this.paginatedByPost(this.table.current_page)
     }else {
-      this.paginatedAll(this.posts.current_page)
+      this.paginatedAll(this.table.current_page)
     }
   }
-/*
-  createCategory() {
-    this.submitted = true;
-    if (this.formCategory.valid){
-      this.loading = true;
-      this.category.name = this.fc['name'].value;
-      this.category.desc = this.fc['desc'].value;
-      this.category.img = this.selectedFile;
-
-      this.postService.create(this.category)
-        .subscribe({
-          next: res => {
-            this.toastr.info(res.message);
-            this.submitted = false;
-            this.loading = false;
-            this.paginated(this.posts.current_page)
-          },
-          error: (err: any) => {
-            this.loading = false;
-          },
-          complete: () => { }
-        });
-    } else {
-      this.loading = false;
-      this.toastr.info('Invalid form');
-    }
-  }
-*/
   onFileChanged(event:any) {
     this.selectedFile = event.target.files[0];
+  }
+
+  filterOrder(column:any){
+    let filter = this.table.columns.find(x => x.column_name === column.column_name);
+    if(filter){
+      if(filter.order==''){
+        filter.order = 'asc';  // Cambiar el valor del filtro
+      }
+      else if(filter.order==='asc'){
+        filter.order = 'desc';  // Cambiar el valor del filtro
+      }else {
+        filter.order = '';  // Cambiar el valor del filtro
+      }
+    }
+    console.log(filter)
+    console.log(this.table.columns)
+    this.updateFilter();
+  }
+
+  filterValue(value: any,column_name:any) {
+    let filter = this.table.columns.find(x => x.column_name === column_name.column_name);
+    console.log(value.target.value)
+    console.log(value.target.key)
+    console.log(column_name)
+    console.log(filter)
+
+    if(filter){
+        filter.value = value.target.value;  // Cambiar el valor del filtro
+      }
+    console.log(filter)
+    this.updateFilter();
+  }
+
+  updateFilter(){
+    this.table.current_page =1+'';
+
+    this.postContentService.filterPaginated(this.table)
+      .subscribe({
+        next: res => {
+          this.posts= res.data;
+          //this.postContentsFiltered = this.posts.data;
+          //this.postContentsFiltered = this.postContentsFiltered.filter((x:any)=> x.global===1);
+          console.log(this.table)
+          this.table.links =res.data.links;
+          this.table.data =res.data.data;
+          this.table.current_page =res.data.current_page+'';
+          console.log(this.table)
+
+        },
+        error: (err: any) => { },
+        complete: () => { }
+      });
   }
 }
