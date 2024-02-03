@@ -96,7 +96,9 @@ export class PostContentService {
       formData.append('subcomponent_attributes_'+key, value);
     });
     Object.keys(subcontents).forEach(key => {
-      const value = subcontents[key];
+      console.log(key)
+      console.log(subcontents[key])
+      const value = subcontents[key].value;
       formData.append(key, value);
     });
     return this.http.post<any>(`${environment.apiUrl}api/post_content/${id}`, formData);
@@ -131,7 +133,7 @@ export class PostContentService {
       formData.append(index, value);
       newOrder.push({ subcomponentId: key.id, order: index })
     });
-    return this.http.post<any>(`${environment.apiUrl}api/post_content/reorder/${id}`, {newOrder:newOrder});
+    return this.http.post<any>(`${environment.apiUrl}api/post_content/reorder/${id}`, {newOrder:newOrder,parent_id:id});
   }
 
   filterPaginated(filter: any) {

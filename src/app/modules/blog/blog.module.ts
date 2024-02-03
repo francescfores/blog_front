@@ -25,8 +25,6 @@ import {EditorContentComponent} from "./components/posts/contents/editor-content
 import {AddContentComponent} from "./components/posts/contents/add-content/add-content.component";
 import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 
-
-
 @NgModule({
   declarations: [
     IndexComponent,
@@ -66,6 +64,9 @@ import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
     ComponentsModuleBlog,
     CdkDrag,
     CdkDropList,
+    //MatInputModule,
+    //MatFormFieldModule,
+    //MatAutocompleteModule
   ]
 })
 export class BlogModule { }

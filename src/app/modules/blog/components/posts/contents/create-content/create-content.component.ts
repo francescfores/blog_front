@@ -1,72 +1,59 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import {FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {FormControl, FormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
 import {Post} from "../../../../models/post";
 import {PostContent} from "../../../../models/post-content";
-import {PostCategory} from "../../../../models/post-category";
 import {Router} from "@angular/router";
-import {PostService} from "../../../../services/api/post.service";
 import {CategoryService} from "../../../../services/api/post-category.service";
 import {SharedService} from "../../../../../../services/shared.service";
 import {ToastrService} from "ngx-toastr";
 import {AuthenticationAdminService} from "../../../../../../services/api/authentication-admin.service";
-import {first} from "rxjs/operators";
+import {first, map, startWith} from "rxjs/operators";
 import {PostContentService} from "../../../../services/api/post-content.service";
 import {ShowContentComponent} from "../show-content/show-content.component";
 import {PostContentType} from "../../../../models/post-content-type";
 
+import {Observable} from "rxjs";
+
 @Component({
   selector: 'app-create-content',
   templateUrl: './create-content.component.html',
-  styleUrls: ['./create-content.component.css']
+  styleUrls: ['./create-content.component.css'],
 })
-export class CreateContentComponent {
+export class CreateContentComponent implements OnInit{
   form!: FormGroup;
   public post!: Post;
-  public postContent!: PostContent;
+  public component!: PostContent;
   @Input() post_id:any=null;
-  @Input() postContent_id:any=null;
-  @Input() postContents!: PostContent[];
-  @Input() postContentsFiltered!: PostContent[];
+  @Input() component_id:any=null;
+  @Input() components!: PostContent[];
+  componentsFiltered: any[] =[];
   @Output() createContentEv = new EventEmitter<any>();
-
   submit!: boolean;
   loading=false;
   selectedImages: File[] = [];
   types!: PostContentType[];
-  private type: any;
-  private user: any;
-  @ViewChild(ShowContentComponent) showContentComponent!: ShowContentComponent;
-
-   copyChecked = false;
-   recycleChecked = false;
-   globalChecked = false;
-  protected selectetContent: any;
+  copyChecked = false;
+  recycleChecked = false;
+  globalChecked = false;
+  selectetContent: any;
 
   constructor(
-    private router: Router,
-    private postContentService: PostContentService,
-    private categoryService: CategoryService,
+    private componentService: PostContentService,
     private formBuilder: UntypedFormBuilder,
-    private sharedService: SharedService,
     private toastr: ToastrService,
-    private authAdminService: AuthenticationAdminService,
   ){
     this.post = new Post();
-    this.postContent = new PostContent();
+    this.component = new PostContent();
   }
-  uploadImages() {
-    const formData = new FormData();
-    for (let image of this.selectedImages) {
-      formData.append('images[]', image);
-    }
-  }
+
+
   ngOnInit(): void {
-    this.user=this.authAdminService.currentUserValue
 
     this.form = this.formBuilder.group({
-      postContent : this.formBuilder.group({
+      component : this.formBuilder.group({
         name: ['name', Validators.required],
         desc: ['desc', Validators.required],
+        component: ['',],
         img: ['img', ],
         content: ['', ],
         type: [ '',Validators.required],
@@ -83,18 +70,44 @@ export class CreateContentComponent {
     this.getTypes();
     this.getContents();
   }
+
+  getContents(){
+    this.componentService.getAll()
+      .pipe(first())
+      .subscribe(
+        data => {
+          const formControls: { [key: string]: any } = {};
+          this.components =  data.data;
+          this.loading=false;
+          //this.componentsFiltered= this.components.filter(x=> x.global===1);
+          this.componentsFiltered= this.components.map(x => ({id:x.id, name:x.name}) );
+        },
+        error => {
+          this.toastr.error('get ccomponents error!');
+        });
+  }
+
   getTypes(){
-  this.postContentService.getAllTypes()
+  this.componentService.getAllTypes()
     .pipe(first())
     .subscribe(
       res => {
         this.types = res.data;
       },
       error => {
+        this.toastr.error('get types error!');
       });
 }
+
   onFileChange(event: any) {
     this.selectedImages = event.target.files;
+  }
+
+  uploadImages() {
+    const formData = new FormData();
+    for (let image of this.selectedImages) {
+      formData.append('images[]', image);
+    }
   }
 
   create() {
@@ -102,35 +115,29 @@ export class CreateContentComponent {
 
     if(!this.loading){
       this.loading=true;
-      if (this.form.get(['postContent'])?.valid){
+      if (this.form.get(['component'])?.valid){
+
         let formData = this.form.value;
-        this.postContent.name = formData.postContent.name;
-        this.postContent.desc = formData.postContent.desc;
-        this.postContent.type = formData.postContent.type;
-        if (this.copyChecked)
-          this.postContent.copied_id = this.selectetContent.id;
-        if (this.recycleChecked){
-          this.postContent.copied_id = this.selectetContent.id;
-          this.postContent.copy_childs = this.recycleChecked;
-        }
-        this.postContent.global = this.globalChecked;
-        if(this.post_id!=undefined){
-          this.postContent.post = this.post_id;
-        }else{
-          this.postContent.subcontents = this.postContent_id;
+        this.component.name = formData.component.name;
+        this.component.desc = formData.component.desc;
+        this.component.type = formData.component.type;
+        this.component.component = formData.component.component;
 
-        }
+        if (this.copyChecked || this.recycleChecked) {
+          this.component.copied_id = this.selectetContent.id;
 
-
-        console.error(this.post_id)
-        const formData2 = new FormData();
-        for (let image of this.selectedImages) {
-          formData2.append('images[]', image);
+          if (this.recycleChecked) {
+            this.component.copy_childs = this.recycleChecked;
+          }
         }
-        this.postContent.img = this.selectedImages;
+        this.component.global = this.globalChecked;
+        this.component.post = this.post_id !== undefined ? this.post_id : undefined;
+        this.component.subcontents = this.post_id === undefined ? this.component_id : undefined;
+
+        this.component.img = this.selectedImages;
+
         setTimeout(() => {
-
-          this.postContentService.create(this.postContent)
+          this.componentService.create(this.component)
             .subscribe({
               next: res => {
                 this.toastr.info(res.message);
@@ -138,16 +145,18 @@ export class CreateContentComponent {
                 this.createContentEv.emit(res.data.id);
                 const event = new Event('load');
                 document.dispatchEvent(event);
-                this.postContent=new PostContent();
+                this.component=new PostContent();
               },
               error: (err: any) => {
                 this.loading=false;
                 this.toastr.error(err);
-                this.postContent=new PostContent();
+                this.component=new PostContent();
               },
-              complete: () => { }
+              complete: () => {
+                console.log('complete')
+              }
             });
-        }, 200)
+        }, 300)
 
       } else {
         this.loading=false;
@@ -155,44 +164,16 @@ export class CreateContentComponent {
       }
     }
   }
-  getContents(){
-    this.postContentService.getAll()
-      .pipe(first())
-      .subscribe(
-        data => {
-          const formControls: { [key: string]: any } = {};
-
-          this.postContents =  data.data;
-          this.loading=false;
-          console.log('postContents')
-          console.log(this.postContents)
-          //this.postContentsFiltered= this.postContents.filter(x=> x.global===1);
-
-        },
-        error => {
-        });
-  }
-
-  selectType() {
-    let type = this.types.find(x=>x.id==this.form.value.postContent.type)
-    // loadAttributes()
-  }
-  loadAttributes()
-  {
-
-  }
 
   selectContent(event: any) {
-    // Accede al valor seleccionado, por ejemplo, event.target.value
-    const selectedType = event.target.value;
-    this.selectetContent=selectedType;
-    let content = this.postContents.find(x => x.id == this.selectetContent);
-    console.log(content)
+    //const selectedType = event.target.value;
+    this.selectetContent=event.option.value.id;
+    let content = this.components.find(x => x.id == this.selectetContent);
     this.selectetContent= content;
-      this.form.get('postContent.name')?.setValue(content?.name);
-      this.form.get('postContent.desc')?.setValue(content?.desc);
-      this.form.get('postContent.type')?.setValue(content?.type.id);
-      this.form.get('postContent.subcontent')?.setValue(content?.id);
+      this.form.get('component.name')?.setValue(content?.name);
+      this.form.get('component.desc')?.setValue(content?.desc);
+      this.form.get('component.type')?.setValue(content?.type.id);
+      this.form.get('component.subcontent')?.setValue(content?.id);
   }
 
   checkRecycle(event: any) {
@@ -214,10 +195,10 @@ export class CreateContentComponent {
     this.copyChecked = !this.copyChecked;
 
   }
+
   checkedGlobal(event: any) {
 
     this.globalChecked = !this.globalChecked;
 
   }
-
 }

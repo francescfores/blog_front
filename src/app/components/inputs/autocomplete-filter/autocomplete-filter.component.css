@@ -1,0 +1,25 @@
+::ng-deep html{
+  /*  --mat-autocomplete-background-color:hsl(var(--twc-btn_ternary_font_color));
+  */
+  --mat-form-field-container-height: 2px;
+  --mat-form-field-container-vertical-padding: 2px;
+  --mdc-filled-text-field-container-color:transparent;
+  --mat-stepper-header-hover-state-layer-color:transparent;
+  --mat-stepper-header-focus-state-layer-color:transparent;
+  --mat-filled-button-hover-state-layer-opacity: 1;
+  --mat-fab-hover-state-layer-opacity:1;
+  --mat-expansion-header-hover-state-layer-color:transparent;
+  --mat-standard-button-toggle-hover-state-layer-opacity:1;
+  --mat-autocomplete-background-color:transparent;
+  --mdc-filled-text-field-input-text-color: hsl(var(--twc-textPrimary))
+}
+
+
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  @apply bg-bgPrim
+}
+::ng-deep .cdk-overlay-pane{
+  @apply bg-warmGray-50
+}
+

@@ -56,14 +56,15 @@ export class Codeplayground_V2Component implements OnInit {
 
   @HostListener('document:mousedown', ['$event'])
   onMouseDown(event: MouseEvent): void {
-    if (event.target === this.splitBarHorizontal1.nativeElement) {
-      this.isHorizontalMouseDown = true;
-      this.startHorizontalX = event.clientX;
-      this.startLeftPanelWidth = this.leftPanel.nativeElement.offsetWidth;
-      this.startCenterPanelWidth = this.contentPanel.nativeElement.offsetWidth - this.startLeftPanelWidth;
-      this.centerPanel.nativeElement.style.pointerEvents = 'none';
+    if(this.splitBarHorizontal1){
+      if (event.target === this.splitBarHorizontal1.nativeElement) {
+        this.isHorizontalMouseDown = true;
+        this.startHorizontalX = event.clientX;
+        this.startLeftPanelWidth = this.leftPanel.nativeElement.offsetWidth;
+        this.startCenterPanelWidth = this.contentPanel.nativeElement.offsetWidth - this.startLeftPanelWidth;
+        this.centerPanel.nativeElement.style.pointerEvents = 'none';
+      }
     }
-
   }
 
   @HostListener('document:mousemove', ['$event'])
@@ -105,20 +106,20 @@ export class Codeplayground_V2Component implements OnInit {
     <html>
       <head>
       <style>
-html{
-display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  width: 100%;
-  height: 100%!important;
-}
-body{
-    display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  width: 100%;
-  height: 100%!important;
-}
+/*html{*/
+/*display: flex;*/
+/*  justify-content: center; !* Centrar horizontalmente *!*/
+/*  align-items: center; !* Centrar verticalmente *!*/
+/*  width: 100%;*/
+/*  height: 100%!important;*/
+/*}*/
+/*body{*/
+/*    display: flex;*/
+/*  justify-content: center; !* Centrar horizontalmente *!*/
+/*  align-items: center; !* Centrar verticalmente *!*/
+/*  width: 100%;*/
+/*  height: 100%!important;*/
+/*}*/
       </style>
         <!--add css cdn-->
       </head>
@@ -134,23 +135,11 @@ body{
     </html>
   `;
     this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
-    // this.renderCode()
-    //  this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
   }
   refreshHtml() {
     var iframe=$('#iframe-'+this.id);
     iframe.contents().find("body").find("main").remove();
-    iframe.contents().find("body").append($("<style >"+this.cssCodes+"</style>"));
-    iframe.contents().find("body").append($("<main >"+this.htmlCodes+"</main>"));
-    iframe.contents().find("body").append($("<script >"+this.jsCodes+"</script>"));
-
-    // this.safeCode = this.sanitizer.bypassSecurityTrustHtml(this.generatedHTML);
-    // const iframeDoc = this.myIframe.nativeElement.contentDocument || this.myIframe.nativeElement.contentWindow.document;
-    // this.generatedHTML=this.safeCode;
-    //
-    // iframeDoc.open();
-    // iframeDoc.write(this.safeCode);
-    // iframeDoc.close();
+    iframe.contents().find("body").append($("<main >"+"<style >"+this.cssCodes+"</style>"+this.htmlCodes+""+"<script>"+this.jsCodes+"</script>"+"</main>"));
 
   }
 }

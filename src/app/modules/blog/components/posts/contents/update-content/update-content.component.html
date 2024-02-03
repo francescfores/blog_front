@@ -43,10 +43,10 @@
                 <p class=" text-md text-textPrimary">
                   Component
                 </p>
-                <app-select-outside *ngIf="postContent.copied_id" class="col-span-12  "  [items]="postContents"
+                <app-select-outside *ngIf="postContent.copied_id" class="col-span-12  "  [items]="components"
                                     [formGroupParent]="form.get(['post'])" [formGroupControlName]="'copied'" [value]="postContent.copied_id"
                 ></app-select-outside>
-                <app-select-outside *ngIf="postContent.recycled_id" class="col-span-12  "   [label]="'component'" [items]="postContents"
+                <app-select-outside *ngIf="postContent.recycled_id" class="col-span-12  "   [label]="'component'" [items]="components"
                                     [formGroupParent]="form.get(['post'])" [formGroupControlName]="'recycled'" [value]="postContent.recycled_id"
                 ></app-select-outside>
                 <div class="col-span-12 flex gap-4 justify-start">
@@ -109,31 +109,41 @@
               </div>
               <div class=" col-span-12 flex flex-col gap-2">
                 <p class=" text-textPrimary">Childs</p>
-                <app-button3d class="" title="Agregar" (click)="agregarSelect()" [type]="'btn_primary'"
-                              [loading_type]="'waves'" [loading]="loading" ></app-button3d>
-                <form  *ngIf="formChilds && postContents" [formGroup]="formChilds"
+                <div class="flex justify-between">
+                  <app-button3d class="" title="Agregar" (click)="agregarSelect()" [type]="'btn_primary'"
+                                [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+                  <app-button3d title="Update" (click)="update()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+                </div>
+                <div *ngFor="let select of selects; let i = index">
+                  <app-autocomplete-filter (newItemEvent)="selectContent($event)" *ngIf="componentsFiltered.length > 0"
+                                           [class]="'w-full min-h-[0.5rem] col-span-12'"
+                                           [options]="componentsFiltered"
+                                           [formGroupParent]="formChilds.get(['childs'])"
+                                           [formGroupControlName]="'subcontent_' + (i + postContent.subcomponents.length)">
+                  </app-autocomplete-filter>
+                </div>
+                <div  *ngIf="postContent.subcomponents.length>0" [formGroup]="formChilds"
                        class="flex flex-wrap w-full">
                   <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    @for (subcomponent of postContent?.subcomponents; track subcomponent) {
-                      <div class="example-box" cdkDrag>
-                        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-                        <p>{{subcomponent.component.name}}</p>
-                        <button (click)="removeContent(subcomponent)" type="button" class="inline-flex items-center p-1 ms-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300" data-dismiss-target="#badge-dismiss-dark" aria-label="Remove">
-                          <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                          </svg>
-                        </button>
-                      </div>
+                    @if (postContent){
+                      @for (subcomponent of postContent.subcomponents; track subcomponent) {
+                        <div class="example-box" cdkDrag>
+                          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                          <p>{{subcomponent.component.name}}</p>
+                          <button (click)="removeContent(subcomponent)" type="button" class="inline-flex items-center p-1 ms-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300" data-dismiss-target="#badge-dismiss-dark" aria-label="Remove">
+                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                          </button>
+                        </div>
+                      }
                     }
                   </div>
-                  <div *ngFor="let select of selects; let i = index">
-                    <app-select-outside [label]="'type'" [items]="postContents"
-                                        [formGroupParent]="formChilds.get(['childs'])"
-                                        [formGroupControlName]="'subcontent_'+(i + postContent.subcomponents.length)"
-                                        [value]="null"></app-select-outside>
-                  </div>
 
-                </form>
+
+                </div>
+
+
               </div>
 
 
@@ -144,7 +154,6 @@
             <div class="flex justify-end items-center gap-2 flex-wrap">
               <!--              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>-->
               <app-button3d (click)="delete(postContent)" title="Delete" [type]="'btn_danger'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
-              <app-button3d title="Update" (click)="update()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
 
             </div>
           </ng-template>

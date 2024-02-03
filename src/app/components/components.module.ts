@@ -31,6 +31,10 @@ import { CodeEditorComponent } from './code-editor/code-editor.component';
 import {CodeEditorModule} from "@ngstack/code-editor";
 import {DynamicComponentLoaderComponent} from "./code-editor/dynamic-component-loader.component";
 import {Codeplayground_V2Component} from "./codeplayground_V2/codeplayground_V2.component";
+import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {AutocompleteFilterComponent} from "./inputs/autocomplete-filter/autocomplete-filter.component";
 
 @NgModule({
   declarations: [
@@ -59,7 +63,8 @@ import {Codeplayground_V2Component} from "./codeplayground_V2/codeplayground_V2.
     GridFlexComponent,
     CodeEditorComponent,
     DynamicComponentLoaderComponent,
-    Codeplayground_V2Component
+    Codeplayground_V2Component,
+    AutocompleteFilterComponent
   ],
   imports: [
     CommonModule,
@@ -68,30 +73,34 @@ import {Codeplayground_V2Component} from "./codeplayground_V2/codeplayground_V2.
     FormsModule,
     ReactiveFormsModule,
     CodeEditorModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatAutocompleteModule
   ],
-    exports: [
-        UserDropdownComponent,
-        IndexDropdownComponent,
-        NotificationDropdownComponent,
-        TableDropdownComponent,
-        PagesDropdownComponent,
-        CardStatsComponent,
-        ButtonDefaultComponent,
-        ButtonFilledComponent,
-        CardDefaultComponent,
-        CardPricingComponent,
-        CardBackgroundComponent,
-        InputDefaultComponent,
-        CardComponent,
-        CodeplaygroundComponent,
-        Button3dComponent,
-        BreadcrumbsComponent,
-        InputOutsiteComponent,
-        SelectOutsideComponent,
-        GridFlexComponent,
-        CodeEditorComponent,
-      Codeplayground_V2Component
-    ],
+  exports: [
+    UserDropdownComponent,
+    IndexDropdownComponent,
+    NotificationDropdownComponent,
+    TableDropdownComponent,
+    PagesDropdownComponent,
+    CardStatsComponent,
+    ButtonDefaultComponent,
+    ButtonFilledComponent,
+    CardDefaultComponent,
+    CardPricingComponent,
+    CardBackgroundComponent,
+    InputDefaultComponent,
+    CardComponent,
+    CodeplaygroundComponent,
+    Button3dComponent,
+    BreadcrumbsComponent,
+    InputOutsiteComponent,
+    SelectOutsideComponent,
+    GridFlexComponent,
+    CodeEditorComponent,
+    Codeplayground_V2Component,
+    AutocompleteFilterComponent,
+  ],
   providers: [DynamicComponentLoaderComponent],
 })
 export class ComponentsModule { }

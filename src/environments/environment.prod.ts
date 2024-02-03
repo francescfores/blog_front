@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://back-api.test/',
+  apiUrl: 'https://blog-back-late-fire-2179.fly.dev/',
   // apiUrl: 'https://laravelapi-production.up.railway.app/',
   // apiEndpoint: 'http://localhost:40151',
   // mapbox: {

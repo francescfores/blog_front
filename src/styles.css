@@ -6,6 +6,49 @@
   tailwind config
 */
 
+/*autocomplet*/
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mdc-line-ripple{
+  display: none;
+
+}
+.mat-form-field-container {
+  height: 2px !important;
+}
+.mat-mdc-form-field-subscript-wrapper {
+  display: none!important;
+}
+
+.mat-mdc-form-field-bottom-align{
+  display: none!important;
+}
+.mat-mdc-form-field-subscript-wrapper {
+  height: 0 !important;
+}
+
+/* styles.css o tu archivo CSS personalizado */
+
+/* Desactivar todos los estilos de mat-autocomplete */
+.mat-autocomplete-trigger,
+.mat-autocomplete-panel {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+.mat-form-field.mat-autocomplete mat-label,
+.mat-form-field.mat-autocomplete mat-placeholder {
+  color: inherit;
+}
+
+.mat-option.mat-active {
+  background-color: transparent;
+}
+
+/*autocomplet*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,7 +61,10 @@
   --rounded-lg: 0.5rem;
   --rounded-xl: 0.75rem;
   --rounded-full: 0.75rem;
+  /*--mat-autocomplete-background-color:transparent;*/
 }
+
+
 /*codemirrror color back*/
 .cm-s-material.CodeMirror {
   /*background-color:  transparent !important;*/

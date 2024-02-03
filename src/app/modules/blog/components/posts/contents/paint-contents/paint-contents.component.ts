@@ -35,10 +35,10 @@ import {ViewportRuler} from "@angular/cdk/overlay";
         </div>
       </div>
     </div>
-    <div  (click)="onClick(content)"  [ngClass]="getAtt(content, 'styles') + '  '+ editing()">
+    <div  (click)="onClick(content)"  [ngClass]="getAtt(content, 'styles') + ' '+ editing()">
       <ng-container *ngIf="content?.type?.name==='codeplayground_v2'; ">
         <app-codeplayground_V2 class="flex w-full my-5"
-                               [id]="0"
+                               [id]="content.id"
                                [height]="getAtt(content, 'height')"
                                [bg_color_1]="getAtt(content, 'bg_color_1')"
                                [bg_color_2]="getAtt(content, 'bg_color_2')"
@@ -51,19 +51,10 @@ import {ViewportRuler} from "@angular/cdk/overlay";
         ></app-codeplayground_V2>
       </ng-container>
       <ng-container *ngIf="content?.type?.name==='text';">
-        {{getAtt(content, 'text_label')}}
+        <p>{{getAtt(subcomponent, 'text_label')}}</p>
       </ng-container>
       <ng-container *ngIf="content?.type?.name==='icon';">
         <i [class]="getAtt(content, 'icon')+' '+ getAtt(content, 'style')"></i>
-      </ng-container>
-
-      <ng-container *ngIf="content?.type?.name==='image3d';">
-        <!--TODO change style.background-image-->
-        <figure class="figure " [ngClass]="content?.type?.name + '-'+ content.id +' '+ setDynamicBackground(content)">
-          <img [src]="environment.apiUrl+'storage/blog/components/'+getAtt(content, 'img_url')"
-               alt="image" class="amt_2"/>
-          <!--<figcaption class="p-4">Rhino</figcaption>-->
-        </figure>
       </ng-container>
       <ng-container *ngIf="content?.type?.name==='img';">
         <ng-container *ngIf="getAtt(content, 'url')==null">
@@ -74,16 +65,44 @@ import {ViewportRuler} from "@angular/cdk/overlay";
                alt="image"/>
         </ng-container>
       </ng-container>
+      <ng-container *ngIf="content?.type?.name==='image3d';">
+        <!--TODO change style.background-image-->
+        <figure class="figure " [ngClass]="content?.type?.name + '-'+ content.id +' '+ setDynamicBackground(content)">
+          <img [src]="environment.apiUrl+'storage/blog/components/'+getAtt(content, 'img_url')"
+               alt="image" class="amt_2"/>
+          <!--<figcaption class="p-4">Rhino</figcaption>-->
+        </figure>
+      </ng-container>
+      <ng-container *ngIf="content?.type?.name==='button';">
+        @if (getAtt(content, 'url')!==null){
+          <a href="{{getAtt(content, 'url')}}" target="_blank">
+            <app-button3d
+              [ngClass]="getAtt(content, 'styles_button') + '  '+ editing()"
+              [title]="getAtt(content, 'label')"
+              [type]="'btn_primary'"
+              [width]="'100%'"
+              [loading_type]="'waves'" [loading]="false" >
+            </app-button3d>
+          </a>
+        } @else {
+          <app-button3d
+            [ngClass]="getAtt(content, 'styles_button') + '  '+ editing()"
+            [title]="getAtt(content, 'label')"
+            [type]="'btn_primary'"
+            [width]="'100%'"
+            [loading_type]="'waves'" [loading]="false" >
+          </app-button3d>
+        }
+      </ng-container>
 
       <ng-container *ngFor="let subcomponent of content.subcomponents">
         <ng-container *ngTemplateOutlet="recursiveContent; context: { $implicit: normalizarSubcomponente(subcomponent) }"></ng-container>
       </ng-container>
-
       <ng-template #recursiveContent let-subcomponent>
         <div (click)="onClick(subcomponent)" (click)="$event.stopPropagation()" [ngClass]="getAtt(subcomponent, 'styles') + ' '+ editing()">
           <ng-container *ngIf="subcomponent?.type?.name==='codeplayground_v2'; ">
             <app-codeplayground_V2 class="flex w-full my-5"
-                                   [id]="0"
+                                   [id]="subcomponent.subcomponent_id"
                                    [height]="getAtt(subcomponent, 'height')"
                                    [bg_color_1]="getAtt(subcomponent, 'bg_color_1')"
                                    [bg_color_2]="getAtt(subcomponent, 'bg_color_2')"
@@ -95,17 +114,16 @@ import {ViewportRuler} from "@angular/cdk/overlay";
                                    [jsCodes]="getAtt(subcomponent, 'js')"
             ></app-codeplayground_V2>
           </ng-container>
-            <ng-container *ngIf="subcomponent?.type?.name==='text';">
-              {{getAtt(subcomponent, 'text_label')}}
+          <ng-container *ngIf="subcomponent?.type?.name==='text';">
+              <p>{{getAtt(subcomponent, 'text_label')}}</p>
             </ng-container>
-          <ng-container *ngIf="subcomponent?.type?.name==='img';">
-          <ng-container *ngIf="getAtt(subcomponent, 'url')==null">
-            <img  [src]="'./assets/img/logo/thunder_logo_dark.png'"  alt="">
+          <ng-container *ngIf="content?.type?.name==='icon';">
+            <i [class]="getAtt(content, 'icon')+' '+ getAtt(content, 'style')"></i>
           </ng-container>
-
-            <ng-container *ngIf="getAtt(subcomponent, 'url')!=null">
+          <ng-container *ngIf="subcomponent?.type?.name==='img';">
+            <ng-container>
               <img [src]="environment.apiUrl+'storage/blog/components/'+getAtt(subcomponent, 'url')"
-                   alt="image" class="{{getAtt(subcomponent, 'style')}}"/>
+                   alt="image" />
             </ng-container>
           </ng-container>
           <ng-container *ngIf="subcomponent?.type?.name==='image3d';">
@@ -116,7 +134,28 @@ import {ViewportRuler} from "@angular/cdk/overlay";
               <!--<figcaption class="p-4">Rhino</figcaption>-->
             </figure>
           </ng-container>
-          <!-- Puedes agregar aquí el contenido específico para los subcomponentes -->
+          <ng-container *ngIf="subcomponent?.type?.name==='button';">
+            @if (getAtt(subcomponent, 'url')!==null){
+              <a href="{{getAtt(subcomponent, 'url')}}" target="_blank">
+                <app-button3d
+                  [ngClass]="getAtt(subcomponent, 'styles_button') + '  '+ editing()"
+                  [title]="getAtt(subcomponent, 'label')"
+                  [type]="'btn_primary'"
+                  [width]="'100%'"
+                  [loading_type]="'waves'" [loading]="false" >
+                </app-button3d>
+              </a>
+            } @else {
+              <app-button3d
+                [ngClass]="getAtt(subcomponent, 'styles_button') + '  '+ editing()"
+                [title]="getAtt(subcomponent, 'label')"
+                [type]="'btn_primary'"
+                [width]="'100%'"
+                [loading_type]="'waves'" [loading]="false" >
+              </app-button3d>
+            }
+          </ng-container>
+
           <ng-container *ngIf="subcomponent.subcomponents && subcomponent.subcomponents.length > 0">
             <ng-container *ngFor="let subSubcomponent of subcomponent.subcomponents">
               <ng-container *ngTemplateOutlet="recursiveContent; context: { $implicit: normalizarSubcomponente(subSubcomponent) }" ></ng-container>
@@ -143,7 +182,7 @@ export class PaintContentsComponent {
 
   @Input() emitClick = true;
   clicked = false;
-   showTree=false;
+  showTree=false;
   @Input() showEditor=false;
 
   onClick(content: any) {
@@ -189,6 +228,7 @@ export class PaintContentsComponent {
   }
 
   editing() {
-    return this.showEditor?'hover:border border-red-400/50 box-border m-auto':'';
+    return this.showEditor?'hover:border-2 border-red-400/50 ':'';
   }
 }
+

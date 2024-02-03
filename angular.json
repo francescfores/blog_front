@@ -13,6 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "jquery",
+              "codemirror"
+            ],
             "outputPath": "dist/blog",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -45,8 +49,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -104,7 +108,7 @@
           }
         }
       }
-    },
+    }
   },
   "cli": {
     "analytics": false

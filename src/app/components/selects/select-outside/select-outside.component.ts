@@ -12,15 +12,10 @@ export class SelectOutsideComponent implements OnInit, AfterViewInit {
   @Input() label!: any;
   @Input() value!: any;
   @Input() items!: any[];
-// FormControl store validators
-  control!: FormControl;
 
   ngAfterViewInit(): void {
     // Fetch Form control (validator) from FormGroup parent
-    this.control = <FormControl>this.formGroupParent.get([this.formGroupControlName]);
-    if (this.value) {
-      this.control.setValue(this.value);
-    }
+
   }
 
   selectItem($event: Event) {

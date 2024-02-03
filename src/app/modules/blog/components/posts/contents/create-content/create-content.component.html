@@ -5,14 +5,13 @@
         <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
           New component
         </h5>
-
       </div>
     </ng-template>
     <div class="py-2 flex flex-wrap">
       <form  [formGroup]="form" class="grid grid-cols-12 w-full gap-4">
-        <app-input-outsite [label]="'name'" class="col-span-6  " [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'name'"></app-input-outsite>
-        <app-input-outsite [label]="'desc'" class="col-span-6  " [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'desc'"></app-input-outsite>
-        <app-select-outside *ngIf="types" class="col-span-6  "  (change)="selectType()" [label]="'Type'" [items]="types" [formGroupParent]="form.get(['postContent'])"
+        <app-input-outsite [label]="'name'" class="col-span-6  " [formGroupParent]="form.get(['component'])" [formGroupControlName]="'name'"></app-input-outsite>
+        <app-input-outsite [label]="'desc'" class="col-span-6  " [formGroupParent]="form.get(['component'])" [formGroupControlName]="'desc'"></app-input-outsite>
+        <app-select-outside *ngIf="types" class="col-span-6  "  [label]="'Type'" [items]="types" [formGroupParent]="form.get(['component'])"
                             [formGroupControlName]="'type'"  value=""></app-select-outside>
         <div class="col-span-6  text-textPrimary flex flex-wrap items-center justify-between">
           <input class="flex justify-between "  type="file" multiple (change)="onFileChange($event)">
@@ -23,7 +22,7 @@
           </p>
           <div class="  mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
             <input
-              [checked]="postContent.global"
+              [checked]="component.global"
               class="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem]
                 border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem]
                 before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent
@@ -34,13 +33,24 @@
               (change)="checkedGlobal($event)"
             />
           </div>
-        </div>-->
-        <div class="col-span-6  grid grid-cols-12 items-end gap-4">
-          <app-select-outside class="col-span-12  "  (change)="selectContent($event)"
-                              [label]="'Component'"
-                              [items]="postContents"
-                              [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'content'" [value]="selectetContent?.id"
-          ></app-select-outside>
+        </div>
+                  <app-autocomplete-filter [class]="'w-full min-h-[0.5rem] col-span-12'"
+                                   [label]="'Components'"
+                                   [formGroupParent]="form.get(['component'])"
+                                   [formGroupControlName]="'component'"
+                                   (change)="selectContent($event)"
+                                   [value]="selectetContent?.id"
+          >
+        -->
+        <div class="col-span-12  grid grid-cols-12 items-end gap-4">
+
+          <app-autocomplete-filter (newItemEvent)="selectContent($event)" *ngIf="componentsFiltered.length>0"
+                                   [class]="'w-full min-h-[0.5rem] col-span-12'"
+                                   [options]="componentsFiltered"
+                                   [formGroupParent]="form.get(['component'])"
+                                   [formGroupControlName]="'component'"
+                                   ></app-autocomplete-filter>
+
           <div class="col-span-12 flex gap-4 justify-start">
             <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
               <input

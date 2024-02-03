@@ -1,0 +1,13 @@
+  <mat-form-field class="" [formGroup]="formGroupParent" style="margin-bottom: -1.25em"
+                  [class]="'bg-bgTern rounded-md mb-0 w-full min-h-[0.5rem] text-textPrimary'">
+    <input [class]="'text-textPrimary'" type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"
+           placeholder="Select option"
+           formControlName="{{formGroupControlName}}">
+    <mat-autocomplete
+      [class]="'bg-bgTern rounded-b-md text-textPrimary'" 
+      #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="addNewItem($event)">
+      @for (option of filteredOptions | async; track option) {
+        <mat-option  [class]="'text-textPrimary'" [value]="option">{{option.name}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>

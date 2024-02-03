@@ -1,6 +1,6 @@
 import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
-import * as $ from "jquery";
+import $ from 'jquery';
 import {Router} from "@angular/router";
 import {ThemeService} from "../../../../services/theme/theme.service";
 import {SidebarService} from "../../services/sidebar.service";

@@ -4,7 +4,7 @@ import {AppComponent} from "./app.component";
 import {AuthModule} from "./modules/auth/auth.module";
 import {LoginAdminComponent} from "./modules/auth/pages/admin/login-admin/login-admin.component";
 import {NonAuthGuard} from "./services/guards/non-auth.guard";
-import {BlogModule2} from "./modules/blog2/blog.module";
+// import {BlogModule2} from "./modules/blog2/blog.module";
 
 const routes: Routes = [
   {
@@ -31,12 +31,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
   },
-  {
-    canActivate: [NonAuthGuard],
-    canActivateChild: [NonAuthGuard],
-    path: '',
-    loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)
-  },
+  // {
+  //   canActivate: [NonAuthGuard],
+  //   canActivateChild: [NonAuthGuard],
+  //   path: '',
+  //   loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)
+  // },
   // admin views
   // { path: "**", redirectTo: "", pathMatch: "full" },
 ];

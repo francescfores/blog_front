@@ -22,4 +22,5 @@ export class PostContent {
   copied_id!: number;
   global!: any;
   copy_childs!: any;
+  subcomponents:PostContent[]=[];
 }
