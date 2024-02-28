@@ -7,30 +7,30 @@ import {NonAuthGuard} from "./services/guards/non-auth.guard";
 // import {BlogModule2} from "./modules/blog2/blog.module";
 
 const routes: Routes = [
-  {
-    canActivate: [NonAuthGuard],
-    canActivateChild: [NonAuthGuard],
-    path: 'admin',
-    loadChildren: () => import('./modules/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-  },
-  {
-    canActivate: [NonAuthGuard],
-    canActivateChild: [NonAuthGuard],
-    path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
-  },
-  {
-    canActivate: [NonAuthGuard],
-    canActivateChild: [NonAuthGuard],
-    path: '',
-    loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
-  },
-  {
-    canActivate: [NonAuthGuard],
-    canActivateChild: [NonAuthGuard],
-    path: '',
-    loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
-  },
+  // {
+  //   canActivate: [NonAuthGuard],
+  //   canActivateChild: [NonAuthGuard],
+  //   path: 'admin',
+  //   loadChildren: () => import('./modules/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+  // },
+  // {
+  //   canActivate: [NonAuthGuard],
+  //   canActivateChild: [NonAuthGuard],
+  //   path: 'auth',
+  //   loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  // },
+  // {
+  //   canActivate: [NonAuthGuard],
+  //   canActivateChild: [NonAuthGuard],
+  //   path: '',
+  //   loadChildren: () => import('./modules/front-layout/front-layout.module').then(m => m.FrontLayoutModule)
+  // },
+  // {
+  //   canActivate: [NonAuthGuard],
+  //   canActivateChild: [NonAuthGuard],
+  //   path: '',
+  //   loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
+  // },
   {
     canActivate: [NonAuthGuard],
     canActivateChild: [NonAuthGuard],

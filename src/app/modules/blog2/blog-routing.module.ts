@@ -51,7 +51,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
+    component: IndexComponent,
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     // data: {
