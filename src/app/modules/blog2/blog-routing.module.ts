@@ -50,8 +50,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'blog2',
-    component: IndexComponent,
+    path: '',
+    component: HomeComponent,
     // canActivate: [NonAuthGuard],
     // canActivateChild: [NonAuthGuard],
     // data: {
