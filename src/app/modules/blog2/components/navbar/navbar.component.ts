@@ -39,30 +39,30 @@ export class NavbarComponent implements OnInit {
     this.themeService.getCurrentTheme().subscribe(theme => {
       this.isDarkEnable = theme === 'theme-dark';
     });
-    this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
-      this.sidebarOpen = sidebarOpen;
-      if(this.transparent && !this.sidebarOpen){
-        $('#navbar').addClass('bg-transparent');
-        $('#navbar').removeClass('bg-bgPrim');
-        window.addEventListener('scroll', this.scroll, true)
-      }else {
-        $('#navbar').removeClass('bg-transparent');
-        $('#navbar').addClass('bg-bgPrim');
-      }
-    });
+    // this.sidebarService.getSidebarState().subscribe(sidebarOpen => {
+    //   this.sidebarOpen = sidebarOpen;
+    //   if(this.transparent && !this.sidebarOpen){
+    //     $('#navbar').addClass('bg-transparent');
+    //     $('#navbar').removeClass('bg-bgPrim');
+    //     window.addEventListener('scroll', this.scroll, true)
+    //   }else {
+    //     $('#navbar').removeClass('bg-transparent');
+    //     $('#navbar').addClass('bg-bgPrim');
+    //   }
+    // });
     // this.client = this.authenticationService.currentClientValue
     // if (!this.client) {
     //   //this.router.navigate(['/auth/login']);
     // }
 
-    if(this.transparent && !this.sidebarOpen){
-      $('#navbar').addClass('bg-transparent');
-      $('#navbar').removeClass('bg-bgPrim');
-      window.addEventListener('scroll', this.scroll, true)
-    }else {
-      $('#navbar').removeClass('bg-transparent');
-      $('#navbar').addClass('bg-bgPrim');
-    }
+    // if(this.transparent && !this.sidebarOpen){
+    //   $('#navbar').addClass('bg-transparent');
+    //   $('#navbar').removeClass('bg-bgPrim');
+    //   window.addEventListener('scroll', this.scroll, true)
+    // }else {
+    //   $('#navbar').removeClass('bg-transparent');
+    //   $('#navbar').addClass('bg-bgPrim');
+    // }
         // window.addEventListener("scroll", this.detectScrollDirection);
     // window.addEventListener('scroll', this.scroll, true)
 
@@ -112,13 +112,13 @@ export class NavbarComponent implements OnInit {
     this.sidebarService.toggleSidebar();
   }
   scroll = (): void => {
-    if(window.scrollY <= 450){
-      $('#navbar').addClass('bg-transparent');
-      $('#navbar').removeClass('bg-bgPrim');
-    }else {
-      $('#navbar').removeClass('bg-transparent');
-      $('#navbar').addClass('bg-bgPrim');
-    }
+    // if(window.scrollY <= 450){
+    //   $('#navbar').addClass('bg-transparent');
+    //   $('#navbar').removeClass('bg-bgPrim');
+    // }else {
+    //   $('#navbar').removeClass('bg-transparent');
+    //   $('#navbar').addClass('bg-bgPrim');
+    // }
     this.detectScrollDirection()
   }
 
