@@ -1,0 +1,318 @@
+/*
+fonts
+ */
+@import url('https://fonts.cdnfonts.com/css/shlop');
+@import url('https://fonts.googleapis.com/css?family=Marvel');
+@import url('https://fonts.cdnfonts.com/css/hyper-viper');
+@import url('https://fonts.cdnfonts.com/css/lazer84');
+@import url('https://fonts.cdnfonts.com/css/da-mad-rave');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.cdnfonts.com/css/rollcage');
+@font-face {
+  font-family: "Exoct";
+  src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")
+}
+
+body{
+  src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf");
+  /*font-family: "Exoct";*/
+  /*font-family: 'Hyper Viper', sans-serif;*/
+  /*font-family: 'lazer84', sans-serif;*/
+  /*font-family: 'Shlop', sans-serif;*/
+  /*font-family: 'Ubuntu', sans-serif;*/
+  font-family: 'Rollcage', sans-serif;
+  letter-spacing: 2px; /* Espacio de 2 píxeles entre las letras */
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--twc-secondary) var(--twc-primary)!important;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--twc-primary)!important;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--twc-secondary)!important;
+  border-radius: 14px;
+  border: 3px solid var(--twc-primary)!important;
+}
+.container {
+  min-height: 100vh;
+  /*   width:90%; */
+  display: flex;
+  flex-wrap:wrap;
+  place-content: end end;
+  gap: 10px;
+  /*   margin:auto;   */
+}
+.content_3d_card{
+  background: black;
+  position: relative;
+  /*transform: rotateZ(40deg);*/
+  /*background: rgb(195,34,67);*/
+  /*background: linear-gradient(207deg, rgba(195,34,67,1) 21%, rgba(255,255,255,0.13207289751838236) 66%),*/
+  /*url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg) top/cover;*/
+}
+.content_3d_card:before {
+  background: linear-gradient(207deg, rgba(195,34,67,1) 21%, rgba(255,255,255,0.13207289751838236) 66%),
+  url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg) top/cover;
+  content: '';
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.figure {
+  flex:flex-start;
+  margin:auto;
+  /*   flex:1; */
+  /*max-height: 260px;*/
+  /*max-width: 240px;*/
+  width: 100%;
+  height:100%;
+  margin-top:0px;
+  aspect-ratio: 1;
+  /*   margin: 0 0 60px; */
+  padding: 5px 20px 0;
+  box-sizing: border-box;
+  display: grid;
+  cursor: pointer;
+  position: relative;
+  /*filter: drop-shadow(0 0 20px rgba(255, 70, 70, 0.63));*/
+  border-radius:0px;
+
+}
+.figure1{
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+  /*filter: drop-shadow(0 0 20px rgb(92, 51, 246));*/
+}
+.figure2{
+  /*filter: drop-shadow(0 0 20px rgb(52, 241, 83));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+.figure3{
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0));
+  /*filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));*/
+}
+.figure4{
+  /*filter: drop-shadow(0 0 20px rgb(229, 38, 38));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+.figure5{
+  /*filter: drop-shadow(0 0 20px rgb(229, 38, 38));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+.figure6{
+  /*filter: drop-shadow(0 0 20px rgb(229, 38, 38));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+.figure7{
+  /*filter: drop-shadow(0 0 20px rgb(229, 38, 38));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+.figure8{
+  /*filter: drop-shadow(0 0 20px rgb(229, 38, 38));*/
+  filter: drop-shadow(0 0 20px rgba(255, 254, 254, 0));
+}
+/*.figure1 figcaption{*/
+/*  color: rgb(130, 100, 243);*/
+/*}*/
+/*.figure2 figcaption{*/
+/*  color: rgb(182, 211, 93);*/
+/*}*/
+/*.figure3 figcaption{*/
+/*  color: rgb(141, 141, 141);*/
+/*}*/
+/*.figure4 figcaption{*/
+/*  color:rgb(229, 38, 38);*/
+/*}*/
+.figure:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: top/cover;
+  transform-origin: bottom;
+  filter: brightness(.9);
+  transition: .5s;
+  border-radius:2px;
+}
+.figure1:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://64.media.tumblr.com/47c08a8cea06364a20db6d3137d221eb/7cbec6d1017fc497-c6/s1280x1920/a4959ce4bff4ed4bfe22b899dc21a22cf8a55a6e.png) top/cover;
+}
+.figure2:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://i.redd.it/xg14j8iflnx71.jpg) top/cover;
+}
+.figure3:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://qph.cf2.quoracdn.net/main-qimg-9ae33dc5b87dbac9b5c979e72b3c426f-lq) top/cover;
+}
+.figure4:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://comicvine.gamespot.com/a/uploads/original/12/124259/8014844-rco026_1619001753.jpg) top/cover;
+}
+.figure5:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://i.ebayimg.com/images/g/1oIAAOSwCp9iS0ia/s-l400.jpg) top/cover;
+}
+.figure6:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://i.ebayimg.com/images/g/1oIAAOSwCp9iS0ia/s-l400.jpg) top/cover;
+}
+.figure7:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://i.ebayimg.com/images/g/1oIAAOSwCp9iS0ia/s-l400.jpg) top/cover;
+}
+.figure8:before {
+  border:solid #131313 5px;
+  background:
+    /*linear-gradient(#0000,rgb(50 50 50 / 100%)),*/
+    url(https://i.ebayimg.com/images/g/1oIAAOSwCp9iS0ia/s-l400.jpg) top/cover;
+}
+.amt_2 {
+  grid-area: 1/1;
+  width: 150%;
+  height: 140%;
+  object-fit: cover;
+  /*   object-position: top; */
+  filter: contrast(.8) brightness(.6);
+  place-self: end center;
+  transition: .5s;
+  max-width: none!important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+figcaption {
+  padding-top:0px;
+  /*   border-radius:14px; */
+  grid-area: 1/1;
+  width: calc(100% + 40px);
+  /*font-family: Exoct;*/
+  font-family: 'Creepster', cursive;
+  font-size: min(32px,5vmin);
+  text-align: center;
+  place-self: end center;
+  transform: perspective(500px) translateY(100%) rotateX(-90deg);
+  backface-visibility: hidden;
+  transform-origin: top;
+  /*background: rgba(0, 0, 0, 0);*/
+  transition: .5s;
+  color:hsl(var(--twc-primary));
+}
+.figure:hover img {
+  width: 160%;
+  height: 145%;
+  margin-bottom:50px;
+  filter: contrast(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  z-index:10000;
+  max-width: none!important;
+}
+.figure:hover::before {
+  filter: brightness(.3);
+  transform: perspective(500px) rotateX(60deg);
+}
+.figure:hover figcaption{
+  transform: perspective(500px)translateY(100%) rotateX(0);
+}
+
+.svg_back  {
+  margin:auto;
+  width: 100%;
+  height:100%;
+  aspect-ratio: 1;
+  padding: 5px 20px 0;
+  box-sizing: border-box;
+  display: grid;
+  cursor: pointer;
+  /*position: relative;*/
+  filter: drop-shadow(0 0 20px rgb(0 0 0/50%));
+  position: absolute;
+  transition: .5s;
+  z-index: 2;
+  object-fit: cover;
+  /*transition: .5s;*/
+  animation: slide_right_left2 0.5s forwards;
+  /*filter: brightness(2);*/
+
+  /*   transition: clip-path 5.5s ease-in-out; /* Transición suave */
+}
+
+.svg_back_clip1 {
+  clip-path: polygon(64% 20%, 86% 0, 100% 0, 100% 70%, 100% 100%, 50% 100%, 26% 100%, 0 100%, 0 14%, 23% 20%);
+}
+.svg_back_clip2 {
+  clip-path: polygon(0 0, 42% 0, 41% 34%, 74% 27%, 75% 16%, 100% 0, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);}
+.svg_back_clip3 {
+  clip-path: polygon(0 0, 8% 29%, 17% 40%, 75% 36%, 75% 81%, 100% 68%, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);
+}
+.svg_back_clip4 {
+  transform:rotateY(30deg)  rotateX(30deg) rotateZ(10deg);
+  clip-path: polygon(0% 15%, 23% 15%, 34% 36%, 60% 36%, 69% 14%, 100% 15%, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);
+}
+
+.figure:hover .svg_back {
+  /*transition: 0.5s;*/
+  filter: brightness(2);
+  /*  transform: perspective(500px) rotateX(60deg); */
+  animation: slide_left_right 0.5s forwards;
+  transform: perspective(400px) translateY(20%) rotateX(70deg);
+}
+
+@keyframes slide_left_right {
+  30% {
+    clip-path:none;
+  }
+  100% {
+    clip-path:none;
+
+  }
+
+}
+@keyframes slide_right_left2 {
+  0% {
+    clip-path: none;
+  }
+
+}
+
+
+
+.section_1_left:before {
+  border-bottom: 560px solid theme('colors.gray.800');
+  border-right: 160px solid transparent;
+  content: "";
+  /*height: 100%;*/
+  right: -158px;
+  position: absolute;
+  transition: .5s ease;
+  width: 0;
+  z-index: 1;
+  display: block;
+}

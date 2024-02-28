@@ -1,0 +1,63 @@
+<div class="flex flex-col gap-2 w-full mx-auto px-10">
+  <app-breadcrumbs></app-breadcrumbs>
+  <div class="mt-4 flex justify-between">
+    <div class="inline-block">
+      <h3 class="font-semibold text-textPrimary text-2xl">Udpate </h3>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="">
+      <div class="flex flex-wrap rounded-lg  justify-start">
+        <app-card class="w-2/4 pr-4">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                Update post
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6 flex flex-wrap">
+            <form *ngIf="form" [formGroup]="form" class="flex flex-col gap-4 flex-wrap w-full">
+              <app-input-outsite [label]="'Name'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'" [value]="form.get(['post'])?.value?.name"></app-input-outsite>
+              <app-input-outsite [label]="'SubName'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'subname'" [value]="form.get(['post'])?.value?.subname"></app-input-outsite>
+              <app-input-outsite [label]="'Desc'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'" [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
+<!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'" ></app-input-outsite>-->
+              <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'"></app-input-outsite>-->
+              <app-select-outside [label]="'Categories'" [items]="categories" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'" [value]="form.get(['post'])?.value?.category"></app-select-outside>
+
+<!--              <div class="col-span-2 sm:col-span-2" >-->
+<!--                <label class="block text-sm font-medium text-gray-700">Categoria</label>-->
+<!--                <select  formControlName="category"  (change)="selectCategory($event)"-->
+<!--                        autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">-->
+<!--                  <option [value]="null">Selecciona una categoria</option>-->
+<!--                  <option *ngFor="let value of this.categories"-->
+<!--                          [value]="value.id">-->
+<!--                    {{value.name}}-->
+<!--                  </option>-->
+<!--                </select>-->
+<!--              </div>-->
+              <input class="text-textPrimary flex flex-wrap" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
+            </form>
+          </div>
+          <ng-template #footerTemplate >
+            <div class="flex justify-end items-center gap-2 flex-wrap">
+<!--              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>-->
+              <app-button3d title="Update" (click)="update()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+
+            </div>
+          </ng-template>
+        </app-card>
+        <app-create-content class="w-2/4" [post_id]="this.id"></app-create-content>
+        <app-show-content class="w-full " [post_id]="this.id"></app-show-content>
+        <div class="w-2/4">
+            <ng-container *ngFor="let content of post.contents" class="">
+              <app-paint-contents class="w-full" [content]="content" (selectContent)="selectContent($event)"></app-paint-contents>
+            </ng-container>
+        </div>
+
+        <app-update-content class="w-2/4 flex lg:sticky lg:top-[62px]" [postContent]="selectetContent" (updatedContent)="getProduct($event)"></app-update-content>
+        <div class="grid grid-cols-3 grid-cols-4 grid-cols-5"></div>
+      </div>
+    </div>
+  </div>
+</div>

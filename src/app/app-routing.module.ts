@@ -31,12 +31,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule)
   },
-  // {
-  //   canActivate: [NonAuthGuard],
-  //   canActivateChild: [NonAuthGuard],
-  //   path: '',
-  //   loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)
-  // },
+  {
+    canActivate: [NonAuthGuard],
+    canActivateChild: [NonAuthGuard],
+    path: '',
+    loadChildren: () => import('./modules/blog2/blog.module').then(m => m.BlogModule2)
+  },
   // admin views
   // { path: "**", redirectTo: "", pathMatch: "full" },
 ];
@@ -47,3 +47,4 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule {}
+

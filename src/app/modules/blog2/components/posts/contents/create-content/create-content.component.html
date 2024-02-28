@@ -1,0 +1,33 @@
+<ng-container>
+  <app-card class="">
+    <ng-template #headerTemplate >
+      <div class="">
+        <h5 class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+          New Content
+        </h5>
+      </div>
+    </ng-template>
+    <div class="py-6 flex flex-wrap">
+      <form  [formGroup]="form" class="flex flex-col gap-4 flex-wrap w-full">
+        <app-input-outsite [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'num'"></app-input-outsite>
+        <app-input-outsite [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'name'"></app-input-outsite>
+        <app-input-outsite [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'desc'"></app-input-outsite>
+<!--        <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'"></app-input-outsite>-->
+<!--        <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img_url'"></app-input-outsite>-->
+<!--        <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'img'"></app-input-outsite>-->
+        <!--              <app-input-outsite [formGroupParent]="form.get(['post'])" [formGroupControlName]="'category'"></app-input-outsite>-->
+        <app-select-outside (change)="selectType()" [label]="'Type'" [items]="types" [formGroupParent]="form.get(['postContent'])" [formGroupControlName]="'type'" [value]="form.get(['postContent'])?.value?.type"></app-select-outside>
+
+        <input class="text-textPrimary flex flex-wrap" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
+      </form>
+    </div>
+    <ng-template #footerTemplate >
+      <div class="flex justify-end items-center gap-2 flex-wrap">
+        <!--            <app-button3d [width]="'120px'" [type]="'btn_disabled'"   [height]="'20px'"  [raise]="5"></app-button3d>-->
+        <!--            <app-button3d [width]="'120px'" [type]="'btn_primary'"  [height]="'30px'" [raise]="5"  ></app-button3d>-->
+        <!--              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>-->
+        <app-button3d title="Create" (click)="create()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+      </div>
+    </ng-template>
+  </app-card>
+</ng-container>

@@ -1,0 +1,74 @@
+<div class="flex flex-col gap-2 w-full" *ngIf="!loading">
+  <div class="w-full lg:sticky lg:top-[62px]">
+      <div class="flex flex-wrap rounded-lg  justify-start">
+        <app-card class="w-full">
+          <ng-template #headerTemplate >
+            <div class="">
+              <h5 *ngIf="postContent" class="text-xl font-semibold leading-snug tracking-normal text-textPrimary antialiased">
+                Update content {{postContent.name}}
+              </h5>
+            </div>
+          </ng-template>
+          <div class="py-6 flex flex-wrap w-full">
+            <form *ngIf="form" [formGroup]="form" class="grid grid-cols-1 w-full flex gap-10">
+              <div class="grid grid-cols-2 flex gap-5">
+                <p class="col-span-2 text-textPrimary">Data</p>
+                  <div class="col-span-1 flex gap-5">
+                    <app-input-outsite [label]="'name'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'name'" [value]="form.get(['post'])?.value?.name"></app-input-outsite>
+                    <app-input-outsite [label]="'desc'" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'desc'" [value]="form.get(['post'])?.value?.desc"></app-input-outsite>
+                  </div>
+                  <div class="col-span-1 flex gap-5 items-center">
+                    <app-select-outside class="flex w-full" [label]="'type'" [items]="types" [formGroupParent]="form.get(['post'])" [formGroupControlName]="'type'" [value]="form.get(['post'])?.value?.type"></app-select-outside>
+                    <input class="text-textPrimary flex flex-wrap w-full" style="width: inherit;" type="file" multiple (change)="onFileChange($event)">
+                  </div>
+               </div>
+              <div class="grid grid-cols-2 flex gap-5">
+                <div class="col-span-1 flex flex-col gap-5">
+                  <p class="text-textPrimary">Default attrs</p>
+                  <form  *ngIf="formAttr" [formGroup]="formAttr" class="flex flex-col gap-5 flex-wrap w-full">
+                    <div *ngFor="let attribute of postContent?.type?.attributes">
+                      <app-input-outsite [label]="attribute.name" [formGroupParent]="formAttr.get(['attr'])" [formGroupControlName]="attribute.name"
+                                         [value]="formAttr.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-span-1 flex flex-col gap-5">
+                  <p class="col-span-2 text-textPrimary">Override attrs</p>
+                  <form  *ngIf="formAttr2" [formGroup]="formAttr2" class="flex flex-col gap-5 flex-wrap w-full">
+                    <div *ngFor="let attribute of postContent.type.attributes">
+                      <app-input-outsite [label]="attribute.name" [formGroupParent]="formAttr2.get(['attr'])" [formGroupControlName]="attribute.name" [value]="formAttr2.get(['attr'])?.value?.attribute?.name"></app-input-outsite>
+                    </div>
+                  </form>
+                </div>
+               </div>
+              <div class="grid grid-cols-2 flex gap-5">
+                  <p class="col-span-2 text-textPrimary">Childs</p>
+                <form  *ngIf="formChilds && postContents" [formGroup]="formChilds" class="grid grid-cols-2 md:grid-cols-4 col-span-2 flex gap-5 flex-wrap w-full">
+                  <div *ngFor="let subcontent of postContent.subcontents; let i = index">
+                    <app-select-outside [label]="'type'" [items]="postContents"
+                                        [formGroupParent]="formChilds.get(['childs'])"
+                                        [formGroupControlName]="'subcontent_'+i"
+                                        [value]="subcontent.id"></app-select-outside>
+                  </div>
+                  <div *ngFor="let select of selects; let i = index">
+                    <app-select-outside [label]="'type'" [items]="postContents"
+                                        [formGroupParent]="formChilds.get(['childs'])"
+                                        [formGroupControlName]="'subcontent_'+(i + postContent.subcontents.length)"
+                                        [value]="null"></app-select-outside>
+                  </div>
+                </form>
+                <button (click)="agregarSelect()">Agregar Select</button>
+              </div>
+            </form>
+          </div>
+          <ng-template #footerTemplate >
+            <div class="flex justify-end items-center gap-2 flex-wrap">
+              <!--              <app-button3d title="Read More" [height]="'30px'" [type]="'btn_disabled'"  ></app-button3d>-->
+              <app-button3d title="Update" (click)="update()" [type]="'btn_primary'" [loading_type]="'waves'" [loading]="loading" ></app-button3d>
+
+            </div>
+          </ng-template>
+        </app-card>
+      </div>
+  </div>
+</div>
