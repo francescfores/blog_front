@@ -790,6 +790,10 @@ html {
   float: left;
 }
 
+.-m-1 {
+  margin: -0.25rem;
+}
+
 .-m-16 {
   margin: -4rem;
 }
@@ -1058,6 +1062,10 @@ html {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .mt-5 {
@@ -3347,16 +3355,6 @@ html {
   color: hsl(var(--twc-primary) / var(--twc-primary-opacity, var(--tw-text-opacity)));
 }
 
-.text-primary-2 {
-  --tw-text-opacity: 1;
-  color: hsl(var(--twc-primary-2) / var(--twc-primary-2-opacity, var(--tw-text-opacity)));
-}
-
-.text-primary-3 {
-  --tw-text-opacity: 1;
-  color: hsl(var(--twc-primary-3) / var(--twc-primary-3-opacity, var(--tw-text-opacity)));
-}
-
 .text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
@@ -3387,16 +3385,6 @@ html {
   color: hsl(var(--twc-secondary) / var(--twc-secondary-opacity, var(--tw-text-opacity)));
 }
 
-.text-secondary-2 {
-  --tw-text-opacity: 1;
-  color: hsl(var(--twc-secondary-2) / var(--twc-secondary-2-opacity, var(--tw-text-opacity)));
-}
-
-.text-secondary-3 {
-  --tw-text-opacity: 1;
-  color: hsl(var(--twc-secondary-3) / var(--twc-secondary-3-opacity, var(--tw-text-opacity)));
-}
-
 .text-slate-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -3415,6 +3403,11 @@ html {
 .text-textTertiary {
   --tw-text-opacity: 1;
   color: hsl(var(--twc-textTertiary) / var(--twc-textTertiary-opacity, var(--tw-text-opacity)));
+}
+
+.text-warmGray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 .text-warning {
@@ -5080,6 +5073,10 @@ html {
     grid-column: span 2 / span 2;
   }
 
+  .md\:-m-2 {
+    margin: -0.5rem;
+  }
+
   .md\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -5146,6 +5143,10 @@ html {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -5173,6 +5174,10 @@ html {
 
   .md\:p-16 {
     padding: 4rem;
+  }
+
+  .md\:p-2 {
+    padding: 0.5rem;
   }
 
   .md\:px-0 {
@@ -5359,6 +5364,11 @@ html {
     padding-right: 5rem;
   }
 
+  .lg\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .lg\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -5371,6 +5381,10 @@ html {
 
   .lg\:pt-10 {
     padding-top: 2.5rem;
+  }
+
+  .lg\:pt-12 {
+    padding-top: 3rem;
   }
 
   .lg\:pt-4 {
