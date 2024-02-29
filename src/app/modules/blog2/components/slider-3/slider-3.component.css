@@ -11,7 +11,7 @@
 }
 /*.slider_body *{*/
 /*  width: 100%;*/
-/*  height: 520px;*/
+/*  height: 720px;*/
 /*  !*position: relative;*!*/
 /*  !*display: block;*!*/
 /*  !*margin: 0 auto;*!*/
@@ -42,18 +42,18 @@ input{
 /* -------------------------------------------------------- codepen */
 /* -------------------------------------------------------- slider */
 .slider{
-  height: 520px;
+  height: 720px;
   margin-bottom: 40px;
   overflow: hidden;
 }
 /* -------------------------------------------------------- slide */
 .slider > ul {
-  height: 520px;
+  height: 720px;
   z-index: 12;
 }
 
 .slider > ul > li{
-  height: 520px;
+  height: 720px;
   width: 100%;
   position: absolute;
   opacity: 0;
@@ -68,34 +68,44 @@ input{
 .slider > #input-slide-0:checked ~ ul > li.slide-0,
 .slider > #input-slide-1:checked ~ ul > li.slide-1,
 .slider > #input-slide-2:checked ~ ul > li.slide-2,
-.slider > #input-slide-3:checked ~ ul > li.slide-3{
+.slider > #input-slide-3:checked ~ ul > li.slide-3,
+.slider > #input-slide-4:checked ~ ul > li.slide-4,
+.slider > #input-slide-5:checked ~ ul > li.slide-5{
   opacity: 1;
   z-index: 2;
   /*background: #ef4444;*/
   /*height: 9900px;*/
-
 }
 .slider > ul > li.slide-0{
-  background: linear-gradient(180deg, hsl(var(--twc-bgSeco)/ 0.3) 21%, hsl(var(--twc-secondary)/ 0.4) 70%),
-  url(../../assets/img/brown-texture.jpg) top/cover;
-/*url(../../assets/img/white-paper-texture.jpg) top/cover;*/
+  background: linear-gradient(180deg, hsl(var(--twc-bgSeco)/ 0.7) 21%, hsl(var(--twc-secondary)/ 0.5) 70%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
+
+  /*url(../../assets/img/white-paper-texture.jpg) top/cover;*/
 
   /*background: hsl(var(--twc-bgTern));*/
   /*@apply bg-gradient-to-b from-bgPrim via-bgSeco to-bgTern;*/
 }
 .slider > ul > li.slide-1{
-  background: linear-gradient(180deg, hsl(var(--twc-bgSeco)/ 0.3) 21%, hsl(var(--twc-secondary)/ 0.4) 70%),
-  url(../../assets/img/fabric-paper-texture-background.jpg) top/cover;
+  background: linear-gradient(90deg, hsl(var(--twc-bgSeco)/ 0) 21%, hsl(var(--twc-secondary)/ 0.9) 70%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
   /*@apply bg-gradient-to-b from-bgPrim via-bgSeco to-bgTern;*/
 }
 .slider > ul > li.slide-2{
-  background: linear-gradient(90deg, hsl(var(--twc-primary)/ 0.5) 50%, hsl(var(--twc-secondary)/ 0.5) 50%),
-  url(../../assets/img/brown-texture.jpg) top/cover;
+  background: linear-gradient(90deg, hsl(var(--twc-secondary)/ 1) 40%, hsl(var(--twc-secondary)/ 0.2) 60%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
 }
 
 .slider > ul > li.slide-3{
-  background: linear-gradient(90deg, hsl(var(--twc-primary)/ 0.5) 50%, hsl(var(--twc-secondary)/ 0.5) 50%),
-  url(../../assets/img/brown-texture.jpg) top/cover;
+  background: linear-gradient(90deg, hsl(var(--twc-primary)/ 0) 50%, hsl(var(--twc-secondary)/ 0.9) 50%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
+}
+.slider > ul > li.slide-4{
+  background: linear-gradient(90deg, hsl(var(--twc-secondary)/ 1) 40%, hsl(var(--twc-secondary)/ 0.2) 60%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
+}
+.slider > ul > li.slide-5{
+  background: linear-gradient(90deg, hsl(var(--twc-primary)/ 0) 50%, hsl(var(--twc-secondary)/ 0.9) 50%),
+  url(../../../../../assets/img/paletudo/banner/sofa-de-palets.jpg) top/cover  fixed;
 }
 /* -------------------------------------------------------- arrow */
 
@@ -113,7 +123,7 @@ input{
   z-index: 100;
   /*font-size: 0;  */
   height: 40px;
-  @apply absolute top-[520px] bg-bgPrim;
+  @apply absolute top-[720px] bg-bgPrim;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -451,7 +461,7 @@ input{
 
 /*claw end*/
 .slider_waves {
-  @apply absolute text-center top-[448px] min-w-[600px];
+  @apply absolute text-center top-[648px] min-w-[600px];
   /*position: relative;*/
   /*text-align: center;*/
   /*margin-top: -104px;*/
@@ -472,7 +482,9 @@ input{
 .slider > #input-slide-0:checked ~ div > .slider-dot > label.slide-0,
 .slider > #input-slide-1:checked ~ div > .slider-dot > label.slide-1,
 .slider > #input-slide-2:checked ~ div > .slider-dot > label.slide-2,
-.slider > #input-slide-3:checked ~ div > .slider-dot > label.slide-3 {
+.slider > #input-slide-3:checked ~ div > .slider-dot > label.slide-3,
+.slider > #input-slide-4:checked ~ div > .slider-dot > label.slide-4,
+.slider > #input-slide-5:checked ~ div > .slider-dot > label.slide-5 {
   background-color: hsl(var(--twc-primary));
 }
 .slider > div  > .slider-dot > label:hover{
@@ -639,6 +651,20 @@ input{
   animation: dot 32000ms infinite 14000ms;
 }
 .slider > #input-slide-autoplay:checked ~ div > .slider-dot > label.slide-3{
+  -webkit-animation: dot 32000ms infinite 22000ms;
+  -moz-animation: dot 32000ms infinite 22000ms;
+  -ms-animation: dot 32000ms infinite 22000ms;
+  -o-animation: dot 32000ms infinite 22000ms;
+  animation: dot 32000ms infinite 22000ms;
+}
+.slider > #input-slide-autoplay:checked ~ div > .slider-dot > label.slide-4{
+  -webkit-animation: dot 32000ms infinite 22000ms;
+  -moz-animation: dot 32000ms infinite 22000ms;
+  -ms-animation: dot 32000ms infinite 22000ms;
+  -o-animation: dot 32000ms infinite 22000ms;
+  animation: dot 32000ms infinite 22000ms;
+}
+.slider > #input-slide-autoplay:checked ~ div > .slider-dot > label.slide-5{
   -webkit-animation: dot 32000ms infinite 22000ms;
   -moz-animation: dot 32000ms infinite 22000ms;
   -ms-animation: dot 32000ms infinite 22000ms;

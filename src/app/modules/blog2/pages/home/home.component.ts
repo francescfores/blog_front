@@ -37,19 +37,19 @@ export class HomeComponent implements OnInit, AfterViewInit{
   categories!: PostCategory[];
   isDarkEnable = false;
   sidebarOpen= false;
-
-  visibleElements: HTMLElement[] = [];
-  private eventManager: any; // Declarar el tipo adecuado para el objeto eventManager
   //
-  private ns: string = "http://www.w3.org/2000/svg";
-  private d: string = "M0,0 Q5,-5 10,0 5,5 0,0z";
-  private stems!: HTMLCollectionOf<HTMLElement>;
-  private leaves!: HTMLCollectionOf<HTMLElement>;
-  private svg!: HTMLElement;
-  private leafCount: number = 30;
-  private plants: number = 10;
-  private centerX: number = 275;
-  private offsetX: number = 175;
+  // visibleElements: HTMLElement[] = [];
+  // private eventManager: any; // Declarar el tipo adecuado para el objeto eventManager
+  // //
+  // private ns: string = "http://www.w3.org/2000/svg";
+  // private d: string = "M0,0 Q5,-5 10,0 5,5 0,0z";
+  // private stems!: HTMLCollectionOf<HTMLElement>;
+  // private leaves!: HTMLCollectionOf<HTMLElement>;
+  // private svg!: HTMLElement;
+  // private leafCount: number = 30;
+  // private plants: number = 10;
+  // private centerX: number = 275;
+  // private offsetX: number = 175;
   //
   constructor(
     private router: Router,
@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   ];
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    const windowCenter = window.innerHeight / 2;
+    const windowCenter = window.innerHeight / 1.6;
 
     for (const animation of this.animations) {
       const elementRect = animation.element.getBoundingClientRect();

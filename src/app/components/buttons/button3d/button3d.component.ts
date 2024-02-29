@@ -15,8 +15,8 @@ import {BehaviorSubject, distinctUntilChanged, Subscription} from "rxjs";
   templateUrl: './button3d.component.html',
   styleUrls: [
     './button3d.component.css',
-    //'./button3d_theme_default.component.css',
-     './button3d_theme_rick_morty.component.css',
+    './button3d_theme_default.component.css',
+    //  './button3d_theme_rick_morty.component.css',
     // './button3d_theme_futurama.component.css'
   ]
 })

@@ -76,7 +76,7 @@ button {
   width:var(--width);
   top:0;
   background: var(--bg_front_color);
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   justify-content: center;
   border-radius:var(--rounded);

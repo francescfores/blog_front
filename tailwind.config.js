@@ -146,12 +146,12 @@ module.exports = {
   //   // }),
     createThemes({
       light: {
-        'primary': '#92c200',
-        'primary-2': '#d6ff5c',
-        'primary-3': '#e8ffa1',
-        'secondary': '#E5BA37E8', //'#70d0f8',
-        'secondary-2': '#D3B654E8', //'#70d0f8',
-        'secondary-3': '#E3D9B8E8', //'#70d0f8',
+        'primary': '#9E7D61',
+        'primary-2': '#daa77c',
+        'primary-3': '#e0cbbb',
+        'secondary': '#989898', //'#70d0f8',
+        'secondary-2': '#C4C4C4', //'#70d0f8',
+        'secondary-3': '#d9d9d9', //'#70d0f8',
         'ternary': '#29335C', //'#29335C',
         'success': '#70c183', //'#70C1B3',
         'info': '#2E72B2', //'#29335C',
@@ -175,23 +175,23 @@ module.exports = {
         // 'border-color': '#E85651',
 
         //for 3d button
-        'btn_primary_border_style': 'rgba(91,189,58,0.8)',
-        'btn_primary_bg_front_color': '#92c200',
-        'btn_primary_bg_shadow_color': '#4B4B4B20',
-        'btn_primary_bg_back_color': 'rgba(82,169,52,0.8)',
-        'btn_primary_font_color': '#eafcb7',
+        'btn_primary_border_style': '#7e6551',
+        'btn_primary_bg_front_color': '#9E7D61',
+        'btn_primary_bg_shadow_color': '#D9D9D949',
+        'btn_primary_bg_back_color': '#675446',
+        'btn_primary_font_color': '#fff',
 
-        'btn_secondary_border_style': 'rgba(238,217,153,0.91)',
-        'btn_secondary_bg_front_color': '#FAFAFA',
+        'btn_secondary_border_style': '#b4b4b4',
+        'btn_secondary_bg_front_color': '#C4C4C4',
         'btn_secondary_bg_shadow_color': '#D9D9D949',
-        'btn_secondary_bg_back_color': '#E5BA37E8',
-        'btn_secondary_font_color': 'rgba(164,131,33,0.91)',
+        'btn_secondary_bg_back_color': '#8a8a8a',
+        'btn_secondary_font_color': '#505050',
 
-        'btn_ternary_border_style': '#69b5e0',
-        'btn_ternary_bg_front_color': '#AAD3EA',
+        'btn_ternary_border_style': '#9ab789',
+        'btn_ternary_bg_front_color': '#c0e0ae',
         'btn_ternary_bg_shadow_color': '#D9D9D949',
-        'btn_ternary_bg_back_color': '#57A9D4',
-        'btn_ternary_font_color': '#2875A0',
+        'btn_ternary_bg_back_color': '#819a73',
+        'btn_ternary_font_color': '#5a6b52',
 
         'btn_anchor_border_style': 'transparent',
         'btn_anchor_bg_front_color': 'transparent',
@@ -213,12 +213,12 @@ module.exports = {
 
       },
       dark: {
-        'primary': '#92c200',
-        'primary-2': '#d6ff5c',
-        'primary-3': '#e8ffa1',
-        'secondary': '#E5BA37E8', //'#70d0f8',
-        'secondary-2': '#D3B654E8', //'#70d0f8',
-        'secondary-3': '#E3D9B8E8', //'#70d0f8',
+        'primary': '#9E7D61',
+        'primary-2': '#daa77c',
+        'primary-3': '#e0cbbb',
+        'secondary': '#989898', //'#70d0f8',
+        'secondary-2': '#C4C4C4', //'#70d0f8',
+        'secondary-3': '#d9d9d9', //'#70d0f8',
         'ternary': '#92c200', ///29335C99 //17BEBBE4 29335C99
         'success': '#70C18399', //'#70C1B3',
         'info': '#2E72B299', //'#29335C',
@@ -243,12 +243,11 @@ module.exports = {
         'link-color': '#41FF6CCA',
         // 'border-color': '#E85651',
 
-        //for 3d button
-        'btn_primary_border_style': 'rgba(91,189,58,0.8)',
-        'btn_primary_bg_front_color': 'rgba(149,212,74,0.8)',
-        'btn_primary_bg_shadow_color': '#4B4B4B20',
-        'btn_primary_bg_back_color': 'rgba(82,169,52,0.8)',
-        'btn_primary_font_color': '#3F8228',
+        'btn_primary_border_style': '#531849',
+        'btn_primary_bg_front_color': '#8B3357',
+        'btn_primary_bg_shadow_color': '#D9D9D949',
+        'btn_primary_bg_back_color': '#531849',
+        'btn_primary_font_color': '#fff',
 
         'btn_secondary_border_style': '#b3e5e1',
         'btn_secondary_bg_front_color': '#FAFAFA',
@@ -256,7 +255,7 @@ module.exports = {
         'btn_secondary_bg_back_color': '#349890',
         'btn_secondary_font_color': '#1A4C48',
 
-        'btn_ternary_border_style': '#57A9D4',
+        'btn_ternary_border_style': '#69b5e0',
         'btn_ternary_bg_front_color': '#AAD3EA',
         'btn_ternary_bg_shadow_color': '#D9D9D949',
         'btn_ternary_bg_back_color': '#57A9D4',
@@ -293,25 +292,25 @@ module.exports = {
   //   // require('tw-elements/dist/plugin'),
   //   // require('@tailwindcss/aspect-ratio'),
   ],
-  safelist: [
-    'text-2xl',
-    'text-3xl',
-    'text-4xl',
-    'text-5xl',
-    'text-6xl',
-    'text-7xl',
-    'text-8xl',
-    'text-9xl',
-    {
-      pattern: /bg-(red|green|blue)-(100|200|300|600)/,
-      //pattern: /bg-+/
-      variants: ['dark','sm','md','lg','xl', 'hover', 'focus', 'lg:hover'],
-    },
-    {
-      pattern: /text-(xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/,
-      //pattern: /bg-+/
-      variants: ['sm','md','lg','xl'],
-    },
-  ],
+  // safelist: [
+  //   'text-2xl',
+  //   'text-3xl',
+  //   'text-4xl',
+  //   'text-5xl',
+  //   'text-6xl',
+  //   'text-7xl',
+  //   'text-8xl',
+  //   'text-9xl',
+  //   {
+  //     pattern: /bg-(red|green|blue)-(100|200|300|600)/,
+  //     //pattern: /bg-+/
+  //     variants: ['dark','sm','md','lg','xl', 'hover', 'focus', 'lg:hover'],
+  //   },
+  //   {
+  //     pattern: /text-(xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/,
+  //     //pattern: /bg-+/
+  //     variants: ['sm','md','lg','xl'],
+  //   },
+  // ],
 };
 
