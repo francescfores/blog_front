@@ -93,7 +93,7 @@ input{
 
 /* -------------------------------------------------------- dot */
 .text_font_marvel{
-  font-family: 'Da Mad Rave', sans-serif;
+  /*font-family: 'Da Mad Rave', sans-serif;*/
 }
 .slider > .slider-dot {
   position: relative;

@@ -1,0 +1,37 @@
+        <section class="">
+          <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 rounded-lg  ">
+            <div class=" bg-gray-800 text-white
+               px-4 lg:px-20 py-10
+              section_1_left w-full relative flex flex-col z-20 h-full justify-center ">
+              <div class=" flex flex-col justify-center items-center">
+                <h6 class="mb-4 text-lg font-semibold uppercase leading-relaxed antialiased text-primary">
+                  Marvel Insider
+                </h6>
+                <h4 class="text-3xl font-semibold leading-snug tracking-normal antialiased text-textSecondary">
+                  Watch, Earn, Redeem!​                </h4>
+                <div class="py-6">
+                  <p class="mb-6 text-base font-light leading-relaxed text-inherit antialiased text-textSecondary">
+                    Get rewarded for doing what you already do as a fan.​</p>
+                  <app-button3d
+                    [rounded]="'5px'" [title]="''" [bg_front_color]="'linear-gradient(rgb(50 50 50 / 20%),rgb(50 50 50 / 80%)), ' +
+                     ' url(https://e0.pxfuel.com/wallpapers/625/392/desktop-wallpaper-marvel-logo-thumbnail.jpg)' +
+                      ' center/cover'"
+                    font_size="22" font_body_weight="900" [height]="'55px'"
+                    [bg_back_color]="'#1e1e1e'"
+                    [border_style]="'solid #181818 var(--border)'"
+                    [width]="'100%'" [raise]="6">
+                    <div class="flex gap-3 justify-between items-center uppercase">
+                      <p>Read More </p>
+                      <i class="fas fa-light fa-arrow-right  text-xs"></i>
+                    </div>
+                  </app-button3d>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="section_1_right flex relative z-10 w-full h-[560px]">
+              <img class="w-full h-full " src="https://cdn.marvel.com/content/1x/01-mi-promo-april2020-featured-half-dsk-1140x680_4.jpg">
+            </div>
+          </div>
+        </section>

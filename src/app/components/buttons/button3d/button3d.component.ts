@@ -28,7 +28,7 @@ export class Button3dComponent implements OnInit{
   @Input() height ='30px';
   @Input() width ='';
   @Input() raise =5;
-  @Input() rounded ='20px';
+  @Input() rounded ='4px';
   // @Input() rotate ='';
   // @Input() rotate_invers ='';
   @Input() border ='';
@@ -60,7 +60,9 @@ export class Button3dComponent implements OnInit{
   ngOnChanges(changes: SimpleChanges): void {
 
     if(this.loading_type!==''){
+      console.log('loading_type')
       if (changes['loading']) {
+        console.log('changessssssss')
 
         const loading = changes['loading'].currentValue;
         const previousValue = changes['loading'].previousValue;
@@ -174,6 +176,7 @@ export class Button3dComponent implements OnInit{
     style.setProperty('--bg_back_color', this.bg_back_color !== '' ? this.bg_back_color : '');
     style.setProperty('--font_color', this.font_color !== '' ? this.font_color : '');
     style.setProperty('--font_size', this.font_size !== '' ? this.font_size : '');
+    style.setProperty('--font_body_weight', this.font_body_weight !== '' ? this.font_body_weight : '');
 
     style.setProperty('--raise', this.raise+'px');
     let raise=this.raise;

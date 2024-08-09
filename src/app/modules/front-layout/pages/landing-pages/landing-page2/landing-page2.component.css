@@ -1,44 +1,51 @@
 /*
 fonts
  */
-@import url('https://fonts.cdnfonts.com/css/shlop');
-@import url('https://fonts.googleapis.com/css?family=Marvel');
-@import url('https://fonts.cdnfonts.com/css/hyper-viper');
-@import url('https://fonts.cdnfonts.com/css/lazer84');
-@import url('https://fonts.cdnfonts.com/css/da-mad-rave');
-@font-face {
-  font-family: "Exoct";
-  src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")
-}
-.text_font_marvel{
-  src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf");
-  /*font-family: "Exoct";*/
-  /*font-family: 'Hyper Viper', sans-serif;*/
-  /*font-family: 'lazer84', sans-serif;*/
-  /*font-family: 'Shlop', sans-serif;*/
-  font-family: 'Da Mad Rave', sans-serif;
-}
+/*@import url('https://fonts.cdnfonts.com/css/shlop');*/
+/*@import url('https://fonts.googleapis.com/css?family=Marvel');*/
+/*@import url('https://fonts.cdnfonts.com/css/hyper-viper');*/
+/*@import url('https://fonts.cdnfonts.com/css/lazer84');*/
+/*@import url('https://fonts.cdnfonts.com/css/da-mad-rave');*/
+/*@font-face {*/
+/*  !*font-family: "Exoct";*!*/
+/*  !*src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")*!*/
+/*  !*font-family: "Marvel-Regular";*!*/
+/*  font-family: "MarvelRegular-Dj83";*/
+/*  src: url("fonts/MarvelRegular-Dj83.ttf") format("truetype");*/
+/*  !*src: url("fonts/Marvel-Regular.ttf") format("truetype");*!*/
+/*}*/
+
+/*.text_font_marvel{*/
+/*  font-family: 'Da Mad Rave', sans-serif;*/
+/*  !*font-family: "Marvel-Regular";*!*/
+/*  !*font-family: "MarvelRegular-Dj83";*!*/
+/*  !*font-family: "Creepster";*!*/
+/*  !*font-family: 'Hyper Viper', sans-serif;*!*/
+/*  !*font-family: 'lazer84', sans-serif;*!*/
+/*  !*font-family: 'Shlop', sans-serif;*!*/
+/*  !*font-family: 'Da Mad Rave', sans-serif;*!*/
+/*}*/
 /* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--twc-secondary) var(--twc-primary)!important;
-}
+/** {*/
+/*  scrollbar-width: thin;*/
+/*  scrollbar-color: var(--twc-secondary) var(--twc-primary)!important;*/
+/*}*/
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 15px;
-}
+/*!* Chrome, Edge, and Safari *!*/
+/**::-webkit-scrollbar {*/
+/*  width: 15px;*/
+/*}*/
 
-*::-webkit-scrollbar-track {
-  background: var(--twc-primary)!important;
-  border-radius: 5px;
-}
+/**::-webkit-scrollbar-track {*/
+/*  background: var(--twc-primary)!important;*/
+/*  border-radius: 50px;*/
+/*}*/
 
-*::-webkit-scrollbar-thumb {
-  background-color: var(--twc-secondary)!important;
-  border-radius: 14px;
-  border: 3px solid var(--twc-primary)!important;
-}
+/**::-webkit-scrollbar-thumb {*/
+/*  background-color: var(--twc-secondary)!important;*/
+/*  border-radius: 14px;*/
+/*  border: 3px solid var(--twc-primary)!important;*/
+/*}*/
 .container {
   min-height: 100vh;
   /*   width:90%; */
@@ -57,19 +64,18 @@ fonts
   /*url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg) top/cover;*/
 }
 .content_3d_card:before {
-   background: linear-gradient(207deg, rgba(195,34,67,1) 21%, rgba(255,255,255,0.13207289751838236) 66%),
-   url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg) top/cover;
-   content: '';
-   opacity: 0.5;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
- }
+  background: linear-gradient(207deg, rgba(195,34,67,1) 21%, rgba(255,255,255,0.13207289751838236) 66%),
+  url(https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2022/08/43bcae33-bigstock-marvel-and-dc-comics-open-com-373641259.jpg) top/cover;
+  content: '';
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 .figure {
-  flex:flex-start;
   margin:auto;
   /*   flex:1; */
   /*max-height: 260px;*/
@@ -142,6 +148,8 @@ fonts
   filter: brightness(.9);
   transition: .5s;
   border-radius:2px;
+  /*height: 300px;  si las imagenes no tienen la misma altura mejor definir una*/
+  width: 100%;
 }
 .figure1:before {
   border:solid #131313 5px;
@@ -193,18 +201,21 @@ fonts
 }
 .amt_2 {
   grid-area: 1/1;
-  width: 150%;
-  height: 140%;
+  width: 120%;
+  height: 120%;
   object-fit: cover;
   /*   object-position: top; */
   filter: contrast(.8) brightness(.6);
   place-self: end center;
   transition: .5s;
   max-width: none!important;
+  overflow: visible;
+
 }
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 figcaption {
-  padding-top:0px;
+  filter: contrast(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  /*padding-top:10px;*/
   /*   border-radius:14px; */
   grid-area: 1/1;
   width: calc(100% + 40px);
@@ -213,7 +224,9 @@ figcaption {
   font-size: min(32px,5vmin);
   text-align: center;
   place-self: end center;
+  /*place-self: start center;*/
   transform: perspective(500px) translateY(100%) rotateX(-90deg);
+  /*  transform: perspective(500px) translateY(-160px) rotateX(160deg);*/
   backface-visibility: hidden;
   transform-origin: top;
   /*background: rgba(0, 0, 0, 0);*/
@@ -221,8 +234,8 @@ figcaption {
   color:hsl(var(--twc-primary));
 }
 .figure:hover img {
-  width: 160%;
-  height: 145%;
+  /*width: 130%;*/
+  /*height: 130%;*/
   margin-bottom:50px;
   filter: contrast(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
   z-index:10000;
@@ -234,8 +247,9 @@ figcaption {
 }
 .figure:hover figcaption{
   transform: perspective(500px)translateY(100%) rotateX(0);
-}
+    /*transform: perspective(500px) translateY(-160px) rotateX(0);*/
 
+}
 .svg_back  {
   margin:auto;
   width: 100%;
@@ -310,3 +324,33 @@ figcaption {
   z-index: 1;
   display: block;
 }
+.section_1_right:before {
+  border-bottom: 560px solid theme('colors.gray.800');
+  border-left: 160px solid transparent;
+  content: "";
+  /*height: 100%;*/
+  left: -158px;
+  position: absolute;
+  transition: .5s ease;
+  width: 0;
+  z-index: 1;
+  display: block;
+}
+
+/*!* Estilos para la barra de desplazamiento *!*/
+.slide_horizontal{
+  scroll-behavior: smooth; /* Agrega suavidad al desplazamiento */
+}
+.slide_horizontal::-webkit-scrollbar {
+  height: 4px; /* Ancho de la barra de desplazamiento */
+  scroll-behavior: smooth; /* Agrega suavidad al desplazamiento */
+}
+/*.slide_horizontal::-webkit-scrollbar-thumb {*/
+/*  background: rgba(0, 0, 0, 0.23);*/
+/*  border-radius: 4px; !* Redondeo de las esquinas *!*/
+/*}*/
+
+/*.slide_horizontal::-webkit-scrollbar-track {*/
+/*  background-color: #E5E7EB; !* Color del fondo de la barra de desplazamiento *!*/
+/*  border-radius: 4px;*/
+/*}*/

@@ -40,17 +40,18 @@ import {LandingPage3Component} from "./landing-page3/landing-page3.component";
     LandingPage3Component,
     // BreadcrumbsComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    LandingPagesRoutingModule,
-    ComponentsModuleLanding1,
-    ComponentsModuleLanding2,
-    ComponentsModuleLanding3,
-    ComponentsModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        LandingPagesRoutingModule,
+        ComponentsModuleLanding1,
+        ComponentsModuleLanding2,
+        ComponentsModuleLanding3,
+        ComponentsModule,
+        ComponentsModule
+    ],
   exports: [IndexComponent],
   providers: []
 })

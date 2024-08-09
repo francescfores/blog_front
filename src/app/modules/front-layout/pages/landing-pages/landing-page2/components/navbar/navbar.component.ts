@@ -89,12 +89,12 @@ export class NavbarComponent implements OnInit {
       console.log(scrollDistance)
       // Scroll hacia abajo
       console.log('abajo');
-      $('#navbar').addClass('-translate-y-[60px]');
+      $('#navbar').addClass('-translate-y-[53px]');
       // handleScrollDown();
     } else if (currentScrollPosition < this.lastScrollPosition) {
       // Scroll hacia arriba
       // handleScrollUp();
-      $('#navbar').removeClass('-translate-y-[60px]');
+      $('#navbar').removeClass('-translate-y-[53px]');
 
       console.log('arriba')
     }

@@ -117,7 +117,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(85, 85, 85, 0.59);
+  background: rgb(195, 195, 195);
   border-radius: 2px;
 }
 
@@ -129,10 +129,61 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(85, 85, 85, 0.59);
+  background: #EC1D24;
 }
 
 @media (min-width: 768px)
 .md\:order-1 {
   order: 1;
 }
+
+
+
+@import url('https://fonts.cdnfonts.com/css/shlop');
+@import url('https://fonts.googleapis.com/css?family=Marvel');
+@import url('https://fonts.cdnfonts.com/css/hyper-viper');
+@import url('https://fonts.cdnfonts.com/css/lazer84');
+@import url('https://fonts.cdnfonts.com/css/da-mad-rave');
+@import url('https://fonts.cdnfonts.com/css/monster-chiller');
+@import url('https://fonts.cdnfonts.com/css/fizzy-soda');
+@import url('https://fonts.cdnfonts.com/css/tower-of-silence');
+@import url('https://fonts.cdnfonts.com/css/call-of-ops-duty');
+@import url('https://fonts.cdnfonts.com/css/black-ops-2');
+@import url('https://fonts.cdnfonts.com/css/ash');
+
+@font-face {
+  /*font-family: "MarvelRegular-Dj83";*/
+  /*src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")*/
+  /*font-family: "Marvel-Regular";*/
+  /*src: url("assets/fonts/MarvelRegular-Dj83.ttf") format("truetype");*/
+  /*src: url("fonts/Ma  rvel-Regular.ttf") format("truetype");*/
+}
+
+.text_font_marvel{
+  /*height:100%;*/
+  /*width: 100%;*/
+
+  /*font-family: 'Monster Chiller', sans-serif;*/
+  /*font-family: 'Da Mad Rave', sans-serif;*/
+  /*font-family: 'Fizzy Soda', sans-serif;*/
+  /*font-family: 'Tower of Silence', sans-serif;*/
+  /*font-family: 'Tower of Silence 3D', sans-serif;*/
+  /*font-family: 'Call of Ops Duty', sans-serif;*/
+  /*font-family: "Marvel-Regular";*/
+  /*font-family: "MarvelRegular-Dj83";*/
+  /*font-family: "Creepster";*/
+  /*font-family: 'Hyper Viper', sans-serif;*/
+  /*font-family: 'lazer84', sans-serif;*/
+  /*font-family: 'Shlop', sans-serif;*/
+  font-family: 'Da Mad Rave', sans-serif;
+  /*font-family: 'Ash', sans-serif;*/
+
+  /*font-family: 'MarvelRegul ar-Dj83', sans-serif;*/
+  /*line-height:1;*/
+  /*font-family: 'Da Mad Rave', sans-serif;*/
+  /*padding-top: 5px;*/
+}
+/*.text_font_marvel{*/
+/*  position: relative;*/
+/*  font-family: 'MarvelRegular-Dj83', sans-serif;*/
+/*}*/
